@@ -113,7 +113,7 @@ export default function NavigationBar(props: { current: String }) {
                         <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                             {/* Sidebar content here */}
                             <li><a href="/">Home</a></li>
-                            <li><a href="/service">Couses</a></li>
+                            <li><a href="/service">Courses</a></li>
                             <li><a href="/service/consult">Consults</a></li>
                             {/* <li className="text-[12px]">
                                 <Accordion >

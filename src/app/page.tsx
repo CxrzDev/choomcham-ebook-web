@@ -19,9 +19,9 @@ import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 export default async function Home() {
    
     var res = await fetch(`https://choomcham.vercel.app/api/course`)
-    // var result : any = await res.json()
-    // var contents :any = [...result.data];
-    var contents :any = [];
+    var result : any = await res.json()
+    var contents :any = [...result.data];
+    // var contents :any = [];
     // const [contents, setContents] = useState<Course[]>([]);
     // useEffect(function mount() {
     //     function onScroll() {
