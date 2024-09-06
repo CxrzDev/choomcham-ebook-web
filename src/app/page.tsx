@@ -1,104 +1,54 @@
-'use client'
+// 'use client'
 
 import { motion } from 'framer-motion'
 import Footer from './components/footer'
 import Navbar from './components/nav'
 import NavigationBar from './components/navbar'
-import { Button, Card, CardBody, CardHeader, Link } from '@nextui-org/react'
-import Image from "next/image";
+import { Button, Card, CardBody, CardHeader, Link, divider } from '@nextui-org/react'
+import { Image } from '@nextui-org/react'
 
-import { db } from './firebaseConfig'
+// import { db } from './firebaseConfig'
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { JSXElementConstructor, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useEffect, useState } from 'react'
 import Loading from './components/loading'
-
-
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Navigation, Pagination } from 'swiper/modules';
-
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import { SwiperOptions } from 'swiper/types'
-
-
-class Course {
-    id: string;
-    title: string;
-    description: string;
-    imageUrl: string;
-    price: string;
-    // static courseConverter: any
-
-    constructor(id: string, title: string, description: string, imageUrl: string, price: any) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.imageUrl = imageUrl;
-        this.price = price;
-    }
-
-    // Firestore data converter
-    static courseConverter = {
-        toFirestore: (course: { id: any; title: any; description: any; imageUrl: any, price: any }) => {
-            return {
-                id: course.id,
-                title: course.title,
-                description: course.description,
-                imageUrl: course.imageUrl,
-                price: course.price,
-            };
-        },
-        fromFirestore: (snapshot: { data: (arg0: any) => any }, options: any) => {
-            const data = snapshot.data(options);
-            return new Course(data.id, data.title, data.description, data.imageUrl, data.price);
-        }
-    };
-}
-
-
-async function getContentData() {
-    const querySnapshot = await getDocs(query(collection(db, "course"), orderBy("id", "asc")));
-    const data: Course[] = [];
-
-    querySnapshot.forEach((doc) => {
-        data.push(Course.courseConverter.fromFirestore(doc, ""));
-    });
-
-    return data;
-}
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 
 
 
-export default function Home() {
-
-    // var contents;
-    const [contents, setContents] = useState<Course[]>([]);
-    useEffect(function mount() {
-        function onScroll() {
-            const nav = document.getElementById("scroll_nav");
-
-            if (window.scrollY > 50 && !nav?.classList.contains('bg-white')) {
 
 
-                nav?.classList.add("bg-white");
-                nav?.classList.remove("text-white");
+
+export default async function Home() {
+
+    var res = await fetch(`${process.env.NEXTPUBLIC_baseUrl}/api/course`)
+    var result : any = await res.json()
+    var contents :any = [...result.data];
+    // const [contents, setContents] = useState<Course[]>([]);
+    // useEffect(function mount() {
+    //     function onScroll() {
+    //         const nav = document.getElementById("scroll_nav");
+
+    //         if (window.scrollY > 50 && !nav?.classList.contains('bg-white')) {
 
 
-            } else if (window.scrollY < 50 && nav?.classList.contains('bg-white')) {
+    //             nav?.classList.add("bg-white");
+    //             nav?.classList.remove("text-white");
 
-                nav?.classList.remove("bg-white");
-                nav?.classList.add("text-white");
 
-            }
-        }
+    //         } else if (window.scrollY < 50 && nav?.classList.contains('bg-white')) {
 
-        window.addEventListener("scroll", onScroll);
+    //             nav?.classList.remove("bg-white");
+    //             nav?.classList.add("text-white");
 
-        return function unMount() {
-            window.removeEventListener("scroll", onScroll);
-        };
-    });
+    //         }
+    //     }
+
+    //     window.addEventListener("scroll", onScroll);
+
+    //     return function unMount() {
+    //         window.removeEventListener("scroll", onScroll);
+    //     };
+    // });
 
 
 
@@ -119,17 +69,9 @@ export default function Home() {
         { id: '6', title: "ชุ่มฉ่ำ Studio   ", description: "ถ่ายภาพโปรไฟล์สำหรับ CEO เพื่อสร้าง Personal Brand ดึงความเป็นตัวคุณออกมาให้มีเสน่ห์ ถ่ายภาพให้ดูมีชีวิตชุ่มฉ่ำ", imageUrl: "https://scontent.fbkk29-7.fna.fbcdn.net/v/t39.30808-6/336890739_1354530558661892_5028428925110047977_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=VIkIn8LBXqoAX-Dvonk&_nc_ht=scontent.fbkk29-7.fna&oh=00_AfDdNl-E1cJuHTaW5_T-_HFkLe88yy_Q3pkbBRcpmWihhg&oe=65ACB443", price: " 19,000" },
     ]
 
-    useEffect(() => {
-        async function fetchData() {
-            const data = await getContentData();
-            setContents(data);
-        }
-
-        fetchData();
-    }, []);
 
 
-    return <div>
+    return <>
         <div className="text-white fixed  z-10 w-full duration-200" id="scroll_nav">
 
             <NavigationBar current="" />
@@ -137,15 +79,14 @@ export default function Home() {
 
         <div id="fb-root"></div>
         <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0&appId=156838349817980" nonce="WQnbcNzF"></script>
-
+        
         <section>
             <div className="relative bg-blue-900 line  ">
                 <div className="absolute sm:top-[30%] top-[25%] sm:left-[3%] left-10">
-                    {/* <motion.div initial={{ y: 20, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 100 }}> <h1 className="text-white thai">ตัวจริงต้องมีที่ยืน</h1></motion.div> */}
+                    {/* <div initial={{ y: 20, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 100 }}> <h1 className="text-white thai">ตัวจริงต้องมีที่ยืน</h1></div> */}
                     {/* top */}
-                    <motion.div initial={{ y: 20, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 100 }} className="">
+                    <div >
                         <div className="text-white">
                             <div className="mark">
                                 <div className="line"> </div>
@@ -153,22 +94,22 @@ export default function Home() {
 
                             {/* top */}
                             <div className="mb-10">
-                                <h2 className=" sm:text-[2.5vw] thai sm:w-[50vw] small">แบรนด์ที่สนใจเรื่องความดียุคนี้ได้เปรียบ <br />เพราะยิ่งคุณค่าชัด ยิ่งโตแบบยั่งยืน
+                                <h2 className=" sm:text-[2.5vw] thai sm:w-[50vw] small">คุณไม่ได้เกิดมาแค่ทำธุรกิจ <br />แต่คุณเกิดมาเพื่อสร้างแบรนด์ที่มีคุณค่า
 
                                 </h2>
                                 <br />
                                 <h4 className="text-[14px] sm:text-large thai w-[56vw]">ผลงานสร้างแบรนด์สายคุณค่าระดับประเทศ</h4>
                                 <br />
                                 {/* <Link href="/about"><div className="btn bg-primary rounded-full px-10 py-1 border-0 hover:scale-110 duration-150 text-white">About us</div></Link> */}
-                                <Link href="/about"><Button>About Us</Button></Link>
+                                <Link href="/about"><Button radius='full' className='w-[300px] bg-[--yellow]'>About Us</Button></Link>
                             </div>
                         </div>
                         <br />
-                    </motion.div>
+                    </div>
                 </div>
                 <h4 className="absolute right-5 sm:right-20 bottom-5 sm:bottom-40 text-white thai sm:text-base text-[12px]">
                     <div>อีฟ ภัทรัดจารินท์​ สุวัชรานนท์</div>
-                    <div>Brand Consultant / Teacher</div>
+                    <div>Brand Consultant / Teacher </div>
                 </h4>
             </div>
         </section>
@@ -182,9 +123,9 @@ export default function Home() {
                         </div>
                     </CardHeader>
                     <CardBody>
-                        <h3 className='text-xl font-bold'>  Brand Strategist </h3>
+                        <h3 className='text-xl font-bold'>  Online course </h3>
                         <div className="text-[18px]">
-                            ถนัดวางแผนสร้างแบรนด์จาก 0 ให้มีชื่อเสียง ด้วยทักษะพิเศษในการมองเห็นล่วงหน้า
+                            สร้างคนดังในตำนาน เนื้อหาแน่น ห้ามพลาด เรียนได้ทุกที่ ทุกเวลา
 
                         </div>
                     </CardBody>
@@ -196,10 +137,11 @@ export default function Home() {
                         </div>
                     </CardHeader>
                     <CardBody>
-                        <h3 className='text-xl font-bold'>  Keynote Speaker </h3>
+                        <h3 className='text-xl font-bold'> On-site Workshop  </h3>
                         <div className="text-[18px]">
 
-                            เปลี่ยนแปลงวิธีคิดในการสร้างแบรนด์ให้คนหลักพัน
+                            พบปะกลุ่มเจ้าของธุรกิจตัวจริงต่างวงการ หรือช่วยจัดเวิร์คชอปเจ๋งๆให้กับทีมงานของคุณ
+
 
                         </div>
                     </CardBody>
@@ -211,10 +153,12 @@ export default function Home() {
                         </div>
                     </CardHeader>
                     <CardBody>
-                        <h3 className='text-xl font-bold'> Spiritual practitioner </h3>
+                        <h3 className='text-xl font-bold'> 1:1 Consult
+                        </h3>
                         <div className="text-[18px]">
 
-                            เน้นฝึกจิต ถือศีล 5 เป็นปกติ ตั้งแต่อายุ 13
+                            แบรนด์ไม่ชัด มีของดีแต่คนไม่รู้จัก ช่วยสะท้อนสิ่งที่คุณไม่เห็นเพื่อให้ไปต่อได้
+
 
                         </div>
                     </CardBody>
@@ -223,15 +167,13 @@ export default function Home() {
             </section>
 
             <section className='p-10 flex justify-evenly items-center'>
-                <motion.div initial={{ opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 100 }} > <img width="250" src="/images/sticker6.png" alt="อิโมจิชุ่มฉ่ำ ตัวจริงต้องมีที่ยืน" /></motion.div>
-                <motion.div initial={{ opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 100 }} className='w-[450px]'>
+                <div  > <img width="250" src="/images/sticker6.png" alt="อิโมจิชุ่มฉ่ำ ตัวจริงต้องมีที่ยืน" /></div>
+                <div className='w-[450px]'>
                     <div className="text-xl sm:text-3xl font-bold  text-yellow-500 ">
                         ภารกิจตัวจริงต้องมีที่ยืน
                     </div>
                     <div className="text-lg sm:text-2xl ">คุณไม่จำเป็นต้องเป็นแบบใคร คุณแค่ต้องเป็นตัวเองให้ชัดพอ ที่เหลือเป็นเรื่องของศิลปะการถ่ายทอดว่าคุณจะทำให้คนจดจำคุณได้ยังไง และไปดึงดูดใครเข้ามา ธุรกิจคุณจะมีที่ยืนเมื่อคุณกล้าตัดสินใจจะเลิกอยู่ตรงกลาง</div>
-                </motion.div>
+                </div>
             </section>
 
             <section className='p-10 bg-slate-100/40'>
@@ -314,9 +256,9 @@ export default function Home() {
                         {
                             (contents.length != 0) ?
 
-                                contents.map((content) =>
+                                contents.map((content:any) =>
                                     <div className="card  w-96 sm:w-96 bg-white/50 shadow-xl overflow-hidden  " key={content.id}>
-                                        <figure className={"h-[210px] sm:h-[240px] overflow-hidden "}><img src={content.imageUrl} alt={content.title} className='object-cover ' /></figure>
+                                        <figure className={"h-[210px] sm:h-[240px] overflow-hidden "}><Image width={390} height={260} src={content.imageUrl || "/images/cover6.png"} fallbackSrc="/images/cover6.png" alt={content.title} className='object-cover z-0' /></figure>
                                         <div className="card-body h-[202px] sm:h-[auto]">
                                             <div className="card-title text-[--green]">
                                                 {content.title}
@@ -325,12 +267,12 @@ export default function Home() {
                                             <p className="h-[40px] sm:h-[80px] w-[auto] text-ellipsis overflow-hidden">{content.description}</p>
                                             <div className="card-actions justify-between">
                                                 <Button href='#' className="bg-[--yellow]" radius='full'>ดูรายละเอียด</Button>
-                                                <div>
+                                                {/* <div>
                                                     {content.price != "" ?
                                                         <><div className="font-bold">เริ่มต้นที่</div><div className="text-[--dark-blue] font-bold">฿ {content.price}</div></>
                                                         : <div></div>
                                                     }
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>
@@ -357,78 +299,6 @@ export default function Home() {
 
                     </div>
 
-                    {/* 
-                    <div className="flex flex-wrap justify-center gap-10 py-5 px-4">
-                        {courses.map((course) =>
-                            <div className="card  w-96 sm:w-96 bg-white/50 shadow-xl overflow-hidden  " key={course.id}>
-                                <figure className={"h-[210px] sm:h-[240px] overflow-hidden "}><img src={course.imageUrl} alt={course.title} className='object-cover ' /></figure>
-                                <div className="card-body h-[202px] sm:h-[auto]">
-                                    <div className="card-title text-[--green]">
-                                        {course.title}
-                                      
-                                    </div>
-                                    <p className="h-[40px] sm:h-[80px] w-[auto] text-ellipsis overflow-hidden">{course.description}</p>
-                                    <div className="card-actions justify-between">
-                                        <Button className="bg-[--yellow]" radius='full'>ดูรายละเอียด</Button>
-                                        <div>
-                                            <div className="font-bold">เริ่มต้นที่</div>
-                                            <div className="text-[--dark-blue] font-bold">฿ {course.price}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                    </div> */}
-
-                    {/* <Swiper
-
-                        // spaceBetween={50}
-                        // slidesPerView={3}
-                        navigation={true}
-                        pagination={true} modules={[Pagination, Navigation]}
-
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 1,
-                                spaceBetween: 20,
-                            },
-                            768: {
-                                slidesPerView: 2,
-                                spaceBetween: 40,
-                            },
-                            1024: {
-                                slidesPerView: 3,
-                                spaceBetween: 50,
-                            },
-                        }}
-
-                    >
-
-                        {courses.map(course =>
-
-                            <SwiperSlide key={course.id} className="py-10 px-4 cursor-default" >
-                                <div className="card  w-[60rem] sm:w-96 bg-white shadow-xl overflow-hidden ">
-                                    <figure className="h-[210px] sm:h-[240px] overflow-hidden"><img src={course.imageUrl} alt={course.title} /></figure>
-                                    <div className="card-body h-[202px] sm:h-[auto]">
-                                        <div className="card-title">
-                                            {course.title}
-                                            <div className="badge bg-[--pink] text-[--yellow] py-3 px-5">NEW</div>
-                                        </div>
-                                        <p className="h-[40px] sm:h-[80px] w-[auto] text-ellipsis overflow-hidden">{course.description}</p>
-                                        <div className="card-actions justify-between">
-                                            <Button>ดูรายละเอียด</Button>
-                                            <div>
-                                                <div className="font-bold">เริ่มต้นที่</div>
-                                                <div className="text-[--dark-blue] font-bold">฿ {course.price}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </SwiperSlide>
-                        )}
-
-                    </Swiper> */}
                 </div>
             </section>
 
@@ -442,23 +312,6 @@ export default function Home() {
 
                         <div className="flex   flex-wrap gap-5 items-center justify-center ">
 
-                            {/* 
-                            {
-                                videos.map((video) => {
-                                    return (
-
-                                        <motion.div key={video.id} initial={{ y: 20, opacity: 0 }}
-                                            whileInView={{ y: 0, opacity: 100 }} className="card w-[250px] sm:w-96 overflow-hidden shadow-xl flex justify-center items-center bg-black">
-                                            <figure className="">
-                                                {video.platform == "youtube"
-                                                    ? <iframe width="560" src={video.src} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="object-cover  h-[auto]"></iframe>
-                                                    : <iframe src={"https://www.facebook.com/plugins/video.php?href=" + video.src + "&height=520"} width="390" className=' h-[400px]' allowFullScreen={true}   ></iframe>}
-
-                                            </figure>
-                                        </motion.div>
-                                    )
-                                })
-                            } */}
 
                             {videos.map((video) => {
                                 return (
@@ -549,5 +402,8 @@ export default function Home() {
 
 
         <Footer></Footer>
-    </div>
+    </>
+
+
+
 }

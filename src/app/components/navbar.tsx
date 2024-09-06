@@ -1,5 +1,6 @@
 "use client"
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Accordion, AccordionItem } from "@nextui-org/react";
+import { useEffect } from "react";
 
 
 export default function NavigationBar(props: { current: String }) {
@@ -8,9 +9,36 @@ export default function NavigationBar(props: { current: String }) {
     //     currentPage = 0;
     const activeList = [" ", " ", " ", " "];
     activeList[currentPage] = "shadow-lg shadow-[--pink] bg-[--pink] hover:text-white hover:bg-[--pink]  text-white rounded-lg border-[--pink]";
+    useEffect(function mount() {
+        function onScroll() {
+            const nav = document.getElementById("nav");
+            console.log(window.scrollY)
+            if (window.scrollY > 50 && !nav?.classList.contains('bg-white/80')) {
+
+
+                nav?.classList.add("bg-white/80");
+                nav?.classList.add("text-black");
+                // nav?.classList.remove("text-white");
+
+
+            } else if (window.scrollY < 100 && nav?.classList.contains('bg-white/80')) {
+                nav?.classList.remove("text-black");
+                nav?.classList.remove("bg-white/80");
+                // nav?.classList.add("text-white");
+
+            }
+        }
+
+        window.addEventListener("scroll", onScroll);
+
+        return function unMount() {
+            window.removeEventListener("scroll", onScroll);
+        };
+        mount()
+    },[]);
 
     return (
-        <div className=" z-10 top-0 w-full flex justify-around glass fixed">
+        <div className=" z-10 top-0 w-full flex justify-around glass fixed " id="nav">
 
             <div className={"navbar px-10 sm:px-20  "}>
                 <div className="navbar-start ">
@@ -34,7 +62,7 @@ export default function NavigationBar(props: { current: String }) {
 
 
                 </div>
-                <div className="navbar-center sm:flex  gap-10 hidden">
+                <div className="navbar-center sm:flex  gap-10 hidden ">
                     <ul className=' gap-5 hidden font-medium sm:flex items-center'>
 
                         <div className={'hover:bg-pink-400/10' + activeList[0] + '  hover:text-[--pink]  rounded-lg px-4 py-2 duration-200 relative group cursor-default'} >
@@ -85,7 +113,9 @@ export default function NavigationBar(props: { current: String }) {
                         <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                             {/* Sidebar content here */}
                             <li><a href="/">Home</a></li>
-                            <li className="text-[12px]">
+                            <li><a href="/service">Couses</a></li>
+                            <li><a href="/service/consult">Consults</a></li>
+                            {/* <li className="text-[12px]">
                                 <Accordion >
                                     <AccordionItem key="anchor" aria-label="Consult & Course" className="text-[12px] w-full"  title="Consult & Course">
                                         <li><a href="/service">Couses</a></li>
@@ -93,7 +123,7 @@ export default function NavigationBar(props: { current: String }) {
                                     </AccordionItem>
                                 
                                 </Accordion>
-                            </li>
+                            </li> */}
 
                             <li><a href="/articles">Articles</a></li>
                             <li><a href="/testimonials">Testimonials</a></li>

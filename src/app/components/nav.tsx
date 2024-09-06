@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 function Navbar() {
     const actStyl = " active px-5 py-1 rounded-full  bg-black  shadow-xl"
@@ -7,6 +8,33 @@ function Navbar() {
 
 
     const header = 'duration-300 navbar  bg-white drop-shadow-md  flex justify-between px-20 sticky top-0 w-full py-3  z-[100] '
+
+    useEffect(function mount() {
+        function onScroll() {
+            const nav = document.getElementById("nav");
+
+            if (window.scrollY > 50 && !nav?.classList.contains('bg-white')) {
+
+
+                nav?.classList.add("bg-white");
+                nav?.classList.remove("text-white");
+
+
+            } else if (window.scrollY < 50 && nav?.classList.contains('bg-white')) {
+
+                nav?.classList.remove("bg-white");
+                nav?.classList.add("text-white");
+
+            }
+        }
+
+        window.addEventListener("scroll", onScroll);
+
+        return function unMount() {
+            window.removeEventListener("scroll", onScroll);
+        };
+        mount()
+    },[]);
 
     return (
         <>

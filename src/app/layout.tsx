@@ -28,7 +28,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Choomcham branding' }],
   keywords: ['Choomcham', 'Choomcham Branding', 'branding', 'courses', 'personal branding','Brand Strategist','Keynote Speaker','Spiritual practitioner','อีฟ ภัทรัดจารินท์​ สุวัชรานนท์', 'marketing', ' brand identity', 'ทำไมต้อง ชุ่มฉ่ำ Branding จะช่วยธุรกิจคุณได้ยังไง?', 'ชุ่มฉ่ำ Branding'],
   publisher: "Vercel",
-  themeColor: [{ media: "(prefers-color-scheme: light)", color: "#ffffff" }],
   robots: { index: true, follow: true },
   icons: "/images/cropped-logo.png",
   openGraph: {
