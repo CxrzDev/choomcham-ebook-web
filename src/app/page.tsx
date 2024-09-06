@@ -12,16 +12,13 @@ import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { JSXElementConstructor, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useEffect, useState } from 'react'
 import Loading from './components/loading'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
-import { headers } from "next/headers";
 
-const headersList = headers();
-const domain = headersList.get("x-forwarded-host") || "";
 
 
 
 export default async function Home() {
    
-    var res = await fetch(`https://choomcham.vercel.app/api/course`)
+    // var res = await fetch(`https://choomcham.vercel.app/api/course`)
     // var result : any = await res.json()
     // var contents :any = [...result.data];
     var contents :any = [];
