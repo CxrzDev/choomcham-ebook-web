@@ -4,6 +4,6 @@
 
 export default function test(){
      return <>
-     <Compo>Ts</Compo>
+     {/* <Compo>Ts</Compo> */}
      </>
 }
