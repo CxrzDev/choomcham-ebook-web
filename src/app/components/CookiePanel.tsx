@@ -33,7 +33,7 @@ export default function CookiePanel() {
                 {/* <div className="w-50 flex justify-end"><img src="/images/cropped-logo.png" alt="" /></div> */}
                 <div className="font-bold text-[--green] text-lg">เว็บไซต์นี้ใช้คุกกี้</div>
                 <div>
-                    เราใช้คุกกี้เพื่อเพิ่มประสิทธิภาพ และประสบการณ์ที่ดีในการใช้งานเว็บไซต์ คุณสามารถเลือกตั้งค่าความยินยอมการใช้คุกกี้ได้ โดยคลิก "การตั้งค่าคุกกี้"
+                    เราใช้คุกกี้เพื่อเพิ่มประสิทธิภาพ และประสบการณ์ที่ดีในการใช้งานเว็บไซต์ คุณสามารถเลือกตั้งค่าความยินยอมการใช้คุกกี้ได้ โดยคลิก &quot;การตั้งค่าคุกกี้&quot;
                     <Link href="#"><span className="underline text-[--pink] ml-1"> นโยบายความเป็นส่วนตัว</span></Link>
                 </div>
             </CardBody>

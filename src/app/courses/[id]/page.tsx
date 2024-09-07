@@ -39,7 +39,7 @@ export default function Page() {
                     <section className="p-5 px-10">
                         <div className="flex gap-10 sm:text-[22px]">
                             <Link href="#courseDescription" className="duration-150 border-b-3 border-transparent hover:border-[--yellow] font-bold">Course Description</Link>
-                            <Link href="#whatwilllearn" className="duration-150 border-b-3 border-transparent hover:border-[--yellow] font-bold">What you'll learn</Link>
+                            <Link href="#whatwilllearn" className="duration-150 border-b-3 border-transparent hover:border-[--yellow] font-bold">What you&apos;ll learn</Link>
                             <Link href="#allLesson" className="duration-150 border-b-3 border-transparent hover:border-[--yellow] font-bold">All lesson</Link>
                         </div>
                     </section>
