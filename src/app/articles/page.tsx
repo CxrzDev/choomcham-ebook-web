@@ -1,7 +1,7 @@
-'use client'
+
 import { GetServerSideProps, InferGetServerSidePropsType } from "next"
 import Link from "next/link"
-import { motion } from "framer-motion"
+
 const blogs = [
     { id: '1', title: 'title', description: 'name' },
     { id: '2', title: 'title', description: 'name' },
@@ -24,13 +24,12 @@ function Blog() {
 
                 <div>ชุ่มฉ่ำ แบรนดิ้ง</div>
                 {/* top */}
-                <motion.div initial={{ y: 20, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 100 }}  className="mb-10">
+                <div   className="mb-10">
                     <h1 className="text-3xl sm:text-5xl thai pb-5">Blog</h1>
                     <div className="text-md thai py-3 px-3 w-80 text-center bg-[#D33666] rounded-full">BLOG ความรู้ BRANDING การตลาดสุดฉ่ำ</div>
                     <br />
 
-                </motion.div>
+                </div>
 
 
 
@@ -48,8 +47,7 @@ function Blog() {
                     {blogs.map((blog) => {
                         return (
                             <>
-                                <motion.div initial={{ y: 20, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 100 }}  className="card sm:w-96 bg-base-100 shadow-xl">
+                                <div   className="card sm:w-96 bg-base-100 shadow-xl">
                                     <figure className="rounded-xl overflow-hidden"><img className="rounded-xl" src="https://www.choomcham.com/assets/images/84dfa30d.png" alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">
@@ -63,7 +61,7 @@ function Blog() {
                                         </div>
                                         <Link href={"./articles/" + (blog.id).toString()} className="btn">อ่านต่อ</Link>
                                     </div>
-                                </motion.div>
+                                </div>
                             </>
                         )
                     })}
@@ -81,10 +79,9 @@ function Blog() {
                 <div className="grid sm:grid-cols-3 gap-10">
 
                     {videos.map((video) => <>
-                        <motion.div initial={{ y: 20, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 100 }}  className="card sm:w-96 overflow-hidden shadow-xl ">
+                        <div   className="card sm:w-96 overflow-hidden shadow-xl ">
                             <figure className="h-48"><iframe width="560" src={video.src} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="object-cover h-full"></iframe></figure>
-                        </motion.div></>)}
+                        </div></>)}
                 </div>
             </div>
         </>

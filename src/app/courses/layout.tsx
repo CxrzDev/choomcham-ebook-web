@@ -11,7 +11,7 @@ export default function RootLayout({
     <>
 
 <NavigationBar current={""} />
-      <div className="p-5">{children}</div>
+      <div className="bg-[#EFEFEF]">{children}</div>
       {/* <Footer></Footer> */}
     </>
 

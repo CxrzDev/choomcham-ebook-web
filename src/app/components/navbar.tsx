@@ -38,14 +38,16 @@ export default function NavigationBar(props: { current: String }) {
     },[]);
 
     return (
-        <div className=" z-10 top-0 w-full flex justify-around glass fixed " id="nav">
+        <>
+        
+        <div className=" z-10 top-0 w-full flex justify-around glass sticky  " id="nav">
 
             <div className={"navbar px-10 sm:px-20  "}>
                 <div className="navbar-start ">
 
 
                     <Link href="/">
-                        <div className="pr-10"><img src="https://blog.choomcham.com/wp-content/uploads/2021/09/cropped-logo.png" alt="" />
+                        <div className="pr-10"><img src="/images/cropped-logo.png" alt="" />
                             {/* <img src="https://www.choomcham.com/assets/images/4277eb7d.png" className='hidden' alt="" /> */}
                         </div>
                     </Link>
@@ -152,5 +154,8 @@ export default function NavigationBar(props: { current: String }) {
                 </div>
             </div>
 
-        </div>);
+        </div>
+        
+        </>
+        );
 }

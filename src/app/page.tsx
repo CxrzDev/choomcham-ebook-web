@@ -21,35 +21,6 @@ export default async function Home() {
     var res = await fetch(`https://choomcham.vercel.app/api/course`)
     var result : any = await res.json()
     var contents :any = [...result.data];
-    // var contents :any = [];
-    // const [contents, setContents] = useState<Course[]>([]);
-    // useEffect(function mount() {
-    //     function onScroll() {
-    //         const nav = document.getElementById("scroll_nav");
-
-    //         if (window.scrollY > 50 && !nav?.classList.contains('bg-white')) {
-
-
-    //             nav?.classList.add("bg-white");
-    //             nav?.classList.remove("text-white");
-
-
-    //         } else if (window.scrollY < 50 && nav?.classList.contains('bg-white')) {
-
-    //             nav?.classList.remove("bg-white");
-    //             nav?.classList.add("text-white");
-
-    //         }
-    //     }
-
-    //     window.addEventListener("scroll", onScroll);
-
-    //     return function unMount() {
-    //         window.removeEventListener("scroll", onScroll);
-    //     };
-    // });
-
-
 
 
 
@@ -93,11 +64,11 @@ export default async function Home() {
 
                             {/* top */}
                             <div className="mb-10">
-                                <h2 className=" sm:text-[2.5vw] thai sm:w-[50vw] small">คุณไม่ได้เกิดมาแค่ทำธุรกิจ <br />แต่คุณเกิดมาเพื่อสร้างแบรนด์ที่มีคุณค่า
+                                <div className=" sm:text-[2.5vw] thai sm:w-[50vw] small">คุณไม่ได้เกิดมาแค่ทำธุรกิจ <br />แต่คุณเกิดมาเพื่อสร้างแบรนด์ที่มีคุณค่า
 
-                                </h2>
+                                </div>
                                 <br />
-                                <h4 className="text-[14px] sm:text-large thai w-[56vw]">ผลงานสร้างแบรนด์สายคุณค่าระดับประเทศ</h4>
+                                <div className="text-[14px] sm:text-large thai w-[56vw]">ผลงานสร้างแบรนด์สายคุณค่าระดับประเทศ</div>
                                 <br />
                                 {/* <Link href="/about"><div className="btn bg-primary rounded-full px-10 py-1 border-0 hover:scale-110 duration-150 text-white">About us</div></Link> */}
                                 <Link href="/about"><Button radius='full' className='w-[300px] bg-[--yellow]'>About Us</Button></Link>
@@ -106,10 +77,10 @@ export default async function Home() {
                         <br />
                     </div>
                 </div>
-                <h4 className="absolute right-5 sm:right-20 bottom-5 sm:bottom-40 text-white thai sm:text-base text-[12px]">
+                <div className="absolute right-5 sm:right-20 bottom-5 sm:bottom-40 text-white thai sm:text-base text-[12px]">
                     <div>อีฟ ภัทรัดจารินท์​ สุวัชรานนท์</div>
                     <div>Brand Consultant / Teacher </div>
-                </h4>
+                </div>
             </div>
         </section>
 
@@ -122,7 +93,7 @@ export default async function Home() {
                         </div>
                     </CardHeader>
                     <CardBody>
-                        <h3 className='text-xl font-bold'>  Online course </h3>
+                        <div className='text-xl font-bold'>  Online course </div>
                         <div className="text-[18px]">
                             สร้างคนดังในตำนาน เนื้อหาแน่น ห้ามพลาด เรียนได้ทุกที่ ทุกเวลา
 
@@ -319,7 +290,7 @@ export default async function Home() {
                                             <iframe src={"https://www.facebook.com/plugins/video.php?href=" + video.src + ""} className='sm:h-[400px]' allowFullScreen={true} allow='autoplay' ></iframe></figure>
                                         <div className="card-body sm:flex-col flex-row text-white sm:w-[50%] sm:h-[auto] ">
                                             <div>
-                                                <h2 className="card-title sm:text-3xl font-bold text-[--yellow] text-xl sm:w-[auto] overflow-hidden text-ellipsis">{video.title}!</h2>
+                                                <div className="card-title sm:text-3xl font-bold text-[--yellow] text-xl sm:w-[auto] overflow-hidden text-ellipsis">{video.title}!</div>
                                                 <p className="text-ellipsis sm:w-[auto] h-[120px] text-[14px] sm:text-xl overflow-hidden">{video.description}.</p>
                                             </div>
                                             <div className="card-actions justify-end">

@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import { Providers } from "./providers";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import CookiePanel from './components/CookiePanel';
 const cloudSoft = localFont({
   src: [
     {
@@ -52,7 +53,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={cloudSoft.className}>
         <Providers>
+        
           {children}
+          <CookiePanel></CookiePanel>
           <SpeedInsights />
         </Providers>
       </body>
