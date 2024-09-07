@@ -118,7 +118,7 @@ export default function Page() {
                             <CardBody className="flex flex-row justify-between flex-1 items-center">
                                 <div className="">
                                     <div className="text-[42px] font-bold text-[--dark-blue]">คนสอนเป็นใคร?</div>
-                                    <div className="text-[36px] text-[--yellow]">"อีฟ ภัทรัดจารินท์​ สุวัชรานนท์"</div>
+                                    <div className="text-[36px] text-[--yellow]">&quot;อีฟ ภัทรัดจารินท์​ สุวัชรานนท์&quot;</div>
                                     <div className="text-zinc-700 w-[80%]">
                                         <ul className="grid grid-cols-1 gap-4 list-none">
                                             <li className="bg-white p-2 rounded-xl items-start">
@@ -130,7 +130,7 @@ export default function Page() {
                                             <li className="bg-white p-2 rounded-xl items-start">
                                                 <Asterisk className="text-[--green]" />
                                                 <span className="">
-                                                    ผู้ร่วมก่อตั้งเพจ "เกลานิสัย อันตราย" ที่สร้างตัวตนให้กับบุคคลที่เป็นที่รู้จักในวงกว้าง <br />
+                                                    ผู้ร่วมก่อตั้งเพจ &quot;เกลานิสัย อันตราย&quot; ที่สร้างตัวตนให้กับบุคคลที่เป็นที่รู้จักในวงกว้าง <br />
                                                     เช่น ดร.ชัชชาติ, ครูเงาะ, นายณภัทร ฯลฯ
                                                 </span>
                                             </li>

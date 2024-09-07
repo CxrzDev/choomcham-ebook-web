@@ -92,7 +92,7 @@ export default function Lession() {
             {lessons.map(
                 (item: any,index) => <AccordionItem key={index} aria-label="Accordion 1" 
                 title={item.title}>
-                    {item.details.map((detail: any) => <div className="flex items-center"><Asterisk className="text-[--pink]"></Asterisk>{detail}</div>)}
+                    {item.details.map((detail: any) => <div key={detail} className="flex items-center"><Asterisk className="text-[--pink]"></Asterisk>{detail}</div>)}
                 </AccordionItem>)}
 
         </Accordion>
