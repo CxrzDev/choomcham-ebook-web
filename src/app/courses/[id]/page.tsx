@@ -129,12 +129,12 @@ export default function Page() {
                             <CardBody>
                                 <div className="sm:text-[42px] text-2xl font-bold text-[--yellow] text-center">ปัญหาของคนทำคอนเทนต์มือใหม่</div>
                                 <div className="text-zinc-700 ">
-                                    <ul className="text-white sm:text-[22px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-sm justify-center items-center">
-                                        <li className="p-5 flex "><MessageCircleX className="sm:w-14 "></MessageCircleX>น้ำเยอะ</li>
-                                        <li className="p-5 flex "><MessageCircleX className="sm:w-14 "></MessageCircleX>คิดพาดหัวไม่เป็น</li>
-                                        <li className="p-5 flex "><MessageCircleX className="sm:w-14 "></MessageCircleX>ไม่รู้จะเริ่มยังไง</li>
-                                        <li className="p-5 flex "><MessageCircleX className="sm:w-14 "></MessageCircleX>คลิปติดแบบฟลุคๆ</li>
-                                        <li className="p-5 flex "><MessageCircleX className="sm:w-14 "></MessageCircleX>นำเสนอจุดเด่นตัวเองไม่ดี</li>
+                                    <ul className="text-white sm:text-[22px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-md justify-center items-center">
+                                        <li className="p-5 flex "><MessageCircleX className="w-14 "></MessageCircleX>น้ำเยอะ</li>
+                                        <li className="p-5 flex "><MessageCircleX className="w-14 "></MessageCircleX>คิดพาดหัวไม่เป็น</li>
+                                        <li className="p-5 flex "><MessageCircleX className="w-14 "></MessageCircleX>ไม่รู้จะเริ่มยังไง</li>
+                                        <li className="p-5 flex "><MessageCircleX className="w-14 "></MessageCircleX>คลิปติดแบบฟลุคๆ</li>
+                                        <li className="p-5 flex "><MessageCircleX className="w-14 "></MessageCircleX>นำเสนอจุดเด่นตัวเองไม่ดี</li>
 
                                     </ul>
                                 </div>
@@ -265,7 +265,7 @@ export default function Page() {
                             <div className="bg-[--yellow] w-36 h-36 rounded-full absolute right-[-10px] top-[-100px] -z-0"></div>
                             <div>
                                 <div className="sm:text-[42px] text-[8vw] font-bold text-[--dark-blue]">คนสอนเป็นใคร?</div>
-                                <div className="sm:text-[36px] text-[4vw] text-[--yellow]">&quot;อีฟ ภัทรัดจารินท์​ สุวัชรานนท์&quot;</div>
+                                <div className="sm:text-[36px] text-[4vw] text-yellow-500">&quot;อีฟ ภัทรัดจารินท์​ สุวัชรานนท์&quot;</div>
                             </div>
 
                             <CardBody className="flex lg:flex-row md:flex-col-reverse flex-col-reverse justify-between flex-1 items-center">
@@ -325,14 +325,14 @@ export default function Page() {
                                     <div className="text-3xl font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย </div>
                                     <div className=" overflow-auto ssm:text-sm">
                                         <ul>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />เพิ่มยอดขายและผู้ติดตาม 10 เท่า ใน 8 ชั่วโมง</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ประหยัดงบ เร็วและปลอดภัยกว่าทดลองเอง 100 เท่า</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ได้รู้ถึงตัวตนที่ชัดเจน (ที่มากกว่าแค่เรื่องธุรกิจ)</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ได้ที่ยืนที่โดดเด่นกว่าใครในตลาด</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ได้เทคนิคการสื่อสารกับทีมสื่อให้เห็นภาพตรงกัน</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />รู้ขั้นตอนการทำคอนเทนต์จาก 0</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ได้วิธีสร้างยอดขายจากเรื่องเล่าให้ต่างจากคู่แข่ง</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />แผนที่เล่าเรื่องขายดีใน 30 วัน</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />เพิ่มยอดขายและผู้ติดตาม 10 เท่า ใน 8 ชั่วโมง</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ประหยัดงบ เร็วและปลอดภัยกว่าทดลองเอง 100 เท่า</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ได้รู้ถึงตัวตนที่ชัดเจน (ที่มากกว่าแค่เรื่องธุรกิจ)</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ได้ที่ยืนที่โดดเด่นกว่าใครในตลาด</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ได้เทคนิคการสื่อสารกับทีมสื่อให้เห็นภาพตรงกัน</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />รู้ขั้นตอนการทำคอนเทนต์จาก 0</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ได้วิธีสร้างยอดขายจากเรื่องเล่าให้ต่างจากคู่แข่ง</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />แผนที่เล่าเรื่องขายดีใน 30 วัน</li>
                                         </ul>
                                         <div className="py-2">
                                         </div>
@@ -349,14 +349,14 @@ export default function Page() {
                                     <div className="text-3xl font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย <br /> (สำหรับองค์กร)</div>
                                     <div className=" overflow-auto ssm:text-sm">
                                         <ul>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />เพิ่มยอดขายและผู้ติดตาม 10 เท่า ใน 8 ชั่วโมง</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ประหยัดงบ เร็วและปลอดภัยกว่าทดลองเอง 100 เท่า</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ได้รู้ถึงตัวตนที่ชัดเจน (ที่มากกว่าแค่เรื่องธุรกิจ)</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ได้ที่ยืนที่โดดเด่นกว่าใครในตลาด</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ได้เทคนิคการสื่อสารกับทีมสื่อให้เห็นภาพตรงกัน</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />รู้ขั้นตอนการทำคอนเทนต์จาก 0</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ได้วิธีสร้างยอดขายจากเรื่องเล่าให้ต่างจากคู่แข่ง</li>
-                                            <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />แผนที่เล่าเรื่องขายดีใน 30 วัน</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />เพิ่มยอดขายและผู้ติดตาม 10 เท่า ใน 8 ชั่วโมง</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ประหยัดงบ เร็วและปลอดภัยกว่าทดลองเอง 100 เท่า</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ได้รู้ถึงตัวตนที่ชัดเจน (ที่มากกว่าแค่เรื่องธุรกิจ)</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ได้ที่ยืนที่โดดเด่นกว่าใครในตลาด</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ได้เทคนิคการสื่อสารกับทีมสื่อให้เห็นภาพตรงกัน</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />รู้ขั้นตอนการทำคอนเทนต์จาก 0</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ได้วิธีสร้างยอดขายจากเรื่องเล่าให้ต่างจากคู่แข่ง</li>
+                                            <li className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />แผนที่เล่าเรื่องขายดีใน 30 วัน</li>
                                         </ul>
                                         <div className="py-2">
                                         </div>
