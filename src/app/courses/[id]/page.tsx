@@ -20,7 +20,7 @@ export default function Page() {
             </div>
 
             <div className="flex w-full   justify-center mt-2">
-                <div className="flex gap-10 flex-col justify-center items-center sm:w-2/3  w-[80vw]">
+                <div className="flex gap-10 flex-col justify-center items-center sm:w-2/3  w-screen">
                     {/* <section className="p-5 pt-10">
                         <div className="flex gap-10 sm:text-[22px] text-[3vw]">
                             <Link href="#courseDescription" className="duration-150 border-b-3 border-transparent hover:border-[--yellow] font-bold">Course Description</Link>
@@ -129,12 +129,12 @@ export default function Page() {
                             <CardBody>
                                 <div className="sm:text-[42px] text-3xl font-bold text-[--yellow] text-center">ปัญหาของคนทำคอนเทนต์มือใหม่</div>
                                 <div className="text-zinc-700 ">
-                                    <ul className="text-white sm:text-[22px] grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-xl">
-                                        <li className="p-5 flex "><MessageCircleX className="w-14"></MessageCircleX>น้ำเยอะ</li>
-                                        <li className="p-5 flex "><MessageCircleX className="w-14"></MessageCircleX>คิดพาดหัวไม่เป็น</li>
-                                        <li className="p-5 flex "><MessageCircleX className="w-14"></MessageCircleX>ไม่รู้จะเริ่มยังไง</li>
-                                        <li className="p-5 flex "><MessageCircleX className="w-14"></MessageCircleX>คลิปติดแบบฟลุคๆ</li>
-                                        <li className="p-5 flex "><MessageCircleX className="w-14"></MessageCircleX>นำเสนอจุดเด่นตัวเองไม่ดี</li>
+                                    <ul className="text-white sm:text-[22px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-sm justify-center items-center">
+                                        <li className="p-5 flex "><MessageCircleX className="sm:w-14 "></MessageCircleX>น้ำเยอะ</li>
+                                        <li className="p-5 flex "><MessageCircleX className="sm:w-14 "></MessageCircleX>คิดพาดหัวไม่เป็น</li>
+                                        <li className="p-5 flex "><MessageCircleX className="sm:w-14 "></MessageCircleX>ไม่รู้จะเริ่มยังไง</li>
+                                        <li className="p-5 flex "><MessageCircleX className="sm:w-14 "></MessageCircleX>คลิปติดแบบฟลุคๆ</li>
+                                        <li className="p-5 flex "><MessageCircleX className="sm:w-14 "></MessageCircleX>นำเสนอจุดเด่นตัวเองไม่ดี</li>
 
                                     </ul>
                                 </div>
@@ -224,12 +224,12 @@ export default function Page() {
 
                     </section>
                     <section className="p-5 sm:px-10 flex justify-center" id="allLesson">
-                        <Card className="p-5 w-full bg-[#E3E3E3] rounded-[3rem]">
-                            <CardBody className="flex sm:flex-row flex-wrap justify-between">
-                                <div className="p-2 grid gap-10 sm:w-[40%]">
+                        <Card className="sm:p-5 p-1 w-full bg-[#E3E3E3] rounded-[3rem]">
+                            <CardBody className="flex sm:flex-row flex-wrap justify-between ssm:p-0">
+                                <div className="p-2 grid  justify-items-center gap-10 sm:w-[30%] lg:w-[40%] md:w-full">
                                     <div className="sm:text-[48px] font-bold">All Lessons</div>
-                                    <div className="bg-[--green] w-36 h-36 rounded-full overflow-hidden flex justify-center items-center">
-                                        <AudioWaveform size={56} className="text-white"></AudioWaveform>
+                                    <div className="bg-[--green] sm:w-36 sm:h-36 w-16 h-16 rounded-full overflow-hidden flex justify-center items-center">
+                                        <AudioWaveform  className="text-white sm:size-[56px] size-4"></AudioWaveform>
                                     </div>
                                     <div className="text-zinc-700 indent-5 text-center text-[20px]  flex justify-center">
                                         <div className=" w-[80%] ">
@@ -241,19 +241,23 @@ export default function Page() {
                                 </div>
 
                                 <div className="sm:w-[60%] lg:w-[60%] md:w-full p-3">
-                                    <Card className="border-none rounded-[2.5rem] p-3 h-full">
-                                        <CardBody >
+
+                                    <Card className="border-none rounded-[2.5rem] p-3 h-full sm:flex lg:flex md:flex hidden">
+                                        <CardBody className="sm:p-1 p-0">
                                             <Lession></Lession>
 
                                         </CardBody>
                                     </Card>
+                                </div>
+                                <div className="sm:hidden flex">
+                                    <Lession></Lession>
                                 </div>
                             </CardBody>
                         </Card>
                     </section>
 
 
-                    <section className="p-5 sm:px-10 flex justify-center" id="instructor">
+                    <section className="sm:p-5 sm:px-10 flex justify-center" id="instructor">
                         <Card className="p-5 w-full bg-transparent border-2 border-white rounded-[2rem]">
                             <div className="bg-[--dark-blue] w-36 h-36 rounded-full absolute left-[-100px] bottom-[-10px] -z-0"></div>
                             <div className="bg-[--green] w-36 h-36 rounded-full absolute left-[-10px] bottom-[-100px] -z-0"></div>
@@ -316,10 +320,10 @@ export default function Page() {
                         <div className="sm:text-[38px] text-[8vw] px-5">หากคุณต้องการที่จะ...</div>
 
                         <div className=" flex gap-2 sm:flex-row flex-col">
-                            <div className="bg-[--dark-blue] sm:w-1/2 sm:mx-0 mx-10 aspect-video rounded-[3rem] text-white">
+                            <div className="bg-[--dark-blue] sm:w-1/2  sm:mx-0   rounded-[3rem] text-white">
                                 <div className="p-10">
-                                        <div className="text-3xl font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย </div>
-                                    <div className="h-[550px] overflow-auto">
+                                    <div className="text-3xl font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย </div>
+                                    <div className=" overflow-auto">
                                         <ul>
                                             <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />เพิ่มยอดขายและผู้ติดตาม 10 เท่า ใน 8 ชั่วโมง</li>
                                             <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ประหยัดงบ เร็วและปลอดภัยกว่าทดลองเอง 100 เท่า</li>
@@ -333,17 +337,17 @@ export default function Page() {
                                         <div className="py-2">
                                         </div>
                                     </div>
-                                        <div className="text-xl text-end">฿ 14,990</div>
-                                        <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
+                                    <div className="text-xl text-end">฿ 14,990</div>
+                                    <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
                                     <Button className="w-full text-xl font-bold mt-4 bg-[--pink] text-white">
                                         ซื้อคอร์ส
                                     </Button>
                                 </div>
                             </div>
-                            <div className="bg-[--pink] sm:w-1/2 sm:mx-0 mx-10 aspect-video rounded-[3rem] text-white">
+                            <div className="bg-[--pink] sm:w-1/2  sm:mx-0  rounded-[3rem] text-white">
                                 <div className="p-10">
-                                        <div className="text-3xl font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย <br /> (สำหรับองค์กร)</div>
-                                    <div className="h-[550px] overflow-auto">
+                                    <div className="text-3xl font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย <br /> (สำหรับองค์กร)</div>
+                                    <div className=" overflow-auto">
                                         <ul>
                                             <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />เพิ่มยอดขายและผู้ติดตาม 10 เท่า ใน 8 ชั่วโมง</li>
                                             <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ประหยัดงบ เร็วและปลอดภัยกว่าทดลองเอง 100 เท่า</li>
@@ -357,8 +361,8 @@ export default function Page() {
                                         <div className="py-2">
                                         </div>
                                     </div>
-                                        <div className="text-xl text-end">฿  250,000</div>
-                                        <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
+                                    <div className="text-xl text-end">฿  250,000</div>
+                                    <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
                                     <Button className="w-full text-xl font-bold mt-4 bg-[--yellow] text-white">
                                         ซื้อคอร์ส
                                     </Button>
