@@ -67,7 +67,7 @@ export default function NavigationBar(props: { current: String }) {
                 <div className="navbar-center sm:flex  gap-10 hidden ">
                     <ul className=' gap-5 hidden font-medium sm:flex items-center'>
 
-                        <div className={'hover:bg-pink-400/10' + activeList[0] + '  hover:text-[--pink]  rounded-lg px-4 py-2 duration-200 relative group cursor-default'} >
+                        {/* <div className={'hover:bg-pink-400/10' + activeList[0] + '  hover:text-[--pink]  rounded-lg px-4 py-2 duration-200 relative group cursor-default'} >
                             <li>Consult & Courses</li>
 
                             <div className="rounded-2xl  p-5 absolute bg-white/80 w-[200px]  group-hover:text-black glass scale-0 group-hover:scale-100 translate-y-3 duration-200  ">
@@ -78,7 +78,10 @@ export default function NavigationBar(props: { current: String }) {
                                     <li className="p-3 rounded-xl hover:bg-pink-400/10 w-full hover:text-[--pink] ">Courses</li>
                                 </a>
                             </div>
-                        </div>
+                        </div> */}
+                        <a className={'hover:bg-pink-400/10' + activeList[0] + '  hover:text-[--pink]  rounded-lg px-4 py-2 duration-200'} href="/courses/3m">
+                            <li>3 Minutes Story</li>
+                        </a>
                         <a className={'hover:bg-pink-400/10' + activeList[2] + '  hover:text-[--pink]  rounded-lg px-4 py-2 duration-200'} href="/articles">
                             <li>Articles</li>
                         </a>

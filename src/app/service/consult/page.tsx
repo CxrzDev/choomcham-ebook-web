@@ -24,7 +24,7 @@ function Consult() {
     }, [])
     return <>
 
-        <div className="py-10 fixed z-50">
+        <div className="fixed z-50 w-full">
             <NavigationBar current="0" />
         </div>
 

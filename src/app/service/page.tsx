@@ -30,7 +30,7 @@ function Service() {
 
     return <>
         {/* bg-[url('https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRRv9ICxXjK-LVFv-lKRId6gB45BFoNCLsZ4dk7bZpYGblPLPG-9aYss0Z0wt2PmWDb')]  */}
-        <div className=" fixed z-20">
+        <div className=" w-full ">
             <NavigationBar current="0" />
         </div>
 

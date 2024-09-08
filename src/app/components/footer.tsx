@@ -2,7 +2,7 @@ import { Button, Input } from "@nextui-org/react"
 
 function Footer() {
   return (
-    <div className="relative w-100 overflow-x-clip overflow-y-visible px-10">
+    <div className="relative w-100 overflow-x-clip overflow-y-visible px-10 bg-zinc-200 -mt-10">
       <div className="divider"></div>
       <div className="footer p-10 ">
         <aside>
@@ -12,14 +12,14 @@ function Footer() {
         </aside>
         <div>
           <div className=" text-[--dark-blue] font-bold text-xl">More from Choomcham branding</div>
-          <div className="grid gap-3 text-[18px]">
+          <div className="grid gap-3 text-[14px]">
             <a target="_blank" className="hover:underline" href="https://blog.choomcham.com/">Blog</a>
             <a target="_blank" className="hover:underline" href="https://blog.choomcham.com/category/testimonials/">Testimonials</a>
             <a className="hover:underline" href="/aboutus">About Us</a>
           </div>
         </div>
         <div className="grid gap-4">
-          <div>
+          {/* <div>
             <div className="text-[--dark-blue] font-bold text-xl">Let&quot;s Stay connectd</div>
             <p>ลงทะเบียนเพื่อรับข้อเสนอกับชุ่มฉ่ำ</p>
             <div className="flex gap-2 items-end justify-center">
@@ -31,7 +31,7 @@ function Footer() {
 
               /><Button className=" bg-[--yellow] text-black/50 text-lg px-10 font-bold" >Submit</Button>
             </div>
-          </div>
+          </div> */}
 
           <div>
             <div className=" text-[--dark-blue] font-bold text-xl">Follow us</div>
@@ -42,11 +42,11 @@ function Footer() {
             </div>
           </div>
         </div>
-        <svg id="svg" viewBox="0 0 1440 690" xmlns="http://www.w3.org/2000/svg" className="transition duration-300 ease-in-out delay-150 absolute w-[200vw] left-0  bottom-[-10px] -z-10">
+        {/* <svg id="svg" viewBox="0 0 1440 690" xmlns="http://www.w3.org/2000/svg" className="transition duration-300 ease-in-out delay-150 absolute w-[200vw] left-0  bottom-[-10px] -z-10">
           <path d="M 0,700 L 0,131 C 156.53333333333336,161.93333333333334 313.0666666666667,192.86666666666665 467,178 C 620.9333333333333,163.13333333333335 772.2666666666667,102.46666666666667 934,87 C 1095.7333333333333,71.53333333333333 1267.8666666666668,101.26666666666667 1440,131 L 1440,700 L 0,700 Z" stroke="none" strokeWidth="0" fill="#7bdcb5" fillOpacity="0.4" className="transition-all duration-300 ease-in-out delay-150 path-0 xl:hidden md:block"></path>
           <path d="M 0,700 L 0,306 C 201.06666666666666,280.26666666666665 402.1333333333333,254.5333333333333 554,271 C 705.8666666666667,287.4666666666667 808.5333333333333,346.1333333333334 948,359 C 1087.4666666666667,371.8666666666666 1263.7333333333333,338.9333333333333 1440,306 L 1440,700 L 0,700 Z" stroke="none" strokeWidth="0" fill="#7bdcb5" fillOpacity="0.53" className="transition-all duration-300 ease-in-out delay-150 path-1 "></path>
           <path d="M 0,700 L 0,481 C 111.86666666666667,489.66666666666663 223.73333333333335,498.3333333333333 396,491 C 568.2666666666667,483.6666666666667 800.9333333333334,460.33333333333337 985,456 C 1169.0666666666666,451.66666666666663 1304.5333333333333,466.3333333333333 1440,481 L 1440,700 L 0,700 Z" stroke="none" strokeWidth="0" fill="#7bdcb5" fillOpacity="1" className="transition-all duration-300 ease-in-out delay-150 path-2"></path>
-        </svg>
+        </svg> */}
       </div>
       <div className="px-10 text-sm text-black/70"> <p>Copyright © 2024 ชุ่มฉ่ำ branding.</p></div>
     </div>
