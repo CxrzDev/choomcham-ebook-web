@@ -19,8 +19,8 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="flex w-full  justify-center mt-2">
-                <div className="flex gap-10 flex-col justify-center items-center sm:w-2/3">
+            <div className="flex w-full   justify-center mt-2">
+                <div className="flex gap-10 flex-col justify-center items-center sm:w-2/3  w-[80vw]">
                     {/* <section className="p-5 pt-10">
                         <div className="flex gap-10 sm:text-[22px] text-[3vw]">
                             <Link href="#courseDescription" className="duration-150 border-b-3 border-transparent hover:border-[--yellow] font-bold">Course Description</Link>
