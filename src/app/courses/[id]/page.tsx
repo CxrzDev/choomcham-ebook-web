@@ -318,7 +318,7 @@ export default function Page() {
                         <div className=" flex gap-2 sm:flex-row flex-col">
                             <div className="bg-[--dark-blue] sm:w-1/2 sm:mx-0 mx-10 aspect-video rounded-[3rem] text-white">
                                 <div className="p-10">
-                                    <div className="h-[500px]">
+                                    <div className="h-[550px]">
                                         <div className="text-3xl font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย </div>
                                         <ul>
                                             <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />เพิ่มยอดขายและผู้ติดตาม 10 เท่า ใน 8 ชั่วโมง</li>
@@ -342,7 +342,7 @@ export default function Page() {
                             </div>
                             <div className="bg-[--pink] sm:w-1/2 sm:mx-0 mx-10 aspect-video rounded-[3rem] text-white">
                                 <div className="p-10">
-                                    <div className="h-[500px]">
+                                    <div className="h-[550px]">
                                         <div className="text-3xl font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย <br /> (สำหรับองค์กร)</div>
                                         <ul>
                                             <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />เพิ่มยอดขายและผู้ติดตาม 10 เท่า ใน 8 ชั่วโมง</li>
