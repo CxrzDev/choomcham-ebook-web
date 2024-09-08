@@ -124,10 +124,10 @@ export default function Page() {
 
 
                     </section>
-                    <section className="p-5 sm:px-10 flex justify-center" id="whatwilllearn">
-                        <Card className="p-5 w-full rounded-[3rem] bg-[--dark-blue] ">
+                    <section className="sm:p-5 sm:px-10 flex justify-center" id="whatwilllearn">
+                        <Card className="sm:p-5 w-full rounded-[3rem] bg-[--dark-blue] ">
                             <CardBody>
-                                <div className="sm:text-[42px] text-3xl font-bold text-[--yellow] text-center">ปัญหาของคนทำคอนเทนต์มือใหม่</div>
+                                <div className="sm:text-[42px] text-2xl font-bold text-[--yellow] text-center">ปัญหาของคนทำคอนเทนต์มือใหม่</div>
                                 <div className="text-zinc-700 ">
                                     <ul className="text-white sm:text-[22px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-sm justify-center items-center">
                                         <li className="p-5 flex "><MessageCircleX className="sm:w-14 "></MessageCircleX>น้ำเยอะ</li>
@@ -223,8 +223,8 @@ export default function Page() {
                         </div>
 
                     </section>
-                    <section className="p-5 sm:px-10 flex justify-center" id="allLesson">
-                        <Card className="sm:p-5 p-1 w-full bg-[#E3E3E3] rounded-[3rem]">
+                    <section className="sm:p-5 sm:px-10 flex justify-center" id="allLesson">
+                        <Card className="sm:p-5 p-1 w-full bg-[#E3E3E3] sm:rounded-[3rem] rounded-none">
                             <CardBody className="flex sm:flex-row flex-wrap justify-between ssm:p-0">
                                 <div className="p-2 grid  justify-items-center gap-10 sm:w-[30%] lg:w-[40%] md:w-full">
                                     <div className="sm:text-[48px] font-bold">All Lessons</div>
@@ -316,14 +316,14 @@ export default function Page() {
                         </Card>
                     </section>
 
-                    <section className="mb-10">
+                    <section className="mb-10 px-5">
                         <div className="sm:text-[38px] text-[8vw] px-5">หากคุณต้องการที่จะ...</div>
 
-                        <div className=" flex gap-2 sm:flex-row flex-col">
-                            <div className="bg-[--dark-blue] sm:w-1/2  sm:mx-0   rounded-[3rem] text-white">
+                        <div className=" flex gap-2 lg:flex-row md:flex-col flex-col">
+                            <div className="bg-[--dark-blue] w-full lg:w-1/2 md:w-full  rounded-[3rem] text-white">
                                 <div className="p-10">
                                     <div className="text-3xl font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย </div>
-                                    <div className=" overflow-auto">
+                                    <div className=" overflow-auto ssm:text-sm">
                                         <ul>
                                             <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />เพิ่มยอดขายและผู้ติดตาม 10 เท่า ใน 8 ชั่วโมง</li>
                                             <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ประหยัดงบ เร็วและปลอดภัยกว่าทดลองเอง 100 เท่า</li>
@@ -344,10 +344,10 @@ export default function Page() {
                                     </Button>
                                 </div>
                             </div>
-                            <div className="bg-[--pink] sm:w-1/2  sm:mx-0  rounded-[3rem] text-white">
+                            <div className="bg-[--pink] w-full lg:w-1/2 md:w-full rounded-[3rem] text-white">
                                 <div className="p-10">
                                     <div className="text-3xl font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย <br /> (สำหรับองค์กร)</div>
-                                    <div className=" overflow-auto">
+                                    <div className=" overflow-auto ssm:text-sm">
                                         <ul>
                                             <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />เพิ่มยอดขายและผู้ติดตาม 10 เท่า ใน 8 ชั่วโมง</li>
                                             <li className="flex items-center gap-2 p-2"><Sparkles className="fill-[--yellow] text-[--yellow]" />ประหยัดงบ เร็วและปลอดภัยกว่าทดลองเอง 100 เท่า</li>
