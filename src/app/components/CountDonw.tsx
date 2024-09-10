@@ -25,7 +25,7 @@ export default function CountDown({ className, targetDate }: CountDownProps) {
     }, [lastedDate]);
 
     return (
-        <div className={`flex gap-5 ${className}`}>
+        <div className={className}>
             <div className="grid w-[100px] justify-items-center">
                 <div>{timeRemaining.days}</div>
                 <div className="text-sm">วัน</div>

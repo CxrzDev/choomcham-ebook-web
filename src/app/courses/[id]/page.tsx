@@ -724,7 +724,7 @@ export default function Page() {
 
                     <section className="mb-10 px-5">
                         <div className="sm:text-[38px]  text-[8vw] px-5 py-2 font-bold  gap-2"><span>โปรพิเศษ</span><span className="sm:text-[42px] text-[9vw] text-[--pink] font-bold underline decoration-wavy">สำหรับ 20 ท่านแรก</span><span>ที่สมัครตอนนี้</span></div>
-                        <div className="sm:text-[3vw] text-[6vw] px-5  py-2 flex justify-center"><CountDown className=""></CountDown></div>
+                        <div className="sm:text-[3vw] text-[6vw] px-5  py-2 flex justify-center "><CountDown className="flex w-full"></CountDown></div>
                         <div className=" lg:grid grid-cols-2 justify-center md:flex flex gap-2 lg:flex-row md:flex-col flex-col ">
                             <div className="bg-[--dark-blue] w-full  md:w-full  rounded-[3rem] text-white">
                                 <div className="p-10">
