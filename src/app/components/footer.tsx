@@ -2,9 +2,9 @@ import { Button, Input } from "@nextui-org/react"
 
 function Footer() {
   return (
-    <div className="relative w-100 overflow-x-clip overflow-y-visible px-10 bg-zinc-200 -mt-10">
-      <div className="divider"></div>
-      <div className="footer p-10 ">
+    <div className="relative w-100 overflow-x-clip overflow-y-visible py-2 lg:px-10 px-3  bg-zinc-200 ">
+      {/* <div className="divider"></div> */}
+      <div className="footer lg:p-10  ">
         <aside>
           <img width="150" src="/icon.svg" alt="choomcham logo" />
           <div className="text-3xl font-bold">วางจิตให้ชุ่มฉ่ำ <br />เดี๋ยวผลลัพธ์จะฉ่ำเอง</div>

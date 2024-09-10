@@ -632,10 +632,10 @@ export default function Page() {
                             <CardBody className="flex sm:flex-row flex-wrap justify-between ssm:p-0">
                                 <div className="p-2 grid  justify-items-center gap-10 sm:w-[30%] lg:w-[40%] md:w-full">
                                     {/* <div className="sm:text-[48px] font-bold">All Lessons</div> */}
-                                    <div className="sm:text-[42px] text-3xl font-bold">All Lessons</div>
+                                    <div className="sm:text-[42px] text-3xl font-bold pt-10">All Lessons</div>
                                     <div className=" sm:w-64 sm:h-64 w-48 h-48 rounded-xl overflow-hidden flex justify-center items-center">
                                         {/* <AudioWaveform className="text-white sm:size-[56px] size-4"></AudioWaveform> */}
-                                        <Image src="/images/3ms/topsecretstamp.png"></Image>
+                                        <Image src="/images/3ms/topsecretstamp.png" className="z-0"></Image>
                                     </div>
                                     <div className="text-zinc-700 indent-5 text-center text-[20px]  flex justify-center">
                                         <div className=" w-[80%] ">
@@ -824,11 +824,11 @@ export default function Page() {
                         </div>
                     </section>
 
-                    <section className="sm:p-5 sm:px-10 grid grid-cols-2 justify-center" id="freqQA">
+                    <section className="sm:p-5 sm:px-10 grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 justify-center" id="freqQA">
                         <div className="sm:text-[42px] text-3xl font-bold">
                             คำถามที่พบบ่อย?
                             <div>
-                                <Image src="/images/sticker19.png" className="h-48"></Image>
+                                <Image src="/images/sticker19.png" className="h-48 z-0"></Image>
                             </div>
                         </div>
                         <Question />
