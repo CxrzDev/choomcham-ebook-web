@@ -9,17 +9,19 @@
 @font-face {
   font-family: 'Cloud Soft';
   src: url('https://github.com/Mikku44/choomcham-next-ts/blob/master/src/app/fonts/cloudsoft/Cloud-Soft-Bold.ttf');
-  font-weight:700;
+  font-weight: 700;
   weight: '700';
 
 }
+
 @font-face {
   font-family: 'Cloud Soft';
   src: url('https://github.com/Mikku44/choomcham-next-ts/blob/master/src/app/fonts/CloudSoft/Cloud-Soft-Light.ttf');
-  font-weight:400;
+  font-weight: 400;
   weight: '400';
 }
-section{
+
+section {
   overflow: hidden;
   width: 100%;
 }
@@ -41,22 +43,22 @@ section{
   --font-size-xl: 25px;
   --font-size-xxs: 11px;
   --font-size-xxl: 40px;
-  --wave:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>');
+  --wave: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>');
 }
 
 
 
-h1{
+h1 {
 
-  font-family: 'Cloud Soft','Prompt';
-  
+  font-family: 'Cloud Soft', 'Prompt';
+
 }
 
-*{
+* {
   scroll-behavior: smooth;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
 }
@@ -66,11 +68,11 @@ body{
   --activedcolor: #D33666;
   /* --activedcolor:linear-gradient(90deg, rgba(34,193,195,1) 0%, rgb(253, 187, 45) 100%);
   --activedcolorfade:linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253, 187, 45, 0.716) 100%); */
-  font-family: 'Cloud Soft',Inter;
+  font-family: 'Cloud Soft', Inter;
   line-height: 1.5;
   font-weight: normal;
 
-  color-scheme: light ;
+  color-scheme: light;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -91,29 +93,35 @@ body{
 
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
-.thai{
+.thai {
   line-height: 1.5;
 }
-.bg-radial{
+
+.bg-radial {
   background: radial-gradient(102.99% 19.58% at 875.44% 15.12%, rgba(23, 167, 138, 0) 0%, #08372E 100%);
 }
-.bg-primary{
+
+.bg-primary {
   background: var(--activedcolor);
 }
-.bg-primary-fade{
+
+.bg-primary-fade {
   background: var(--activedcolorfade);
 }
 
 .actived {
   background: var(--activedcolor);
-  color:white;
-  border-color:var(--activedcolor);
+  color: white;
+  border-color: var(--activedcolor);
 }
-.mark{
+
+.mark {
 
   overflow: hidden;
   /* width: 100%; */
@@ -127,9 +135,16 @@ body{
   z-index: -1;
 }
 
+.wave {
+  /* background-color: #000000; */
+  opacity: 1;
+  background-image:  radial-gradient(#5897da 2px, transparent 2px), radial-gradient(#5897da 2px, #00000000 2px);
+  background-size: 80px 80px;
+  background-position: 0 0,40px 40px;
+}
 
 
-.line{
+.line {
   /* position:absolute;
   right:0;
   top:0; */
@@ -142,45 +157,48 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
 }
-.line-service{
+
+.line-service {
   /* position:absolute;
   right:0;
   top:0; */
 
   height: 100vh;
-  background:  linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(22, 221, 128, 0.873)),url("https://blog.choomcham.com/wp-content/uploads/2023/01/285933007_755002819248039_7005441046324586670_n.jpg");
+  background: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(22, 221, 128, 0.873)), url("https://blog.choomcham.com/wp-content/uploads/2023/01/285933007_755002819248039_7005441046324586670_n.jpg");
   background-color: var(--activedcolor);
   background-size: contain;
 }
 
-.background-blue{
+.background-blue {
   background: url("/images/background.png");
 }
 
-.work{
+.work {
   background: url("/images/cover23.png");
   background-size: cover;
 }
 
-.btn-active{
+.btn-active {
   background: rgb(236 72 153);
   padding: 0 30px;
 }
 
-.swiper-button-next:after,.swiper-button-prev:after{
-  color:rgba(0, 0, 0, 0.689);
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: rgba(0, 0, 0, 0.689);
   padding: 10px 50px;
-  font-size:24px !important;
+  font-size: 24px !important;
   background: var(--yellow) !important;
   border-radius: 100px;
   /* border: 2px solid rgba(0, 0, 0, 0.689); */
   line-height: 50px !important;
-  top:0% !important;
-  height:fit-content !important;
+  top: 0% !important;
+  height: fit-content !important;
 }
+
 .swiper-pagination-bullet-active {
-  background:var(--green) !important; 
-  padding-left:20px;
+  background: var(--green) !important;
+  padding-left: 20px;
   border-radius: 100px !important;
   transition: all 0.4s ease-in-out;
 }
@@ -190,11 +208,12 @@ body{
 
 
 
-@media screen and (max-width: 986px){
-  .mark{
+@media screen and (max-width: 986px) {
+  .mark {
     mask-size: 125rem;
   }
-  .line{
+
+  .line {
     /* background-size: inherit; */
     height: 50vh;
   }
@@ -204,24 +223,21 @@ body{
     display: grid; */
 
     /* height: 300px; */
-  
+
   }
-  
-  .swiper-slide{
+
+  .swiper-slide {
     display: flex !important;
     justify-content: center;
   }
 
-  small{
+  small {
     font-size: 1.5rem;
   }
 }
 
-@media screen and (max-width: 280px){
-  small{
+@media screen and (max-width: 280px) {
+  small {
     font-size: 4vw;
   }
 }
-
-
-

@@ -287,7 +287,7 @@ export default async function Home() {
                                 return (
                                     <div className="card  card-side bg-[--pink] glass shadow-xl w-[346px] h-[548px] overflow-hidden sm:w-[640px]  sm:h-[380px] flex-col sm:flex-row" key={video.id}>
                                         <figure className='bg-black w-[350px] sm:w-[50%] h-full  flex items-center justify-center overflow-hidden '>
-                                            <iframe src={"https://www.facebook.com/plugins/video.php?href=" + video.src + ""} className='sm:h-[400px]' allowFullScreen={true} allow='autoplay' ></iframe></figure>
+                                            <iframe src={"https://www.facebook.com/plugins/video.php?href=" + video.src + ""} className='sm:h-[400px]' allowFullScreen={true}  ></iframe></figure>
                                         <div className="card-body sm:flex-col flex-row text-white sm:w-[50%] sm:h-[auto] ">
                                             <div>
                                                 <div className="card-title sm:text-3xl font-bold text-[--yellow] text-xl sm:w-[auto] overflow-hidden text-ellipsis">{video.title}!</div>
