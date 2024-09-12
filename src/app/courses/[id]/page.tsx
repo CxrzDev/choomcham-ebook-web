@@ -5,12 +5,21 @@ import Lession from "./Lessons";
 import Video from "@/app/components/VideoPlayer";
 import CountDown from "@/app/components/CountDonw";
 import Question from "./Questions";
+import Review from "./Review";
+
 
 export default function Page() {
     return (
         <>
-            <div className="w-full bg-[--dark-blue] flex flex-col items-center justify-center min-h-[80vh] text-white py-5 text-center">
-                <div className="w-2/3">
+            <div className="w-full bg-1 overflow-clip  relative flex flex-col items-center justify-center min-h-[80vh] text-white py-5 text-center">
+                {/* <div className="blob-yellow  w-[50vw] md:w-[25vw] lg:w-[25vw] h-[50vw] md:h-[25vw] lg:h-[25vw] absolute -left-[10vw] -top-[10vw]"></div>
+                <div className="blob-pink  w-[30vw] h-[30vw] absolute  -right-10 lg:-top-[15rem] -top-[10vw] "></div>
+                <div className="blob-green  w-[25vw] h-[25vw] absolute  -right-[15vw] -top-[5vw]"></div>
+                <img src="/icon.svg" className=" colored-icon absolute z-0 w-[500px] left-[-15rem] bottom-[-10rem]" alt="" />
+               
+                <img src="/icon.svg" className="absolute z-0 w-[500px] right-[-20rem] bottom-10 " alt="" /> */}
+                <div className="w-2/3 absolute">
+
                     <p className="lg:text-[56px] md:text-[56px] text-[6vw] font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย</p>
                     <p className="lg:text-[42px] md:text-[42px] text-[4vw]">เพิ่มยอดขายและผู้ติดตาม <span className="text-[--yellow] font-bold">10 เท่าใน 8 ชั่วโมง </span>โดยไม่ต้องมีพื้นฐาน</p>
                     <div className="text-xl grid lg:grid-cols-2 md:grid-cols-1 gap-2">
@@ -22,420 +31,41 @@ export default function Page() {
                 </div>
             </div>
 
+
+            <section className="p-5 sm:px-10 flex flex-col text-center justify-center h-[500px]" id="warning">
+                <div className="font-bold relative text-[4vw]  sm:text-[36px] py-2 text-center">
+                    <div className="text-md text-[--yellow]">คำเตือน!</div>
+                    <div className="font-normal">
+                        <div>คุณอาจต้องเรียนซ้ำ
+                            เพราะความรู้อัดแน่น
+                            จนเก็บไม่หมดในครั้งเดียว</div>
+                    </div>
+
+
+                </div>
+
+
+
+            </section>
+
+            <section className="flex flex-col lg:flex-row items-center justify-between  p-8 lg:p-16">
+                <div className="font-bold text-[6.5vw] sm:text-[48px] pt-2  text-[--pink]">
+                    และนี่คือผลลัพธ์ของนักเรียนบางส่วน</div>
+            </section>
+            <div className="bg-zinc-switch ">
+
+                <Review />
+            </div>
+
             <div className="flex w-full   justify-center mt-2">
+
                 <div className="flex gap-10 flex-col justify-center items-center sm:w-2/3  w-screen">
-
-                    <section className="p-5 sm:px-10 flex flex-col text-center" id="warning">
-                        <div className="font-bold relative text-[4vw] text-white sm:text-[36px] py-2 text-center bg-[--pink] rounded-xl shadow-lg">
-                            <div className=" text-[--yellow]">คำเตือน!</div>
-                            <div>คุณอาจต้องเรียนซ้ำ</div>
-                            <div >เพราะ<span className="bg-[--dark-blue] mx-1 px-1 rounded-md -rotate-45">ความรู้อัดแน่น</span></div>
-                            <div>จนเก็บไม่หมดในครั้งเดียว</div>
-
-                            <img src="icon.svg" alt="" />
-                        </div>
-
-
-
-                    </section>
 
                     <section className=" flex justify-center text-center" id="warning">
                         <div className="bg-[--pink] w-[20vw] h-2 rounded-full"></div>
                     </section>
 
 
-
-                    <section className="p-5 sm:px-10 flex flex-col " id="courseDescription">
-                        <div className="font-bold text-[6.5vw] sm:text-[48px] py-2 text-center">
-                            และนี่คือผลลัพธ์ของนักเรียนบางส่วน</div>
-
-                        {/* <div className="text-center">
-                            <div className="text-[--pink] text-[5.5vw] sm:text-[26px] font-bold"><span className="text-[--yellow]"> &quot; </span>โลกใหม่ของการทํา Content นั้นมันเกิน กว่าที่เรารู้จักมาก<span className="text-[--yellow]"> &quot; </span></div>
-                            <div className="w-full flex justify-center p-2">
-                                <div className="h-[40vw] sm:h-64 aspect-square overflow-hidden rounded-full bg-black">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/ving.png"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="text-[--dark-blue]  text-[22px] font-bold">คุณเวย์</div>
-                            <div className="text-lg text-zinc-500 ">เจ้าของแบรนด์รองเท้า <a href="https://www.facebook.com/vingrun" className="underline" target="_blank" target="_blank">VING RUNNER SQUAD</a></div>
-                            <div className="text-lg indent-2 text-start flex">
-                                <q>
-                                    เมื่อเริ่มเรียน ผมรู้สึกเหมือนกับนีโอที่ได้เจอกับมอร์เฟียส ที่บอกว่า คุณอยู่ในโลกของ The Matrix และเมื่อได้ลอง หยิบยาเม็ดสีแดงเข้าปาก
-                                    จะพบว่าโลกใหม่ของการทำ Content นั้นมันเกินกว่าที่เรารู้จักมาก ในระหว่างคอร์ส
-                                    ครูอีฟนั้นเปรียบเสมือนมอร์เฟียสที่หยิบยื่นบทเรียนต่าง ๆ ให้เราได้ทดลองทดสอบด้วยตัวเองอย่างหนักหน่วงจนเรา บรรลุไปถึงแก่นของหลักการนั้น
-                                    ด้วยตัวเราเอง
-                                </q></div>
-                        </div> */}
-
-                        <div className="text-center my-10">
-                            <div className="text-[--pink] text-[5.5vw] sm:text-[26px] font-bold">
-                                {/* <span className="text-[--yellow]"> &quot; </span> */}
-                                Jaymeen เจ้าของ Chubby Cheeks ทำยอดขาย 8 หมื่นกระปุกภายในปีครึ่ง!
-                                {/* <span className="text-[--yellow]"> &quot; </span> */}
-                            </div>
-                            <div className="w-full flex gap-3 justify-center p-2 items-center">
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <Video className="h-[30vw] sm:h-64" src="/images/3ms/chubbycheeks.mp4"></Video>
-                                    {/* <video
-                                    controls={true}
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/chubbycheeks.mp4"
-                                    /> */}
-                                    {/* <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/choomchambranding/videos/526606112193948/" className="z-0 h-full aspect-video object-contain"></iframe> */}
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/jaymeen.png"
-                                    />
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/chubbycheeks.jpg"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="text-[--dark-blue]  text-[22px] font-bold">Jaymeen </div>
-                            <div className="text-lg text-zinc-500 ">เจ้าของ <a href="https://www.tiktok.com/@chubbycheeks.m" className="underline" target="_blank">Chubby Cheeks</a> </div>
-                            <div className="text-lg text-zinc-500 ">นร.คอร์สสด</div>
-                            <div className="text-lg indent-2 text-start ">
-
-                                {/* <q> */}
-                                Jaymeen เด็กสายศิลป์อาร์ตตัวแม่ แต่ไม่ได้มีสกิลการพูดโน้มน้าวเลย ก่อนเรียนคือพูดงงๆ ตดๆ
-                                คลิปสวยมากแต่เล่าเรื่องไม่เป็น ได้ยอดวิวหลักร้อย เรียนจบ 1 เดือน คลิปได้ 5 ล้านวิวเรียบร้อย
-                                <span className="font-bold"> ล่าสุดได้ยอดขายเดือนละล้าน!</span>
-                                {/* </q> */}
-                            </div>
-                        </div>
-
-
-                        <div className="text-center my-10">
-                            <div className="text-[--pink] text-[5.5vw] sm:text-[26px] font-bold">
-                                {/* <span className="text-[--yellow]"> &quot; </span> */}
-                                อายุน้อยร้อยล้าน จากรายการยอดเข้าถึงขึ้นลง สู่ Reach 10 ล้าน!
-                                {/* <span className="text-[--yellow]"> &quot; </span> */}
-                            </div>
-                            <div className="w-full flex gap-3 justify-center p-2 items-center">
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <Video className="h-full object-cover" src="/images/3ms/100millionaire.mp4"></Video>
-                                    {/* <video
-                                    controls={true}
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/chubbycheeks.mp4"
-                                    /> */}
-                                    {/* <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/choomchambranding/videos/526606112193948/" className="z-0 h-full aspect-video object-contain"></iframe> */}
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/100millionaire.png"
-                                    />
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/100millionaire.jpg"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="text-[--dark-blue]  text-[22px] font-bold">พี่ก้อง อายุน้อยร้อยล้าน </div>
-                            <div className="text-lg text-zinc-500 ">ผู้ก่อตั้งบริษัทสื่อ Mushroom Group
-                                <a href="https://www.facebook.com/Ryounoi100lan" className="underline" target="_blank"> อายุน้อยร้อยล้าน</a> </div>
-                            <div className="text-lg text-zinc-500 ">นร.คลาส In-house training
-                            </div>
-                            <div className="text-lg indent-2 text-start flex">
-                                <q>
-                                    ตัวผมเองก็นิสัยไม่ค่อยดี ตอนนั้นคิดว่า &quot; จริงเหรอวะ เด็กอายุแค่ 20 กว่าจะมาสอนอะไรเรา&quot;  เขาฟลุ๊คหรือเปล่า มันทำได้จริงเหรอ พอตั้งใจเรียน ผมว่ามันเปลี่ยนแปลงวิธีการทำงานของผม อยากเปลี่ยนแปลงต้องเปิดใจ มันคิดกระแทกผมมากเลยนะ
-                                </q></div>
-                        </div>
-
-
-                        <div className="text-center my-10">
-
-                            <div className="w-full flex gap-3 justify-center p-2 items-center">
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <Video className="h-full object-cover" src="/images/3ms/pmon.mp4"></Video>
-
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/100.png"
-                                    />
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/100millionaire.jpg"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="text-[--dark-blue]  text-[22px] font-bold">พี่ม่อน </div>
-                            <div className="text-lg text-zinc-500 ">Producer
-                                <a href="https://www.facebook.com/Ryounoi100lan" className="underline" target="_blank"> อายุน้อยร้อยล้าน</a> </div>
-                            <div className="text-lg text-zinc-500 ">นร.คลาส In-house training
-                            </div>
-                            {/* <div className="text-lg indent-2 text-start flex">
-                                <q>
-                                    ตัวผมเองก็นิสัยไม่ค่อยดี ตอนนั้นคิดว่า &quot; จริงเหรอวะ เด็กอายุแค่ 20 กว่าจะมาสอนอะไรเรา&quot;  เขาฟลุ๊คหรือเปล่า มันทำได้จริงเหรอ พอตั้งใจเรียน ผมว่ามันเปลี่ยนแปลงวิธีการทำงานของผม อยากเปลี่ยนแปลงต้องเปิดใจ มันคิดกระแทกผมมากเลยนะ
-                                </q></div> */}
-                        </div>
-
-
-                        <div className="text-center my-10">
-
-                            <div className="w-full flex gap-3 justify-center p-2 items-center">
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    {/* <Video className="h-full object-cover" src="/images/3ms/pmon.mp4"></Video> */}
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/theiconleft.png"
-                                    />
-
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/paul.jpg"
-                                    />
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-white">
-                                    <img
-                                        className="z-0 h-full aspect-video object-scale-down"
-
-                                        src="/images/3ms/theicon.png"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="text-[--dark-blue]  text-[22px] font-bold">พี่พอล
-                            </div>
-                            <div className="text-lg text-zinc-500 ">เจ้าของอาณาจักร
-                                <a href="https://www.facebook.com/iConGroup.official/" className="underline" target="_blank"> The iCon Group
-                                </a> </div>
-                            <div className="text-lg text-zinc-500 ">นร.คอร์สสด
-                            </div>
-                            <div className="text-lg indent-2 justify-center flex text-center">
-                                {/* <q> */}
-                                ยอดวิว 2.3 ล้าน ได้ผู้ติดตามเพิ่ม 4 หมื่น ชั่วข้ามคืน
-                                {/* </q> */}
-                            </div>
-                        </div>
-
-
-                        <div className="text-center my-10">
-
-                            <div className="w-full flex gap-3 justify-center p-2 items-center">
-                                {/* <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <Video className="h-full object-cover" src="/images/3ms/pmon.mp4"></Video>
-
-                                </div> */}
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/taa.webp"
-                                    />
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/chapaakyoon.jpg"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="text-[--dark-blue]  text-[22px] font-bold">คุณตา แก้วรุ้ง
-                            </div>
-                            <div className="text-lg text-zinc-500 ">เจ้าของ Brand T-Zaa ชาปากยูน
-                                <div className="text-lg text-zinc-500 ">นร.คอร์สสด
-
-                                </div>
-                                <div className="text-lg indent-2 text-start flex">
-                                    <q>
-                                        พี่รับโทรศัพท์ไม่ไหว ลูกค้าโทรมากระหน่ำมากขอซื้อเฟรนไชส์..พีคสุด..จนเราต้องเปลี่ยนเบอร์หนี จากขายแฟรนไชส์ได้เดือนละ 2-3 สาขา (สาขาละ 150k) พอคลิปสั้นออกไป กลายเป็นว่าทำยอดได้ 5 สาขา/เดือน
-                                    </q>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="text-center my-10">
-                            <div className="text-[--pink] text-[5.5vw] sm:text-[26px] font-bold">
-                                {/* <span className="text-[--yellow]"> &quot; </span> */}
-                                {/* อายุน้อยร้อยล้าน จากรายการยอดเข้าถึงขึ้นลง สู่ Reach 10 ล้าน! */}
-                                {/* <span className="text-[--yellow]"> &quot; </span> */}
-                            </div>
-                            <div className="w-full flex gap-3 justify-center p-2 items-center">
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <Video className="h-full object-cover" src="/images/3ms/6th.mp4"></Video>
-
-                                </div>
-                                {/* <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/100millionaire.png"
-                                    />
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/100millionaire.jpg"
-                                    />
-                                </div> */}
-                            </div>
-
-                            <div className="text-[--dark-blue]  text-[22px] font-bold">คุณจิ๊บ</div>
-                            <div className="text-lg text-zinc-500 ">เซลล์ขายยา และเจ้าของธุรกิจนวดหน้า
-                                {/* <a href="https://www.facebook.com/Ryounoi100lan" className="underline" target="_blank"> อายุน้อยร้อยล้าน</a> </div> */}
-                                <div className="text-lg text-zinc-500 ">นร.คอร์ส Online และ นร.คอร์สสด</div>
-                                <div className="text-lg indent-2 text-start flex justify-center">
-                                    <q>
-                                        ยอดขายฉ่ำทั้งงานประจำและอาชีพเสริม แต่ไม่เหนื่อยกับการทำงานเลยเพราะเราใช้วิธีการขายแบบไม่ได้ขาย
-                                    </q></div>
-                            </div>
-                        </div>
-
-                        <div className="text-center my-10">
-                            <div className="text-[--pink] text-[5.5vw] sm:text-[26px] font-bold">
-                                {/* <span className="text-[--yellow]"> &quot; </span> */}
-                                {/* Youtuber ที่เริ่มจาก 0 สู่ 1,000,000 ผู้ติดตาม */}
-                                {/* <span className="text-[--yellow]"> &quot; </span> */}
-                            </div>
-                            <div className="w-full flex gap-3 justify-center p-2 items-center">
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full  object-scale-down"
-
-                                        src="/images/3ms/amzaing.png"
-                                    />
-
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/eifel.png"
-                                    />
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/amazing_logo.jpg"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="text-[--dark-blue]  text-[22px] font-bold">คุณไอเฟล
-                            </div>
-                            <div className="text-lg text-zinc-500 ">เจ้าของช่องยูทูป
-
-                                <a href="https://www.youtube.com/@amazingstorytelling" className="underline" target="_blank"> Amazing Storytelling</a>
-
-                                {/* <a href="https://www.facebook.com/Ryounoi100lan" className="underline" target="_blank"> อายุน้อยร้อยล้าน</a> </div> */}
-                                <div className="text-lg text-zinc-500 ">นร.คอร์ส Online และ นร.คอร์สสด</div>
-                                <div className="text-lg indent-2 text-start flex justify-center">
-                                    {/* <q> */}
-                                    Youtuber ที่เริ่มจาก 0 สู่ 1,000,000 ผู้ติดตาม
-
-                                    {/* </q> */}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="text-center my-10">
-                            <div className="text-[--pink] text-[5.5vw] sm:text-[26px] font-bold">
-                                {/* <span className="text-[--yellow]"> &quot; </span> */}
-                                {/* Youtuber ที่เริ่มจาก 0 สู่ 1,000,000 ผู้ติดตาม */}
-                                {/* <span className="text-[--yellow]"> &quot; </span> */}
-                            </div>
-                            <div className="w-full flex gap-3 justify-center p-2 items-center">
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <Video className="h-full object-cover" src="/images/3ms/new.mp4"></Video>
-
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/knight.jpg"
-                                    />
-                                </div>
-                                <div className="h-[30vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black justify-center items-center flex relative">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/cheffycar.jpg"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="text-[--dark-blue]  text-[22px] font-bold">คุณไนต์
-                            </div>
-                            <div className="text-lg text-zinc-500 ">เจ้าของช่องยูทูป
-                                <a href="https://www.youtube.com/@CheffyCar/videos" className="underline" target="_blank">Cheffy Car </a>
-
-                                {/* <a href="https://www.facebook.com/Ryounoi100lan" className="underline" target="_blank"> อายุน้อยร้อยล้าน</a> </div> */}
-                                <div className="text-lg text-zinc-500 ">นร.คอร์สสด
-                                </div>
-                                <div className="text-lg indent-2 text-start flex justify-center">
-                                    <q>
-                                        ลูกค้าโอนเงินหลักแสนกลางอากาศ ยอดขายเพิ่ม 2 เท่าตั้งแต่เปิดตัว
-
-                                    </q>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        {/* <div className="text-center my-10">
-                            <div className="text-[--pink] text-[5.5vw] sm:text-[26px] font-bold"><span className="text-[--yellow]"> &quot; </span>ผมไม่เคยนึกมาก่อนว่าเรื่องที่เล่า ถ้ามันจะทรงพลังถึงขนาดไปเปลี่ยนแปลงชีวิตใครได้!<span className="text-[--yellow]"> &quot; </span></div>
-                            <div className="w-full flex justify-center p-2">
-                                <div className="h-[40vw] sm:h-64 aspect-square overflow-hidden rounded-xl bg-black">
-                                    <img
-                                        className="z-0 h-full aspect-video object-cover"
-
-                                        src="/images/3ms/pmeng.jpg"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="text-[--dark-blue]  text-[22px] font-bold">คุณแมงปอ </div>
-                            <div className="text-lg text-zinc-500 ">เจ้าของเพจดัง <a href="https://www.facebook.com/brotherMP" className="underline" target="_blank">พี่แมง ป.</a></div>
-                            <div className="text-lg indent-2 text-start flex">
-                                <q>
-                                    ผมไม่เคยนึกมาก่อนว่าเรื่องที่เล่า ถ้ามันจะทรงพลังถึงขนาดไปเปลี่ยนแปลงชีวิตใครได้ มันจะต้องมีกลยุทธ์ มีการวางแผน
-                                    มีการตั้งเป้า เป็นวิทยาศาสตร์อย่างหนึ่งที่ผมเพิ่งจะเรียนรู้
-                                </q></div>
-                        </div> */}
-
-
-
-
-                    </section>
 
                     <section className="sm:p-5 sm:px-10 flex justify-center " id="whatwilllearn">
                         <Card className="sm:p-5 w-full rounded-[3rem] bg-[--dark-blue] ">
