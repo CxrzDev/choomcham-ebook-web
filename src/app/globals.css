@@ -138,9 +138,13 @@ body {
 .wave {
   /* background-color: #000000; */
   opacity: 1;
-  background-image:  radial-gradient(#5897da 2px, transparent 2px), radial-gradient(#5897da 2px, #00000000 2px);
+  background-image: radial-gradient(#5897da 2px, transparent 2px), radial-gradient(#5897da 2px, #00000000 2px);
   background-size: 80px 80px;
-  background-position: 0 0,40px 40px;
+  background-position: 0 0, 40px 40px;
+}
+
+.bg-standard {
+  background-image: url("/images/bg.png")
 }
 
 
@@ -171,6 +175,15 @@ body {
 
 .background-blue {
   background: url("/images/background.png");
+  /* height: 70vh; */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.bg-1 {
+  background: url("/images/background1.svg");
+  background-size: cover;
 }
 
 .work {
@@ -185,15 +198,7 @@ body {
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  color: rgba(0, 0, 0, 0.689);
-  padding: 10px 50px;
-  font-size: 24px !important;
-  background: var(--yellow) !important;
-  border-radius: 100px;
-  /* border: 2px solid rgba(0, 0, 0, 0.689); */
-  line-height: 50px !important;
-  top: 0% !important;
-  height: fit-content !important;
+  color: aliceblue;
 }
 
 .swiper-pagination-bullet-active {
@@ -202,9 +207,64 @@ body {
   border-radius: 100px !important;
   transition: all 0.4s ease-in-out;
 }
+.swiper-slide > *{
+  background-color: blue;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
 
 
+.blob-yellow {
+  /* width: 100%;
+  height: 100%; */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M826.5 639Q660 778 471.5 827t-265-139Q130 500 191 285T494 80.5q242 10.5 370.5 215t-38 343.5Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23f2c762%22 d=%22M826.5 639Q660 778 471.5 827t-265-139Q130 500 191 285T494 80.5q242 10.5 370.5 215t-38 343.5Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
 
+.blob-green {
+  /* width: 100%;
+  height: 100%; */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M832 646q-99 146-270.5 241.5t-288.5-63Q156 666 144 494.5T266.5 194Q401 65 600 95t265 217.5Q931 500 832 646Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%2317a78a%22 d=%22M832 646q-99 146-270.5 241.5t-288.5-63Q156 666 144 494.5T266.5 194Q401 65 600 95t265 217.5Q931 500 832 646Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+
+.blob-pink {
+  /* width: 100%;
+  height: 100%; */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M889 612q-81 112-189 141.5T520 722q-72-61-231-7t-185-80.5Q78 500 190 428t156-168.5q44-96.5 138-48t197.5 65q103.5 16.5 196 120T889 612Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23d33666%22 d=%22M889 612q-81 112-189 141.5T520 722q-72-61-231-7t-185-80.5Q78 500 190 428t156-168.5q44-96.5 138-48t197.5 65q103.5 16.5 196 120T889 612Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+.colored-icon {
+  filter: invert(36%) sepia(84%) saturate(2872%) hue-rotate(121deg) brightness(96%) contrast(101%);
+}
+
+
+.bg-zinc-switch > *:nth-child(odd) {
+  background-color: #f3f4f6; /* Light Zinc-like color for odd elements */
+}
+
+.bg-zinc-switch > *:nth-child(even) {
+  background-color: var(--light-blue); 
+  /* background-color: rgb(236, 235, 235); 
+  color: white; /* Ensure text is readable on darker background */
+}
+
+.flex-col-reverse-switch:nth-child(odd) {
+  @apply flex-col; /* Use Tailwind's flex-col for odd elements */
+}
+
+.flex-col-reverse-switch:nth-child(even) {
+  @apply flex-col-reverse; /* Use Tailwind's flex-col-reverse for even elements */
+}
 
 
 
@@ -218,18 +278,9 @@ body {
     height: 50vh;
   }
 
-  .swiper {
-    /* width: 100vw;
-    display: grid; */
+ 
 
-    /* height: 300px; */
-
-  }
-
-  .swiper-slide {
-    display: flex !important;
-    justify-content: center;
-  }
+ 
 
   small {
     font-size: 1.5rem;
