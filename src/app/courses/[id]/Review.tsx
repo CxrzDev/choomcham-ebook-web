@@ -12,7 +12,7 @@ export default function Review() {
             name: "Jaymeen",
             role: <>เจ้าของ <a href="https://www.tiktok.com/@chubbycheeks.m" className="underline" target="_blank">Chubby Cheeks</a></>,
             course: "นักเรียนคอร์สสด",
-            video: <Video className="rounded-xl" src={"/images/3ms/jaymeen.mp4"}></Video>,
+            video: <Video className="rounded-xl" src={"/images/3ms/jaymeen1.mp4"}></Video>,
 
         },
         {
