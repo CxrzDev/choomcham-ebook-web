@@ -32,13 +32,14 @@ export default function Page() {
             </div>
 
 
-            <section className="p-5 sm:px-10 flex flex-col text-center justify-center h-[500px]" id="warning">
-                <div className="font-bold relative text-[4vw]  sm:text-[36px] py-2 text-center">
+            <section className="p-5 sm:px-10  flex flex-col text-center justify-center items-center h-[500px] bg-blue-200" id="warning">
+                <div className="font-bold relative text-[5vw]  sm:text-[36px] py-2 text-center w-1/2">
                     <div className="text-md text-[--yellow]">คำเตือน!</div>
-                    <div className="font-normal">
-                        <div>คุณอาจต้องเรียนซ้ำ
-                            เพราะความรู้อัดแน่น
-                            จนเก็บไม่หมดในครั้งเดียว</div>
+                    <div className="font-normal ">
+                        <div>คอร์สนี้ไม่เหมาะกับคนที่
+                            อยากใช้เวลาหลายปี จ่ายเงินหลักล้าน และทุ่มเทกำลังใจมากมาย
+                            ในการทดลองด้วยตัวเอง
+                        </div>
                     </div>
 
 
@@ -49,8 +50,10 @@ export default function Page() {
             </section>
 
             <section className="flex flex-col lg:flex-row items-center justify-between  p-8 lg:p-16">
-                <div className="font-bold text-[6.5vw] sm:text-[48px] pt-2  text-[--pink]">
-                    และนี่คือผลลัพธ์ของนักเรียนบางส่วน</div>
+                <div className="font-bold text-[6.5vw] sm:text-[36px] pt-2  text-[--pink] text-center">
+                    หากคุณเป็นคนที่เชื่อในผลลัพธ์ที่จับต้องได้จริง
+                    นี่คือตัวอย่างนักเรียนบางส่วนของเรา
+                </div>
             </section>
             <div className="bg-zinc-switch ">
 
@@ -68,7 +71,7 @@ export default function Page() {
 
 
                     <section className="sm:p-5 sm:px-10 flex justify-center " id="whatwilllearn">
-                        <Card className="sm:p-5 w-full rounded-[3rem] bg-[--dark-blue] ">
+                        <Card className="sm:p-5 w-full rounded-[3rem]  bg-[--dark-blue] ">
                             <CardBody>
                                 <div className="sm:text-[42px] text-2xl font-bold text-[--yellow] text-center">ทุกปัญหาเหล่านี้จะหมดไป
                                     เมื่อคุณรู้ความลับในคอร์สนี้
@@ -90,7 +93,7 @@ export default function Page() {
                     </section>
 
                     <section className="sm:p-5 sm:px-10 flex flex-col items-center justify-center  " id="">
-                        <div className="sm:text-[42px] text-3xl font-bold py-5">⚠️ อย่าเสียเงินมาเรียน ถ้าคุณยังไม่เข้าใจ ⚠️</div>
+                        <div className="sm:text-[42px] text-3xl text-center font-bold py-5"> อย่าเสียเงินมาเรียน ถ้าคุณยังไม่เข้าใจ </div>
                         <div className="">
                             <div className="text-lg font-bold">  <Asterisk className="text-[--green]" />ชีวิตจริงพูดเก่ง แต่ออนไลน์ดันไม่ปัง</div>
                             <div className="">การสื่อสารแบบตัวต่อตัวมักจะได้รับ Feedback ทันที
@@ -261,17 +264,24 @@ export default function Page() {
                         <Card className="sm:p-5 p-1 w-full bg-[#E3E3E3] sm:rounded-[3rem] rounded-none">
                             <CardBody className="flex sm:flex-row flex-wrap justify-between ssm:p-0">
                                 <div className="p-2 grid  justify-items-center gap-10 sm:w-[30%] lg:w-[40%] md:w-full">
-                                    {/* <div className="sm:text-[48px] font-bold">All Lessons</div> */}
-                                    <div className="sm:text-[42px] text-3xl font-bold pt-10">All Lessons</div>
-                                    <div className=" sm:w-64 sm:h-64 w-48 h-48 rounded-xl overflow-hidden flex justify-center items-center">
-                                        {/* <AudioWaveform className="text-white sm:size-[56px] size-4"></AudioWaveform> */}
-                                        <Image src="/images/3ms/topsecretstamp.png" className="z-0"></Image>
+
+                                    <div className="sm:text-[38px] text-3xl font-bold pt-10 text-center">8 ชั่วโมง
+                                        เรียนอะไรบ้าง?
                                     </div>
-                                    <div className="text-zinc-700 indent-5 text-center text-[20px]  flex justify-center">
+                                    <div className=" sm:w-64 sm:h-64 w-48 h-48 rounded-xl overflow-hidden flex justify-center items-center">
+                                        <AudioWaveform className="text-white sm:size-[56px] size-4 bg-[--green] rounded-full w-10 h-10 p-2"></AudioWaveform>
+                                        {/* <Image src="/images/3ms/topsecretstamp.png" className="z-0"></Image> */}
+                                    </div>
+                                    <div className="text-zinc-700 indent-5 text-center text-[20px] h-full flex flex-col items-center justify-center">
                                         <div className=" w-[80%] ">
-                                            8 ชั่วโมงต่อจากนี้
-                                            คุณจะเข้าใจแก่นแท้ของการเล่าเรื่อง
-                                            ที่ไม่มีวันตกกระแส
+                                            แค่ 8 ชั่วโมง ฟังดูสั้นนิดเดียวก็จริง
+                                            แต่ขอรับประกันเลยว่าคุณจะได้เจอ
+                                            สิ่งที่แม้แต่คุณเองก็ยังไม่รู้ว่าตัวเองยังไม่รู้
+                                            เพราะนี่คือหลักสูตรคอนเทนต์ที่ชัดเจน เข้าใจง่าย
+                                            แต่ลึก ตรงประเด็น และรายละเอียดอัดแน่นที่สุด
+
+                                        </div>
+                                        <div className="sm:text-[36px] text-3xl font-bold pt-10">คุณจะตาสว่างขึ้นทุกครั้งที่เรียน!
                                         </div>
                                     </div>
                                 </div>
@@ -300,7 +310,7 @@ export default function Page() {
                             <div className="bg-[--pink] w-36 h-36 rounded-full absolute right-[-100px] top-[-10px] -z-0"></div>
                             <div className="bg-[--yellow] w-36 h-36 rounded-full absolute right-[-10px] top-[-100px] -z-0"></div>
                             <div>
-                                <div className="sm:text-[42px] text-[8vw] font-bold text-[--dark-blue]">สอนโดย <q className="text-[--yellow]">อีฟ ภัทรัดจารินท์​ สุวัชรานนท์</q></div>
+                                <div className="sm:text-[36px] text-[6vw] font-bold text-[--dark-blue]">สอนโดย <q >อีฟ ภัทรัดจารินท์​ สุวัชรานนท์</q></div>
                                 {/* <div className="sm:text-[36px] text-[4vw] text-yellow-500">&quot;อีฟ ภัทรัดจารินท์​ สุวัชรานนท์&quot;</div> */}
                             </div>
 

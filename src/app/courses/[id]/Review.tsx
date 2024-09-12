@@ -12,7 +12,7 @@ export default function Review() {
             name: "Jaymeen",
             role: <>เจ้าของ <a href="https://www.tiktok.com/@chubbycheeks.m" className="underline" target="_blank">Chubby Cheeks</a></>,
             course: "นักเรียนคอร์สสด",
-            video: <Video className="rounded-xl" src={"/images/3ms/chubbycheeks.mp4"}></Video>,
+            video: <Video className="rounded-xl" src={"/images/3ms/jaymeen.mp4"}></Video>,
 
         },
         {
@@ -22,7 +22,7 @@ export default function Review() {
             name: "พี่ก้อง อายุน้อยร้อยล้าน",
             role: <>ผู้ก่อตั้งบริษัทสื่อ  <a href="https://www.facebook.com/Ryounoi100lan" className="underline" target="_blank">Mushroom Group</a></>,
             course: "นร.คลาส In-house training",
-            video: <Video className="rounded-xl" src={"/images/3ms/100millionaire.mp4"}></Video>,
+            video: <Video className="rounded-xl" src={"/images/3ms/100mill1.mp4"}></Video>,
 
         },
         {
@@ -32,7 +32,7 @@ export default function Review() {
             name: "พี่ม่อน",
             role: <>Producer  <a href="https://www.facebook.com/Ryounoi100lan" className="underline" target="_blank">อายุน้อยร้อยล้าน</a></>,
             course: "นร.คลาส In-house training",
-            video: <Video className="rounded-xl" src={"/images/3ms/pmon.mp4"}></Video>,
+            video: <Video className="rounded-xl" src={"/images/3ms/100mill.mp4"}></Video>,
 
         },
         {
@@ -52,7 +52,7 @@ export default function Review() {
             name: "คุณตา แก้วรุ้ง",
             role: <>เจ้าของ Brand T-Zaa ชาปากยูน</>,
             course: "นร.คอร์สสด",
-            video: <Image className="z-0" src="/images/3ms/chapaakyoon.jpg" />,
+            video: <Video className="rounded-xl" src={"/images/3ms/kuntaa.mp4"}></Video>,
 
         },
         {
@@ -62,7 +62,7 @@ export default function Review() {
             name: "คุณจิ๊บ",
             role: <>เซลล์ขายยา และเจ้าของธุรกิจนวดหน้า</>,
             course: "นร.คอร์ส Online และ นร.คอร์สสด",
-            video: <Video className="rounded-xl" src={"/images/3ms/6th.mp4"}></Video>,
+            video: <Video className="rounded-xl" src={"/images/3ms/kunjib.mp4"}></Video>,
 
         },
         {
@@ -82,7 +82,7 @@ export default function Review() {
             name: "คุณไนต์",
             role: <>เจ้าของช่องยูทูป  <a href="https://www.youtube.com/@CheffyCar/videos" className="underline" target="_blank">Cheffy Car</a></>,
             course: "นร.คอร์สสด",
-            video: <Video className="rounded-xl" src={"/images/3ms/new.mp4"}></Video>,
+            video: <Video className="rounded-xl" src={"/images/3ms/cheffycar.mp4"}></Video>,
 
         },
     ]
