@@ -90,7 +90,7 @@ export default function Review() {
     return (
         <>
            
-            {students.map((item,index) => <section className={`flex flex-col  items-center justify-between  p-8 lg:p-16 ${index%2==0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
+            {students.map((item,index) => <section key={index} className={`flex flex-col  items-center justify-between  p-8 lg:p-16 ${index%2==0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
                 {/* Text Section */}
                 <div className="max-w-md lg:w-1/2 space-y-4">
 
