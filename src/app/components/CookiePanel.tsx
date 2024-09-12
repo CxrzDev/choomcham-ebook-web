@@ -27,8 +27,8 @@ export default function CookiePanel() {
     return <motion.div
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 100 }}
-        className="fixed z-[999] bottom-5 right-5 hidden" id="cookiepanel">
-        <Card className="w-[400px] ">
+        className="fixed z-[999] lg:bottom-5 lg:right-5 bottom-0 right-0 m-1 hidden" id="cookiepanel">
+        <Card className="lg:w-[400px] w-full">
             <CardBody className="p-5">
                 {/* <div className="w-50 flex justify-end"><img src="/images/cropped-logo.png" alt="" /></div> */}
                 <div className="font-bold text-[--green] text-lg">เว็บไซต์นี้ใช้คุกกี้</div>
@@ -38,7 +38,7 @@ export default function CookiePanel() {
                 </div>
             </CardBody>
             <CardFooter className="flex justify-end gap-2 p-5">
-                <Button variant="light" className="text-[--pink] underline">การตั้งค่าคุกกี้</Button>
+                <Button variant="light" onClick={e => {}} className="text-[--pink] underline">ปฏิเสธทั้งหมด</Button>
                 <Button onClick={e => setAccept(true)} className="bg-[--pink] text-white">ยอมรับทั้งหมด</Button>
             </CardFooter>
             {/* <div className="w-full pb-2 px-5">
