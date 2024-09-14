@@ -89,36 +89,44 @@ export default function Review() {
 
     return (
         <>
-           
-            {students.map((item,index) => <section key={index} className={`flex flex-col  items-center justify-between  p-8 lg:p-16 ${index%2==0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
-                {/* Text Section */}
-                <div className="max-w-md lg:w-1/2 space-y-4">
 
-                    <h2 className="text-3xl font-bold text-gray-800">
+            {students.map((item, index) => <section key={index} className={`-skew-y-1 flex flex-col relative min-h-[60vh] items-center justify-between  p-8 lg:p-16 ${index % 2 == 0 ? "lg:flex-row" : "lg:flex-row-reverse"} `}>
+                {/* Text Section */}
+                {/* <div className="bg-[--dark-blue] w-36 h-36 rounded-full absolute left-[-100px] bottom-[-10px] -z-0"></div>
+                <div className="bg-[--green] w-36 h-36 rounded-full absolute left-[-10px] bottom-[-100px] -z-0"></div>
+                <div className="bg-[--pink] w-36 h-36 rounded-full absolute right-[-100px] top-[-10px] -z-0"></div>
+                <div className="bg-[--yellow] w-36 h-36 rounded-full absolute right-[-10px] top-[-100px] -z-0"></div> */}
+
+                <div className={`blob-green w-[600px]  absolute -z-0 aspect-square text-transparent bottom-[-400px] ${index%2==0 ? "right-[-100px]":"left-[-100px]"}`}>icon</div>
+                <div className={`blob-yellow w-[600px] absolute -z-0 aspect-square text-transparent top-[-400px] ${index%2==0 ? "left-[-300px]":"right-[-300px]"} rotate-45`}>icon</div>
+                <div className={`blob-pink w-[650px] absolute -z-0 aspect-square text-transparent bottom-[-400px] ${index%2==0 ? "left-[-300px]":"right-[-300px]"} rotate-45`}>icon</div>
+                <div className="max-w-md lg:w-1/2 space-y-4 skew-y-1">
+
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold title  relative z-1">
                         {item.title}
                     </h2>
-                    <p className="text-gray-600">
+                    <p className="relative z-1 des text-lg">
                         {item.description}
                     </p>
-                    <div className="flex gap-2 items-center">
+                    <div className="flex gap-2 items-center relative z-1">
                         <div className="h-[20vw] sm:h-20 aspect-square rounded-full overflow-hidden bg-black justify-center items-center flex relative">
                             <img
-                                className="z-0 h-full aspect-video object-cover"
+                                className="z-0 h-full aspect-square object-cover"
 
                                 src={item.profile}
                             />
                         </div>
                         <div>
-                            <div className="text-[--dark-blue]  text-[22px] font-bold">{item.name} </div>
-                            <div className="text-lg text-zinc-500 ">{item.role} </div>
-                            <div className="text-md text-zinc-500">{item.course}</div>
+                            <div className="  text-[22px] font-bold name">{item.name} </div>
+                            <div className="text-lg  ">{item.role} </div>
+                            <div className="text-md ">{item.course}</div>
 
                         </div>
                     </div>
                 </div>
 
                 {/* Image Section */}
-                <div className="mt-8 lg:mt-0 lg:w-1/2 flex justify-center">
+                <div className="mt-8 lg:mt-0 lg:w-1/2 flex justify-center skew-y-1">
                     <div className="relative lg:max-w-md max-w-xs">
                         {/* <img className=" w-32" src="/images/3ms/chubbycheeks.jpg" alt="" /> */}
                         {item.video}

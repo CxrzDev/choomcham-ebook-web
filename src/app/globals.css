@@ -121,6 +121,18 @@ body {
   border-color: var(--activedcolor);
 }
 
+.skewed-background {
+  /* height: 100vh; */
+  /* background: linear-gradient(110deg, #e0c3fc 0%, #8ec5fc 100%); */
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Use clip-path to create a skewed shape */
+  /* padding: 50px; */
+  /* color: #000; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .mark {
 
   overflow: hidden;
@@ -183,6 +195,10 @@ body {
 
 .bg-1 {
   background: url("/images/background1.svg");
+  background-size: cover;
+}
+.bg-2 {
+  background: url("/images/bg2.png");
   background-size: cover;
 }
 
@@ -252,10 +268,19 @@ body {
   background-color: #f3f4f6; /* Light Zinc-like color for odd elements */
 }
 
+.bg-zinc-switch > *:nth-child(odd) .name{
+    color:var(--dark-blue);
+
+}
 .bg-zinc-switch > *:nth-child(even) {
-  background-color: var(--light-blue); 
+  background-color: var(--dark-blue); 
+  color:white ;
   /* background-color: rgb(236, 235, 235); 
   color: white; /* Ensure text is readable on darker background */
+}
+.bg-zinc-switch > *:nth-child(even) .name{
+    color:var(--green);
+
 }
 
 .flex-col-reverse-switch:nth-child(odd) {
