@@ -7,19 +7,20 @@ import CountDown from "@/app/components/CountDonw";
 import Question from "./Questions";
 import Review from "./Review";
 import Promote from "./Promote";
+import Quote from "./Quote";
 
 
 export default function Page() {
     return (
         <>
-            <div className="w-full bg-1  overflow-clip  relative flex flex-col items-center justify-center min-h-[100vh] text-white py-5 text-center">
+            <div className="w-full bg-1    relative flex flex-col items-center justify-center min-h-[100vh] text-white py-5 text-center">
                 {/* <div className="blob-yellow  w-[50vw] md:w-[25vw] lg:w-[25vw] h-[50vw] md:h-[25vw] lg:h-[25vw] absolute -left-[10vw] -top-[10vw]"></div>
                 <div className="blob-pink  w-[30vw] h-[30vw] absolute  -right-10 lg:-top-[15rem] -top-[10vw] "></div>
                 <div className="blob-green  w-[25vw] h-[25vw] absolute  -right-[15vw] -top-[5vw]"></div>
                 <img src="/icon.svg" className=" colored-icon absolute z-0 w-[500px] left-[-15rem] bottom-[-10rem]" alt="" />
                
                 <img src="/icon.svg" className="absolute z-0 w-[500px] right-[-20rem] bottom-10 " alt="" /> */}
-                <div className="w-2/3 absolute ">
+                <div className="w-2/3 relative ">
 
                     <p className="lg:text-[56px] md:text-[56px] text-[6vw] font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย</p>
                     <p className="lg:text-[42px] md:text-[42px] text-[4vw]">เพิ่มยอดขายและผู้ติดตาม <span className="text-[--yellow] font-bold">10 เท่าใน 8 ชั่วโมง </span>โดยไม่ต้องมีพื้นฐาน</p>
@@ -30,12 +31,24 @@ export default function Page() {
                         <div className="flex ring-1 ring-white/50 rounded-full px-2 py-1 text-[3vw] sm:text-base"><Check className="text-[--yellow]"></Check>จากสื่อสารไม่เป็น...ให้ดังระดับประเทศ</div>
                     </div>
                 </div>
-                
+
+                <div className="lg:text-lg md:text-[2vw] max-w-[80%] text-[3vw] sm:text-md mt-10 rounded-[2rem] bg-white/80 glass p-5 ">
+                    <div className="text-md font-bold text-[--pink]">คำเตือน!</div>
+                    <div className="font-normal grid justify-items-center justify-center w-full  text-black">
+                        <div className="w-[70%]">คอร์สนี้ไม่เหมาะกับคนที่
+                            อยากใช้เวลาหลายปี จ่ายเงินหลักล้าน และทุ่มเทกำลังใจมากมาย
+                            ในการทดลองด้วยตัวเอง
+                        </div>
+                    </div>
+
+
+                </div>
+
             </div>
 
 
-            <section className="p-5 relative sm:px-10  flex flex-col text-center justify-center items-center h-[500px] glass skewed-background" id="warning">
-                    <img src="/icon.svg" className="z-0 absolute w-[600px] bottom-0 lg:right-[-200px] right-[-100px] opacity-55 colored-icon" alt="" />
+            {/* <section className="p-5 relative sm:px-10  flex flex-col text-center justify-center items-center h-[500px] glass skewed-background" id="warning">
+               <img src="/icon.svg" className="z-0 absolute w-[600px] bottom-0 lg:right-[-200px] right-[-100px] opacity-55 colored-icon" alt="" /> 
                 <div className="font-bold relative text-[5vw]  sm:text-[36px] py-2 text-center lg:w-1/2 w-full">
                     <div className="text-md text-[--pink]">คำเตือน!</div>
                     <div className="font-normal text-[--dark-blue]">
@@ -50,11 +63,11 @@ export default function Page() {
 
 
 
-            </section>
+            </section> */}
 
             <section className="flex flex-col lg:flex-row items-center  justify-between  p-8 lg:p-16">
                 <div className="font-bold text-[4.5vw] sm:text-[36px] pt-2 w-full text-[--pink] text-center">
-                    หากคุณเป็นคนที่เชื่อในผลลัพธ์ที่จับต้องได้จริง<br/>
+                    หากคุณเป็นคนที่เชื่อในผลลัพธ์ที่จับต้องได้จริง<br />
                     <div className=" font-normal">นี่คือตัวอย่างนักเรียนบางส่วนของเรา</div>
                 </div>
             </section>
@@ -147,8 +160,9 @@ export default function Page() {
                             <div className="bg-[--pink] w-36 h-36 rounded-full absolute right-[-100px] top-[-10px] -z-0"></div>
                             <div className="bg-[--yellow] w-36 h-36 rounded-full absolute right-[-10px] top-[-100px] -z-0"></div>
                             <div>
-                                <div className="sm:text-[36px] text-[6vw] font-bold text-[--dark-blue]">สอนโดย <q >อีฟ ภัทรัดจารินท์​ สุวัชรานนท์</q></div>
+                                <div className="sm:text-[36px] text-[6vw] font-bold text-[--dark-blue] relative z-1">สอนโดย <q >อีฟ ภัทรัดจารินท์​ สุวัชรานนท์</q></div>
                                 {/* <div className="sm:text-[36px] text-[4vw] text-yellow-500">&quot;อีฟ ภัทรัดจารินท์​ สุวัชรานนท์&quot;</div> */}
+                                <div className="text-lg  w-[80%] indent-4 relative z-1">การเห็นโปรเจคดีๆ มีคุณค่าต่อสังคมถูกเมิน เป็นเรื่องเดียวที่อีฟทนไม่ได้เลย ชุ่มฉ่ำา Branding จึงทําหน้าที่ยืนเคียงข้าง ช่วยเหลือเจ้าของธุรกิจที่มีเจตนาดีไม่ให้สูญเปล่า โดยเอาพรสวรรค์และชั่วโมงบินในการปั้นคนออกมาแบ่งปัน และถ้าคุณรู้ว่าตัวคุณเองมีของดี มาเรียนรู้การสร้างแบรนด์กันค่ะ เพื่อที่คุณจะได้แบ่งปันคุณค่าดีๆ ต่อสังคม ทิ้ง เป็นสัญลักษณ์ไว้บนโลกใบนี้ก่อนตาย</div>
                             </div>
 
                             <CardBody className="flex lg:flex-row md:flex-col-reverse flex-col-reverse justify-between flex-1 items-center">
@@ -199,6 +213,8 @@ export default function Page() {
                         </Card>
                     </section>
 
+                    <Quote />
+
                     <section className="mb-10 px-5">
                         <div className="sm:text-[38px] text-center text-[8vw] px-5 py-2 font-bold  gap-2"><span>โปรพิเศษ</span><span className="sm:text-[42px] text-[9vw] text-[--pink] font-bold underline decoration-wavy">สำหรับ 20 ท่านแรก</span><span>ที่สมัครตอนนี้</span></div>
                         <div className="sm:text-[3vw] text-[6vw] text-center w-full px-5  py-2 flex justify-center "><CountDown className="flex w-full justify-center"></CountDown></div>
@@ -236,7 +252,7 @@ export default function Page() {
                                         <div className="text-xl text-end">฿19,999</div>
                                         <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
                                         <Button className="w-full text-xl font-bold mt-4 bg-[--pink] text-white">
-                                           ซื้อคอร์ส
+                                            ซื้อคอร์ส
                                         </Button>
                                         <div className="text-sm text-end"> ออกใบกำกับภาษี ขอลดหย่อนได้ 200%</div>
                                     </div>
@@ -302,7 +318,7 @@ export default function Page() {
                                         <div className="text-xl text-end">ราคาพิเศษ 49,999</div>
                                         <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
                                         <Button className="w-full text-xl font-bold mt-4 bg-[--yellow] text-white">
-                                                    ซื้อคอร์ส
+                                            ซื้อคอร์ส
                                         </Button>
                                         <div className="text-sm text-end"> ออกใบกำกับภาษี ขอลดหย่อนได้ 200%</div>
                                     </div>
