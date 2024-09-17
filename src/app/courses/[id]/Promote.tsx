@@ -63,8 +63,10 @@ export default function Promote() {
                                     ปิดการขายได้สบายๆ
                                     แม้สินค้ามีราคาแพง
                                 </q>
-                                <div>
-                                    <Image className="z-0 aspect-video " height={400} src="/images/3ms/firstbusiness.png"></Image>
+                                <div className="grid">
+                                    <Image className="z-0  "  src="/images/3ms/firstbusiness_slide1.png"></Image>
+                                    <Image className="z-0  "  src="/images/3ms/firstbusiness_slide2.png"></Image>
+                                    <Image className="z-0 "  src="/images/3ms/firstbusiness_slide3.png"></Image>
                                 </div>
                             </div>
                         </div>
