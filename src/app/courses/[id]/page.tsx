@@ -14,6 +14,7 @@ import Quote1 from "./Quote1";
 export default function Page() {
     return (
         <>
+        <Quote1 />
             <div className="w-full bg-1    relative flex flex-col items-center justify-center min-h-[100vh] text-white py-5 text-center">
                 {/* <div className="blob-yellow  w-[50vw] md:w-[25vw] lg:w-[25vw] h-[50vw] md:h-[25vw] lg:h-[25vw] absolute -left-[10vw] -top-[10vw]"></div>
                 <div className="blob-pink  w-[30vw] h-[30vw] absolute  -right-10 lg:-top-[15rem] -top-[10vw] "></div>
@@ -46,7 +47,7 @@ export default function Page() {
                 </div>
 
             </div>
-            <Quote1 />
+            
 
 
             {/* <section className="p-5 relative sm:px-10  flex flex-col text-center justify-center items-center h-[500px] glass skewed-background" id="warning">
