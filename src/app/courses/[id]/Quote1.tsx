@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion"
 
-export default function Quote() {
+export default function Quote1() {
     return <>
-{/* 
-        <section className="h-[70vh] justify-center items-center w-full ">
+
+        <section className="h-[70vh] justify-center items-center w-full bg-zinc-200 skewed-background">
             <div className="flex flex-col  h-full items-center justify-center">
                 <motion.div initial={{ y: 100 ,opacity:0 }}
                     
@@ -25,18 +25,7 @@ export default function Quote() {
 
             </div>
 
-        </section> */}
-        <section className="h-[70vh] justify-center items-center w-full bg-[--green] skewed-background">
-            <div className="flex flex-col  h-full items-center justify-center">
-                <motion.div  initial={{ y: 100 ,opacity:0 }}
-                    
-                    whileInView={{ y: 0,opacity:100 }}  className="lg:text-[4rem] md:text-[3.5rem] text-[8vw] font-bold text-[--pink]">ถึงเวลาแล้ว</motion.div>
-                <motion.div  initial={{ y: 100 ,opacity:0 }}
-                    
-                    whileInView={{ y: 0,opacity:100 }}  className="lg:text-[4rem] md:text-[3.5rem] text-[8vw] font-bold text-[--pink]">ที่ตัวจริงอย่างคุณ<span className="bg-[--yellow] text-white px-2">ต้องมีที่ยืน</span></motion.div>
-
-            </div>
-
         </section>
+     
     </>
 }

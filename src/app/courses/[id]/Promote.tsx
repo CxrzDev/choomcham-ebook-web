@@ -37,16 +37,16 @@ export default function Promote() {
             <div  className="z-0 absolute w-[600px] aspect-square blob-pink  top-[30%] lg:right-[-200px] right-[-100px] opacity-55 "  />
             <div  className="z-0 absolute w-[600px] aspect-square blob-green  top-[60%] lg:left-[-200px] left-[-100px] opacity-55 "  /> */}
                 <div className="sm:w-2/3 w-screen px-10">
-                    <div className="sm:text-[42px] text-3xl font-bold text-center pb-10 relative z-1">คอร์สนี้เหมาะกับใคร?</div>
+                    {/* <div className="sm:text-[42px] text-3xl font-bold text-center pb-10 relative z-1">คอร์สนี้เหมาะกับใคร?</div> */}
                     <div className="text-zinc-700 indent-5 grid gap-5">
-                        <div className="bg-white/80 pb-5 rounded-[1rem] px-5 glass">
+                        {/* <div className="bg-white/80 pb-5 rounded-[1rem] px-5 glass">
                             <div className="text-xl mt-5 font-bold ">
                                 <Asterisk className="text-[--green]"></Asterisk>
                                 รู้ว่ามีของดี แต่ไม่รู้วิธีเล่าเรื่องให้ได้ใจคน
                             </div>
                             <p className="text-lg  rounded-2xl">การเห็นโปรเจคดีๆ มีคุณค่าต่อสังคมถูกเมิน เป็นเรื่องเดียวที่อีฟทนไม่ได้เลย ชุ่มฉ่ำ Branding จึงทำหน้าที่ยืนเคียงข้าง ช่วยเหลือเจ้าของธุรกิจที่มีเจตนาดีไม่ให้สูญเปล่า โดยเอาพรสวรรค์และชั่วโมงบินในการปั้นคนออกมาแบ่งปัน และถ้าคุณรู้ว่าตัวคุณเองมีของดี
                                 มาเรียนรู้การสร้างแบรนด์กันค่ะ เพื่อที่คุณจะได้แบ่งปันคุณค่าดีๆ ต่อสังคม ทิ้งเป็นสัญลักษณ์ไว้บนโลกใบนี้ก่อนตาย</p>
-                        </div>
+                        </div> */}
 
                         <div className="bg-white/80 pb-5 rounded-[1rem] px-5 glass">
                             <div className="text-xl mt-5 font-bold ">

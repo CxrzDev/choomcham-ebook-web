@@ -97,9 +97,9 @@ export default function Review() {
                 <div className="bg-[--pink] w-36 h-36 rounded-full absolute right-[-100px] top-[-10px] -z-0"></div>
                 <div className="bg-[--yellow] w-36 h-36 rounded-full absolute right-[-10px] top-[-100px] -z-0"></div> */}
 
-                <div className={`blob-green w-[600px]  absolute -z-0 aspect-square text-transparent bottom-[-400px] ${index%2==0 ? "right-[-100px]":"left-[-100px]"}`}>icon</div>
+                {/* <div className={`blob-green w-[600px]  absolute -z-0 aspect-square text-transparent bottom-[-400px] ${index%2==0 ? "right-[-100px]":"left-[-100px]"}`}>icon</div>
                 <div className={`blob-yellow w-[600px] absolute -z-0 aspect-square text-transparent top-[-400px] ${index%2==0 ? "left-[-300px]":"right-[-300px]"} rotate-45`}>icon</div>
-                <div className={`blob-pink w-[650px] absolute -z-0 aspect-square text-transparent bottom-[-400px] ${index%2==0 ? "left-[-300px]":"right-[-300px]"} rotate-45`}>icon</div>
+                <div className={`blob-pink w-[650px] absolute -z-0 aspect-square text-transparent bottom-[-400px] ${index%2==0 ? "left-[-300px]":"right-[-300px]"} rotate-45`}>icon</div> */}
                 <div className="max-w-md lg:w-1/2 space-y-4 skew-y-1">
 
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold title  relative z-1">

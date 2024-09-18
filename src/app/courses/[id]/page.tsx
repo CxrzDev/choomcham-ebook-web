@@ -8,6 +8,7 @@ import Question from "./Questions";
 import Review from "./Review";
 import Promote from "./Promote";
 import Quote from "./Quote";
+import Quote1 from "./Quote1";
 
 
 export default function Page() {
@@ -45,6 +46,7 @@ export default function Page() {
                 </div>
 
             </div>
+            <Quote1 />
 
 
             {/* <section className="p-5 relative sm:px-10  flex flex-col text-center justify-center items-center h-[500px] glass skewed-background" id="warning">
