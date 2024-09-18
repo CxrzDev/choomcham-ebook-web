@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export default function Quote() {
     return <>
-{/* 
+ 
         <section className="h-[70vh] justify-center items-center w-full ">
             <div className="flex flex-col  h-full items-center justify-center">
                 <motion.div initial={{ y: 100 ,opacity:0 }}
@@ -25,7 +25,7 @@ export default function Quote() {
 
             </div>
 
-        </section> */}
+        </section> 
         <section className="h-[70vh] justify-center items-center w-full bg-[--green] skewed-background">
             <div className="flex flex-col  h-full items-center justify-center">
                 <motion.div  initial={{ y: 100 ,opacity:0 }}

@@ -1,13 +1,117 @@
-import { Image } from "@nextui-org/react";
-import { Asterisk } from "lucide-react";
+import { Card, CardBody, Image } from "@nextui-org/react";
+import { Asterisk, AudioWaveform } from "lucide-react";
+import Lession from "./Lessons";
 
 export default function Promote() {
     return (
         <>
-            <section className="sm:p-5 bg-2 text-white sm:px-10 flex flex-col items-center justify-center skewed-background bg-blue-100 rounded-t-xl relative" id="">
+            <section className="sm:p-5 bg-2 text-white sm:px-10 flex flex-col items-center gap-4 justify-center skewed-background bg-blue-100 rounded-t-xl relative" id="">
 
+                <div className="sm:text-[42px] text-3xl text-center font-bold py-5"> อย่าเพิ่งโอน! เราอยากให้คุณอ่านก่อน!</div>
+                <section className="sm:p-5 sm:px-10 flex justify-center" id="allLesson">
+                    <Card className="sm:p-5 p-1 w-full bg-[#E3E3E3] sm:rounded-[3rem] rounded-none">
+                        <CardBody className="flex sm:flex-row flex-wrap justify-between ssm:p-0">
+                            <div className="p-2 grid  justify-items-center gap-10 sm:w-[30%] lg:w-[40%] md:w-full">
+
+                                <div className="sm:text-[38px] text-3xl font-bold pt-10 text-center">8 ชั่วโมง
+                                    เรียนอะไรบ้าง?
+                                </div>
+                                <div className=" lg:w-64 lg:h-64 w-36 h-36 bg-[--green] rounded-full overflow-hidden flex justify-center items-center">
+                                    <AudioWaveform className="text-white sm:size-[56px] size-4  rounded-full w-10 h-10 p-2"></AudioWaveform>
+                                    {/* <Image src="/images/3ms/topsecretstamp.png" className="z-0"></Image> */}
+                                </div>
+                                <div className="text-zinc-700 indent-5 text-center text-[20px] h-full flex flex-col items-center justify-center">
+                                    <div className=" w-[80%] ">
+                                        แค่ 8 ชั่วโมง ฟังดูสั้นนิดเดียวก็จริง
+                                        แต่ขอรับประกันเลยว่าคุณจะได้เจอ
+                                        สิ่งที่แม้แต่คุณเองก็ยังไม่รู้ว่าตัวเองยังไม่รู้
+                                        เพราะนี่คือหลักสูตรคอนเทนต์ที่ชัดเจน เข้าใจง่าย
+                                        แต่ลึก ตรงประเด็น และรายละเอียดอัดแน่นที่สุด
+
+                                    </div>
+                                    <div className="sm:text-[36px] text-3xl font-bold pt-10">คุณจะตาสว่างขึ้นทุกครั้งที่เรียน!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="sm:w-[60%] lg:w-[60%] md:w-full p-3">
+
+                                <Card className="border-none rounded-[2.5rem] p-3 h-full sm:flex lg:flex md:flex hidden">
+                                    <CardBody className="sm:p-1 p-0">
+                                        <Lession></Lession>
+
+                                    </CardBody>
+                                </Card>
+                            </div>
+                            <div className="sm:hidden flex">
+                                <Lession></Lession>
+                            </div>
+                        </CardBody>
+                    </Card>
+                </section>
+
+
+                <section className="sm:p-5 sm:px-10 flex justify-center " id="instructor">
+                    <Card className="p-5 w-full  border-2 border-white rounded-[2rem] bg-[#f5f5f5]">
+                        <div className="bg-[--dark-blue] w-36 h-36 rounded-full absolute left-[-100px] bottom-[-10px] -z-0"></div>
+                        <div className="bg-[--green] w-36 h-36 rounded-full absolute left-[-10px] bottom-[-100px] -z-0"></div>
+                        <div className="bg-[--pink] w-36 h-36 rounded-full absolute right-[-100px] top-[-10px] -z-0"></div>
+                        <div className="bg-[--yellow] w-36 h-36 rounded-full absolute right-[-10px] top-[-100px] -z-0"></div>
+                        <div>
+                            <div className="sm:text-[36px] text-[6vw] font-bold text-[--dark-blue] relative z-1">สอนโดย <q >อีฟ ภัทรัดจารินท์​ สุวัชรานนท์</q></div>
+                            {/* <div className="sm:text-[36px] text-[4vw] text-yellow-500">&quot;อีฟ ภัทรัดจารินท์​ สุวัชรานนท์&quot;</div> */}
+                            <div className="text-lg  w-[80%] indent-4 relative z-1">การเห็นโปรเจคดีๆ มีคุณค่าต่อสังคมถูกเมิน เป็นเรื่องเดียวที่อีฟทนไม่ได้เลย ชุ่มฉ่ำา Branding จึงทําหน้าที่ยืนเคียงข้าง ช่วยเหลือเจ้าของธุรกิจที่มีเจตนาดีไม่ให้สูญเปล่า โดยเอาพรสวรรค์และชั่วโมงบินในการปั้นคนออกมาแบ่งปัน และถ้าคุณรู้ว่าตัวคุณเองมีของดี มาเรียนรู้การสร้างแบรนด์กันค่ะ เพื่อที่คุณจะได้แบ่งปันคุณค่าดีๆ ต่อสังคม ทิ้ง เป็นสัญลักษณ์ไว้บนโลกใบนี้ก่อนตาย</div>
+                        </div>
+
+                        <CardBody className="flex lg:flex-row md:flex-col-reverse flex-col-reverse justify-between flex-1 items-center ">
+
+
+                            <div className="text-zinc-700 sm:w-[80%] w-full">
+                                <ul className="grid grid-cols-1 gap-4 list-none">
+                                    <li className="bg-white p-2 rounded-xl items-start">
+                                        <Asterisk className="text-[--green]" />
+                                        <span className="">
+                                            สร้างแบรนด์ขายรองเท้าตั้งแต่อายุ 17 ยอดขายหลักแสน/เดือน ด้วยงบ 0 บาท
+                                        </span>
+                                    </li>
+                                    <li className="bg-white p-2 rounded-xl items-start">
+                                        <Asterisk className="text-[--green]" />
+                                        <span className="">
+                                            ผู้ร่วมก่อตั้งเพจ &quot;เกลานิสัย อันตราย&quot; ที่สร้างตัวตนให้กับบุคคลที่เป็นที่รู้จักในวงกว้าง <br />
+                                            เช่น ดร.ชัชชาติ, ครูเงาะ, นายณภัทร ฯลฯ
+                                        </span>
+                                    </li>
+                                    <li className="bg-white p-2 rounded-xl items-start">
+                                        <Asterisk className="text-[--green]" />
+                                        <span className="">
+                                            เจ้าของเพจ Eve pattars บทความคนแชร์กว่า 1 แสน
+                                        </span>
+                                    </li>
+                                    <li className="bg-white p-2 rounded-xl items-start">
+                                        <Asterisk className="text-[--green]" />
+                                        <span className="">
+                                            ที่ปรึกษาเรื่องแบรนด์ให้เจ้าของธุรกิจระดับ 10-1,000 ล้าน/ปี
+                                        </span>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+
+                            <div className="sm:w-[40%] md:w-full flex justify-center w-full p-2">
+
+
+                                <div className=" sm:w-80 md:w-64 w-[50%] aspect-square overflow-clip rounded-full">
+                                    <Image className="z-0" src="/images/kruEve_image.jpg"></Image>
+                                </div>
+
+                            </div>
+                        </CardBody>
+
+                    </Card>
+                </section>
                 <div className="sm:w-2/3 w-screen px-10">
-                    <div className="sm:text-[42px] text-3xl text-center font-bold py-5"> อย่าเพิ่งโอน! เราอยากให้คุณอ่านก่อน!                    </div>
+
                     <div className="">
                         <div className="text-lg font-bold">  <Asterisk className="text-[--yellow]" />ชีวิตจริงพูดเก่ง แต่ออนไลน์ดันไม่ปัง</div>
                         <div className="indent-2">คนมีของส่วนใหญ่จะเชี่ยวชาญเรื่องที่ตัวเองถนัดอยู่แล้ว ยิ่งให้พูดในชีวิตจริงยิ่งง่าย แต่พอมาโลกออนไลน์กลับทำให้คนสนใจไม่ได้ ไม่ใช่คุณไม่เก่งนะ แต่คุณยังไม่รู้ความลับการสื่อสารโลกออนไลน์หลายอย่าง
@@ -64,9 +168,9 @@ export default function Promote() {
                                     แม้สินค้ามีราคาแพง
                                 </q>
                                 <div className="grid">
-                                    <Image className="z-0  "  src="/images/3ms/firstbusiness_slide1.png"></Image>
-                                    <Image className="z-0  "  src="/images/3ms/firstbusiness_slide2.png"></Image>
-                                    <Image className="z-0 "  src="/images/3ms/firstbusiness_slide3.png"></Image>
+                                    <Image className="z-0  " src="/images/3ms/firstbusiness_slide1.png"></Image>
+                                    <Image className="z-0  " src="/images/3ms/firstbusiness_slide2.png"></Image>
+                                    <Image className="z-0 " src="/images/3ms/firstbusiness_slide3.png"></Image>
                                 </div>
                             </div>
                         </div>
