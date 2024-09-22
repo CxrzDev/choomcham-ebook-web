@@ -12,17 +12,21 @@ import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { JSXElementConstructor, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useEffect, useState } from 'react'
 import Loading from './components/loading'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { BadgeCheck, Flower, HeartHandshake } from 'lucide-react'
+import Script from 'next/script'
 
 
 
 
 export default async function Home() {
-   
+
     var res = await fetch(`https://choomcham.vercel.app/api/course`)
-    var result : any = await res.json()
-    var contents :any = [...result.data];
+    var result: any = await res.json()
+    var contents: any = [...result.data];
 
-
+    <Script>
+        {`document.documentElement.classList.add('light')`}
+    </Script>
 
     const videos = [
         { id: '1', src: 'https://www.facebook.com/video.php?v=993405428609497', description: 'รับออกแบบทิศทางการสร้าง Brand ให้สอดคล้องคุณค่าชีวิต 5 แบรนด์/เดือน ยอดขายหลายล้านที่คุณทำหล่นหายไป เพราะแบรนด์ไม่ชัด', platform: "facebook", title: "รีวิวจากคุณทราย CEO MADAMFIN" },
@@ -49,10 +53,10 @@ export default async function Home() {
 
         <div id="fb-root"></div>
         <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0&appId=156838349817980" nonce="WQnbcNzF"></script>
-        
-        <section>
-            <div className="relative bg-blue-900 line  ">
-                <div className="absolute sm:top-[30%] top-[25%] sm:left-[3%] left-10">
+
+        <section className="bg-[--dark-blue]">
+            <div className="relative bg-blue-900 line  skewed-background">
+                <div className="absolute sm:bottom-0 bottom-0 sm:left-[3%] left-10">
                     {/* <div initial={{ y: 20, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 100 }}> <h1 className="text-white thai">ตัวจริงต้องมีที่ยืน</h1></div> */}
                     {/* top */}
@@ -64,14 +68,14 @@ export default async function Home() {
 
                             {/* top */}
                             <div className="mb-10">
-                                <div className=" sm:text-[2.5vw] thai sm:w-[50vw] small">คุณไม่ได้เกิดมาแค่ทำธุรกิจ <br />แต่คุณเกิดมาเพื่อสร้างแบรนด์ที่มีคุณค่า
+                                <div className=" lg:text-[2rem] md:text-[3vw] text-[6vw] thai sm:w-[35vw] small">อย่าทำธุรกิจแค่เพื่อยอดขาย <br />จงดึงคุณค่าจากตัวคุณออกมา<br /><div className="underline decoration-[--yellow]">สร้างแบรนด์ให้เป็นตำนาน</div>
 
                                 </div>
                                 <br />
                                 <div className="text-[14px] sm:text-large thai w-[56vw]">ผลงานสร้างแบรนด์สายคุณค่าระดับประเทศ</div>
                                 <br />
                                 {/* <Link href="/about"><div className="btn bg-primary rounded-full px-10 py-1 border-0 hover:scale-110 duration-150 text-white">About us</div></Link> */}
-                                <Link href="/about"><Button radius='full' className='w-[300px] bg-[--yellow]'>About Us</Button></Link>
+                                {/* <Link href="/about"><Button radius='sm' className='w-[300px] '>About Us</Button></Link> */}
                             </div>
                         </div>
                         <br />
@@ -85,56 +89,109 @@ export default async function Home() {
         </section>
 
         <section>
-            <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-items-center justify-between py-10 sm:px-10 work'>
-                <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
-                    <CardHeader>
-                        <div className='h-10 w-10 rounded-full '>
-                            <Image className='' width={300} height={300} src="./icon.svg" alt="" />
-                        </div>
-                    </CardHeader>
-                    <CardBody>
-                        <div className='text-xl font-bold'>  Online course </div>
-                        <div className="text-[18px]">
-                            สร้างคนดังในตำนาน เนื้อหาแน่น ห้ามพลาด เรียนได้ทุกที่ ทุกเวลา
 
-                        </div>
-                    </CardBody>
-                </Card>
-                <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
-                    <CardHeader>
-                        <div className='h-10 w-10 rounded-full '>
-                            <Image className='' width={300} height={300} src="./icon.svg" alt="" />
-                        </div>
-                    </CardHeader>
-                    <CardBody>
-                        <h3 className='text-xl font-bold'> On-site Workshop  </h3>
-                        <div className="text-[18px]">
-
-                            พบปะกลุ่มเจ้าของธุรกิจตัวจริงต่างวงการ หรือช่วยจัดเวิร์คชอปเจ๋งๆให้กับทีมงานของคุณ
-
-
-                        </div>
-                    </CardBody>
-                </Card>
-                <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
-                    <CardHeader>
-                        <div className='h-10 w-10 rounded-full '>
-                            <Image className='' width={300} height={300} src="./icon.svg" alt="" />
-                        </div>
-                    </CardHeader>
-                    <CardBody>
-                        <h3 className='text-xl font-bold'> 1:1 Consult
-                        </h3>
-                        <div className="text-[18px]">
-
-                            แบรนด์ไม่ชัด มีของดีแต่คนไม่รู้จัก ช่วยสะท้อนสิ่งที่คุณไม่เห็นเพื่อให้ไปต่อได้
-
-
-                        </div>
-                    </CardBody>
-                </Card>
-
-            </section>
+            <div className="bg-[--dark-blue]">
+                <div className=" text-white w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] text-[4vw] py-4">ชุ่มฉ่ำ Branding ปั้นเจ้าของธุรกิจตัวจริงให้มีที่ยืน             </div>
+                <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-items-center justify-between py-10 sm:px-10 '>
+                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80'>
+                        <CardHeader>
+                            {/* <div className='h-10 w-10 rounded-full '>
+                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
+                            </div> */}
+                        </CardHeader>
+                        <CardBody>
+                            <Flower />
+                            <div className='text-xl font-bold'>  Value </div>
+                            <div className="text-[18px]">
+                                เราช่วยสะท้อนคุณค่าในตัวคุณที่สร้างอิมแพคให้สังคม
+                            </div>
+                        </CardBody>
+                    </Card>
+                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80'>
+                        <CardHeader>
+                            {/* <div className='h-10 w-10 rounded-full '>
+                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
+                            </div> */}
+                        </CardHeader>
+                        <CardBody>
+                            <BadgeCheck />
+                            <h3 className='text-xl font-bold'> Identity  </h3>
+                            <div className="text-[18px]">
+                                เราช่วยค้นหาเอกลักษณ์ที่เป็นธรรมชาติที่สุดของคุณ
+                            </div>
+                        </CardBody>
+                    </Card>
+                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80'>
+                        <CardHeader>
+                            {/* <div className='h-10 w-10 rounded-full '>
+                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
+                            </div> */}
+                        </CardHeader>
+                        <CardBody>
+                            <HeartHandshake />
+                            <h3 className='text-xl font-bold'> Culture
+                            </h3>
+                            <div className="text-[18px]">
+                                เราช่วยสร้างวัฒนธรรมประจำแบรนด์ให้ธุรกิจคุณแตกต่างอย่างยั่งยืน
+                            </div>
+                          
+                        </CardBody>
+                    </Card>
+                </section>
+            </div>
+            <div className="bg-slate-100/40">
+                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] text-[4vw] pt-10  ">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอดแต่ยังไม่มีใครเห็น คุณมาถูกที่แล้ว
+                </div>
+                <div className="grid justify-center">
+                    <div className="rounded-full h-1 w-[350px] bg-[#D33666] "></div>
+                </div>
+                <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-items-center justify-between py-10 sm:px-10 '>
+                    <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
+                        <CardHeader>
+                            <div className='w-10 rounded-full '>
+                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
+                            </div>
+                        </CardHeader>
+                        <CardBody>
+                            <div className='text-xl font-bold'>  Online course </div>
+                            <div className="text-[18px]">
+                                หลักสูตรสร้างคนดังในตำนาน เนื้อหาแน่น ห้ามพลาด เรียนได้ทุกที่ ทุกเวลา
+                            </div>
+                            <Button className='bg-[--green] text-white mt-2' radius="full">ดูหลักสูตรเพิ่มเติม</Button>
+                        </CardBody>
+                    </Card>
+                    <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
+                        <CardHeader>
+                            <div className=' w-10 rounded-full '>
+                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
+                            </div>
+                        </CardHeader>
+                        <CardBody>
+                            <h3 className='text-xl font-bold'> On-site Workshop  </h3>
+                            <div className="text-[18px]">
+                                เรียนสด Connection เพื่อนเจ้าของธุรกิจตัวจริงต่างวงการ หรือจัดเวิร์คชอปเจ๋งๆให้องค์กร
+                            </div>
+                            <Button className='bg-[--green] text-white mt-2' radius="full">ดูรอบเรียน</Button>
+                        </CardBody>
+                    </Card>
+                    <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
+                        <CardHeader>
+                            <div className=' w-10 rounded-full '>
+                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
+                            </div>
+                            
+                        </CardHeader>
+                        <CardBody>
+                            <h3 className='text-xl font-bold'> 1:1 Consult
+                            </h3>
+                            <div className="text-[18px]">
+                                ลงพื้นที่ทดสอบแบรนด์ที่มีหน้าร้าน ช่วยดึงจุดเด่นของแบรนด์ออกมาสื่อสารให้ได้ใจคน
+                            </div>
+                            <Button className='bg-[--green] text-white mt-2' radius="full">ดูเพิ่มเติม</Button>
+                        </CardBody>
+                    </Card>
+                </section>
+            </div>
 
             <section className='p-10 flex justify-evenly items-center'>
                 <div  > <img width="250" src="/images/sticker6.png" alt="อิโมจิชุ่มฉ่ำ ตัวจริงต้องมีที่ยืน" /></div>
@@ -204,6 +261,7 @@ export default async function Home() {
                         <img className="sm:h-[80px] h-[50px]" src="/images/ondemand_logo.png" alt="โลโก้ออนดีมานด์" />
                         <img className="sm:h-[80px] h-[50px]" src="/images/sowonclinic_logo.jpg" alt="โลโก้โซวอนคลีนิค" />
                         <img className="sm:h-[80px] h-[50px]" src="/images/winkwhite_logo.jpg" alt="โลโก้วิ้งค์ไวท์" />
+                        <img className="sm:h-[80px] h-[50px]" src="/images/klao.png" alt="โลโก้เกลานิสัยอันตราย" />
                     </div>
                 </div>
             </section>
@@ -226,7 +284,7 @@ export default async function Home() {
                         {
                             (contents.length != 0) ?
 
-                                contents.map((content:any) =>
+                                contents.map((content: any) =>
                                     <div className="card  w-96 sm:w-96 bg-white/50 shadow-xl overflow-hidden  " key={content.id}>
                                         <figure className={"h-[210px] sm:h-[240px] overflow-hidden "}><Image width={390} height={260} src={content.imageUrl || "/images/cover6.png"} fallbackSrc="/images/cover6.png" alt={content.title} className='object-cover z-0' /></figure>
                                         <div className="card-body h-[202px] sm:h-[auto]">
@@ -276,7 +334,7 @@ export default async function Home() {
             <section className=''>
                 <div className='p-10'>
 
-                    <div className="sm:text-3xl text-xl font-bold">ทำไมต้องชุ่มฉ่ำ?</div>
+                    <div className="sm:text-3xl text-xl font-bold">ทำไมต้องชุ่มฉ่ำเท่านั้น ?</div>
                     <div className="rounded-full h-1 w-[10%] bg-[#D33666]"></div>
                     <div className="py-3 my-3  divide-y">
 
@@ -307,7 +365,11 @@ export default async function Home() {
                 </div>
             </section>
 
+            <section className="py-5 bg-[--green] lg:text-[3rem] md:text-[2rem] text-[6vw] flex flex-col justify-center items-center h-[500px] text-white font-bold">
+                <div className="lg:text-[4rem] bg-[--pink]">สร้างแบรนด์ให้คนรักในแบบที่คุณ…เป็นคุณ</div>
+                เติบโตเร็วกว่า ยั่งยืนกว่า มีความสุขกว่า
 
+            </section>
 
             <section className='flex justify-center p-10'>
                 <div className="w-[90vw] hero min-h-screen bg-slate-200  rounded-[40px] py-4 shadow-xl relative overflow-hidden">
@@ -323,11 +385,18 @@ export default async function Home() {
 
 
                             <div className="text-5xl font-bold " >เงื่อนไขก่อนรับบริการ!</div>
-                            <div className="">1.ธุรกิจของท่านถูกศีลธรรม ไม่ขัดต่อศีล 5
+                            <br />
+                            <div className="">1.เป็นเจ้าของธุรกิจตัวจริงในวงการนั้นๆ<br />
+                                มี PASSION ในธุรกิจนั้น<br />
+                                มีเรื่องราวหรือประสบการณ์<br />
+                                มี FEEDBACK ที่ดีมากกว่าเสีย<br />
+
 
                             </div>
-                            <div className="">2.คุณรักการเรียนรู้และการพัฒนาตัวเอง</div>
-                            <div className="">3.ธุรกิจคุณมี Feedback ที่ดีมากกว่าเสีย</div>
+                            <br />
+                            <div className="">2.ทีมงานชุ่มฉ่ำสัมภาษณ์คัดกรอง
+                            </div>
+                            {/* <div className="">3.ธุรกิจคุณมี Feedback ที่ดีมากกว่าเสีย</div> */}
                         </div>
                         <div className="card flex-shrink-2 w-full max-w-xl shadow-2xl bg-white">
                             <div className=" card  bg-white shadow-xl">
