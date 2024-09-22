@@ -13,7 +13,6 @@ import { JSXElementConstructor, PromiseLikeOfReactNode, ReactElement, ReactNode,
 import Loading from './components/loading'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { BadgeCheck, Flower, HeartHandshake } from 'lucide-react'
-import Script from 'next/script'
 
 
 
@@ -24,9 +23,7 @@ export default async function Home() {
     var result: any = await res.json()
     var contents: any = [...result.data];
 
-    <Script>
-        {`document.documentElement.classList.add('light')`}
-    </Script>
+    
 
     const videos = [
         { id: '1', src: 'https://www.facebook.com/video.php?v=993405428609497', description: 'รับออกแบบทิศทางการสร้าง Brand ให้สอดคล้องคุณค่าชีวิต 5 แบรนด์/เดือน ยอดขายหลายล้านที่คุณทำหล่นหายไป เพราะแบรนด์ไม่ชัด', platform: "facebook", title: "รีวิวจากคุณทราย CEO MADAMFIN" },
