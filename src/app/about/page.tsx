@@ -4,6 +4,26 @@ import NavigationBar from '../components/navbar';
 import Footer from '../components/footer';
 import { motion } from "framer-motion"
 import { Image } from '@nextui-org/react';
+import { Metadata } from 'next';
+
+
+const metadata: Metadata = {
+    title: 'ชุ่มฉ่ำ branding | เกี่ยวกับเรา',
+    description: 'ครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์ นักสร้างแบรนด์รุ่นใหม่สายคุณค่า บัณฑิตคณะศิลปศาสตร์ เอกภาษาศาสตร์ มหาวิทยาลัยธรรมศาสตร์',
+    authors: [{ name: 'Choomcham branding' }],
+    keywords: ['Choomcham', 'Choomcham Branding', 'branding', 'courses', 'personal branding', 'Brand Strategist', 'Keynote Speaker', 'Spiritual practitioner', 'อีฟ ภัทรัดจารินท์​ สุวัชรานนท์', 'marketing', ' brand identity', 'ทำไมต้อง ชุ่มฉ่ำ Branding จะช่วยธุรกิจคุณได้ยังไง?', 'ชุ่มฉ่ำ',
+        "เกลานิสัย อันตราย", "เพิ่มยอดขาย"
+    ],
+    publisher: "Vercel",
+    robots: { index: true, follow: true },
+    icons: "/images/cropped-logo.png",
+    openGraph: {
+
+        images: [{
+            url: "https://choomcham.vercel.app/images/cover6.png",
+        }]
+    }
+}
 
 function About() {
     return (
@@ -13,7 +33,7 @@ function About() {
             <div className="z-20 fixed w-full">
                 <NavigationBar current="3" />
             </div>
-            
+
             <div className="bg-slate-200 ">
                 <div className="text-black  w-full h-[80px]   rounded-3xl">
                     .
@@ -108,7 +128,7 @@ function About() {
                     <div className="bg-[--pink] w-[100px] h-[150px] absolute sm:bottom-0 sm:right-[600px] sm:block hidden rounded-t-full">.</div>
                     <div className="relative p-10">
                         <img src="./icon.svg" className="z-[3] absolute w-[90px] sm:w-[5vw]" alt="choomcham icon - splash water" />
-                        <Image  draggable='false' src="/images/kruEve_image.jpg" alt="รูปครูอีฟ กำลังยิ้ม" className="w-72 max-w-[auto] rounded-tl-[60px] rounded-br-[60px] sm:mb-0  " />
+                        <Image draggable='false' src="/images/kruEve_image.jpg" alt="รูปครูอีฟ กำลังยิ้ม" className="w-72 max-w-[auto] rounded-tl-[60px] rounded-br-[60px] sm:mb-0  " />
                     </div>
                     <div>
                         <h2 className="text-xl sm:text-3xl font-bold">ครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์ </h2>
@@ -193,10 +213,10 @@ function About() {
                         <div className="ssm:grid gap-3 ">
                             <div className="text-xl sm:text-3xl font-bold sm:w-[80%]  text-[--yellow]">ภารกิจของชุ่มฉ่ำ คืออะไร?</div>
                             <div className="text-md sm:text-xl w-[70vw] sm:w-[35vw] ">
-                            แรงผลักดันการทำธุรกิจของอีฟตอนนี้คือ อยากช่วยเจ้าของธุรกิจทุกคนหา DNA พิเศษเฉพาะแบรนด์ ช่วยให้แบรนด์ค้นพบ Key message ทองคำเพื่อนำไปสื่อสารต่อ ให้สังคมได้เกิดการตื่นรู้หันมาทำสิ่งดีๆในชีวิตเพิ่มขึ้น อย่าง Nike มี Just do it ช่วยให้คนที่กลัว ไม่กล้า หันมาลงมือทำเพิ่มขึ้น แบรนด์อื่นๆในประเทศไทยก็ควรที่จะมี Message ดีๆเพื่อถ่ายทอดให้คนเกิดการเปลี่ยนแปลงเชิงบวกได้เช่นกัน
+                                แรงผลักดันการทำธุรกิจของอีฟตอนนี้คือ อยากช่วยเจ้าของธุรกิจทุกคนหา DNA พิเศษเฉพาะแบรนด์ ช่วยให้แบรนด์ค้นพบ Key message ทองคำเพื่อนำไปสื่อสารต่อ ให้สังคมได้เกิดการตื่นรู้หันมาทำสิ่งดีๆในชีวิตเพิ่มขึ้น อย่าง Nike มี Just do it ช่วยให้คนที่กลัว ไม่กล้า หันมาลงมือทำเพิ่มขึ้น แบรนด์อื่นๆในประเทศไทยก็ควรที่จะมี Message ดีๆเพื่อถ่ายทอดให้คนเกิดการเปลี่ยนแปลงเชิงบวกได้เช่นกัน
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </section>
