@@ -7,7 +7,7 @@ import { Image } from '@nextui-org/react';
 import { Metadata } from 'next';
 
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
     title: 'ชุ่มฉ่ำ branding | เกี่ยวกับเรา',
     description: 'ครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์ นักสร้างแบรนด์รุ่นใหม่สายคุณค่า บัณฑิตคณะศิลปศาสตร์ เอกภาษาศาสตร์ มหาวิทยาลัยธรรมศาสตร์',
     authors: [{ name: 'Choomcham branding' }],

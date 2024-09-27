@@ -12,7 +12,7 @@ import Quote1 from "./Quote1";
 import { Metadata } from "next";
 
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
     title: 'ชุ่มฉ่ำ branding | เล่าเรื่อง 3 นาทีให้มียอดขาย',
     description: 'เพิ่มยอดขายและผู้ติดตาม 10 เท่าใน 8 ชั่วโมง โดยไม่ต้องมีพื้นฐาน  ถ้าคุณรู้...ว่าตัวเองมีของดี ถ้าคุณรู้...ว่าตัวเองคือตัวจริง มันจะเจ็บปวดแค่ไหน? ถ้าสุดท้ายคุณเป็นได้แค่...คนเก่งที่ไม่มีใครรู้จัก',
     authors: [{ name: 'Choomcham branding' }],
