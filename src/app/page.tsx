@@ -65,7 +65,7 @@ export default async function Home() {
 
                             {/* top */}
                             <div className="mb-10">
-                                <div className=" lg:text-[2rem] md:text-[3vw] text-[6vw] thai sm:w-[35vw] small font-bold">อย่าทำธุรกิจแค่เพื่อยอดขาย <br />จงดึงคุณค่าจากตัวคุณออกมา<br /><div className="underline decoration-[--yellow] text-[--yellow]">สร้างแบรนด์ให้เป็นตำนาน</div>
+                                <div className=" lg:text-[2rem] md:text-[3vw] text-[6vw] thai sm:w-[35vw] small">อย่าทำธุรกิจแค่เพื่อยอดขาย <br />จงดึงคุณค่าจากตัวคุณออกมา<br /><div className="underline decoration-[--yellow] text-[--yellow]">สร้างแบรนด์ให้เป็นตำนาน</div>
 
                                 </div>
                                 <br />
@@ -88,7 +88,7 @@ export default async function Home() {
         <section>
 
             <div className="bg-[--dark-blue] work">
-                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] text-xl pt-10 leading-normal  ">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br/>แต่ยังไม่มีใครเห็น <span className="bg-[--pink] px-2 text-white">คุณมาถูกที่แล้ว</span>
+                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] lg:text-black text-white text-xl pt-10 leading-normal  ">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br/>แต่ยังไม่มีใครเห็น <span className="bg-[--pink] px-2 text-white">คุณมาถูกที่แล้ว</span>
                 </div>
                
                 <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-items-center justify-between py-10 sm:px-10 '>
