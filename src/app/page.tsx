@@ -65,7 +65,7 @@ export default async function Home() {
 
                             {/* top */}
                             <div className="mb-10">
-                                <div className=" lg:text-[2rem] md:text-[3vw] text-[6vw] thai sm:w-[35vw] small">อย่าทำธุรกิจแค่เพื่อยอดขาย <br />จงดึงคุณค่าจากตัวคุณออกมา<br /><div className="underline decoration-[--yellow] text-[--yellow]">สร้างแบรนด์ให้เป็นตำนาน</div>
+                                <div className=" lg:text-[2rem] md:text-[3vw] sm:text-[3vw] text-[20px] thai sm:w-[35vw] small">อย่าทำธุรกิจแค่เพื่อยอดขาย <br />จงดึงคุณค่าจากตัวคุณออกมา<br /><div className="underline decoration-[--yellow] text-[--yellow]">สร้างแบรนด์ให้เป็นตำนาน</div>
 
                                 </div>
                                 <br />
