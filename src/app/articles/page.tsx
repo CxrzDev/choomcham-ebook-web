@@ -44,7 +44,7 @@ function Blog() {
                 <div className="grid sm:grid-cols-3 gap-10 ">
                     {blogs.map((blog) => {
                         return (
-                            <Link href={`/articles/${blog.id}`}>
+                            <Link href={`/articles/${blog.id}`} key={blog.id}>
                                 <Card className="py-4 group">
                                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                                         <p className="text-tiny uppercase font-bold ring-1 ring-zinc-400 px-2 rounded-full">{blog.catergory}</p>
