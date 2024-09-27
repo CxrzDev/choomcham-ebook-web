@@ -1,7 +1,8 @@
 "use client"
-import Navbar from "../components/nav";
+
 import Footer from "../components/footer";
 import { motion } from "framer-motion";
+import Navbar from "../components/navbar";
 const quizs = [
     { question: 'Something here' },
     { question: 'Something here 2' },
@@ -13,7 +14,7 @@ const quizs = [
 
 function SwotTest() {
     return <>
-        <Navbar />
+        <Navbar current={""}/>
         {/* <div className="w-full h-[35rem]  relative overflow-hidden">
             <div className="w-[120rem] bg-pink-600 h-[60rem] absolute -top-[25rem] rounded-b-full -z-[10]"></div>
             <h1 className="p-10 text-3xl">Analytic your bussiness</h1>
