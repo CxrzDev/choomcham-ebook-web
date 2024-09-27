@@ -51,7 +51,7 @@ export default async function Home() {
         <div id="fb-root"></div>
         <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0&appId=156838349817980" nonce="WQnbcNzF"></script>
 
-        <section className="bg-[--dark-blue]">
+        <section className="bg-[--dark-blue] ">
             <div className="relative bg-blue-900 line  skewed-background">
                 <div className="absolute sm:bottom-0 bottom-0 sm:left-[3%] left-10">
                     {/* <div initial={{ y: 20, opacity: 0 }}
@@ -87,12 +87,12 @@ export default async function Home() {
 
         <section>
 
-            <div className="bg-[--dark-blue]">
-                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] text-[4vw] pt-10  text-white">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br/>แต่ยังไม่มีใครเห็น <span className="bg-[--pink] px-2">คุณมาถูกที่แล้ว</span>
+            <div className="bg-[--dark-blue] work">
+                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] text-[4vw] pt-10  ">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br/>แต่ยังไม่มีใครเห็น <span className="bg-[--pink] px-2 text-white">คุณมาถูกที่แล้ว</span>
                 </div>
                
                 <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-items-center justify-between py-10 sm:px-10 '>
-                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80'>
+                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white'>
                         <CardHeader>
                             {/* <div className='h-10 w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
@@ -106,7 +106,7 @@ export default async function Home() {
                             </div>
                         </CardBody>
                     </Card>
-                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80'>
+                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white'>
                         <CardHeader>
                             {/* <div className='h-10 w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
@@ -120,7 +120,7 @@ export default async function Home() {
                             </div>
                         </CardBody>
                     </Card>
-                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80'>
+                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white'>
                         <CardHeader>
                             {/* <div className='h-10 w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
@@ -193,13 +193,13 @@ export default async function Home() {
                 </section>
             </div>
 
-            <section className='p-10 flex justify-evenly items-center'>
+            <section className='p-10 lg:flex grid justify-evenly items-center'>
                 <div  > <img width="250" src="/images/sticker6.png" alt="อิโมจิชุ่มฉ่ำ ตัวจริงต้องมีที่ยืน" /></div>
-                <div className='w-[450px]'>
+                <div className='lg:w-[450px] md:w-[450px]'>
                     <div className="text-xl sm:text-3xl font-bold  text-yellow-500 ">
                         ภารกิจตัวจริงต้องมีที่ยืน
                     </div>
-                    <div className="text-lg sm:text-2xl ">คุณไม่จำเป็นต้องเป็นแบบใคร คุณแค่ต้องเป็นตัวเองให้ชัดพอ ที่เหลือเป็นเรื่องของศิลปะการถ่ายทอดว่าคุณจะทำให้คนจดจำคุณได้ยังไง และไปดึงดูดใครเข้ามา ธุรกิจคุณจะมีที่ยืนเมื่อคุณกล้าตัดสินใจจะเลิกอยู่ตรงกลาง</div>
+                    <div className="text-lg sm:text-2xl">คุณไม่จำเป็นต้องเป็นแบบใคร คุณแค่ต้องเป็นตัวเองให้ชัดพอ ที่เหลือเป็นเรื่องของศิลปะการถ่ายทอดว่าคุณจะทำให้คนจดจำคุณได้ยังไง และไปดึงดูดใครเข้ามา ธุรกิจคุณจะมีที่ยืนเมื่อคุณกล้าตัดสินใจจะเลิกอยู่ตรงกลาง</div>
                 </div>
             </section>
 
@@ -267,13 +267,13 @@ export default async function Home() {
             </section>
 
             <div className="divider-y"></div>
-
+{/* 
             <div className="text-2xl sm:text-4xl font-bold text-center py-10 flex flex-col justify-center items-center">
                 Our services
                 <div className="rounded-full h-1 w-[100px] bg-[#D33666] "></div>
             </div>
 
-            {/* scroll section */}
+            
             <section className=''>
 
 
@@ -290,17 +290,12 @@ export default async function Home() {
                                         <div className="card-body h-[202px] sm:h-[auto]">
                                             <div className="card-title text-[--green]">
                                                 {content.title}
-                                                {/* <div className="badge bg-[--pink] text-[--yellow] py-3 px-5">NEW</div> */}
+                                                
                                             </div>
                                             <p className="h-[40px] sm:h-[80px] w-[auto] text-ellipsis overflow-hidden">{content.description}</p>
                                             <div className="card-actions justify-between">
                                                 <Button href='#' className="bg-[--yellow]" radius='full'>ดูรายละเอียด</Button>
-                                                {/* <div>
-                                                    {content.price != "" ?
-                                                        <><div className="font-bold">เริ่มต้นที่</div><div className="text-[--dark-blue] font-bold">฿ {content.price}</div></>
-                                                        : <div></div>
-                                                    }
-                                                </div> */}
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -328,7 +323,7 @@ export default async function Home() {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
 
 
             <section className=''>

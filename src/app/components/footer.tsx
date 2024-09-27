@@ -8,7 +8,7 @@ function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-4">
           <div className="grid gap-3">
             <img className="lg:w-[150px] w-[25vw]" src="/images/sticker6.png" alt="choomcham logo" />
-            <div className="text-3xl font-bold">ตัวจริง ต้องมีที่ยืน</div>
+            {/* <div className="text-3xl font-bold">ตัวจริง ต้องมีที่ยืน</div> */}
             <div className="flex gap-2">
               <a target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full bg-[--green]" href="https://lin.ee/5p0JD5t"><img width="24" height="24" className="text-white" src="https://elvira.co.th/wp-content/uploads/2016/02/line-icon.png" alt="linelogo" /></a>
               <a target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full bg-[--green]" href="https://youtube.com/channel/UCqiaFEL0g1TAFiK_x7acvRw"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current text-white"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
@@ -35,16 +35,16 @@ function Footer() {
           <div className="">
             <div className="text-sm py-4 text-[--dark-blue]">Services</div>
             <ul>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="https://choomcham.com/service/#entrepreneur-desktop">
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#entrepreneur-desktop">
                 <li>Entrepreneur</li>
               </Link>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="https://choomcham.com/service/#service-desktop">
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#service-desktop">
                 <li>Production Service</li>
               </Link>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="https://choomcham.com/service/#online-courses-desktop">
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#online-courses-desktop">
                 <li>Online Courses</li>
               </Link>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="https://choomcham.com/service/#business-brief-desktop">
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#business-brief-desktop">
                 <li>Business Brief</li>
               </Link>
             </ul>
