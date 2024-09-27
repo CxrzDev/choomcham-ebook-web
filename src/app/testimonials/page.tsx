@@ -33,7 +33,7 @@ function Work(){
             </div>
         </div>
 
-        <div  className=" py-10 px-5 grid sm:grid-cols-2 justify-items-center items-center relative ">
+        <div  className=" py-10 px-5 grid sm:grid-cols-2 justify-items-center items-center relative z-[-1]">
             <div className="w-100 relative">
                     <div className="bg-[#F2C762] w-full h-full rounded-xl absolute -translate-x-20 -translate-y-10 -z-30 "> </div>
                 <div className=" sm:w-[20vw] sm:h-[20vw] w-48 h-48  rounded-xl overflow-hidden ">
@@ -41,7 +41,7 @@ function Work(){
                 
                 </div>
             </div>
-            <div className="px-5 sm:pr-24">
+            <div className="px-5 sm:pr-24 z-[-1]">
                 <h3 className="text-xl font-bold">Title</h3>
                 <div className="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ipsum tempora ea temporibus iusto ipsam, explicabo quae! Ratione officiis, consectetur, accusamus alias odit ab sunt veritatis iste, hic est possimus.</div>
             </div>
@@ -50,7 +50,7 @@ function Work(){
 
         <div className="py-10"></div>
 
-        <div  className=" py-10 px-5 grid  sm:grid-cols-2 justify-items-center items-center relative ">
+        <div  className=" py-10 px-5 grid  sm:grid-cols-2 justify-items-center items-center relative z-[-1] ">
             <div className="w-100 relative sm:order-2">
                     <div className="bg-[#3C4297] w-full h-full rounded-xl absolute -translate-x-20 -translate-y-10 -z-30 "> </div>
                 <div className=" sm:w-[20vw] sm:h-[20vw] w-48 h-48  rounded-xl overflow-hidden ">

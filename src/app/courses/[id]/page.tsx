@@ -14,7 +14,7 @@ import Quote1 from "./Quote1";
 export default function Page() {
     return (
         <>
-        <Quote1 />
+            <Quote1 />
             <div className="w-full bg-1    relative flex flex-col items-center justify-center min-h-[100vh] text-white py-5 text-center">
                 {/* <div className="blob-yellow  w-[50vw] md:w-[25vw] lg:w-[25vw] h-[50vw] md:h-[25vw] lg:h-[25vw] absolute -left-[10vw] -top-[10vw]"></div>
                 <div className="blob-pink  w-[30vw] h-[30vw] absolute  -right-10 lg:-top-[15rem] -top-[10vw] "></div>
@@ -47,7 +47,7 @@ export default function Page() {
                 </div>
 
             </div>
-            
+
 
 
             {/* <section className="p-5 relative sm:px-10  flex flex-col text-center justify-center items-center h-[500px] glass skewed-background" id="warning">
@@ -74,8 +74,8 @@ export default function Page() {
                     <div className=" font-normal">นี่คือตัวอย่างนักเรียนบางส่วนของเรา</div>
                 </div>
             </section>
-            <div className="bg-zinc-switch ">
-
+            {/* <div className="bg-zinc-switch "> */}
+            <div>
                 <Review />
             </div>
 
@@ -113,7 +113,7 @@ export default function Page() {
 
                     <Promote></Promote>
 
-                    
+
 
                     <Quote />
 
@@ -162,6 +162,34 @@ export default function Page() {
                             </div>
                             <div className="bg-[--pink] w-full  md:w-full rounded-[3rem] text-white">
                                 <div className="p-10 grid">
+                                    <div className="text-3xl font-bold">เรียนสด 2 วัน Exclusive Group for CEO</div>
+                                    <div className=" overflow-auto ssm:text-sm min-h-[400px]">
+                                        <ul>
+
+                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ชัดในคาแรกเตอร์คนจดจำ</div>
+                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />เรื่องเล่าประจำแบรนด์ที่ฟังแล้วมีมูลค่า</div>
+                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />สกิลพูดหน้ากล้องให้คนสนใจ</div>
+                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ได้คลิป Video พรีเซนต์สินค้าป้ายยาใน 1 นาที</div>
+                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />สร้าง Connection เพื่อนนักธุรกิจตัวจริงในวงการ</div>
+                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />คัดพิเศษเพียง 8 คน/รุ่นเท่านั้น ต้องผ่านสัมภาษณ์</div>
+
+                                        </ul>
+                                        <div className="py-2">
+                                        </div>
+                                    </div>
+                                    <div className="min-h-[150px] flex justify-end flex-col items-end ">
+                                        <div className="text-md text-end line-through">ราคาปกติ 150,000 บาท</div>
+                                        <div className="text-xl text-end">ราคาพิเศษ 49,999</div>
+                                        <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
+                                        <Button className="w-full text-xl font-bold mt-4 bg-[--yellow] text-white">
+                                            ซื้อคอร์ส
+                                        </Button>
+                                        <div className="text-sm text-end"> ออกใบกำกับภาษี ขอลดหย่อนได้ 200%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bg-[--pink] w-full  md:w-full rounded-[3rem] text-white">
+                                <div className="p-10 grid">
                                     <div className="text-3xl font-bold">เล่าเรื่อง 3 นาทีให้มียอดขาย <br /> (สำหรับองค์กร)</div>
                                     <div className=" overflow-auto ssm:text-sm min-h-[400px]">
                                         <ul>
@@ -198,34 +226,7 @@ export default function Page() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="bg-[--pink] w-full  md:w-full rounded-[3rem] text-white">
-                                <div className="p-10 grid">
-                                    <div className="text-3xl font-bold">เรียนสด 2 วัน Exclusive Group for CEO</div>
-                                    <div className=" overflow-auto ssm:text-sm min-h-[400px]">
-                                        <ul>
 
-                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ชัดในคาแรกเตอร์คนจดจำ</div>
-                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />เรื่องเล่าประจำแบรนด์ที่ฟังแล้วมีมูลค่า</div>
-                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />สกิลพูดหน้ากล้องให้คนสนใจ</div>
-                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />ได้คลิป Video พรีเซนต์สินค้าป้ายยาใน 1 นาที</div>
-                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />สร้าง Connection เพื่อนนักธุรกิจตัวจริงในวงการ</div>
-                                            <div className="flex items-center gap-2 p-1"><Sparkles className="fill-[--yellow] text-[--yellow] " />คัดพิเศษเพียง 8 คน/รุ่นเท่านั้น ต้องผ่านสัมภาษณ์</div>
-
-                                        </ul>
-                                        <div className="py-2">
-                                        </div>
-                                    </div>
-                                    <div className="min-h-[150px] flex justify-end flex-col items-end ">
-                                        <div className="text-md text-end line-through">ราคาปกติ 150,000 บาท</div>
-                                        <div className="text-xl text-end">ราคาพิเศษ 49,999</div>
-                                        <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
-                                        <Button className="w-full text-xl font-bold mt-4 bg-[--yellow] text-white">
-                                            ซื้อคอร์ส
-                                        </Button>
-                                        <div className="text-sm text-end"> ออกใบกำกับภาษี ขอลดหย่อนได้ 200%</div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </section>
 

@@ -1,14 +1,81 @@
 import { Button, Input } from "@nextui-org/react"
+import Link from "next/link"
 
 function Footer() {
+  return (
+    <>
+      <section className="px-10 py-5 bg-zinc-300">
+        <div className="grid grid-cols-1 lg:grid-cols-4">
+          <div className="grid gap-3">
+            <img className="lg:w-[150px] w-[25vw]" src="/images/sticker6.png" alt="choomcham logo" />
+            <div className="text-3xl font-bold">ตัวจริง ต้องมีที่ยืน</div>
+            <div className="flex gap-2">
+              <a target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full bg-[--green]" href="https://lin.ee/5p0JD5t"><img width="24" height="24" className="text-white" src="https://elvira.co.th/wp-content/uploads/2016/02/line-icon.png" alt="linelogo" /></a>
+              <a target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full bg-[--green]" href="https://youtube.com/channel/UCqiaFEL0g1TAFiK_x7acvRw"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current text-white"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+              <a target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full bg-[--green]" href="https://facebook.com/choomchambranding"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current text-white"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+            </div>
+          </div>
+          <div className="">
+            <div className="text-sm py-4 text-[--dark-blue]">Quick Link</div>
+            <ul>
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/">
+                <li>Home</li>
+              </Link>
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/courses/3ms">
+                <li>3 Minutes Story</li>
+              </Link>
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/about">
+                <li>About us</li>
+              </Link>
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#">
+                <li>Testimonials</li>
+              </Link>
+            </ul>
+          </div>
+          <div className="">
+            <div className="text-sm py-4 text-[--dark-blue]">Services</div>
+            <ul>
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="https://choomcham.com/service/#entrepreneur-desktop">
+                <li>Entrepreneur</li>
+              </Link>
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="https://choomcham.com/service/#service-desktop">
+                <li>Production Service</li>
+              </Link>
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="https://choomcham.com/service/#online-courses-desktop">
+                <li>Online Courses</li>
+              </Link>
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="https://choomcham.com/service/#business-brief-desktop">
+                <li>Business Brief</li>
+              </Link>
+            </ul>
+          </div>
+          <div className="">
+            <div className="text-sm py-4 text-[--dark-blue]">About Us</div>
+            <ul>
+           
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/about">
+                <li>About Founder</li>
+              </Link>
+              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/service/consult">
+                <li>Consult</li>
+              </Link>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className="bg-zinc-300">
+        <div className="text-sm px-10 py-2 text-center">Copyright © 2024 ชุ่มฉ่ำ branding.</div>
+      </section>
+    </>
+  )
   return (
     <div className="relative w-100 overflow-x-clip overflow-y-visible py-2 lg:px-10 px-3  bg-zinc-200 ">
       {/* <div className="divider"></div> */}
       <div className="footer lg:p-10  ">
         <aside>
           <img width="150" src="/icon.svg" alt="choomcham logo" />
-          <div className="text-3xl font-bold">วางจิตให้ชุ่มฉ่ำ <br />เดี๋ยวผลลัพธ์จะฉ่ำเอง</div>
-         
+          <div className="text-3xl font-bold">ตัวจริง ต้องมีที่ยืน</div>
+
         </aside>
         <div>
           <div className=" text-[--dark-blue] font-bold text-xl">More from Choomcham branding</div>

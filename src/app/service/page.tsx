@@ -30,7 +30,7 @@ function Service() {
 
     return <>
         {/* bg-[url('https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRRv9ICxXjK-LVFv-lKRId6gB45BFoNCLsZ4dk7bZpYGblPLPG-9aYss0Z0wt2PmWDb')]  */}
-        <div className=" w-full ">
+        <div className=" w-full sticky top-0 z-30">
             <NavigationBar current="0" />
         </div>
 
@@ -44,10 +44,10 @@ function Service() {
 
             <div className="flex sm:flex-row gap-5 flex-col sm:justify-around items-center text-white">
                 <div className="relative">
-                    <Image src="/images/kruEve_image5.jpg" className="rounded-full sm:w-[450px] w-[30vw]" alt="Description" width={800} height={620} />
+                    <Image src="/images/kruEve_image5.jpg" className=" z-[-10] rounded-full sm:w-[450px] w-[30vw]" alt="Description" width={800} height={620} />
 
                     <div className="absolute top-0 z-10 opacity-100">
-                        <Image src="/images/sulmanservices/icon 1.png" className="xl:w-[300px] w-[50px] " alt="Description" width={500} height={500} />
+                        <Image src="/images/sulmanservices/icon 1.png" className="z-[-10]  xl:w-[300px] w-[50px] " alt="Description" width={500} height={500} />
                     </div>
                 </div>
                 <div className="sm:w-[35%] sm:h-[80%] p-10 rounded-2xl relative ">
@@ -192,7 +192,7 @@ function Service() {
         </section>
 
         <section className="bg-slate-200">
-            <div className="relative xl:bg-cover xl:bg-center xl:flex xl:justify-around xl:pt-20 xl:pb-10 " >
+            <div className="relative grid lg:grid-cols-3 grid-cols-1 " >
 
 
                 <div className="xl:w-[25vw] xl:h-[250px] shadow-xl xl:shadow-none m-2 bg-slate-100 glass rounded-2xl ">
@@ -204,13 +204,11 @@ function Service() {
                     </div>
 
                 </div>
-                <div className="flex justify-center pt-5 " >
-                    <Image src="/images/sulmanservices/Rectangle 48.svg" className="sm:w-[20vw] w-[40vw] block md:hidden" alt="Description" width={800} height={620} />
+                <div className="" >
+                    <Image src="/images/sulmanservices/Rectangle 48.svg" className="" alt="Description"  />
                 </div>
 
-                <div className="absolute hidden md:block top-[20.5%] left-[43%] ">
-                    <Image src="/images/sulmanservices/Rectangle 48.svg" className="w-[250px] " alt="Description" width={800} height={620} />
-                </div>
+           
 
                 <div className="xl:w-[25vw] xl:h-[250px] shadow-xl xl:shadow-none m-2 bg-slate-100 rounded-2xl ">
                     <div className="text-xl  text-balance text-start gap-3 pl-10 p-2 xl:pt-10">

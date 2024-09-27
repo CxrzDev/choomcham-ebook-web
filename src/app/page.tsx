@@ -23,7 +23,7 @@ export default async function Home() {
     var result: any = await res.json()
     var contents: any = [...result.data];
 
-    
+
 
     const videos = [
         { id: '1', src: 'https://www.facebook.com/video.php?v=993405428609497', description: 'รับออกแบบทิศทางการสร้าง Brand ให้สอดคล้องคุณค่าชีวิต 5 แบรนด์/เดือน ยอดขายหลายล้านที่คุณทำหล่นหายไป เพราะแบรนด์ไม่ชัด', platform: "facebook", title: "รีวิวจากคุณทราย CEO MADAMFIN" },
@@ -78,7 +78,7 @@ export default async function Home() {
                         <br />
                     </div>
                 </div>
-                <div className="absolute right-5 sm:right-20 bottom-5 sm:bottom-40 text-white thai sm:text-base text-[12px]">
+                <div className="absolute right-5 sm:right-20 bottom-8 sm:bottom-40 text-white thai sm:text-base text-[12px]">
                     <div>อีฟ ภัทรัดจารินท์​ สุวัชรานนท์</div>
                     <div>Brand Consultant / Teacher </div>
                 </div>
@@ -88,7 +88,9 @@ export default async function Home() {
         <section>
 
             <div className="bg-[--dark-blue]">
-                <div className=" text-white w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] text-[4vw] py-4">ชุ่มฉ่ำ Branding ปั้นเจ้าของธุรกิจตัวจริงให้มีที่ยืน             </div>
+                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] text-[4vw] pt-10  text-white">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br/>แต่ยังไม่มีใครเห็น <span className="bg-[--pink] px-2">คุณมาถูกที่แล้ว</span>
+                </div>
+               
                 <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-items-center justify-between py-10 sm:px-10 '>
                     <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80'>
                         <CardHeader>
@@ -131,40 +133,40 @@ export default async function Home() {
                             <div className="text-[18px]">
                                 เราช่วยสร้างวัฒนธรรมประจำแบรนด์ให้ธุรกิจคุณแตกต่างอย่างยั่งยืน
                             </div>
-                          
+
                         </CardBody>
                     </Card>
                 </section>
             </div>
             <div className="bg-slate-100/40">
-                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] text-[4vw] pt-10  ">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอดแต่ยังไม่มีใครเห็น คุณมาถูกที่แล้ว
-                </div>
-                <div className="grid justify-center">
-                    <div className="rounded-full h-1 w-[350px] bg-[#D33666] "></div>
-                </div>
+
                 <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-items-center justify-between py-10 sm:px-10 '>
                     <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
-                        <CardHeader>
+                        {/* <CardHeader>
                             <div className='w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
                             </div>
-                        </CardHeader>
-                        <CardBody>
-                            <div className='text-xl font-bold'>  Online course </div>
-                            <div className="text-[18px]">
-                                หลักสูตรสร้างคนดังในตำนาน เนื้อหาแน่น ห้ามพลาด เรียนได้ทุกที่ ทุกเวลา
+                        </CardHeader> */}
+                        <CardBody className="flex flex-col justify-between">
+                            <Image src="/images/courses/5.jpg"></Image>
+                            <div className="">
+                                <div className='text-xl font-bold pt-2 pb-1'>  Online course </div>
+                                <div className="text-[18px]">
+                                    หลักสูตรสร้างคนดังในตำนาน เนื้อหาแน่น ห้ามพลาด เรียนได้ทุกที่ ทุกเวลา
+                                </div>
+                                <Button className='bg-[--green] text-white mt-2 w-full' radius="full">ดูหลักสูตรเพิ่มเติม</Button>
                             </div>
-                            <Button className='bg-[--green] text-white mt-2' radius="full">ดูหลักสูตรเพิ่มเติม</Button>
                         </CardBody>
                     </Card>
                     <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
-                        <CardHeader>
+                        {/* <CardHeader>
                             <div className=' w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
                             </div>
-                        </CardHeader>
+                        </CardHeader> */}
                         <CardBody>
-                            <h3 className='text-xl font-bold'> On-site Workshop  </h3>
+                            <Image src="/images/courses/4.jpg"></Image>
+                            <h3 className='text-xl font-bold pt-3 pb-1'> On-site Workshop  </h3>
                             <div className="text-[18px]">
                                 เรียนสด Connection เพื่อนเจ้าของธุรกิจตัวจริงต่างวงการ หรือจัดเวิร์คชอปเจ๋งๆให้องค์กร
                             </div>
@@ -172,14 +174,15 @@ export default async function Home() {
                         </CardBody>
                     </Card>
                     <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
-                        <CardHeader>
+                        {/* <CardHeader>
                             <div className=' w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
                             </div>
                             
-                        </CardHeader>
+                        </CardHeader> */}
                         <CardBody>
-                            <h3 className='text-xl font-bold'> 1:1 Consult
+                            <Image src="/images/courses/1.jpg"></Image>
+                            <h3 className='text-xl font-bold pt-2 pb-1'> 1:1 Consult
                             </h3>
                             <div className="text-[18px]">
                                 ลงพื้นที่ทดสอบแบรนด์ที่มีหน้าร้าน ช่วยดึงจุดเด่นของแบรนด์ออกมาสื่อสารให้ได้ใจคน
