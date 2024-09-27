@@ -87,8 +87,8 @@ export default async function Home() {
 
         <section>
 
-            <div className="bg-[--dark-blue] bg-2">
-                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] text-xl pt-10 leading-normal text-white ">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br/>แต่ยังไม่มีใครเห็น <span className="bg-[--pink] px-2 text-white">คุณมาถูกที่แล้ว</span>
+            <div className="bg-[--dark-blue] work">
+                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] text-xl pt-10 leading-normal  ">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br/>แต่ยังไม่มีใครเห็น <span className="bg-[--pink] px-2 text-white">คุณมาถูกที่แล้ว</span>
                 </div>
                
                 <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-items-center justify-between py-10 sm:px-10 '>
