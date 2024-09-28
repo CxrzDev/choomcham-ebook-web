@@ -199,7 +199,7 @@ export default function Page() {
                                     </div>
                                     <div className="min-h-[150px] flex justify-end flex-col items-end ">
                                         <div className="text-md text-end line-through">ราคาปกติ 150,000 บาท</div>
-                                        <div className="text-xl text-end">ราคาพิเศษ 49,999</div>
+                                        <div className="text-xl text-end">ราคาพิเศษ 59,999</div>
                                         <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
                                         <Button className="w-full text-xl font-bold mt-4 bg-[--yellow] text-white">
                                             ซื้อคอร์ส

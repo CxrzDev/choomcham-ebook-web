@@ -5,7 +5,7 @@ import Lession from "./Lessons";
 export default function Promote() {
     return (
         <>
-            <section className="sm:p-5 bg-2 text-white sm:px-10 flex flex-col items-center gap-4 justify-center skewed-background bg-blue-100 rounded-t-xl relative" id="">
+            <section className="sm:p-5 bg-2 text-white sm:px-10 flex flex-col items-center gap-4 justify-center  bg-blue-100 rounded-t-xl relative" id="">
 
                 <div className="sm:text-[42px] text-3xl text-center font-bold py-5"> อย่าเพิ่งโอน! เราอยากให้คุณอ่านก่อน!</div>
                 <section className="sm:p-5 sm:px-10 flex justify-center" id="allLesson">

@@ -110,7 +110,7 @@ export default function Review() {
                     return (
                         <div className="card  card-side bg-[--pink] glass shadow-xl w-[346px] h-[548px] overflow-hidden sm:w-[640px]  sm:h-[380px] flex-col sm:flex-row" key={video.id}>
                             <figure className='bg-[#da547d] w-[350px] sm:w-[50%] h-full  flex lg:items-center justify-center overflow-hidden '>
-                                {video.src.match("mp4") ? <video controls src={video.src} /> : <img src={video.src}/>}
+                                {video.src.match("mp4") ? <video controls src={video.src}  /> : <img src={video.src}/>}
                             </figure>
                             <div className="card-body sm:flex-col flex-row text-white sm:w-[50%] sm:h-[auto] ">
                                 <div>
