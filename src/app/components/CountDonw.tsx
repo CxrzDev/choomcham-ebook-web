@@ -8,7 +8,7 @@ interface CountDownProps {
 
 export default function CountDown({ className, targetDate }: CountDownProps) {
     // targetDate = targetDate || new Date("2024-09-30T23:59:59")
-    const lastedDate = targetDate || new Date("2024-09-29T23:59:59")
+    const lastedDate = targetDate || new Date("2024-10-02T23:59:59")
     const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining(lastedDate));
 
     useEffect(() => {
@@ -25,6 +25,7 @@ export default function CountDown({ className, targetDate }: CountDownProps) {
     }, [lastedDate]);
 
     return (
+        calculateTimeRemaining(lastedDate).total >= 0 &&
         <div className={className}>
             <div className="grid w-[100px] justify-items-center">
                 <div>{timeRemaining.days}</div>
