@@ -243,7 +243,7 @@ export default function Page() {
                                         <div className="text-md text-end line-through">ราคาปกติ 65,000</div>
                                         <div className="text-xl text-end">฿15,999</div>
                                         <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
-                                        <Link href="https://line.me/R/ti/p/@205bxsga?oat_referrer=PROFILE">
+                                        <Link className="w-full" href="https://line.me/R/ti/p/@205bxsga?oat_referrer=PROFILE">
                                             <Button className="w-full text-xl font-bold mt-4 bg-[--pink] text-white">
                                                 ซื้อคอร์ส
                                             </Button>
@@ -278,7 +278,7 @@ export default function Page() {
                                         <div className="text-md text-end line-through">ราคาปกติ 150,000 บาท</div>
                                         <div className="text-xl text-end">ราคาพิเศษ 59,999</div>
                                         <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
-                                        <Link href="https://line.me/R/ti/p/@205bxsga?oat_referrer=PROFILE">
+                                        <Link className="w-full" href="https://line.me/R/ti/p/@205bxsga?oat_referrer=PROFILE">
                                             <Button className="w-full text-xl font-bold mt-4 bg-[--yellow] text-white">
                                                 ซื้อคอร์ส
                                             </Button>
@@ -318,7 +318,7 @@ export default function Page() {
                                     <div className="min-h-[150px] flex justify-end flex-col items-end ">
                                         <div className="text-xl text-end">เริ่มต้น ฿  250,000</div>
                                         <div className="text-sm text-end">ทบทวนซ้ำได้ไม่จำกัดจำนวนครั้ง**</div>
-                                        <Link href="https://line.me/R/ti/p/@205bxsga?oat_referrer=PROFILE">
+                                        <Link className="w-full" href="https://line.me/R/ti/p/@205bxsga?oat_referrer=PROFILE">
                                             <Button className="w-full text-xl font-bold mt-4 bg-[--yellow] text-white">
                                                 ซื้อคอร์ส
                                             </Button>
