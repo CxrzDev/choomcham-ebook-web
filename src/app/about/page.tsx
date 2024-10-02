@@ -116,8 +116,8 @@ function About() {
 
 
             </main> */}
-            <section className="bg-[--dark-blue] grid justify-items-center">
-                <div className="p-10 ="><iframe className='rounded-xl w-[50vw] aspect-video' src="https://www.youtube.com/embed/DIBoM57Loec?si=2z1yN5j0-9KKPe4y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></div>
+            <section className="bg-[--dark-blue] grid justify-items-center h-auto">
+                <div className="p-10 "><iframe className='rounded-xl lg:w-[50vw] w-[80vw] aspect-video' src="https://www.youtube.com/embed/DIBoM57Loec?si=2z1yN5j0-9KKPe4y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></div>
             </section>
 
             <section className="bg-slate-200">
@@ -130,14 +130,14 @@ function About() {
                         <img src="./icon.svg" className="z-[3] absolute w-[90px] sm:w-[5vw]" alt="choomcham icon - splash water" />
                         <Image draggable='false' src="/images/kruEve_image.jpg" alt="รูปครูอีฟ กำลังยิ้ม" className="w-72 z-0 max-w-[auto] rounded-2xl sm:mb-0  " />
                     </div>
-                    <div>
-                        <h2 className="text-3xl sm:text-5xl font-bold">ครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์ </h2>
-                        <div className=" sm:w-[500px] text-lg sm:text-xl relative z-1">
-                            <div>ผู้ก่อตั้งชุ่มฉ่ำ Branding</div>
-                            <div>นักสร้างแบรนด์รุ่นใหม่สายคุณค่า</div>
-                            <div>บัณฑิตคณะศิลปศาสตร์ เอกภาษาศาสตร์ มหาวิทยาลัยธรรมศาสตร์</div>
-
-
+                    <div >
+                        <div className="w-full  grid justify-center">
+                            <h2 className="text-3xl sm:text-5xl text-center font-bold">ครูอีฟ <br className="lg:hidden "/> ภัทรัดจารินท์ สุวัชรานนท์ </h2>
+                            <div className=" sm:w-[500px] text-lg sm:text-lg text-center relative z-1 text-slate-500">
+                                <div>ผู้ก่อตั้งชุ่มฉ่ำ Branding</div>
+                                <div>นักสร้างแบรนด์รุ่นใหม่สายคุณค่า</div>
+                                <div>บัณฑิตคณะศิลปศาสตร์ เอกภาษาศาสตร์ มหาวิทยาลัยธรรมศาสตร์</div>
+                            </div>
                         </div>
                         <ul className="gap-2 grid  p-2 text-[4vw] sm:text-lg relative z-1 ">
                             <li className='flex gap-2 p-2 rounded-md bg-white '><ChevronRight className='text-[--yellow]' />อายุ 15 สร้าง Branding ให้ศิลปินที่ตัวเองรัก</li>
@@ -156,17 +156,17 @@ function About() {
 
             <section>
                 <div className="grid lg:grid-cols-3 px-10 py-10 justify-items-center bg-[--green]">
-                    <div className="rounded-xl bg-white shadow-md border-1 m-2 w-[350px] md:w-[300px] p-2">
+                    <div className="rounded-xl bg-white shadow-md border-1 m-2 w-[80vw] lg:w-[350px] md:w-[300px] p-2">
                         <div className="rounded-full p-2 bg-[--green] w-fit text-white"><Dumbbell /></div>
                         <div className="font-bold text-xl">Brand Strategist </div>
                         <div>ถนัดวางแผนสร้างแบรนด์จาก 0 ให้มีชื่อเสียงด้วยทักษะพิเศษใช้สัญชาตญาณมองขาด</div>
                     </div>
-                    <div className="rounded-xl bg-white shadow-md border-1 m-2 w-[350px] md:w-[300px] p-2">
+                    <div className="rounded-xl bg-white shadow-md border-1 m-2 w-[80vw] lg:w-[350px] md:w-[300px] p-2">
                         <div className="rounded-full p-2 bg-[--green] w-fit text-white"><Key /></div>
                         <div className="font-bold text-xl">Keynote Speaker </div>
                         <div>เปลี่ยนแปลงวิธีคิดในการสร้างแบรนด์ให้คนหลักพัน</div>
                     </div>
-                    <div className="rounded-xl bg-white shadow-md border-1 m-2 w-[350px] md:w-[300px] p-2">
+                    <div className="rounded-xl bg-white shadow-md border-1 m-2 w-[80vw] lg:w-[350px] md:w-[300px] p-2">
                         <div className="rounded-full p-2 bg-[--green] w-fit text-white"><HeartPulse /></div>
                         <div className="font-bold text-xl">Spiritual practitioner</div>
                         <div>เน้นฝึกจิต ถือศีล 5 เป็นปกติ ตั้งแต่อายุ 13</div>
@@ -182,7 +182,7 @@ function About() {
                         {/* <img draggable='false' src="/images/kruEve_image4.jpg" alt="รูปครูอีฟ กำลังทำมือผิด" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6" /> */}
                         <div className="outline outline-offset-4 outline-[--yellow] rounded-xl">
                             {/* <img draggable='false' src="/images/kruEve_image4.jpg" alt="รูปครูอีฟ กำลังทำมือผิด" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6" /> */}
-                            <video controls src="/images/3ms/kunevefacebook.mp4" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6"></video>
+                            <video controls src="/images/3ms/kunevefacebook.mp4"  className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6"></video>
                         </div>
                     </div>
                     <div>
