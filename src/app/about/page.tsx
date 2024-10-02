@@ -5,6 +5,7 @@ import Footer from '../components/footer';
 import { motion } from "framer-motion"
 import { Image } from '@nextui-org/react';
 import { Metadata } from 'next';
+import { ChevronRight, Dumbbell, HeartPulse, Key } from 'lucide-react';
 
 
 export const metadata: Metadata = {
@@ -30,15 +31,11 @@ function About() {
         <>
 
             {/* <Navbar /> */}
-            <div className="z-20 fixed w-full">
+            <div className="z-20 sticky top-0 w-full">
                 <NavigationBar current="3" />
             </div>
 
-            <div className="bg-slate-200 ">
-                <div className="text-black  w-full h-[80px]   rounded-3xl">
-                    .
-                </div>
-            </div>
+
             {/* <main className="relative">
 
 
@@ -119,35 +116,74 @@ function About() {
 
 
             </main> */}
+            <section className="bg-[--dark-blue] grid justify-items-center">
+                <div className="p-10 ="><iframe className='rounded-xl w-[50vw] aspect-video' src="https://www.youtube.com/embed/DIBoM57Loec?si=2z1yN5j0-9KKPe4y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></div>
+            </section>
 
             <section className="bg-slate-200">
-                <div className="p-10 gap-5 sm:gap-0 sm:flex grid justify-items-center  sm:justify-evenly items-center relative">
+                <div className="p-10 gap-5 lg:gap-0 lg:flex grid justify-items-center  lg:justify-evenly items-center relative">
                     <div className="bg-[--dark-blue] w-[100px] h-[150px] absolute sm:bottom-0 sm:right-[100px] sm:block hidden rounded-t-full">.</div>
                     <div className="bg-[--green] w-[100px] h-[100px] absolute sm:bottom-0  sm:right-[300px] sm:block hidden rounded-t-full">.</div>
                     <div className="bg-[--yellow] w-[100px] h-[100px] absolute sm:bottom-0  sm:right-[450px] sm:block hidden rounded-t-full">.</div>
                     <div className="bg-[--pink] w-[100px] h-[150px] absolute sm:bottom-0 sm:right-[600px] sm:block hidden rounded-t-full">.</div>
                     <div className="relative p-10">
                         <img src="./icon.svg" className="z-[3] absolute w-[90px] sm:w-[5vw]" alt="choomcham icon - splash water" />
-                        <Image draggable='false' src="/images/kruEve_image.jpg" alt="รูปครูอีฟ กำลังยิ้ม" className="w-72 max-w-[auto] rounded-tl-[60px] rounded-br-[60px] sm:mb-0  " />
+                        <Image draggable='false' src="/images/kruEve_image.jpg" alt="รูปครูอีฟ กำลังยิ้ม" className="w-72 z-0 max-w-[auto] rounded-2xl sm:mb-0  " />
                     </div>
                     <div>
-                        <h2 className="text-xl sm:text-3xl font-bold">ครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์ </h2>
-                        <div className=" sm:w-[500px] text-lg sm:text-xl">นักสร้างแบรนด์รุ่นใหม่สายคุณค่า
-                            บัณฑิตคณะศิลปศาสตร์ เอกภาษาศาสตร์ มหาวิทยาลัยธรรมศาสตร์
-                            อดีตผู้ร่วมก่อตั้งสร้างแบรนด์ “เกลา นิสัยอันตราย” ผู้ติดตามล้านคน
+                        <h2 className="text-3xl sm:text-5xl font-bold">ครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์ </h2>
+                        <div className=" sm:w-[500px] text-lg sm:text-xl relative z-1">
+                            <div>ผู้ก่อตั้งชุ่มฉ่ำ Branding</div>
+                            <div>นักสร้างแบรนด์รุ่นใหม่สายคุณค่า</div>
+                            <div>บัณฑิตคณะศิลปศาสตร์ เอกภาษาศาสตร์ มหาวิทยาลัยธรรมศาสตร์</div>
+
+
                         </div>
+                        <ul className="gap-2 grid  p-2 text-[4vw] sm:text-lg relative z-1 ">
+                            <li className='flex gap-2 p-2 rounded-md bg-white '><ChevronRight className='text-[--yellow]' />อายุ 15 สร้าง Branding ให้ศิลปินที่ตัวเองรัก</li>
+                            <li className='flex gap-2 p-2 rounded-md bg-white '><ChevronRight className='text-[--yellow]' />อายุ 18 สร้าง Branding ให้ธุรกิจตัวเองด้วยงบ 0 บาท</li>
+                            <li className='flex gap-2 p-2 rounded-md bg-white '><ChevronRight className='text-[--yellow]' />อายุ 25 ร่วมก่อตั้งเพจเกลา นิสัยอันตราย ปัจจุบันผู้ติดตาม 1.4 ล้านคน</li>
+                            <li className='flex gap-2 p-2 rounded-md bg-white '><ChevronRight className='text-[--yellow]' />นักสร้างแบรนด์ ผู้อยู่เบื้องหลังการสร้างตัวตนของบุคคลระดับประเทศ อาทิ ดร.ชัชชาติ, ครูเงาะ, นาย ณภัทร ฯลฯ</li>
+                            <li className='flex gap-2 p-2 rounded-md bg-white '><ChevronRight className='text-[--yellow]' />อายุ 27 ผู้บุกเบิกคลิป Viral ของรายการอายุน้อยร้อยล้านให้มีคลิป 10 ล้านวิว+ ติดต่อกัน</li>
+                            <li className='flex gap-2 p-2 rounded-md bg-white '><ChevronRight className='text-[--yellow]' />สอนผู้ประกอบการมาแล้วมากกว่า 1,000 รายเป็นเวลากว่า 6 ปี</li>
+                            <li className='flex gap-2 p-2 rounded-md bg-white '><ChevronRight className='text-[--yellow]' />ที่ปรึกษาเรื่องแบรนด์ให้เจ้าของธุรกิจระดับ 10-1,000 ล้าน/ปี</li>
+
+                        </ul>
                     </div>
 
+                </div>
+            </section>
+
+            <section>
+                <div className="grid lg:grid-cols-3 px-10 py-10 justify-items-center bg-[--green]">
+                    <div className="rounded-xl bg-white shadow-md border-1 m-2 w-[350px] md:w-[300px] p-2">
+                        <div className="rounded-full p-2 bg-[--green] w-fit text-white"><Dumbbell /></div>
+                        <div className="font-bold text-xl">Brand Strategist </div>
+                        <div>ถนัดวางแผนสร้างแบรนด์จาก 0 ให้มีชื่อเสียงด้วยทักษะพิเศษใช้สัญชาตญาณมองขาด</div>
+                    </div>
+                    <div className="rounded-xl bg-white shadow-md border-1 m-2 w-[350px] md:w-[300px] p-2">
+                        <div className="rounded-full p-2 bg-[--green] w-fit text-white"><Key /></div>
+                        <div className="font-bold text-xl">Keynote Speaker </div>
+                        <div>เปลี่ยนแปลงวิธีคิดในการสร้างแบรนด์ให้คนหลักพัน</div>
+                    </div>
+                    <div className="rounded-xl bg-white shadow-md border-1 m-2 w-[350px] md:w-[300px] p-2">
+                        <div className="rounded-full p-2 bg-[--green] w-fit text-white"><HeartPulse /></div>
+                        <div className="font-bold text-xl">Spiritual practitioner</div>
+                        <div>เน้นฝึกจิต ถือศีล 5 เป็นปกติ ตั้งแต่อายุ 13</div>
+                    </div>
                 </div>
             </section>
 
             <section className="bg-orange-100 bg-opacity-50">
                 <div className="p-10 grid sm:flex justify-items-center justify-around flex-row-reverse gap-5 items-center">
                     <div className="relative p-10">
-                        <img src="./icon.svg" className="z-[3] absolute w-[90px] sm:w-[200px] right-0 bottom-4" alt="choomcham icon - splash water" />
+                        <img src="./icon.svg" className="z-[3] absolute w-[90px] sm:w-[200px] right-0 top-4" alt="choomcham icon - splash water" />
                         {/* <div draggable='false'  className="absolute top-5 right-6 w-72 max-w-[auto] h-96 sm:h-[550px] sm:w-96 rounded-2xl sm:mb-0 bg-black  -rotate-6" >.</div> */}
                         {/* <img draggable='false' src="/images/kruEve_image4.jpg" alt="รูปครูอีฟ กำลังทำมือผิด" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6" /> */}
-                        <div className="outline outline-offset-4 outline-[--yellow] rounded-xl"><img draggable='false' src="/images/kruEve_image4.jpg" alt="รูปครูอีฟ กำลังทำมือผิด" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6" /></div>
+                        <div className="outline outline-offset-4 outline-[--yellow] rounded-xl">
+                            {/* <img draggable='false' src="/images/kruEve_image4.jpg" alt="รูปครูอีฟ กำลังทำมือผิด" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6" /> */}
+                            <video controls src="/images/3ms/kunevefacebook.mp4" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6"></video>
+                        </div>
                     </div>
                     <div>
 
