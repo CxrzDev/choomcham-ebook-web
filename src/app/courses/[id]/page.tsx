@@ -10,6 +10,7 @@ import Promote from "./Promote";
 import Quote from "./Quote";
 import Quote1 from "./Quote1";
 import { Metadata } from "next";
+import Script from 'next/script'
 
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <>
+
             <Quote1 />
             <div className="w-full lg:h-[50vh]  grid items-center px-5 py-5 gap-5">
 
@@ -344,8 +346,26 @@ export default function Page() {
                 </div>
             </div>
 
-
-
+            <Script
+                id="facebook-pixel"
+                strategy="afterInteractive"
+            >
+                {`
+         !function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '574886846850217');
+fbq('track', 'PageView');
+        `}
+            </Script>
+            <noscript><img height="1" width="1" style={{display:"none"}}
+                src="https://www.facebook.com/tr?id=574886846850217&ev=PageView&noscript=1"
+            /></noscript>
         </>
     )
 }
