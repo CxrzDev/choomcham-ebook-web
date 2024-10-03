@@ -182,7 +182,7 @@ function About() {
                         {/* <img draggable='false' src="/images/kruEve_image4.jpg" alt="รูปครูอีฟ กำลังทำมือผิด" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6" /> */}
                         <div className="outline outline-offset-4 outline-[--yellow] rounded-xl">
                             {/* <img draggable='false' src="/images/kruEve_image4.jpg" alt="รูปครูอีฟ กำลังทำมือผิด" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6" /> */}
-                            <video controls src="/images/3ms/kunevefacebook.mp4"  className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6"></video>
+                            <video controls src="/images/3ms/kunevefacebook.mp4"  className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  "></video>
                         </div>
                     </div>
                     <div>
