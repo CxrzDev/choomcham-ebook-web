@@ -14,6 +14,8 @@ import Loading from './components/loading'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { BadgeCheck, Flower, HeartHandshake } from 'lucide-react'
 
+import GoogleAnalytics from './GoogleAnalytics'
+
 
 
 
@@ -47,7 +49,7 @@ export default async function Home() {
 
             <NavigationBar current="" />
         </div>
-
+        <GoogleAnalytics />
         <div id="fb-root"></div>
         <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0&appId=156838349817980" nonce="WQnbcNzF"></script>
 

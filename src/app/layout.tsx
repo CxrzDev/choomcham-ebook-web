@@ -6,6 +6,8 @@ import localFont from 'next/font/local'
 import { Providers } from "./providers";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import CookiePanel from './components/CookiePanel';
+
+
 const cloudSoft = localFont({
   src: [
     {
