@@ -6,6 +6,7 @@ import localFont from 'next/font/local'
 import { Providers } from "./providers";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import CookiePanel from './components/CookiePanel';
+import GoogleAnalytics from './GoogleAnalytics';
 
 
 const cloudSoft = localFont({
@@ -55,7 +56,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cloudSoft.className}>
         <Providers>
-        
+        <GoogleAnalytics />
           {children}
           <CookiePanel></CookiePanel>
           <SpeedInsights />
