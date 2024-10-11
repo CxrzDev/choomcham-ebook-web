@@ -7,7 +7,6 @@ import { Providers } from "./providers";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import CookiePanel from './components/CookiePanel';
 import GoogleAnalytics from './GoogleAnalytics';
-import { FacebookPixelEvents } from './components/pixel-events';
 import Script from 'next/script';
 
 
