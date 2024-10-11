@@ -1,5 +1,10 @@
+
+import Script from 'next/script';
 import Footer from "../components/footer"
 import NavigationBar from "../components/navbar"
+import { FacebookPixelEvents } from "../components/pixel-events"
+import Head from 'next/head';
+
 
 
 export default function RootLayout({
@@ -10,10 +15,11 @@ export default function RootLayout({
   return (
     <>
 
+      
 
-          <NavigationBar current={""} />
+      <NavigationBar current={""} />
       <div className="bg-[#EFEFEF]">
-       
+        <FacebookPixelEvents />
         {children}
       </div>
       <Footer></Footer>

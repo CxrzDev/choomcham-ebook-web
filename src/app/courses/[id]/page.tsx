@@ -11,6 +11,8 @@ import Quote from "./Quote";
 import Quote1 from "./Quote1";
 import { Metadata } from "next";
 import Script from 'next/script'
+import Head from "next/head";
+import { FacebookPixelEvents } from "@/app/components/pixel-events";
 
 
 export const metadata: Metadata = {
@@ -348,7 +350,7 @@ export default function Page() {
 
             <Script
                 id="facebook-pixel"
-                strategy="afterInteractive"
+                strategy="lazyOnload"
             >
                 {`
          !function(f,b,e,v,n,t,s)
@@ -359,13 +361,29 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '574886846850217');
+fbq('init', '819884986890695');
 fbq('track', 'PageView');
         `}
             </Script>
-            <noscript><img height="1" width="1" style={{display:"none"}}
+            <noscript><img height="1" width="1" style={{ display: "none" }}
                 src="https://www.facebook.com/tr?id=574886846850217&ev=PageView&noscript=1"
             /></noscript>
+            <noscript><img height="1" width="1" style={{display:"none"}}
+                src="https://www.facebook.com/tr?id=819884986890695&ev=PageView&noscript=1"
+            /></noscript>
+            <FacebookPixelEvents />
+            <Script type="text/javascript" src="https://app.adtechthai.com/js/1.0/adtech-tracker.js" />
+            <Script strategy="lazyOnload">
+                {`if( document.readyState === "complete" ||document.readyState === "interactive" ) {
+                    alert("installed!");
+            adTechTrackerInit("trFkiewT3cO3JqCb4xtZnrvzPFfV9PVd");
+      } else {
+            document.addEventListener("DOMContentLoaded", function (event) {
+              adTechTrackerInit("trFkiewT3cO3JqCb4xtZnrvzPFfV9PVd");
+            }); 
+      }`}
+
+            </Script>
         </>
     )
 }
