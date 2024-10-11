@@ -83,7 +83,7 @@ fbq('track', 'PageView');
           <noscript><img height="1" width="1" style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=819884986890695&ev=PageView&noscript=1"
           /></noscript>
-          <FacebookPixelEvents />
+          
           <Script type="text/javascript" id="adtechthai" src="https://app.adtechthai.com/js/1.0/adtech-tracker.js" />
           <Script id="adtechthai-script" strategy="lazyOnload">
             {`if( document.readyState === "complete" ||document.readyState === "interactive" ) {
