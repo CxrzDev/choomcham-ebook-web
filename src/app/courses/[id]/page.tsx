@@ -12,7 +12,7 @@ import Quote1 from "./Quote1";
 import { Metadata } from "next";
 import Script from 'next/script'
 import Head from "next/head";
-import { FacebookPixelEvents } from "@/app/components/pixel-events";
+
 
 
 export const metadata: Metadata = {
