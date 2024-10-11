@@ -86,7 +86,7 @@ fbq('track', 'PageView');
           <Script type="text/javascript" id="adtechthai" src="https://app.adtechthai.com/js/1.0/adtech-tracker.js" />
           <Script id="adtechthai-script" strategy="lazyOnload">
             {`if( document.readyState === "complete" ||document.readyState === "interactive" ) {
-                    alert("installed!");
+                    // alert("installed!");
             adTechTrackerInit("trFkiewT3cO3JqCb4xtZnrvzPFfV9PVd");
       } else {
             document.addEventListener("DOMContentLoaded", function (event) {
