@@ -41,18 +41,7 @@ export default function Review() {
             src: "/images/3ms/100mill.mp4"
 
         },
-        {
-            id: 4,
-            title: "",
-            description: "ยอดวิว 2.3 ล้าน ได้ผู้ติดตามเพิ่ม 4 หมื่น ชั่วข้ามคืน",
-            profile: "/images/3ms/paul.jpg",
-            name: "พี่พอล",
-            role: <>เจ้าของอาณาจักร  <a href="https://www.facebook.com/iConGroup.official/" className="underline" target="_blank">The iCon Group</a></>,
-            course: "นร.คอร์สสด",
-            video: <Image className="z-0" src="/images/3ms/theiconleft.png" />,
-            src: "/images/3ms/theiconleft.png"
 
-        },
         {
             id: 5,
             title: "",

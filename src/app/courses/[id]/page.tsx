@@ -133,7 +133,7 @@ export default function Page() {
 
                 <div className="flex flex-wrap  gap-5 justify-center enable-animation  ">
                     <img className="sm:h-[80px] h-[50px] " src="/images/100_logo.png" alt="โลโก้อายุน้อยร้อยล้าน" />
-                    <img className="sm:h-[80px] h-[50px] " src="/images/3ms/theicon.png" alt="โลโก้ดิไอคอน" />
+                  
                     <img className="sm:h-[80px] h-[50px] " src="/images/chubbycheeks_logo.jpg" alt="โลโก้ชุบบี้ชิ๊กส์" />
                     <img className="sm:h-[80px] h-[50px] mix-blend-multiply" src="/images/madamfin_logo.jpg" alt="โลโก้มาดามฟิน" />
                     <img className="sm:h-[80px] h-[50px] " src="/images/ondemand_logo.png" alt="โลโก้ออนดีมานด์" />
