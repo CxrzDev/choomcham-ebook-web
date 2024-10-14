@@ -269,10 +269,7 @@ export default function Promote() {
                             </p>
                             <div className="lg:grid lg:grid-cols-2 flex items-center justify-around lg:flex-row md:flex-col flex-col  gap-2">
                                 <q className="font-bold lg:text-3xl md:text-lg text-lg text-[--green] py-4 text-center">
-                                    เรียนจบแล้ว
-                                    เอาไปใช้ไม่ได้ผล
-                                    ยินดีคืนเงิน 100%
-                                    ไม่มีเงื่อนไข
+                                หากทำแบบฝึกหัดทั้งหมดแล้ว แต่รู้สึกไม่ได้อะไรจากคอร์สเลย ยินดีคืนเงิน 100%
 
                                 </q>
                                 <div>
