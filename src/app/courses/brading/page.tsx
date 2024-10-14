@@ -52,7 +52,7 @@ export default function Page() {
                 {/* Highlight Cards */}
                 <div className="grid md:grid-cols-2 gap-8">
                     {[
-                        '"จำได้กับเข้าใจ ผลลัพธ์ต่างกันสุดขั้ว"',
+                        '&quot;จำได้กับเข้าใจ ผลลัพธ์ต่างกันสุดขั้ว&quot;',
                         'จะมีสักกี่คอร์สที่เริ่มสอนจาก',
                         'จุดจบมาหาจุดเริ่มต้น',
                         'เพื่อค้นพบตัวตนที่แท้จริงทางธุรกิจ'
@@ -89,7 +89,7 @@ export default function Page() {
                 <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                     คอร์สชุ่มฉ่ำ Branding: สร้างแบรนด์จาก 0 ให้มีคุณค่าใน 120 วัน แม้สื่อสารไม่เป็น
                     ในคลาสนี้ เราจะแชร์เทคนิคการสร้างแบรนด์จากศูนย์ ด้วยประสบการณ์สร้างแบรนด์
-                    <span className="font-semibold">"เกลา นิสัยอันตราย"</span>
+                    <span className="font-semibold">&quot;เกลา นิสัยอันตราย&quot;</span>
                     ที่มีผู้ติดตามมากกว่า 1,000,000 คน โดยใช้เงินเริ่มต้นแค่หลักพัน
                     ทำให้แบรนด์ติดตลาดทั่วประเทศใน 6 เดือน
                 </p>
@@ -207,7 +207,7 @@ export default function Page() {
                                     <Asterisk className="text-[--green]" />
                                     <span className="">
                                         ผู้ร่วมก่อตั้งเพจ &quot;เกลานิสัย อันตราย&quot; ที่สร้างตัวตนให้กับบุคคลที่เป็นที่รู้จักในวงกว้าง <br />
-                                        เช่น ดร.ชัชชาติ, ครูเงาะ, นายณภัทร ฯลฯ
+                                        เช่น ดร.ชัชชาติ&#0;  ครูเงาะ&#0;  นายณภัทร ฯลฯ
                                     </span>
                                 </li>
                                 <li className="bg-white p-2 rounded-xl items-start">
@@ -219,7 +219,7 @@ export default function Page() {
                                 <li className="bg-white p-2 rounded-xl items-start">
                                     <Asterisk className="text-[--green]" />
                                     <span className="">
-                                        ที่ปรึกษาเรื่องแบรนด์ให้เจ้าของธุรกิจระดับ 10-1,000 ล้าน/ปี
+                                        ที่ปรึกษาเรื่องแบรนด์ให้เจ้าของธุรกิจระดับ 10-1&#0; 000 ล้าน/ปี
                                     </span>
                                 </li>
                             </ul>
