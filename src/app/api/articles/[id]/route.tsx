@@ -7,7 +7,7 @@ import { db } from '../../config/firebaseConfig';
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
     try {
         const { id } = params;
-        console.log()
+
 
         // Check if `id` is provided
         if (!id) {

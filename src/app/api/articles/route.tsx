@@ -1,4 +1,4 @@
-import { addDoc, collection, doc, getDoc, getDocs, orderBy, query } from "firebase/firestore";
+import { addDoc, collection, doc, getDoc, getDocs, orderBy, query, updateDoc } from "firebase/firestore";
 import { db } from "../config/firebaseConfig";
 
 async function getContentData() {
@@ -27,10 +27,26 @@ export async function GET(res: Request) {
     });
 }
 export async function POST(res: Request) {
-    const body = await res.json(); 
-    const result = await addDoc(collection(db, 'articles'),{
+    const body = await res.json();
+    const result = await addDoc(collection(db, 'articles'), {
         ...body,
     });
 
-    return Response.json({"msg":body});
+    return Response.json({ "msg": body });
+}
+export async function PATCH(res: Request) {
+    const { id, ...body } = await res.json();
+    try {
+
+        const ref = doc(db, 'articles', id);
+        const result = await updateDoc(ref, {
+            ...body,
+        });
+
+        return Response.json({ "msg": ref });
+    } catch (error) {
+        return Response.json({ "msg": "not found content" });
+    }
+
+
 }

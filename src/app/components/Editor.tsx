@@ -9,9 +9,13 @@ import {
   markdownShortcutPlugin,
   MDXEditor,
   type MDXEditorMethods,
-  type MDXEditorProps
+  type MDXEditorProps,
+  toolbarPlugin,
+  UndoRedo,
+  BoldItalicUnderlineToggles,
+  CreateLink
 } from '@mdxeditor/editor';
-
+import '@mdxeditor/editor/style.css'
 type EditorProps = MDXEditorProps & {
   className?: string;
 };
@@ -40,41 +44,32 @@ const Editor = forwardRef<MDXEditorMethods, EditorProps>((props, forwardedRef) =
   return (
     <div className="rounded-lg border border-gray-200 ">
       <div className="border-b border-gray-200 bg-gray-50 p-2 flex gap-2">
-        <button
-          type="button"
-          onClick={handleBoldClick}
-          className="px-2.5 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded transition-colors"
-        >
-          Bold
-        </button>
-        <button
-          type="button"
-          onClick={handleItalicClick}
-          className="px-2.5 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded transition-colors"
-        >
-          Italic
-        </button>
-        <button
-          type="button"
-          onClick={handleCodeClick}
-          className="px-2.5 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded transition-colors"
-        >
-          Code
-        </button>
+        Live Preview
       </div>
-      
-      <MDXEditor
-      contentEditableClassName=''
 
+      <MDXEditor
+
+        contentEditableClassName="prose"
         ref={editorRef}
         plugins={[
+          toolbarPlugin({
+            toolbarContents: () => (
+              <>
+                {' '}
+                <UndoRedo />
+                <BoldItalicUnderlineToggles />
+                <CreateLink />
+              </>
+            )
+          }),
           headingsPlugin(),
           listsPlugin(),
           quotePlugin(),
           thematicBreakPlugin(),
           markdownShortcutPlugin()
         ]}
-        
+
+
         {...props}
         className={`focus:border-none  w-full ${props.className || ''}`}
       />
