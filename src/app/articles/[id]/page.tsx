@@ -22,6 +22,14 @@ export default function Page({ params }: { params: { id: string } }) {
             try {
                 const res = await fetch(`${process.env.NEXT_PUBLIC_baseUrl}/api/articles/${articleId}`);
 
+                const response = await fetch(`${process.env.NEXT_PUBLIC_baseUrl}/api/articles/${params.id}`, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({id:params.id}),
+                });
+
                 if (!res.ok) {
                     throw new Error("Failed to fetch articles");
                 }

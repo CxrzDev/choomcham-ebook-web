@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../config/firebaseConfig';
 
 
@@ -32,4 +32,28 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
         console.error('Error fetching document:', error);
         return new NextResponse(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
     }
+}
+
+export async function PATCH(res: Request) {
+    const { id } = await res.json();
+    try {
+
+        const ref = doc(db, 'articles', id);
+        const docSnap = await getDoc(ref);
+
+        if (docSnap.exists()) {
+            const currentViews = docSnap.data()?.views ? parseInt(docSnap.data()?.views) : 0;
+            const updatedViews = currentViews + 1; // Increment the views
+
+            const result = await updateDoc(ref, {
+                views: updatedViews,
+            });
+        }
+
+        return Response.json({ "msg": "Successfully" });
+    } catch (error) {
+        return Response.json({ "msg": "not found content" });
+    }
+
+
 }

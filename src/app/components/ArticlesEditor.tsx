@@ -29,7 +29,7 @@ const ArticleEditor = ({ data }: any) => {
         }
         // console.log(body)
         const response = await fetch(`${process.env.NEXT_PUBLIC_baseUrl}/api/articles`, {
-            method: "PATCH",
+            method: data ?"PATCH" : "POST",
             headers: {
                 "Content-Type": "application/json",
             },
