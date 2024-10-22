@@ -27,7 +27,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({id:params.id}),
+                    body: JSON.stringify({ id: params.id }),
                 });
 
                 if (!res.ok) {
@@ -54,12 +54,9 @@ export default function Page({ params }: { params: { id: string } }) {
 
         <div className="py-5"></div>
         <div className="py-10">
-            <div className="card-actions justify-center">
-                <div className="badge p-5 text-black text-md hover:text-white ring-[#F2C762] cursor-pointer hover:bg-[#F2C762]">Bussiness</div>
-                {/* <div className="badge p-5 text-black text-md hover:text-white ring-[#F2C762] cursor-pointer hover:bg-[#F2C762]">Products</div> */}
-            </div>
 
-            <div className="flex justify-center py-10">
+
+            <div className="flex max-w-[80vw] mx-auto py-10">
                 <nav className="flex" aria-label="Breadcrumb">
                     <ol className="inline-flex items-center space-x-1 md:space-x-3">
                         <li className="inline-flex items-center">
@@ -90,15 +87,20 @@ export default function Page({ params }: { params: { id: string } }) {
                 </nav>
             </div>
 
-            <div className="flex gap-2 justify-center">
+            <div className="flex gap-2 max-w-[80vw] mx-auto">
                 <Eye></Eye> {blog?.views || 0} views
             </div>
-            <h1 className="sm:text-3xl md:text-5xl text-3xl text-center py-10"> {blog?.title}</h1>
+            <h1 className="lg:text-[48px] md:text-[36px] leading-[1.3] py-10 max-w-[80vw] mx-auto">{blog?.title}</h1>
 
-            <div className="sm:px-48 px-10">
-                <div className="rounded-xl overflow-hidden"><img src={blog?.imageURL || "/images/cover2.png"} alt="" /></div>
+            <div className="lg:px-48  px-10">
+                <div className="rounded-xl w-full object-cover overflow-hidden"><img src={blog?.imageURL || "/images/cover2.png"} alt="" /></div>
                 {/* Blog content here */}
                 <div className="py-10">
+                    Category : <div className="badge p-5 text-black text-md hover:text-white ring-[#F2C762] cursor-pointer hover:bg-[#F2C762]">{blog?.category}</div>
+                    {/* <div className="badge p-5 text-black text-md hover:text-white ring-[#F2C762] cursor-pointer hover:bg-[#F2C762]">Products</div> */}
+                </div>
+                <div className="py-10 leading-relaxed indent-unit-xl">
+
                     {blog?.description ? (
                         <ReactMarkdown>{blog.description}
                         </ReactMarkdown>

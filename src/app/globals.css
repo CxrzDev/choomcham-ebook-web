@@ -48,8 +48,10 @@ section {
 
 
 h1 {
-  font-family: 'Cloud Soft', 'Prompt';
+  font-weight: 100;
   font-size: 2em;
+  line-height: 32px;
+  
   /* Approximately 32px */
 }
 
@@ -81,6 +83,12 @@ h6 {
   font-family: 'Cloud Soft', 'Prompt';
   font-size: 0.67em;
   /* Approximately 11px */
+}
+
+p {
+  font-size: 1.3rem; /* Default for small devices */
+  line-height: 1.6;
+  color: #333; /* Darker gray for better contrast */
 }
 
 * {
@@ -364,7 +372,9 @@ body {
   }
 
 
-
+  p {
+    font-size: 1.25rem; /* Larger for desktops */
+  }
 
 
   small {
@@ -380,6 +390,9 @@ body {
     height: 50vh;
     background-repeat: repeat-x;
     background-position-x: calc(30px + 20vw);
+  }
+  p {
+    font-size: 1.125rem; /* Slightly larger for tablets */
   }
 }
 

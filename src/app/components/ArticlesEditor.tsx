@@ -20,7 +20,7 @@ const ArticleEditor = ({ data }: any) => {
         const firestoreTimestamp = Timestamp.fromDate(dateObject);
 
         const body = {
-            id: data.id,
+             id:data && data.id,
             title,
             imageURL,
             description,
@@ -129,6 +129,7 @@ const ArticleEditor = ({ data }: any) => {
                 <Button
                     isLoading={isLoading}
                     type="submit"
+                    // onClick={handleSubmit}
                     className="bg-blue-500 text-white rounded px-4 py-2"
                 >
                     Save Article
