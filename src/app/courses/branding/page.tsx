@@ -2,31 +2,48 @@ import { ArrowRight, Asterisk, AudioWaveform, Battery, Heart, Lightbulb, Users }
 import Lession from "./Lessons";
 import { Card, CardBody, Image } from "@nextui-org/react";
 import Quote from "./Quote";
+import Question from "./Questions";
 
 export default function Page() {
     return <div className="min-h-[100vh]">
-           <section className="bg-[--dark-blue] work skewed-background text-white py-16">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-          <p className="text-lg font-light uppercase mb-2 text-[--yellow]">Course</p>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
-           BRADING
-          </h1>
-        </div>
-        <div className="md:w-1/2">
-          <ul className="text-lg font-light leading-relaxed space-y-4">
-            <li className="bg-[--yellow] text-[--grey] p-2 rounded-lg">จำเอากับเข้าใจ</li>
-            <li className="bg-[--pink] p-2 rounded-lg">ผลลัพธ์ต่างกันสุดขั้ว</li>
-            <li className="bg-[--green] p-2 rounded-lg">เข้าใจ &quot;แบรนดิ้ง&quot; ใน 3 ชั่วโมง</li>
-            <li className="bg-[--sky-blue] text-[--grey] p-2 rounded-lg">เปลี่ยนจากธุรกิจที่ดีกลายเป็นธุรกิจที่สุดยอด</li>
-            <li className="bg-[--white] text-[--dark-blue] p-2 rounded-lg">ที่อยู่ใกล้จนคิดไม่ถึง</li>
-          </ul>
-          <a href="#" className="inline-block mt-6 text-lg font-semibold bg-[--yellow] text-[white] px-4 py-2 rounded-lg hover:opacity-90 transition-colors duration-300">
-            Learn More &rarr;
-          </a>
-        </div>
-      </div>
-    </section>
+        <section className="bg-[--dark-blue] text-white py-16">
+            <div className="container mx-auto px-4 flex  items-center justify-center">
+
+                <div className="w-1/2">
+                    <ul className="lg:text-[36px] text-lg leading-relaxed  space-y-4 text-center">
+                        ไม่มีใครจำคุณได้ ถ้าคุณคือธุรกิจอันดับ 2
+                        แต่ถ้าคุณเข้าใจ Branding
+                        คุณจะเป็นอันดับ 1 โดยที่ไม่ต้องแข่งกับใครเลย
+                        ถึงเวลาเปลี่ยนธุรกิจของคุณให้โดดเด่น
+                        กับคอร์สที่จะทำให้คุณเข้าใจ &quot;แบรนดิ้ง&quot; ใน 3 ชั่วโมง
+
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+        <section className="bg-[--dark-blue] work skewed-background text-white py-16">
+            <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+                <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                    <p className="text-lg font-light uppercase mb-2 text-[--yellow]">Course</p>
+                    <h1 className="text-5xl md:text-6xl font-bold mb-4">
+                        BRADING
+                    </h1>
+                </div>
+                <div className="md:w-1/2">
+                    <ul className="text-lg font-light leading-relaxed space-y-4">
+                        <li className="bg-[--yellow] text-[--grey] p-2 rounded-lg">จำเอากับเข้าใจ</li>
+                        <li className="bg-[--pink] p-2 rounded-lg">ผลลัพธ์ต่างกันสุดขั้ว</li>
+                        <li className="bg-[--green] p-2 rounded-lg">เข้าใจ &quot;แบรนดิ้ง&quot; ใน 3 ชั่วโมง</li>
+                        <li className="bg-[--sky-blue] text-[--grey] p-2 rounded-lg">เปลี่ยนจากธุรกิจที่ดีกลายเป็นธุรกิจที่สุดยอด</li>
+                        <li className="bg-[--white] text-[--dark-blue] p-2 rounded-lg">ที่อยู่ใกล้จนคิดไม่ถึง</li>
+                    </ul>
+                    <a href="#" className="inline-block mt-6 text-lg font-semibold bg-[--yellow] text-[white] px-4 py-2 rounded-lg hover:opacity-90 transition-colors duration-300">
+                        Learn More &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
 
 
         <section className="p-10">
@@ -52,7 +69,7 @@ export default function Page() {
                 {/* Highlight Cards */}
                 <div className="grid md:grid-cols-2 gap-8">
                     {[
-                        '&quot;จำได้กับเข้าใจ ผลลัพธ์ต่างกันสุดขั้ว&quot;',
+                        'จำได้กับเข้าใจ ผลลัพธ์ต่างกันสุดขั้ว',
                         'จะมีสักกี่คอร์สที่เริ่มสอนจาก',
                         'จุดจบมาหาจุดเริ่มต้น',
                         'เพื่อค้นพบตัวตนที่แท้จริงทางธุรกิจ'
@@ -87,16 +104,18 @@ export default function Page() {
 
                 {/* Course Description */}
                 <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                    คอร์สชุ่มฉ่ำ Branding: สร้างแบรนด์จาก 0 ให้มีคุณค่าใน 120 วัน แม้สื่อสารไม่เป็น
-                    ในคลาสนี้ เราจะแชร์เทคนิคการสร้างแบรนด์จากศูนย์ ด้วยประสบการณ์สร้างแบรนด์
-                    <span className="font-semibold">&quot;เกลา นิสัยอันตราย&quot;</span>
-                    ที่มีผู้ติดตามมากกว่า 1,000,000 คน โดยใช้เงินเริ่มต้นแค่หลักพัน
-                    ทำให้แบรนด์ติดตลาดทั่วประเทศใน 6 เดือน
+                    <div className="lg:w-1/2 md:1/2 w-full">
+                        คอร์สชุ่มฉ่ำ Branding: สร้างแบรนด์จาก 0 ให้มีคุณค่าใน 120 วัน แม้สื่อสารไม่เป็น
+                        ในคลาสนี้ เราจะแชร์เทคนิคการสร้างแบรนด์จากศูนย์ ด้วยประสบการณ์สร้างแบรนด์
+                        <span className="font-semibold">&quot;เกลา นิสัยอันตราย&quot;</span>
+                        ที่มีผู้ติดตามมากกว่า 1,000,000 คน โดยใช้เงินเริ่มต้นแค่หลักพัน
+                        ทำให้แบรนด์ติดตลาดทั่วประเทศใน 6 เดือน
+                    </div>
                 </p>
 
                 {/* CTA Button */}
                 <div className="mt-6">
-                    <a href="#" className="inline-block bg-[--pink] text-white py-3 px-6 rounded-lg font-medium text-lg hover:bg-pink-600 transition duration-300">
+                    <a href="https://line.me/R/ti/p/@205bxsga?oat_referrer=PROFILE" className="inline-block bg-[--pink] text-white py-3 px-6 rounded-lg font-medium text-lg hover:bg-pink-600 transition duration-300">
                         Join Course
                     </a>
                 </div>
@@ -241,8 +260,8 @@ export default function Page() {
             </section>
         </section>
 
-        <section className="p-5 sm:px-10 grid lg:grid-cols-2 md:grid-cols-1 gap-3 items-center justify-center  relative" >
-            <div className="bg-white/80 pb-5 rounded-[1rem] px-5 glass">
+        <section className="p-5 sm:px-10 grid px-0 py-0 lg:grid-cols-2 md:grid-cols-1 gap-3 items-center justify-center  relative" >
+            <div className="bg-white/80 pb-5 lg:rounded-[1rem] px-5 ">
                 <div className="text-xl mt-5 font-bold ">
                     <Asterisk className="text-[--green]"></Asterisk>
                     สบายตา สบายใจ ได้ความรู้
@@ -258,7 +277,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="bg-white/80 pb-5 rounded-[1rem] px-5 glass">
+            <div className="bg-white/80 pb-5 lg:rounded-[1rem] px-5 ">
                 <div className="text-xl mt-5 font-bold ">
                     <Asterisk className="text-[--green]"></Asterisk>
                     ไม่มีความรู้ Branding  คอร์สนี้จะทำให้กระจ่าง
@@ -275,7 +294,7 @@ export default function Page() {
             </div>
 
 
-            <div className="bg-white/80 pb-5 rounded-[1rem] px-5 glass">
+            <div className="bg-white/80 pb-5 lg:rounded-[1rem] px-5 ">
                 <div className="text-xl mt-5 font-bold ">
                     <Asterisk className="text-[--green]"></Asterisk>
                     เข้าใจถึงแก่นของการทำ Branding
@@ -290,7 +309,7 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            <div className="bg-white/80 pb-5 rounded-[1rem] px-5 glass">
+            <div className="bg-white/80 pb-5 lg:rounded-[1rem] px-5 ">
                 <div className="text-xl mt-5 font-bold ">
                     <Asterisk className="text-[--green]"></Asterisk>
                     ได้รู้จักตัวเอง รักตัวเอง ได้เข็มทิศนำทาง
@@ -307,7 +326,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="bg-white/80 pb-5 rounded-[1rem] px-5 glass">
+            <div className="bg-white/80 pb-5 lg:rounded-[1rem] px-5 ">
                 <div className="text-xl mt-5 font-bold ">
                     <Asterisk className="text-[--green]"></Asterisk>
                     ผ่านมา 3 ปีก็ยังชุ่มฉ่ำ
@@ -324,7 +343,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="bg-white/80 pb-5 rounded-[1rem] px-5 glass">
+            <div className="bg-white/80 pb-5 lg:rounded-[1rem] px-5 ">
                 <div className="text-xl mt-5 font-bold ">
                     <Asterisk className="text-[--green]"></Asterisk>
                     How To ที่แท้ทรู
@@ -342,7 +361,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="bg-white/80 pb-5 rounded-[1rem] px-5 glass">
+            <div className="bg-white/80 pb-5 lg:rounded-[1rem] px-5 ">
                 <div className="text-xl mt-5 font-bold ">
                     <Asterisk className="text-[--green]"></Asterisk>
                     เนื้อหานำไปใช้ได้จริง
@@ -359,8 +378,28 @@ export default function Page() {
             </div>
         </section>
 
-        <section>
+        <section className="py-10 flex flex-col gap-10 items-center lg:text-[36px] md:text-[36px] text-lg">
+            <div className="">❌ ราคาเต็ม 9,450 บาท ❌</div>
+            <div className="">✅ เพียง 1,990 บาท ✅</div>
+            <div className="mt-6">
+                <a href="https://line.me/R/ti/p/@205bxsga?oat_referrer=PROFILE" className="inline-block bg-[--pink] text-white py-3 px-6 rounded-lg font-medium text-lg hover:bg-pink-600 transition duration-300">
+                    Join Course
+                </a>
+            </div>
+        </section>
+
+        <section className="my-5">
             <Quote />
+        </section>
+
+        <section className="sm:p-5 sm:px-10 p-2 grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 justify-center" id="freqQA">
+            <div className="sm:text-[42px] text-center text-3xl font-bold">
+                คำถามที่พบบ่อย?
+                <div className="flex justify-center">
+                    <Image src="/images/sticker19.png" className="h-48 z-0"></Image>
+                </div>
+            </div>
+            <Question />
         </section>
 
     </div>

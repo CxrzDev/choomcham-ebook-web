@@ -12,7 +12,7 @@ export default function NavigationBar(props: { current: String }) {
     useEffect(function mount() {
         function onScroll() {
             const nav = document.getElementById("nav");
-            console.log(window.scrollY)
+            // console.log(window.scrollY)
             if (window.scrollY > 50 && !nav?.classList.contains('bg-white/80')) {
 
 

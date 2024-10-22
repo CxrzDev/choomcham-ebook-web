@@ -47,11 +47,40 @@ section {
 }
 
 
-
 h1 {
-
   font-family: 'Cloud Soft', 'Prompt';
+  font-size: 2em;
+  /* Approximately 32px */
+}
 
+h2 {
+  font-family: 'Cloud Soft', 'Prompt';
+  font-size: 1.5em;
+  /* Approximately 24px */
+}
+
+h3 {
+  font-family: 'Cloud Soft', 'Prompt';
+  font-size: 1.17em;
+  /* Approximately 20px */
+}
+
+h4 {
+  font-family: 'Cloud Soft', 'Prompt';
+  font-size: 1em;
+  /* Approximately 16px */
+}
+
+h5 {
+  font-family: 'Cloud Soft', 'Prompt';
+  font-size: 0.83em;
+  /* Approximately 13px */
+}
+
+h6 {
+  font-family: 'Cloud Soft', 'Prompt';
+  font-size: 0.67em;
+  /* Approximately 11px */
 }
 
 * {
@@ -124,7 +153,8 @@ body {
 .skewed-background {
   /* height: 100vh; */
   /* background: linear-gradient(110deg, #e0c3fc 0%, #8ec5fc 100%); */
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Use clip-path to create a skewed shape */
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  /* Use clip-path to create a skewed shape */
   /* padding: 50px; */
   /* color: #000; */
   display: flex;
@@ -147,7 +177,7 @@ body {
   z-index: -1;
 }
 
-.text-md{
+.text-md {
   font-size: 1rem;
 }
 
@@ -174,7 +204,7 @@ body {
   background: url("/images/homepage_image.jpg");
   background-color: var(--activedcolor);
   /* background-color: black; */
-  
+
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -202,6 +232,7 @@ body {
   background: url("/images/background1.svg");
   background-size: cover;
 }
+
 .bg-2 {
   background: url("/images/bg2.png");
   background-size: cover;
@@ -228,7 +259,8 @@ body {
   border-radius: 100px !important;
   transition: all 0.4s ease-in-out;
 }
-.swiper-slide > *{
+
+.swiper-slide>* {
   background-color: blue;
   display: flex !important;
   justify-content: center;
@@ -271,36 +303,46 @@ body {
 }
 
 
-.bg-zinc-switch > *:nth-child(odd) {
-  background-color: #f3f4f6; /* Light Zinc-like color for odd elements */
+.bg-zinc-switch>*:nth-child(odd) {
+  background-color: #f3f4f6;
+  /* Light Zinc-like color for odd elements */
 }
 
-.bg-zinc-switch > *:nth-child(odd) .name{
-    color:var(--dark-blue);
+.bg-zinc-switch>*:nth-child(odd) .name {
+  color: var(--dark-blue);
 
 }
-.bg-zinc-switch > *:nth-child(even) {
-  background-color: var(--dark-blue); 
-  color:white ;
+
+.bg-zinc-switch>*:nth-child(even) {
+  background-color: var(--dark-blue);
+  color: white;
   /* background-color: rgb(236, 235, 235); 
   color: white; /* Ensure text is readable on darker background */
 }
-.bg-zinc-switch > *:nth-child(even) .name{
-    color:var(--green);
+
+.bg-zinc-switch>*:nth-child(even) .name {
+  color: var(--green);
 
 }
 
 .flex-col-reverse-switch:nth-child(odd) {
-  @apply flex-col; /* Use Tailwind's flex-col for odd elements */
+  @apply flex-col;
+  /* Use Tailwind's flex-col for odd elements */
 }
 
 .flex-col-reverse-switch:nth-child(even) {
-  @apply flex-col-reverse; /* Use Tailwind's flex-col-reverse for even elements */
+  @apply flex-col-reverse;
+  /* Use Tailwind's flex-col-reverse for even elements */
 }
 
 @keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(calc(-100% - var(--gap))); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
 }
 
 .enable-animation .marquee__content {
@@ -321,9 +363,9 @@ body {
     background-position-x: calc(30px - 5vw);
   }
 
- 
 
- 
+
+
 
   small {
     font-size: 1.5rem;
@@ -331,7 +373,7 @@ body {
 }
 
 @media screen and (max-width: 720px) {
-  
+
 
   .line {
     /* background-size: inherit; */
@@ -340,6 +382,7 @@ body {
     background-position-x: calc(30px + 20vw);
   }
 }
+
 @media screen and (max-width: 395px) {
   small {
     font-size: 4vw;
