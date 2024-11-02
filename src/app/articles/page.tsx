@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import Link from "next/link";
 import Head from 'next/head';
+import Pagination from "../components/Pagination";
 
 
 const videos = [
@@ -15,6 +16,15 @@ function Blog() {
     const [blogs, setBlogs] = useState<any[]>([]); // Initialize blogs as an empty array
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5;
+
+    const totalPages = Math.ceil(blogs.length / itemsPerPage);
+    const paginatedBlogs = blogs.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    );
 
     useEffect(() => {
         // Fetch blogs from API on component mount
@@ -73,8 +83,8 @@ function Blog() {
             <div className="px-10 py-20 bg-[--light-blue]">
                 <h4 className="py-10 px-5 text-xl font-bold">ACITIVITY & EVENT</h4>
                 <div className="grid sm:grid-cols-3 gap-10">
-                    {blogs.length > 0 ? (
-                        blogs.map((blog: any) => (
+                    {paginatedBlogs.length > 0 ? (
+                        paginatedBlogs.map((blog: any) => (
                             <Link href={`/articles/${blog.id}`} key={blog.id}>
                                 <Card className="py-4 group h-[350px]">
                                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
@@ -109,6 +119,12 @@ function Blog() {
                         <p>No blogs found.</p>
                     )}
                 </div>
+                {blogs && <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={(page) => setCurrentPage(page)}
+                />}
+               
             </div>
 
             <h3 className="text-4xl p-10 text-center grid justify-items-center">
