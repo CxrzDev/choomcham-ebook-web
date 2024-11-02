@@ -92,6 +92,8 @@ function Blog() {
                                             {blog.category || "Uncategorized"}
                                         </p>
                                         <h4 className="font-bold text-large py-2">{blog.title || "ไม่มีหัวข้อ"}</h4>
+                                        <div className="text-sm text-zinc-600">{new Date(blog.date.seconds * 1000).toLocaleDateString()}
+                                        </div>
                                     </CardHeader>
                                     <CardBody className="overflow-hidden py-2">
                                         <div className="w-full bg-black overflow-hidden rounded-xl relative">
@@ -119,7 +121,7 @@ function Blog() {
                         <p>No blogs found.</p>
                     )}
                 </div>
-                {blogs && <Pagination
+                {totalPages > 1 && <Pagination
                     currentPage={currentPage}
                     totalPages={totalPages}
                     onPageChange={(page) => setCurrentPage(page)}
