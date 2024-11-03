@@ -18,6 +18,19 @@ const ArticleEditor = ({ data }: any) => {
     const [preview, setPreview] = useState<any>(null);
     const [isLoading, setIsLoading] = useState(false);
 
+
+    // useEffect(() => {
+    //     // Replace every newline character with a period
+    //     const formattedDescription =description.replace(/\n{2,}/g, ' . ');
+        
+    //     // Only update if there were newlines to replace
+    //     if (formattedDescription !== description) {
+    //       setDescription(formattedDescription);
+    //     }
+
+    //     console.log(description);
+    //   }, [description]);
+
     const handleUpload = async () => {
         if (!file) return;
 
@@ -35,7 +48,7 @@ const ArticleEditor = ({ data }: any) => {
             }
 
             const data = await response.json();
-           
+
             alert('File uploaded successfully! : ' + data.url);
 
 
@@ -53,18 +66,19 @@ const ArticleEditor = ({ data }: any) => {
         e.preventDefault(); // Prevent default form submission
         setIsLoading(true); // Set loading state to true
         try {
-           const imageURL = await handleUpload();
-           setImageURL(imageURL);
-           console.log(imageURL);
+            const imageURL = await handleUpload();
+            setImageURL(imageURL);
+            console.log(imageURL);
         }
         catch (error: any) {
             console.log(error)
             return;
         }
-        if(file && !imageURL){
-            console.log("IMAGE :",imageURL)
+        if (file && !imageURL) {
+            console.log("IMAGE :", imageURL)
             setIsLoading(false);
-            return alert("Create article fail.");}
+            return alert("Create article fail.");
+        }
         const dateString = date;
         const dateObject = new Date(dateString);
         const firestoreTimestamp = Timestamp.fromDate(dateObject);
@@ -88,7 +102,9 @@ const ArticleEditor = ({ data }: any) => {
             });
 
             if (response.status === 200) {
-                alert('Create Articles successfully');
+                if(data)
+                    return alert("Article has changed")
+                alert('Created Article successfully');
             } else {
                 alert('Failed to create article. Please try again.');
             }
@@ -99,11 +115,13 @@ const ArticleEditor = ({ data }: any) => {
         } finally {
             setIsLoading(false); // Reset loading state
             // Clear form fields
-            setTitle('');
-            setImageURL('');
-            setDescription('');
-            setCategory('');
-            setDate('');
+            if (!data) {
+                setTitle('');
+                setImageURL('');
+                setDescription('');
+                setCategory('');
+                setDate('');
+            }
         }
     };
 
@@ -114,6 +132,10 @@ const ArticleEditor = ({ data }: any) => {
         setCategory(data?.category || "");
         setDate(data?.date || "");
     }, [data]);
+
+    // useEffect(() => {
+    //     console.log(description)
+    // }, [description]);
 
     const handleFileChange = (e: any) => {
         const selectedFile = e.target.files[0];
@@ -192,25 +214,27 @@ const ArticleEditor = ({ data }: any) => {
                         />
                     </div>
                 </div>
-                <div className="mb-4 flex gap-2 flex-wrap">
+                <div className="mb-4 flex flex-col gap-2 flex-wrap">
                     <label className="block text-gray-700 mb-2">Description:</label>
                     <textarea
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         required
-                        className="w-full border border-gray-300 rounded px-2 py-1"
+                        className="w-full border border-gray-300 rounded px-2 py-1 hidden"
                     />
                     {/* Assuming Editor is a component for markdown editing */}
-                    {description && <Editor markdown={description} onChange={setDescription} />}
+                    {<Editor markdown={description} onChange={setDescription} />}
                 </div>
 
-                <Button
-                    isLoading={isLoading}
-                    type="submit"
-                    className="bg-blue-500 text-white rounded px-4 py-2"
-                >
-                    Save Article
-                </Button>
+                <div className="flex justify-center">
+                    <Button
+                        isLoading={isLoading}
+                        type="submit"
+                        className="bg-[--pink-50] text-white rounded px-4 h-[50px] w-1/2 mx-auto"
+                    >
+                        บันทึกบทความ
+                    </Button>
+                </div>
             </form>
         </div>
     );

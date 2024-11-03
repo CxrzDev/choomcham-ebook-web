@@ -13,7 +13,15 @@ import {
   toolbarPlugin,
   UndoRedo,
   BoldItalicUnderlineToggles,
-  CreateLink
+  CreateLink,
+  BlockTypeSelect,
+  CodeToggle,
+  ListsToggle,
+  linkDialogPlugin,
+  linkPlugin,
+  InsertThematicBreak,
+  tablePlugin,
+  InsertTable
 } from '@mdxeditor/editor';
 import '@mdxeditor/editor/style.css'
 type EditorProps = MDXEditorProps & {
@@ -59,11 +67,20 @@ const Editor = forwardRef<MDXEditorMethods, EditorProps>((props, forwardedRef) =
                 <UndoRedo />
                 <BoldItalicUnderlineToggles />
                 <CreateLink />
+                <BlockTypeSelect />
+                <InsertThematicBreak />
+                <CodeToggle />
+                <ListsToggle />
+                <InsertTable />
+                
               </>
             )
           }),
           headingsPlugin(),
+          tablePlugin(),
           listsPlugin(),
+          linkDialogPlugin(),
+          linkPlugin(),
           quotePlugin(),
           thematicBreakPlugin(),
           markdownShortcutPlugin()

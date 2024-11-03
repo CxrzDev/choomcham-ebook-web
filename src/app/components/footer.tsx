@@ -4,7 +4,7 @@ import Link from "next/link"
 function Footer() {
   return (
     <>
-      <section className="px-10 py-5 bg-zinc-300">
+      <section className="px-10 py-5  bg-zinc-100 font-bold">
         <div className="grid grid-cols-1 lg:grid-cols-4">
           <div className="grid gap-3">
             <img className="lg:w-[150px] w-[25vw]" src="/images/sticker6.png" alt="choomcham logo" />
@@ -63,7 +63,7 @@ function Footer() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-300">
+      <section className="bg-[--dark-blue] text-white font-bold">
         <div className="text-sm px-10 py-2 text-center">Copyright © 2024 ชุ่มฉ่ำ branding.</div>
       </section>
     </>

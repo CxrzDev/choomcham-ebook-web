@@ -50,8 +50,8 @@ section {
 h1 {
   font-weight: 100;
   font-size: 2em;
-  line-height: 32px;
-  
+  /* line-height: 32px; */
+
   /* Approximately 32px */
 }
 
@@ -60,6 +60,8 @@ h2 {
   font-size: 1.5em;
   /* Approximately 24px */
 }
+
+
 
 h3 {
   font-family: 'Cloud Soft', 'Prompt';
@@ -86,10 +88,125 @@ h6 {
 }
 
 p {
-  font-size: 1.3rem; /* Default for small devices */
+  font-size: 1.3rem;
+  /* Default for small devices */
   line-height: 1.6;
-  color: #333; /* Darker gray for better contrast */
+  color: #333;
+  /* Darker gray for better contrast */
 }
+
+.prose li {
+  font-size: 1.3rem;
+  /* Default for small devices */
+  line-height: 1.6;
+  color: #333;
+  /* Darker gray for better contrast */
+}
+.prose *{
+  font-family:  'Prompt' !important;
+  white-space: pre-wrap;
+
+}
+
+/* Basic blockquote styling */
+.prose blockquote {
+  /* margin: 1em 0; */
+  /* Vertical spacing */
+  padding: 0.5em 1em;
+  /* Padding inside the blockquote */
+  border-left: 4px solid #ccc;
+  /* Left border for emphasis */
+  color: #555;
+  /* Slightly muted text color */
+  /* background-color: #f9f9f9; Light background color */
+  font-style: italic;
+  /* Italicized text */
+}
+
+
+/* Reset any list styling to use browser default */
+.prose ul {
+  list-style: circle;
+  /* Sets list style to default */
+  margin: 1em 0;
+  /* Add default vertical spacing */
+  padding-left: 1.5em;
+  /* Default indentation */
+}
+
+.prose ol {
+  list-style-type: decimal; /* Default numbering style */
+  margin: 1em 0; /* Vertical spacing before and after the list */
+  padding-left: 1.5em; /* Indentation for the list */
+}
+
+.prose ol li::marker {
+  font-size: 1.5em; /* Make the numbers larger */
+  color: #333; /* Customize color of numbers */
+  font-weight: bold; /* Optionally make them bold */
+}
+
+
+/* List items should inherit default browser styles */
+.prose li {
+  margin: 0.5em 0.4em;
+  /* Default vertical spacing between list items */
+}
+
+.prose a {
+  color: var(--activedcolor);
+  font-weight: 600;
+
+}
+
+.prose hr {
+  border: none; /* Remove default border */
+  background: transparent; /* Ensure background is transparent */
+  height: 20px; /* Height of the dots */
+  margin: 10px auto; /* Center the dots and provide spacing */
+  display: flex; /* Use flexbox for positioning */
+  justify-content: space-between; /* Space out the dots */
+  align-items: center; /* Center the dots vertically */
+  width: 60px; /* Width of the entire set of dots */
+}
+
+/* Style for the individual dots */
+.prose hr::before,
+.prose hr::after,
+.prose hr span {
+  content: ''; /* Create an empty element */
+  display: inline-block; /* Ensure it's displayed inline */
+  width: 20px; /* Width of each dot */
+  height: 20px; /* Height of each dot */
+  background: var(--dark-blue); /* Background color for the dots */
+  border-radius: 50%; /* Make it circular */
+  opacity: 0.8; /* Set opacity */
+}
+
+.prose hr::before {
+  margin-right: 10px; /* Space between the first dot and the middle dot */
+}
+
+.prose hr span {
+  margin: 0 5px; /* Space between the dots */
+}
+
+.prose hr::after {
+  margin-left: 10px; /* Space between the middle dot and the last dot */
+}
+
+
+.prose h1 {
+  color:var(--green);
+  font-weight: bold;
+}
+.prose h2 {
+  color:var(--yellow);
+  font-weight: bold;
+}
+
+
+
 
 * {
   scroll-behavior: smooth;
@@ -373,7 +490,8 @@ body {
 
 
   p {
-    font-size: 1.25rem; /* Larger for desktops */
+    font-size: 1.25rem;
+    /* Larger for desktops */
   }
 
 
@@ -391,8 +509,10 @@ body {
     background-repeat: repeat-x;
     background-position-x: calc(30px + 20vw);
   }
+
   p {
-    font-size: 1.125rem; /* Slightly larger for tablets */
+    font-size: 1.125rem;
+    /* Slightly larger for tablets */
   }
 }
 

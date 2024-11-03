@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import ArticleEditor from '@/app/components/ArticlesEditor';
+import Loading from '@/app/components/loading';
 
 function Page({ params }: any) {
 
@@ -26,8 +27,8 @@ function Page({ params }: any) {
     fetchBlogs();
   }, [])
 
-  return <div className="App">
-    <ArticleEditor data={Blog} />
+  return <div className="min-h-screen flex items-center">
+    {Blog ? <ArticleEditor data={Blog}  /> :<div className="w-full"> <Loading/></div>}
   </div>
 }
 export default Page;
