@@ -9,22 +9,40 @@ import { ChevronRight, Dumbbell, HeartPulse, Key } from 'lucide-react';
 
 
 export const metadata: Metadata = {
-    title: 'ชุ่มฉ่ำ branding | เกี่ยวกับเรา',
-    description: 'ครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์ นักสร้างแบรนด์รุ่นใหม่สายคุณค่า บัณฑิตคณะศิลปศาสตร์ เอกภาษาศาสตร์ มหาวิทยาลัยธรรมศาสตร์',
-    authors: [{ name: 'Choomcham branding' }],
-    keywords: ['Choomcham', 'Choomcham Branding', 'branding', 'courses', 'personal branding', 'Brand Strategist', 'Keynote Speaker', 'Spiritual practitioner', 'อีฟ ภัทรัดจารินท์​ สุวัชรานนท์', 'marketing', ' brand identity', 'ทำไมต้อง ชุ่มฉ่ำ Branding จะช่วยธุรกิจคุณได้ยังไง?', 'ชุ่มฉ่ำ',
-        "เกลานิสัย อันตราย", "เพิ่มยอดขาย"
+    title: 'ชุ่มฉ่ำ Branding | สร้างแบรนด์ให้โดดเด่นด้วยคุณค่า',
+    description: 'ชุ่มฉ่ำ Branding นำโดยครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์ ผู้เชี่ยวชาญการสร้างแบรนด์ที่ผสมผสานคุณค่าและตัวตน เพื่อให้แบรนด์ของคุณเป็นที่น่าจดจำและเพิ่มยอดขายได้อย่างยั่งยืน',
+    authors: [{ name: 'Choomcham Branding' }],
+    keywords: [
+        'ชุ่มฉ่ำ Branding', 'Choomcham Branding', 'สร้างแบรนด์', 'personal branding',
+        'Brand Strategist', 'ครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์', 'การตลาด', 'กลยุทธ์การสร้างแบรนด์',
+        'ธุรกิจ', 'เพิ่มยอดขาย', 'แบรนด์คุณค่า', 'Choomcham Branding courses', 'branding courses',
+        'สร้างตัวตนแบรนด์', 'เอกลักษณ์แบรนด์', 'การสร้างความสัมพันธ์ลูกค้า', 'เกลานิสัยอันตราย'
     ],
-    publisher: "Choomcham branding",
+    publisher: "Choomcham Branding",
     robots: { index: true, follow: true },
     icons: "/images/cropped-logo.png",
     openGraph: {
-
+        title: 'ชุ่มฉ่ำ Branding | แบรนด์คุณค่าเพื่อธุรกิจที่ยั่งยืน',
+        description: 'ครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์ ผู้นำด้านการสร้างแบรนด์เชิงคุณค่า ช่วยให้คุณสร้างแบรนด์ที่มีเอกลักษณ์ และตอบโจทย์ลูกค้าด้วยกลยุทธ์ที่ยั่งยืน',
+        url: 'https://choomcham.com/about',
+        type: 'website',
         images: [{
-            url: "https://choomcham.vercel.app/images/cover6.png",
-        }]
-    }
-}
+            url: "https://choomcham.com/images/cover6.png",
+            width: 1200,
+            height: 630,
+            alt: 'ชุ่มฉ่ำ Branding - การสร้างแบรนด์คุณค่า'
+        }],
+        siteName: "Choomcham Branding"
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: '@choomcham_branding',
+        title: 'ชุ่มฉ่ำ Branding | สร้างแบรนด์ด้วยคุณค่าและกลยุทธ์',
+        description: 'เรียนรู้วิธีสร้างแบรนด์ที่เป็นมากกว่าธุรกิจ ครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์ ช่วยให้แบรนด์ของคุณเพิ่มยอดขายอย่างมีคุณค่า',
+        images: ["https://choomcham.com/images/cover6.png"],
+    },
+   
+};
 
 function About() {
     return (
