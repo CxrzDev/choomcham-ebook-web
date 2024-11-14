@@ -3,8 +3,24 @@ import Lession from "./Lessons";
 import { Card, CardBody, Image } from "@nextui-org/react";
 import Quote from "./Quote";
 import Question from "./Questions";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: 'คอร์สเรียน Branding  – ชุ่มฉ่ำ',
+    description: 'สำรวจคอร์สเรียนจากชุ่มฉ่ำ: เรียนรู้การสร้างแบรนด์และเทคนิคการเล่าเรื่องใน 3 นาที เสริมสร้างแบรนด์ส่วนตัวและพัฒนาทักษะการสื่อสารผ่านคอร์สคุณภาพจากผู้เชี่ยวชาญ',
+    keywords: ['คอร์สชุ่มฉ่ำ', 'คอร์ส branding', 'คอร์ส storytelling', 'เทคนิคการสร้างแบรนด์', 'การพัฒนาแบรนด์ส่วนตัว', 'branding สำหรับธุรกิจ', 'เล่าเรื่องใน 3 นาที', 'บริการชุ่มฉ่ำ', 'บทความชุ่มฉ่ำ'],
+    authors: [{ name: 'ชุ่มฉ่ำ' }],
+    publisher: "Choomcham branding",
+    robots: { index: true, follow: true },
+    openGraph: {
+      images: [{
+        url: "https://choomcham.vercel.app/images/courses-cover.png",
+        alt: 'คอร์สเรียน Branding  โดย ชุ่มฉ่ำ',
+      }]
+    }
+  }
+  
 export default function Page() {
+    
     return <div className="min-h-[100vh]">
         <section className="bg-[--dark-blue] text-white py-16">
             <div className="container mx-auto px-4 flex  items-center justify-center">

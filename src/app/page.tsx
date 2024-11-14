@@ -20,7 +20,7 @@ import { BadgeCheck, Flower, HeartHandshake } from 'lucide-react'
 
 export default async function Home() {
 
-    var res = await fetch(`https://choomcham.vercel.app/api/course`)
+    var res = await fetch(`https://choomcham.com/api/course`)
     var result: any = await res.json()
     var contents: any = [...result.data];
 

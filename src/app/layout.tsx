@@ -28,20 +28,21 @@ const cloudSoft = localFont({
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ชุ่มฉ่ำ branding ตัวจริงต้องมีที่ยืน',
-  description: 'ชุ่มฉ่ำ branding ตัวจริงต้องมีที่ยืน คนดี มีของดี ต้องสร้างแบรนด์เป็น จนมีที่ยืน ผลลัพธ์ของชีวิต ขึ้นอยู่กับการตัดสินใจของคุณในวันนี้ ทำไมต้อง ชุ่มฉ่ำ Branding จะช่วยธุรกิจคุณได้ยังไง? วางจิตให้ชุ่มฉ่ำ เดี๋ยวผลลัพธ์จะฉ่ำเอง',
+  title: 'ชุ่มฉ่ำ Branding – สร้างแบรนด์ตัวจริงต้องมีที่ยืน',
+  description: 'ชุ่มฉ่ำ Branding - ตัวจริงต้องมีที่ยืน สร้างแบรนด์ธุรกิจที่แข็งแกร่งพร้อมส่งผลลัพธ์เชิงบวก วางจิตให้ชุ่มฉ่ำเพื่อผลลัพธ์ที่ดี ธุรกิจคุณจะเติบโตอย่างไรด้วย ชุ่มฉ่ำ Branding?',
   authors: [{ name: 'Choomcham branding' }],
-  keywords: ['Choomcham', 'Choomcham Branding', 'branding', 'courses', 'personal branding', 'Brand Strategist', 'Keynote Speaker', 'Spiritual practitioner', 'อีฟ ภัทรัดจารินท์​ สุวัชรานนท์', 'marketing', ' brand identity', 'ทำไมต้อง ชุ่มฉ่ำ Branding จะช่วยธุรกิจคุณได้ยังไง?', 'ชุ่มฉ่ำ Branding'],
-  publisher: "Vercel",
+  keywords: ['Choomcham', 'Choomcham Branding', 'branding strategies', 'personal branding courses', 'Brand Strategist', 'Keynote Speaker', 'Spiritual practitioner', 'อีฟ ภัทรัดจารินท์ สุวัชรานนท์', 'marketing', 'brand identity', 'business growth with branding', 'ชุ่มฉ่ำ Branding'],
+  publisher: "Choomcham",
   robots: { index: true, follow: true },
   icons: "/images/cropped-logo.png",
   openGraph: {
-
     images: [{
-      url: "https://choomcham.vercel.app/images/cover2.png",
+      url: "https://choomcham.com/images/cover2.png",
+      alt: 'ชุ่มฉ่ำ Branding - สร้างแบรนด์ตัวจริงเพื่อธุรกิจที่แข็งแกร่ง',
     }]
   }
 }
+
 
 
 

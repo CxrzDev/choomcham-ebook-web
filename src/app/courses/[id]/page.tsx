@@ -16,19 +16,17 @@ import Head from "next/head";
 
 
 export const metadata: Metadata = {
-    title: 'ชุ่มฉ่ำ branding | เล่าเรื่อง 3 นาทีให้มียอดขาย',
-    description: 'เพิ่มยอดขายและผู้ติดตาม 10 เท่าใน 8 ชั่วโมง โดยไม่ต้องมีพื้นฐาน  ถ้าคุณรู้...ว่าตัวเองมีของดี ถ้าคุณรู้...ว่าตัวเองคือตัวจริง มันจะเจ็บปวดแค่ไหน? ถ้าสุดท้ายคุณเป็นได้แค่...คนเก่งที่ไม่มีใครรู้จัก',
-    authors: [{ name: 'Choomcham branding' }],
-    keywords: ['Choomcham', 'Choomcham Branding', 'branding', 'courses', 'personal branding', 'Brand Strategist', 'Keynote Speaker', 'Spiritual practitioner', 'อีฟ ภัทรัดจารินท์​ สุวัชรานนท์', 'marketing', ' brand identity', 'ทำไมต้อง ชุ่มฉ่ำ Branding จะช่วยธุรกิจคุณได้ยังไง?', 'ชุ่มฉ่ำ',
-        "เล่าเรื่อง 3 นาที", "เพิ่มยอดขาย"
-    ],
-    publisher: "Vercel",
+    title: 'ชุ่มฉ่ำ Branding | เทคนิคเล่าเรื่อง 3 นาที เพิ่มยอดขาย 10 เท่า',
+    description: 'เพิ่มยอดขายและผู้ติดตามถึง 10 เท่าใน 8 ชั่วโมง โดยไม่ต้องมีพื้นฐาน เพียงแค่คุณรู้ว่าคุณมีของดีและพร้อมที่จะให้คนอื่นได้เห็น ใช้การเล่าเรื่องเพื่อสร้างแบรนด์ส่วนตัวที่แข็งแกร่ง',
+    authors: [{ name: 'Choomcham Branding' }],
+    keywords: ['Choomcham', 'Choomcham Branding', 'branding', 'courses', 'personal branding', 'เล่าเรื่อง 3 นาที', 'เพิ่มยอดขาย', 'สร้างแบรนด์', 'การตลาด', 'Brand Strategist', 'Keynote Speaker', 'Spiritual practitioner', 'อีฟ ภัทรัดจารินท์​ สุวัชรานนท์', 'brand identity', 'branding for business'],
+    publisher: "Choomcham Branding",
     robots: { index: true, follow: true },
     icons: "/images/cropped-logo.png",
     openGraph: {
-
         images: [{
-            url: "https://choomcham.vercel.app/images/cover5.png",
+            url: "https://choomcham.com/images/cover5.png",
+            alt: 'เทคนิคเล่าเรื่อง 3 นาทีเพื่อเพิ่มยอดขาย โดย ชุ่มฉ่ำ Branding',
         }]
     }
 }

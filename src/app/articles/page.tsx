@@ -4,7 +4,23 @@ import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import Link from "next/link";
 import Head from 'next/head';
 import Pagination from "../components/Pagination";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: 'บทความสร้างแบรนด์ | เทคนิคและแนวคิดจาก Choomcham',
+    description: 'อ่านบทความจาก Choomcham ที่อัดแน่นด้วยเทคนิคการสร้างแบรนด์และกลยุทธ์การตลาด เรียนรู้การสร้างตัวตนให้แข็งแกร่งและดึงดูดลูกค้า ด้วยความรู้และประสบการณ์จากผู้เชี่ยวชาญ',
+    authors: [{ name: 'Choomcham Branding' }],
+    keywords: ['Choomcham', 'บทความการสร้างแบรนด์', 'การสร้างแบรนด์', 'การตลาด', 'บทความการตลาด', 'personal branding', 'กลยุทธ์การตลาด', 'การเล่าเรื่อง', 'สร้างตัวตนแบรนด์', 'Choomcham Branding'],
+    publisher: "Choomcham Branding",
+    robots: { index: true, follow: true },
+    icons: "/images/cropped-logo.png",
+    openGraph: {
+        images: [{
+            url: "https://choomcham.com/images/article-cover.png",
+            alt: 'บทความสร้างแบรนด์และกลยุทธ์การตลาดโดย Choomcham',
+        }]
+    }
+}
 
 const videos = [
     { id: '1', src: 'https://www.youtube.com/embed/dcVFxqyxACI?si=A6HAhtVsSUap2dtz', description: 'name' },
