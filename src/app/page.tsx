@@ -13,6 +13,8 @@ import { JSXElementConstructor, PromiseLikeOfReactNode, ReactElement, ReactNode,
 import Loading from './components/loading'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { BadgeCheck, Flower, HeartHandshake } from 'lucide-react'
+import MyForm from './components/Myform'
+import Script from 'next/script'
 
 
 
@@ -45,10 +47,10 @@ export default async function Home() {
 
     return <>
         <div className="text-white fixed  z-10 w-full duration-200" id="scroll_nav">
-
+            <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" />
             <NavigationBar current="" />
         </div>
-    
+
         <div id="fb-root"></div>
         <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0&appId=156838349817980" nonce="WQnbcNzF"></script>
 
@@ -89,9 +91,9 @@ export default async function Home() {
         <section>
 
             <div className="bg-[--dark-blue] work">
-                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] lg:text-black text-white text-xl pt-10 leading-normal  ">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br/>แต่ยังไม่มีใครเห็น <span className="bg-[--pink] px-2 text-white">คุณมาถูกที่แล้ว</span>
+                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] lg:text-black text-white text-xl pt-10 leading-normal  ">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br />แต่ยังไม่มีใครเห็น <span className="bg-[--pink] px-2 text-white">คุณมาถูกที่แล้ว</span>
                 </div>
-               
+
                 <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-items-center justify-between py-10 sm:px-10 '>
                     <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white'>
                         <CardHeader>
@@ -268,7 +270,7 @@ export default async function Home() {
             </section>
 
             <div className="divider-y"></div>
-{/* 
+            {/* 
             <div className="text-2xl sm:text-4xl font-bold text-center py-10 flex flex-col justify-center items-center">
                 Our services
                 <div className="rounded-full h-1 w-[100px] bg-[#D33666] "></div>
@@ -397,40 +399,8 @@ export default async function Home() {
                         <div className="card flex-shrink-2 w-full max-w-xl shadow-2xl bg-white">
                             <div className=" card  bg-white shadow-xl">
                                 <div className="card-title text-2xl text-center p-10">ลงทะเบียนพูดคุยกับชุ่มฉ่ำ</div>
-                                <form target='_blank' action="https://docs.google.com/forms/d/e/1FAIpQLSeRYMnp4m1rpF8_zMBq__VOgWqi5qSbnZk8B0MeQt5KJAMjRw/formResponse" className="grid gap-5 px-10 pb-10">
-                                    <div className="grid grid-flow-col gap-5">
-                                        <div>
-                                            <label htmlFor='name'>ชื่อ</label>
-                                            <input required type="text" id='name' name="entry.2006373774" className="input input-bordered input-md w-full bg-white " placeholder="กรอกชื่อ" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor='tel'>เบอร์โทร</label>
-                                            <input required type="text" id='tel' name="entry.1817569432" className="input input-bordered input-md w-full bg-white " placeholder="กรอกเบอร์โทรศัพท์" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label htmlFor='email'>อีเมล์</label>
-                                        <input required type="text" id='email' name="entry.659431789" className="input input-bordered input-md w-full bg-white " placeholder="กรอกอีเมล์" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor='bussines'>ชื่อองค์กร/ธุรกิจที่คุณทำอยู่</label>
-                                        <input required type="text" id='bussines' name="entry.1305396878" className="input input-bordered input-md w-full bg-white " placeholder="กรอกชื่อองค์กร/ธุรกิจที่คุณทำอยู่" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor='fb'>Facebook / fanpage</label>
-                                        <input required type="text" id='fb' name="entry.2063738074" className="input input-bordered input-md w-full bg-white " placeholder="กรอกFacebook / fanpage" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor='trouble'>ปัญหาที่อยากระบาย</label>
-                                        <textarea id='trouble' rows={50} name="entry.1456771675" className="input input-bordered input-md w-full bg-white " placeholder="ระบุ"></textarea>
-                                    </div>
+                                <MyForm />
 
-
-                                    {/* <input type="email" name="emailAddress" id="" value/> */}
-                                    <button type="submit" className="btn bg-primary">ลงทะเบียน</button>
-                                </form>
-
-                                
                             </div>
                         </div>
                     </div>
