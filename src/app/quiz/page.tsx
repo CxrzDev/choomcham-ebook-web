@@ -1,4 +1,5 @@
 'use client'
+/* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from 'react'
 import { supabase } from '../service/supabase'
 import { useRouter } from 'next/navigation' 
@@ -9,7 +10,7 @@ export default function QuizPage() {
   const [questions, setQuestions] = useState<any[]>([
     {
       id: 1,
-      question_text: 'เวลามีคนถามว่า "แบรนด์คุณทำอะไร?" คุณมักจะ...',
+      question_text: 'เวลามีคนถามว่า &quot;แบรนด์คุณทำอะไร?&quot; คุณมักจะ...',
       order: 1,
       category: 'Identity & Soul',
       options: [
@@ -21,7 +22,7 @@ export default function QuizPage() {
     },
     {
       id: 2,
-      question_text: 'ถ้าต้องอธิบายจุดเด่นของแบรนด์ใน 1 ประโยค โดยห้ามใช้คำว่า "ดี/ถูก/เร็ว/มีคุณภาพ" คุณทำได้ไหม?',
+      question_text: 'ถ้าต้องอธิบายจุดเด่นของแบรนด์ใน 1 ประโยค โดยห้ามใช้คำว่า &quot;ดี/ถูก/เร็ว/มีคุณภาพ&quot; คุณทำได้ไหม?',
       order: 2,
       category: 'Identity & Soul',
       options: [
@@ -33,12 +34,12 @@ export default function QuizPage() {
     },
     {
       id: 3,
-      question_text: 'คุณรู้สึก "ปลอม" เวลาต้องออกหน้ากล้องหรือพูดคุยกับแฟนคลับไหม?',
+      question_text: 'คุณรู้สึก &quot;ปลอม&quot; เวลาต้องออกหน้ากล้องหรือพูดคุยกับแฟนคลับไหม?',
       order: 3,
       category: 'Identity & Soul',
       options: [
         { text: 'ก. รู้สึกตลอดเวลา จนเหนื่อยใจและอยากหลบไปหลังบ้าน', score: 1 },
-        { text: 'ข. รู้สึกเป็นบางช่วงที่ต้องทำเพื่อ "ยอดขาย" หรือตามกระแส', score: 2 },
+        { text: 'ข. รู้สึกเป็นบางช่วงที่ต้องทำเพื่อ &quot;ยอดขาย&quot; หรือตามกระแส', score: 2 },
         { text: 'ค. นานๆ ครั้ง เมื่อต้องทำในสิ่งที่ไม่ใช่จริตจริง', score: 3 },
         { text: 'ง. ไม่เลย ฉันเป็นคนเดิมทั้งหน้ากล้องและหลังกล้อง', score: 4 }
       ]
@@ -52,12 +53,12 @@ export default function QuizPage() {
         { text: 'ก. กลัวมาก เพราะคนจำแค่สินค้า ไม่ได้จำตัวตนของฉัน', score: 1 },
         { text: 'ข. กังวล เพราะภาพจำเดิมมันแข็งแรงจนขยับตัวยาก', score: 2 },
         { text: 'ค. เฉยๆ เพราะฉันค่อยๆ แทรกตัวตนลงไปบ้างแล้ว', score: 3 },
-        { text: 'ง. ไม่กลัวเลย เพราะแฟนคลับติดตามที่ "วิธีคิด" ของฉัน', score: 4 }
+        { text: 'ง. ไม่กลัวเลย เพราะแฟนคลับติดตามที่ &quot;วิธีคิด&quot; ของฉัน', score: 4 }
       ]
     },
     {
       id: 5,
-      question_text: 'ถ้าวันนี้คุณ "หยุดยิงโฆษณา" ทุกช่องทางเป็นเวลา 30 วัน...',
+      question_text: 'ถ้าวันนี้คุณ &quot;หยุดยิงโฆษณา&quot; ทุกช่องทางเป็นเวลา 30 วัน...',
       order: 5,
       category: 'Message & Magnetic Power',
       options: [
@@ -73,15 +74,15 @@ export default function QuizPage() {
       order: 6,
       category: 'Message & Magnetic Power',
       options: [
-        { text: 'ก. "ราคาเท่าไหร่?" / "มีโปรโมชั่นไหม?"', score: 1 },
-        { text: 'ข. "สนใจสินค้าตัวนี้ค่ะ/ครับ" (ทักตามรูปที่เห็น)', score: 2 },
-        { text: 'ค. "ชอบสไตล์การทำงานของคุณจังเลยค่ะ"', score: 3 },
-        { text: 'ง. "ต้องเป็นคุณเท่านั้นถึงจะช่วยเรื่องนี้ได้"', score: 4 }
+        { text: 'ก. &quot;ราคาเท่าไหร่?&quot; / &quot;มีโปรโมชั่นไหม?&quot;', score: 1 },
+        { text: 'ข. &quot;สนใจสินค้าตัวนี้ค่ะ/ครับ&quot; (ทักตามรูปที่เห็น)', score: 2 },
+        { text: 'ค. &quot;ชอบสไตล์การทำงานของคุณจังเลยค่ะ&quot;', score: 3 },
+        { text: 'ง. &quot;ต้องเป็นคุณเท่านั้นถึงจะช่วยเรื่องนี้ได้&quot;', score: 4 }
       ]
     },
     {
       id: 7,
-      question_text: 'เมื่อตัดโลโก้และชื่อแบรนด์ออก คนยังจำ "น้ำเสียง" หรือ "สไตล์ภาพ" ของคุณได้ไหม?',
+      question_text: 'เมื่อตัดโลโก้และชื่อแบรนด์ออก คนยังจำ &quot;น้ำเสียง&quot; หรือ &quot;สไตล์ภาพ&quot; ของคุณได้ไหม?',
       order: 7,
       category: 'Message & Magnetic Power',
       options: [
@@ -93,7 +94,7 @@ export default function QuizPage() {
     },
     {
       id: 8,
-      question_text: 'คุณรู้สึกเหนื่อยที่ต้องคอย "คิดคอนเทนต์ใหม่" ทุกวันเพื่อวิ่งไล่อัลกอริทึมไหม?',
+      question_text: 'คุณรู้สึกเหนื่อยที่ต้องคอย &quot;คิดคอนเทนต์ใหม่&quot; ทุกวันเพื่อวิ่งไล่อัลกอริทึมไหม?',
       order: 8,
       category: 'Message & Magnetic Power',
       options: [
@@ -117,14 +118,14 @@ export default function QuizPage() {
     },
     {
       id: 10,
-      question_text: 'คำชมจากลูกค้าแบบไหนที่คุณได้รับแล้ว "ใจฟู" และมีพลังที่สุด?',
+      question_text: 'คำชมจากลูกค้าแบบไหนที่คุณได้รับแล้ว &quot;ใจฟู&quot; และมีพลังที่สุด?',
       order: 10,
       category: 'Inner State & Consistency',
       options: [
-        { text: 'ก. "ถูกดี / คุ้มค่ามาก"', score: 1 },
-        { text: 'ข. "ทำงานไว / เก่งจัง"', score: 2 },
-        { text: 'ค. "ชอบแนวคิดและทัศนคติของคุณจัง"', score: 3 },
-        { text: 'ง. "ขอบคุณที่คุณเป็นคุณ ขอบคุณที่ทำสิ่งนี้ออกมา"', score: 4 }
+        { text: 'ก. &quot;ถูกดี / คุ้มค่ามาก&quot;', score: 1 },
+        { text: 'ข. &quot;ทำงานไว / เก่งจัง&quot;', score: 2 },
+        { text: 'ค. &quot;ชอบแนวคิดและทัศนคติของคุณจัง&quot;', score: 3 },
+        { text: 'ง. &quot;ขอบคุณที่คุณเป็นคุณ ขอบคุณที่ทำสิ่งนี้ออกมา&quot;', score: 4 }
       ]
     },
     {
@@ -141,7 +142,7 @@ export default function QuizPage() {
     },
     {
       id: 12,
-      question_text: 'พนักงานหรือแอดมินของคุณ สามารถตอบคำถามลูกค้าได้ "โทนเสียง" เดียวกับคุณไหม?',
+      question_text: 'พนักงานหรือแอดมินของคุณ สามารถตอบคำถามลูกค้าได้ &quot;โทนเสียง&quot; เดียวกับคุณไหม?',
       order: 12,
       category: 'Inner State & Consistency',
       options: [
@@ -153,14 +154,14 @@ export default function QuizPage() {
     },
     {
       id: 13,
-      question_text: 'มีแบรนด์คู่แข่งหน้าใหม่ที่ "ภาพสวยกว่า / เด็กกว่า" เริ่มเข้ามา คุณรู้สึกอย่างไร?',
+      question_text: 'มีแบรนด์คู่แข่งหน้าใหม่ที่ &quot;ภาพสวยกว่า / เด็กกว่า&quot; เริ่มเข้ามา คุณรู้สึกอย่างไร?',
       order: 13,
       category: 'Future & Sustainability',
       options: [
         { text: 'ก. สติหลุด กลัวโดนแย่งลูกค้าจนต้องลดราคาแข่ง', score: 1 },
         { text: 'ข. กังวล และพยายามวิ่งไล่ตามทำตามเขาทุกอย่าง', score: 2 },
         { text: 'ค. ดูไว้เป็นไอเดีย แต่ยังเชื่อมั่นในทางของตัวเอง', score: 3 },
-        { text: 'ง. ไม่หวั่นใจเลย เพราะเขาเลียนแบบ "ตัวตน" ของฉันไม่ได้', score: 4 }
+        { text: 'ง. ไม่หวั่นใจเลย เพราะเขาเลียนแบบ &quot;ตัวตน&quot; ของฉันไม่ได้', score: 4 }
       ]
     },
     {
@@ -201,7 +202,7 @@ export default function QuizPage() {
     },
     {
       id: 17,
-      question_text: 'แบรนด์ของคุณกำลังแย่ง "เวลาใช้ชีวิต" หรือ "ช่วยส่งเสริมชีวิต" คุณ?',
+      question_text: 'แบรนด์ของคุณกำลังแย่ง &quot;เวลาใช้ชีวิต&quot; หรือ &quot;ช่วยส่งเสริมชีวิต&quot; คุณ?',
       order: 17,
       category: 'Future & Sustainability',
       options: [
@@ -237,7 +238,7 @@ export default function QuizPage() {
     },
     {
       id: 20,
-      question_text: 'สรุปแล้ว คุณรู้สึกว่าความสำเร็จวันนี้มาจาก "ตัวจริง" หรือ "ความโชคดี"?',
+      question_text: 'สรุปแล้ว คุณรู้สึกว่าความสำเร็จวันนี้มาจาก &quot;ตัวจริง&quot; หรือ &quot;ความโชคดี&quot;?',
       order: 20,
       category: 'Future & Sustainability',
       options: [
