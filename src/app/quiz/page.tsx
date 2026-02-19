@@ -99,78 +99,78 @@ export default function QuizPage() {
     setCurrentIndex(currentIndex + 1)
   }
 
-  const handlePayment = async (e?: React.MouseEvent) => {
-    // 1. สำคัญมาก: ป้องกันไม่ให้หน้าเว็บรีเฟรชตัวเองตอนกดปุ่ม
-    if (e) e.preventDefault();
+  //   const handlePayment = async (e?: React.MouseEvent) => {
+  //     // 1. สำคัญมาก: ป้องกันไม่ให้หน้าเว็บรีเฟรชตัวเองตอนกดปุ่ม
+  //     if (e) e.preventDefault();
 
-    // โหลด Omise script ถ้ายังไม่มี
-    if (!(window as any).OmiseCard) {
-      const script = document.createElement('script');
-      script.src = 'https://cdn.omise.co/omise.js';
-      script.onload = () => {
-        console.log('Omise script loaded successfully');
-        proceedWithPayment();
-      };
-      script.onerror = () => {
-        console.error('Failed to load Omise script');
-        alert('ไม่สามารถโหลดระบบชำระเงินได้ กรุณาลองใหม่');
-      };
-      document.head.appendChild(script);
-    } else {
-      proceedWithPayment();
-    }
-  };
+  //     // โหลด Omise script ถ้ายังไม่มี
+  //     if (!(window as any).OmiseCard) {
+  //       const script = document.createElement('script');
+  //       script.src = 'https://cdn.omise.co/omise.js';
+  //       script.onload = () => {
+  //         console.log('Omise script loaded successfully');
+  //         proceedWithPayment();
+  //       };
+  //       script.onerror = () => {
+  //         console.error('Failed to load Omise script');
+  //         alert('ไม่สามารถโหลดระบบชำระเงินได้ กรุณาลองใหม่');
+  //       };
+  //       document.head.appendChild(script);
+  //     } else {
+  //       proceedWithPayment();
+  //     }
+  //   };
 
-  const proceedWithPayment = () => {
-    const { OmiseCard } = window as any;
-    if (!OmiseCard) {
-      alert('ระบบชำระเงินยังไม่พร้อมใช้งาน กรุณารอสักครู่แล้วลองใหม่');
-      return;
-    }
+  //   const proceedWithPayment = () => {
+  //     const { OmiseCard } = window as any;
+  //     if (!OmiseCard) {
+  //       alert('ระบบชำระเงินยังไม่พร้อมใช้งาน กรุณารอสักครู่แล้วลองใหม่');
+  //       return;
+  //     }
 
-    OmiseCard.configure({
-      publicKey: process.env.NEXT_PUBLIC_OMISE_PUBLIC_KEY,
-      currency: 'thb',
-      frameLabel: 'ชุ่มฉ่ำ Branding Payment',
-      submitLabel: 'ยืนยันการชำระเงิน',
-    });
+  //     OmiseCard.configure({
+  //       publicKey: process.env.NEXT_PUBLIC_OMISE_PUBLIC_KEY,
+  //       currency: 'thb',
+  //       frameLabel: 'ชุ่มฉ่ำ Branding Payment',
+  //       submitLabel: 'ยืนยันการชำระเงิน',
+  //     });
 
-    // 2. เรียกเปิดหน้าต่างกรอกบัตร (ตัวนี้จะเป็นหน้าแยกที่เด้งขึ้นมาให้เองครับ)
-    OmiseCard.open({
-      amount: 59900,
-      onCreateTokenSuccess: async (token: string) => {
-        try {
-          const res = await fetch('/api/checkout', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              email: regData.email || 'guest@example.com',
-              amount: 599, // Amount in THB
-              token: token,
-            }),
-          })
+  //     // 2. เรียกเปิดหน้าต่างกรอกบัตร (ตัวนี้จะเป็นหน้าแยกที่เด้งขึ้นมาให้เองครับ)
+  //     OmiseCard.open({
+  //       amount: 59900,
+  //       onCreateTokenSuccess: async (token: string) => {
+  //         try {
+  //           const res = await fetch('/api/checkout', {
+  //             method: 'POST',
+  //             headers: {
+  //               'Content-Type': 'application/json',
+  //             },
+  //             body: JSON.stringify({
+  //               email: regData.email || 'guest@example.com',
+  //               amount: 599, // Amount in THB
+  //               token: token,
+  //             }),
+  //           })
 
-          const data = await res.json()
+  //           const data = await res.json()
 
-          if (data.success) {
-            console.log('Payment successful:', data)
-            router.push('/upsell')
-          } else {
-            alert('การชำระเงินไม่สำเร็จ: ' + (data.message || data.error))
-          }
-        } catch (err) {
-          console.error('Payment error:', err)
-          alert('เกิดข้อผิดพลาดในการชำระเงิน กรุณาลองใหม่')
-        }
-      },
-      // ถ้าลูกค้ากดปิดหน้าต่างกรอกบัตร ไม่ต้องทำอะไร (จะยังอยู่ที่หน้าเดิม ไม่เด้งกลับไปลงทะเบียน)
-      onCancel: () => {
-        console.log("Customer closed the payment window");
-      }
-    });
-  };
+  //           if (data.success) {
+  //             console.log('Payment successful:', data)
+  //             router.push('/upsell')
+  //           } else {
+  //             alert('การชำระเงินไม่สำเร็จ: ' + (data.message || data.error))
+  //           }
+  //         } catch (err) {
+  //           console.error('Payment error:', err)
+  //           alert('เกิดข้อผิดพลาดในการชำระเงิน กรุณาลองใหม่')
+  //         }
+  //       },
+  //       // ถ้าลูกค้ากดปิดหน้าต่างกรอกบัตร ไม่ต้องทำอะไร (จะยังอยู่ที่หน้าเดิม ไม่เด้งกลับไปลงทะเบียน)
+  //       onCancel: () => {
+  //         console.log("Customer closed the payment window");
+  //       }
+  //     });
+  //   };
 
   const handleStartQuiz = async () => {
     setAuthError(null)
@@ -566,7 +566,7 @@ export default function QuizPage() {
                 </div>
                 <button
                   className="w-full bg-[--green] text-white rounded-full py-4 px-6 font-black text-base sm:text-lg shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-150"
-                  onClick={handlePayment}
+                  onClick={() => router.push(`/checkout?email=${encodeURIComponent(regData.email)}`)}
                 >
                   {getResultData(score).ctaLabel}
                 </button>
