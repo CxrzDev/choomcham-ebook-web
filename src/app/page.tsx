@@ -76,11 +76,11 @@ export default async function Home() {
 
                             {/* top */}
                             <div className="mb-10">
-                                <div className=" lg:text-[2rem] md:text-[3vw] sm:text-[3vw] text-[20px] thai sm:w-[35vw] small">อย่าทำธุรกิจแค่เพื่อยอดขาย <br />จงดึงคุณค่าจากตัวคุณออกมา<br /><div className="underline decoration-[--yellow] text-[--yellow]">สร้างแบรนด์ให้เป็นตำนาน</div>
+                                <div className=" lg:text-5xl md:text-3xl sm:text-2xl text-xl thai sm:max-w-xl max-w-sm small loading-tight">อย่าทำธุรกิจแค่เพื่อยอดขาย <br />จงดึงคุณค่าจากตัวคุณออกมา<br /><div className="underline decoration-[--yellow] text-[--yellow] mt-2">สร้างแบรนด์ให้เป็นตำนาน</div>
 
                                 </div>
                                 <br />
-                                <div className="text-[14px] sm:text-large thai w-[56vw]">ผลงานสร้างแบรนด์สายคุณค่าระดับประเทศ</div>
+                                <div className="text-base sm:text-lg thai w-full sm:max-w-lg">ผลงานสร้างแบรนด์สายคุณค่าระดับประเทศ</div>
                                 <br />
                                 {/* <Link href="/about"><div className="btn bg-primary rounded-full px-10 py-1 border-0 hover:scale-110 duration-150 text-white">About us</div></Link> */}
                                 {/* <Link href="/about"><Button radius='sm' className='w-[300px] '>About Us</Button></Link> */}
@@ -89,7 +89,7 @@ export default async function Home() {
                         <br />
                     </div>
                 </div>
-                <div className=" absolute right-5 sm:right-20 bottom-8 sm:bottom-40 text-white thai sm:text-base text-[12px]">
+                <div className=" absolute right-5 sm:right-20 bottom-8 sm:bottom-40 text-white thai sm:text-base text-xs text-right">
                     <div>อีฟ ภัทรัดจารินท์​ สุวัชรานนท์</div>
                     <div>Brand Consultant / Teacher </div>
                 </div>
@@ -99,49 +99,49 @@ export default async function Home() {
         <section>
 
             <div className="bg-[--dark-blue] work">
-                <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] lg:text-black text-white text-xl pt-10 leading-normal  ">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br />แต่ยังไม่มีใครเห็น <span className="bg-[--pink] px-2 text-white">คุณมาถูกที่แล้ว</span>
+                <div className="w-full text-center font-bold lg:text-4xl md:text-3xl text-xl lg:text-black text-white pt-10 leading-normal px-4">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br /><span className='inline-block my-2'>แต่ยังไม่มีใครเห็น</span> <span className="bg-[--pink] px-2 text-white rounded-md inline-block">คุณมาถูกที่แล้ว</span>
                 </div>
 
-                <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-center py-10 px-4 sm:px-10 '>
-                    <Card className=' w-full max-w-[350px] shadow-xl bg-white'>
+                <section className=' flex flex-col gap-10  lg:flex-row lg:items-stretch items-center justify-center py-10 px-4 sm:px-10 '>
+                    <Card className=' w-full max-w-[350px] shadow-xl bg-white hover:-translate-y-2 duration-300'>
                         <CardHeader>
                             {/* <div className='h-10 w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
                             </div> */}
                         </CardHeader>
                         <CardBody>
-                            <Flower />
-                            <div className='text-xl font-bold'>  Value </div>
-                            <div className="text-[18px]">
+                            <Flower size={48} className="text-[--pink] mb-4" />
+                            <div className='text-xl font-bold mb-2'>  Value </div>
+                            <div className="text-base text-gray-600">
                                 เราช่วยสะท้อนคุณค่าในตัวคุณที่สร้างอิมแพคให้สังคม
                             </div>
                         </CardBody>
                     </Card>
-                    <Card className=' w-full max-w-[350px] shadow-xl bg-white'>
+                    <Card className=' w-full max-w-[350px] shadow-xl bg-white hover:-translate-y-2 duration-300'>
                         <CardHeader>
                             {/* <div className='h-10 w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
                             </div> */}
                         </CardHeader>
                         <CardBody>
-                            <BadgeCheck />
-                            <h3 className='text-xl font-bold'> Identity  </h3>
-                            <div className="text-[18px]">
+                            <BadgeCheck size={48} className="text-[--green] mb-4" />
+                            <h3 className='text-xl font-bold mb-2'> Identity  </h3>
+                            <div className="text-base text-gray-600">
                                 เราช่วยค้นหาเอกลักษณ์ที่เป็นธรรมชาติที่สุดของคุณ
                             </div>
                         </CardBody>
                     </Card>
-                    <Card className=' w-full max-w-[350px] shadow-xl bg-white'>
+                    <Card className=' w-full max-w-[350px] shadow-xl bg-white hover:-translate-y-2 duration-300'>
                         <CardHeader>
                             {/* <div className='h-10 w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
                             </div> */}
                         </CardHeader>
                         <CardBody>
-                            <HeartHandshake />
-                            <h3 className='text-xl font-bold'> Culture
+                            <HeartHandshake size={48} className="text-[--yellow] mb-4" />
+                            <h3 className='text-xl font-bold mb-2'> Culture
                             </h3>
-                            <div className="text-[18px]">
+                            <div className="text-base text-gray-600">
                                 เราช่วยสร้างวัฒนธรรมประจำแบรนด์ให้ธุรกิจคุณแตกต่างอย่างยั่งยืน
                             </div>
 
@@ -151,54 +151,58 @@ export default async function Home() {
             </div>
             <div className="bg-slate-100/40">
 
-                <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-center py-10 px-4 sm:px-10 '>
-                    <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass'>
+                <section className=' flex flex-col gap-10  lg:flex-row lg:items-stretch items-center justify-center py-10 px-4 sm:px-10 '>
+                    <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass hover:scale-105 duration-300'>
                         {/* <CardHeader>
                             <div className='w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
                             </div>
                         </CardHeader> */}
-                        <CardBody className="flex flex-col justify-between">
-                            <Image src="/images/courses/5.jpg"></Image>
-                            <div className="">
-                                <div className='text-xl font-bold pt-2 pb-1'>  Online course </div>
-                                <div className="text-[18px]">
+                        <CardBody className="flex flex-col justify-between p-0">
+                            <Image src="/images/courses/5.jpg" className="w-full h-auto object-cover aspect-video rounded-none"></Image>
+                            <div className="p-5">
+                                <div className='text-xl font-bold pt-2 pb-1 text-[--dark-blue]'>  Online course </div>
+                                <div className="text-base text-gray-600 mb-4 h-[72px] overflow-hidden">
                                     หลักสูตรสร้างคนดังในตำนาน เนื้อหาแน่น ห้ามพลาด เรียนได้ทุกที่ ทุกเวลา
                                 </div>
-                                <Button className='bg-[--green] text-white mt-2 w-full' radius="full">ดูหลักสูตรเพิ่มเติม</Button>
+                                <Button className='bg-[--green] text-white mt-2 w-full font-bold shadow-md' radius="full">ดูหลักสูตรเพิ่มเติม</Button>
                             </div>
                         </CardBody>
                     </Card>
-                    <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass'>
+                    <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass hover:scale-105 duration-300'>
                         {/* <CardHeader>
                             <div className=' w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
                             </div>
                         </CardHeader> */}
-                        <CardBody>
-                            <Image src="/images/courses/4.jpg"></Image>
-                            <h3 className='text-xl font-bold pt-3 pb-1'> On-site Workshop  </h3>
-                            <div className="text-[18px]">
-                                เรียนสด Connection เพื่อนเจ้าของธุรกิจตัวจริงต่างวงการ หรือจัดเวิร์คชอปเจ๋งๆให้องค์กร
+                        <CardBody className="p-0">
+                            <Image src="/images/courses/4.jpg" className="w-full h-auto object-cover aspect-video rounded-none"></Image>
+                            <div className="p-5">
+                                <h3 className='text-xl font-bold pt-3 pb-1 text-[--dark-blue]'> On-site Workshop  </h3>
+                                <div className="text-base text-gray-600 mb-4 h-[72px] overflow-hidden">
+                                    เรียนสด Connection เพื่อนเจ้าของธุรกิจตัวจริงต่างวงการ หรือจัดเวิร์คชอปเจ๋งๆให้องค์กร
+                                </div>
+                                <Button className='bg-[--green] text-white mt-2 w-full font-bold shadow-md' radius="full">ดูรอบเรียน</Button>
                             </div>
-                            <Button className='bg-[--green] text-white mt-2' radius="full">ดูรอบเรียน</Button>
                         </CardBody>
                     </Card>
-                    <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass'>
+                    <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass hover:scale-105 duration-300'>
                         {/* <CardHeader>
                             <div className=' w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
                             </div>
                             
                         </CardHeader> */}
-                        <CardBody>
-                            <Image src="/images/courses/1.jpg"></Image>
-                            <h3 className='text-xl font-bold pt-2 pb-1'> 1:1 Consult
-                            </h3>
-                            <div className="text-[18px]">
-                                ลงพื้นที่ทดสอบแบรนด์ที่มีหน้าร้าน ช่วยดึงจุดเด่นของแบรนด์ออกมาสื่อสารให้ได้ใจคน
+                        <CardBody className="p-0">
+                            <Image src="/images/courses/1.jpg" className="w-full h-auto object-cover aspect-video rounded-none"></Image>
+                            <div className="p-5">
+                                <h3 className='text-xl font-bold pt-2 pb-1 text-[--dark-blue]'> 1:1 Consult
+                                </h3>
+                                <div className="text-base text-gray-600 mb-4 h-[72px] overflow-hidden">
+                                    ลงพื้นที่ทดสอบแบรนด์ที่มีหน้าร้าน ช่วยดึงจุดเด่นของแบรนด์ออกมาสื่อสารให้ได้ใจคน
+                                </div>
+                                <Button className='bg-[--green] text-white mt-2 w-full font-bold shadow-md' radius="full">ดูเพิ่มเติม</Button>
                             </div>
-                            <Button className='bg-[--green] text-white mt-2' radius="full">ดูเพิ่มเติม</Button>
                         </CardBody>
                     </Card>
                 </section>
@@ -207,7 +211,7 @@ export default async function Home() {
             <section className='p-8 lg:p-16 bg-gradient-to-br from-white to-slate-50'>
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
                     <div className="w-full lg:w-1/3 flex justify-center">
-                        <img className="w-64 lg:w-80 drop-shadow-2xl hover:scale-105 transition-transform duration-300" src="/images/sticker6.png" alt="E-Book ตัวจริงต้องมีที่ยืน" />
+                        <img className="w-48 sm:w-64 lg:w-80 drop-shadow-2xl hover:scale-105 transition-transform duration-300" src="/images/sticker6.png" alt="E-Book ตัวจริงต้องมีที่ยืน" />
                     </div>
 
                     <div className="w-full lg:w-2/3 space-y-6 text-center lg:text-left">
@@ -215,16 +219,16 @@ export default async function Home() {
                             Sales Page E-Book
                         </div>
 
-                        <h2 className="text-3xl lg:text-5xl font-bold text-[--dark-blue] leading-tight">
+                        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-[--dark-blue] leading-tight">
                             เลิกทำตัวเป็น <span className="text-[--green]">&quot;ของดีที่ไม่มีใครเห็น&quot;</span><br />
                             แล้วเริ่มเป็น <span className="text-[--yellow] bg-black/5 px-2">&quot;เบอร์หนึ่ง&quot;</span> ที่ใครก็แทนไม่ได้
                         </h2>
 
-                        <h3 className="text-xl lg:text-2xl font-bold text-[--pink] italic">
+                        <h3 className="text-lg lg:text-2xl font-bold text-[--pink] italic">
                             &quot;คนเก่งที่ไม่มีที่ยืน... จะถูกแทนที่เสมอ&quot;
                         </h3>
 
-                        <div className="text-lg text-[--grey] leading-relaxed space-y-4">
+                        <div className="text-base lg:text-lg text-[--grey] leading-relaxed space-y-4">
                             <p>
                                 คุณอาจจะเก่งระดับโลก มีสินค้าที่ดีเกินมาตรฐาน หรือมีบริการที่เปลี่ยนชีวิตคนได้
                                 แต่... <span className="font-bold text-red-500">นี่คือความจริงที่เจ็บปวด</span>
@@ -233,14 +237,14 @@ export default async function Home() {
                                 ในโลกธุรกิจ <span className="font-bold">&quot;ความเก่ง&quot;</span> เป็นแค่ตั๋วเข้าประตู
                                 แต่ <span className="font-bold bg-[--yellow]/20 px-1">&quot;ที่ยืน&quot;</span> ต่างหากคือตัวตัดสินว่าใครจะรวย
                             </p>
-                            <p className="text-base text-slate-500 italic border-l-4 border-[--pink] pl-4">
+                            <p className="text-sm sm:text-base text-slate-500 italic border-l-4 border-[--pink] pl-4">
                                 &quot;ถ้าวันนี้คุณยังเหนื่อยกับการหาลูกค้า ยังต้องลดแลกแจกแถม หรือรู้สึกว่าคนอื่นที่ &apos;เก่งน้อยกว่า&apos; กลับดังกว่าคุณ...
                                 ปัญหาไม่ใช่ว่าคุณไม่เก่ง แต่เป็นเพราะคุณ &apos;ยืนมั่ว&apos; ค่ะ&quot;
                             </p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 mt-6 max-w-2xl">
-                            <h4 className="text-xl font-bold text-[--dark-blue] mb-3 flex items-center gap-2">
+                        <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 mt-6 max-w-2xl mx-auto lg:mx-0">
+                            <h4 className="text-lg sm:text-xl font-bold text-[--dark-blue] mb-3 flex items-center justify-center lg:justify-start gap-2">
                                 <span className="text-2xl">📖</span> E-Book ตัวจริงต้องมีที่ยืน: ประตูสู่ Top of Mind
                             </h4>
                             <ul className="space-y-2 text-left text-sm text-[--grey] mb-4">
@@ -280,37 +284,37 @@ export default async function Home() {
 
             <section className='p-10 bg-slate-100/40'>
                 <div className=''>
-                    <div className="text-2xl sm:text-4xl font-bold text-center py-10 ">
+                    <div className="text-2xl sm:text-4xl font-bold text-center py-10 text-[--dark-blue]">
                         สร้างแบรนด์แบบชุ่มฉ่ำ คืออะไร?
                     </div>
 
-                    <ul className="sm:text-2xl text-lg sm:flex grid justify-center items-strech  gap-10">
-                        <li className="hover:-translate-y-3 duration-200 rounded-2xl text-center w-[250px]  p-3 grid ">
-                            <div><img src="/images/sticker24.png" alt="" /></div>
+                    <ul className="flex flex-wrap justify-center items-stretch gap-8">
+                        <li className="hover:-translate-y-3 duration-200 rounded-3xl bg-white p-6 shadow-md w-full max-w-[260px] flex flex-col items-center text-center border border-slate-100">
+                            <div className="mb-4 h-32 flex items-center"><img src="/images/sticker24.png" alt="" className="w-full h-full object-contain" /></div>
                             <div>
-                                <div className='font-bold text-[--green]'>1. จิตวิญญาณ</div>
-                                <div className="text-[18px]">ถอดตัวตนพิเศษของคุณออกมาวางกลยุทธ์แบรนด์</div>
+                                <div className='font-bold text-[--green] text-xl mb-2'>1. จิตวิญญาณ</div>
+                                <div className="text-base text-gray-600">ถอดตัวตนพิเศษของคุณออกมาวางกลยุทธ์แบรนด์</div>
                             </div>
                         </li>
-                        <li className="hover:-translate-y-3 duration-200 rounded-2xl text-center w-[250px]  p-3 grid ">
-                            <div><img src="/images/sticker19.png" alt="" /></div>
+                        <li className="hover:-translate-y-3 duration-200 rounded-3xl bg-white p-6 shadow-md w-full max-w-[260px] flex flex-col items-center text-center border border-slate-100">
+                            <div className="mb-4 h-32 flex items-center"><img src="/images/sticker19.png" alt="" className="w-full h-full object-contain" /></div>
                             <div>
-                                <div className="font-bold text-[--green]">2. ความสุข</div>
-                                <div className="text-[18px]">ใจใสใจสบายทำอะไรก็สำเร็จ</div>
+                                <div className="font-bold text-[--green] text-xl mb-2">2. ความสุข</div>
+                                <div className="text-base text-gray-600">ใจใสใจสบายทำอะไรก็สำเร็จ</div>
                             </div>
                         </li>
-                        <li className="hover:-translate-y-3 duration-200 rounded-2xl text-center w-[250px]  p-3 grid ">
-                            <div><img src="/images/sticker7.png" alt="" /></div>
+                        <li className="hover:-translate-y-3 duration-200 rounded-3xl bg-white p-6 shadow-md w-full max-w-[260px] flex flex-col items-center text-center border border-slate-100">
+                            <div className="mb-4 h-32 flex items-center"><img src="/images/sticker7.png" alt="" className="w-full h-full object-contain" /></div>
                             <div>
-                                <div className="font-bold text-[--green]">3. ลูกค้า</div>
-                                <div className="text-[18px]">เขาคือคนสำคัญที่สุดของคุณนะ เข้าใจเขาลึกมากพอรึยัง?</div>
+                                <div className="font-bold text-[--green] text-xl mb-2">3. ลูกค้า</div>
+                                <div className="text-base text-gray-600">เขาคือคนสำคัญที่สุดของคุณนะ เข้าใจเขาลึกมากพอรึยัง?</div>
                             </div>
                         </li>
-                        <li className="hover:-translate-y-3 duration-200 rounded-2xl text-center w-[250px]  p-3 grid ">
-                            <div><img src="/images/sticker21.png" alt="" /></div>
+                        <li className="hover:-translate-y-3 duration-200 rounded-3xl bg-white p-6 shadow-md w-full max-w-[260px] flex flex-col items-center text-center border border-slate-100">
+                            <div className="mb-4 h-32 flex items-center"><img src="/images/sticker21.png" alt="" className="w-full h-full object-contain" /></div>
                             <div>
-                                <div className="font-bold text-[--green]">4. ชื่อเสียง</div>
-                                <div className="text-[18px]">ออกแบบคอนเทนต์คุณให้แตกต่างและลูกค้าจดจำ</div>
+                                <div className="font-bold text-[--green] text-xl mb-2">4. ชื่อเสียง</div>
+                                <div className="text-base text-gray-600">ออกแบบคอนเทนต์คุณให้แตกต่างและลูกค้าจดจำ</div>
                             </div>
                         </li>
                     </ul>
@@ -318,127 +322,85 @@ export default async function Home() {
             </section>
 
             <section>
-                <div className="flex sm:flex-row flex-col justify-evenly items-center gap-5 p-10 ">
-                    <div className=' p-10 flex flex-col justify-between '>
+                <div className="flex lg:flex-row flex-col justify-evenly items-center gap-10 p-10 ">
+                    <div className=' lg:p-10 flex flex-col justify-between text-center lg:text-left '>
                         <div>
-                            <div className="text-3xl font-bold text-[--yellow]">Our Students</div>
-                            <div className="text-lg sm:text-2xl w-[95vw] sm:w-auto ">
-                                ธุรกิจคุณจะมีที่ยืน เมื่อคุณตัดสินใจจะเลิกอยู่ตรงกลาง
+                            <div className="text-3xl font-bold text-[--yellow] mb-4">Our Students</div>
+                            <div className="text-xl sm:text-3xl max-w-xl font-bold text-[--dark-blue] ">
+                                ธุรกิจคุณจะมีที่ยืน<br className="hidden sm:block" /> เมื่อคุณตัดสินใจจะเลิกอยู่ตรงกลาง
                             </div>
                         </div>
-                        <div className="py-10"><Button className=" bg-[--green] text-white text-lg px-10 " radius='full'>สำรวจคอร์สที่เหมาะกับคุณ</Button></div>
+                        <div className="py-10"><Button className=" bg-[--green] text-white text-lg px-10 font-bold shadow-lg shadow-green-200" radius='full'>สำรวจคอร์สที่เหมาะกับคุณ</Button></div>
                     </div>
-                    <div className="flex flex-wrap sm:w-[30%] w-[95vw] gap-5 justify-center ">
-                        <img className="sm:h-[80px] h-[50px]" src="/images/100_logo.png" alt="โลโก้อายุน้อยร้อยล้าน" />
-                        <img className="sm:h-[80px] h-[50px]" src="/images/bdms_logo.jpg" alt="โลโก้คลินิคบีดีเอ็มเอส" />
-                        <img className="sm:h-[80px] h-[50px]" src="/images/chubbycheeks_logo.jpg" alt="โลโก้ชุบบี้ชิ๊กส์" />
-                        <img className="sm:h-[80px] h-[50px]" src="/images/madamfin_logo.jpg" alt="โลโก้มาดามฟิน" />
-                        <img className="sm:h-[80px] h-[50px]" src="/images/ondemand_logo.png" alt="โลโก้ออนดีมานด์" />
-                        <img className="sm:h-[80px] h-[50px]" src="/images/sowonclinic_logo.jpg" alt="โลโก้โซวอนคลีนิค" />
-                        <img className="sm:h-[80px] h-[50px]" src="/images/winkwhite_logo.jpg" alt="โลโก้วิ้งค์ไวท์" />
-                        <img className="sm:h-[80px] h-[50px]" src="/images/klao.png" alt="โลโก้เกลานิสัยอันตราย" />
+                    <div className="flex flex-wrap lg:w-[40%] w-full gap-6 justify-center ">
+                        <img className="h-[60px] sm:h-[80px] object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100" src="/images/100_logo.png" alt="โลโก้อายุน้อยร้อยล้าน" />
+                        <img className="h-[60px] sm:h-[80px] object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100" src="/images/bdms_logo.jpg" alt="โลโก้คลินิคบีดีเอ็มเอส" />
+                        <img className="h-[60px] sm:h-[80px] object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100" src="/images/chubbycheeks_logo.jpg" alt="โลโก้ชุบบี้ชิ๊กส์" />
+                        <img className="h-[60px] sm:h-[80px] object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100" src="/images/madamfin_logo.jpg" alt="โลโก้มาดามฟิน" />
+                        <img className="h-[60px] sm:h-[80px] object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100" src="/images/ondemand_logo.png" alt="โลโก้ออนดีมานด์" />
+                        <img className="h-[60px] sm:h-[80px] object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100" src="/images/sowonclinic_logo.jpg" alt="โลโก้โซวอนคลีนิค" />
+                        <img className="h-[60px] sm:h-[80px] object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100" src="/images/winkwhite_logo.jpg" alt="โลโก้วิ้งค์ไวท์" />
+                        <img className="h-[60px] sm:h-[80px] object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100" src="/images/klao.png" alt="โลโก้เกลานิสัยอันตราย" />
                     </div>
                 </div>
             </section>
 
             <div className="divider-y"></div>
-            {/* 
-            <div className="text-2xl sm:text-4xl font-bold text-center py-10 flex flex-col justify-center items-center">
-                Our services
-                <div className="rounded-full h-1 w-[100px] bg-[#D33666] "></div>
-            </div>
-
-            
-            <section className=''>
-
-
-                <div className=" rounded-3xl bg-slate-100 w-[100%]">
-                    <div className="flex flex-wrap justify-center gap-10 py-5 px-4">
-
-
-                        {
-                            (contents.length != 0) ?
-
-                                contents.map((content: any) =>
-                                    <div className="card  w-96 sm:w-96 bg-white/50 shadow-xl overflow-hidden  " key={content.id}>
-                                        <figure className={"h-[210px] sm:h-[240px] overflow-hidden "}><Image width={390} height={260} src={content.imageUrl || "/images/cover6.png"} fallbackSrc="/images/cover6.png" alt={content.title} className='object-cover z-0' /></figure>
-                                        <div className="card-body h-[202px] sm:h-[auto]">
-                                            <div className="card-title text-[--green]">
-                                                {content.title}
-                                                
-                                            </div>
-                                            <p className="h-[40px] sm:h-[80px] w-[auto] text-ellipsis overflow-hidden">{content.description}</p>
-                                            <div className="card-actions justify-between">
-                                                <Button href='#' className="bg-[--yellow]" radius='full'>ดูรายละเอียด</Button>
-                                               
-                                            </div>
-                                        </div>
-                                    </div>
-                                ) :
-                                courses.map((content) => {
-                                    return <div className="card  w-96 sm:w-96 bg-white/50 shadow-xl overflow-hidden  " key={content.id}>
-                                        <figure className={"h-[210px] sm:h-[240px] overflow-hidden "}><Loading /></figure>
-                                        <div className="card-body h-[202px] sm:h-[auto]">
-                                            <div className="card-title text-[--green]">
-                                                กำลังโหลด
-                                            </div>
-                                            <p className="h-[40px] sm:h-[80px] w-[auto] text-ellipsis overflow-hidden">เนื้อหาเพื่อแสดง</p>
-                                            <div className="card-actions justify-between">
-                                                <Button href='#' className="bg-[--yellow]" radius='full'></Button>
-                                                <div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                })
-
-                        }
-
-                    </div>
-
-                </div>
-            </section> */}
 
 
             <section className=''>
-                <div className='p-10'>
+                <div className='py-10 pb-20'>
 
-                    <div className="sm:text-3xl text-xl font-bold">ทำไมต้องชุ่มฉ่ำเท่านั้น ?</div>
-                    <div className="rounded-full h-1 w-[10%] bg-[#D33666]"></div>
-                    <div className="py-3 my-3  divide-y">
-
-                        <div className="flex   flex-wrap gap-5 items-center justify-center ">
+                    <div className="lg:text-4xl text-2xl font-bold text-center text-[--dark-blue] mb-10">ทำไมต้องชุ่มฉ่ำเท่านั้น ?</div>
+                    <div className="flex flex-col items-center justify-center gap-10 px-4">
 
 
-                            {videos.map((video) => {
-                                return (
-                                    <div className="card  card-side bg-[--pink] glass shadow-xl w-[90vw] h-[548px] overflow-hidden sm:w-[640px]  sm:h-[380px] flex-col sm:flex-row" key={video.id}>
-                                        <figure className='bg-black w-full sm:w-[50%] h-full  flex items-center justify-center overflow-hidden '>
-                                            <iframe src={"https://www.facebook.com/plugins/video.php?href=" + video.src + ""} className='sm:h-[400px]' allowFullScreen={true}  ></iframe></figure>
-                                        <div className="card-body sm:flex-col flex-row text-white sm:w-[50%] sm:h-[auto] ">
-                                            <div>
-                                                <div className="card-title sm:text-3xl font-bold text-[--yellow] text-xl sm:w-[auto] overflow-hidden text-ellipsis">{video.title}!</div>
-                                                <p className="text-ellipsis sm:w-[auto] h-[120px] text-[14px] sm:text-xl overflow-hidden">{video.description}.</p>
-                                            </div>
-                                            <div className="card-actions justify-end">
-                                                <a href={video.src} target='_blank' className="btn bg-[--yellow] border-none">Watch</a>
-                                            </div>
+                        {videos.map((video) => {
+                            return (
+                                <div className="card lg:card-side bg-white border border-slate-100 shadow-xl w-full max-w-4xl overflow-hidden hover:shadow-2xl transition-shadow duration-300" key={video.id}>
+                                    <figure className='bg-black w-full lg:w-[60%] flex items-center justify-center overflow-hidden aspect-video relative group'>
+
+                                        {/* Placeholder or proper embed strategy often better than raw iframe for responsiveness. 
+                                            Using iframe with w-full h-full object-cover strategy */}
+                                        <div className="w-full h-full min-h-[300px] lg:min-h-[400px]">
+                                            <iframe
+                                                src={"https://www.facebook.com/plugins/video.php?href=" + video.src + "&show_text=false&width=560"}
+                                                className='w-full h-full'
+                                                style={{ border: 'none', overflow: 'hidden' }}
+                                                allowFullScreen={true}
+                                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                            ></iframe>
+                                        </div>
+
+                                    </figure>
+                                    <div className="card-body lg:w-[40%] flex flex-col justify-center p-8 bg-[--pink]/5 relative">
+
+                                        <div className="absolute top-0 right-0 w-24 h-24 bg-[--pink]/10 rounded-bl-[100px] -z-0"></div>
+
+                                        <div className="card-title text-xl lg:text-2xl font-bold text-[--dark-blue] mb-2 z-10">{video.title}!</div>
+                                        <p className="text-[--grey] text-base lg:text-lg mb-6 z-10 leading-relaxed">{video.description}.</p>
+                                        <div className="card-actions justify-start z-10">
+                                            <a href={video.src} target='_blank' className="btn bg-[--yellow] text-[--dark-blue] border-none px-8 rounded-full font-bold shadow-md hover:bg-[#e0b650]">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="mr-2"><path d="M8 5v14l11-7z" /></svg>
+                                                Watch Original
+                                            </a>
                                         </div>
                                     </div>
-                                )
-                            })}
+                                </div>
+                            )
+                        })}
 
 
-                        </div>
                     </div>
                 </div>
             </section>
 
-            <section className="py-5 bg-[--green] lg:text-[3rem] md:text-[2rem] text-[6vw] flex flex-col justify-center items-center h-[500px] text-white font-bold">
-                <div className="lg:text-[4rem] bg-[--pink]">สร้างแบรนด์ให้คนรักในแบบที่คุณ…เป็นคุณ</div>
-                เติบโตเร็วกว่า ยั่งยืนกว่า มีความสุขกว่า
-
+            <section className="py-20 bg-[--green] text-center text-white px-6">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-6 drop-shadow-md leading-tight">สร้างแบรนด์ให้คนรัก<br />ในแบบที่คุณ…เป็นคุณ</h2>
+                    {/* <div className="w-24 h-2 bg-white/30 mx-auto rounded-full mb-6"></div> */}
+                    <p className="text-xl sm:text-2xl lg:text-3xl font-light opacity-90">เติบโตเร็วกว่า ยั่งยืนกว่า มีความสุขกว่า</p>
+                </div>
             </section>
 
             <section className='flex justify-center p-10'>
