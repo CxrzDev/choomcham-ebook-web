@@ -18,47 +18,66 @@ function Footer() {
           <div className="">
             <div className="text-sm py-4 text-[--dark-blue]">Quick Link</div>
             <ul>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/">
-                <li>Home</li>
-              </Link>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/courses/3ms">
-                <li>3 Minutes Story</li>
-              </Link>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/about">
-                <li>About us</li>
-              </Link>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#">
-                <li>Testimonials</li>
-              </Link>
+              <li>
+                <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/courses/3ms">
+                  3 Minutes Story
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/about">
+                  About us
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#">
+                  Testimonials
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="">
             <div className="text-sm py-4 text-[--dark-blue]">Services</div>
             <ul>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#entrepreneur-desktop">
-                <li>Entrepreneur</li>
-              </Link>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#service-desktop">
-                <li>Production Service</li>
-              </Link>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#online-courses-desktop">
-                <li>Online Courses</li>
-              </Link>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#business-brief-desktop">
-                <li>Business Brief</li>
-              </Link>
+              <li>
+                <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#entrepreneur-desktop">
+                  Entrepreneur
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#service-desktop">
+                  Production Service
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#online-courses-desktop">
+                  Online Courses
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="#business-brief-desktop">
+                  Business Brief
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="">
             <div className="text-sm py-4 text-[--dark-blue]">About Us</div>
             <ul>
-           
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/about">
-                <li>About Founder</li>
-              </Link>
-              <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/service/consult">
-                <li>Consult</li>
-              </Link>
+              <li>
+                <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/about">
+                  About Founder
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:decoration-[--pink] decoration-transparent underline duration-150" href="/service/consult">
+                  Consult
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

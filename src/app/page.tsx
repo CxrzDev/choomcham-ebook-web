@@ -96,8 +96,8 @@ export default async function Home() {
                 <div className="w-full text-center font-bold lg:text-[2rem] md:text-[1.5rem] lg:text-black text-white text-xl pt-10 leading-normal  ">หากคุณมั่นใจว่าคุณทำสินค้าดีมาตลอด<br />แต่ยังไม่มีใครเห็น <span className="bg-[--pink] px-2 text-white">คุณมาถูกที่แล้ว</span>
                 </div>
 
-                <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-items-center justify-between py-10 sm:px-10 '>
-                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white'>
+                <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-center py-10 px-4 sm:px-10 '>
+                    <Card className=' w-full max-w-[350px] shadow-xl bg-white'>
                         <CardHeader>
                             {/* <div className='h-10 w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
@@ -111,7 +111,7 @@ export default async function Home() {
                             </div>
                         </CardBody>
                     </Card>
-                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white'>
+                    <Card className=' w-full max-w-[350px] shadow-xl bg-white'>
                         <CardHeader>
                             {/* <div className='h-10 w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
@@ -125,7 +125,7 @@ export default async function Home() {
                             </div>
                         </CardBody>
                     </Card>
-                    <Card className=' w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white'>
+                    <Card className=' w-full max-w-[350px] shadow-xl bg-white'>
                         <CardHeader>
                             {/* <div className='h-10 w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
@@ -145,8 +145,8 @@ export default async function Home() {
             </div>
             <div className="bg-slate-100/40">
 
-                <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-items-center justify-between py-10 sm:px-10 '>
-                    <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
+                <section className=' flex flex-col gap-10  sm:flex-row sm:items-stretch items-center justify-center py-10 px-4 sm:px-10 '>
+                    <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass'>
                         {/* <CardHeader>
                             <div className='w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
@@ -163,7 +163,7 @@ export default async function Home() {
                             </div>
                         </CardBody>
                     </Card>
-                    <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
+                    <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass'>
                         {/* <CardHeader>
                             <div className=' w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
@@ -178,7 +178,7 @@ export default async function Home() {
                             <Button className='bg-[--green] text-white mt-2' radius="full">ดูรอบเรียน</Button>
                         </CardBody>
                     </Card>
-                    <Card className='w-[calc(100vw-20px)] sm:w-[350px] shadow-xl bg-white/80 glass'>
+                    <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass'>
                         {/* <CardHeader>
                             <div className=' w-10 rounded-full '>
                                 <Image className='' width={300} height={300} src="./icon.svg" alt="" />
@@ -343,8 +343,8 @@ export default async function Home() {
 
                             {videos.map((video) => {
                                 return (
-                                    <div className="card  card-side bg-[--pink] glass shadow-xl w-[346px] h-[548px] overflow-hidden sm:w-[640px]  sm:h-[380px] flex-col sm:flex-row" key={video.id}>
-                                        <figure className='bg-black w-[350px] sm:w-[50%] h-full  flex items-center justify-center overflow-hidden '>
+                                    <div className="card  card-side bg-[--pink] glass shadow-xl w-[90vw] h-[548px] overflow-hidden sm:w-[640px]  sm:h-[380px] flex-col sm:flex-row" key={video.id}>
+                                        <figure className='bg-black w-full sm:w-[50%] h-full  flex items-center justify-center overflow-hidden '>
                                             <iframe src={"https://www.facebook.com/plugins/video.php?href=" + video.src + ""} className='sm:h-[400px]' allowFullScreen={true}  ></iframe></figure>
                                         <div className="card-body sm:flex-col flex-row text-white sm:w-[50%] sm:h-[auto] ">
                                             <div>
@@ -352,7 +352,7 @@ export default async function Home() {
                                                 <p className="text-ellipsis sm:w-[auto] h-[120px] text-[14px] sm:text-xl overflow-hidden">{video.description}.</p>
                                             </div>
                                             <div className="card-actions justify-end">
-                                                <a href={video.src} target='blank'><Button className="bg-[--yellow] ">Watch</Button></a>
+                                                <a href={video.src} target='blank'><button className="btn bg-[--yellow] border-none">Watch</button></a>
                                             </div>
                                         </div>
                                     </div>

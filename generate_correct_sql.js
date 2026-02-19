@@ -1,0 +1,295 @@
+const fs = require('fs');
+
+const questionsData = [
+    {
+        id: 1,
+        question_text: 'เวลามีคนถามว่า "แบรนด์คุณทำอะไร?" คุณมักจะ...',
+        order: 1,
+        category: 'Identity & Soul',
+        options: [
+            { text: 'ก. ตอบตามสิ่งที่ตลาดต้องการได้ยิน', score: 1 },
+            { text: 'ข. ตอบตามสินค้าที่ขายดีที่สุดในตอนนั้น', score: 2 },
+            { text: 'ค. ตอบได้ชัดเจน แต่อธิบายลำบากถ้าต้องโยงเข้าหาตัวเอง', score: 3 },
+            { text: 'ง. ตอบได้ทันทีด้วยความภูมิใจ เพราะมันคือเนื้อแท้ของคุณ', score: 4 }
+        ]
+    },
+    {
+        id: 2,
+        question_text: 'ถ้าต้องอธิบายจุดเด่นของแบรนด์ใน 1 ประโยค โดยห้ามใช้คำว่า "ดี/ถูก/เร็ว/มีคุณภาพ" คุณทำได้ไหม?',
+        order: 2,
+        category: 'Identity & Soul',
+        options: [
+            { text: 'ก. นึกไม่ออกเลย ถ้าไม่ใช้คำพวกนี้ก็ไม่รู้จะขายอะไร', score: 1 },
+            { text: 'ข. พอได้นะ แต่ฟังดูเหมือนก๊อปปี้คำสวยๆ ของคนอื่นมา', score: 2 },
+            { text: 'ค. ทำได้ และเริ่มรู้สึกอินกับคำนั้นมากขึ้นเรื่อยๆ', score: 3 },
+            { text: 'ง. ทำได้ทันที และประโยคนั้นคือคัมภีร์ที่ใช้ทำงานทุกวัน', score: 4 }
+        ]
+    },
+    {
+        id: 3,
+        question_text: 'คุณรู้สึก "ปลอม" เวลาต้องออกหน้ากล้องหรือพูดคุยกับแฟนคลับไหม?',
+        order: 3,
+        category: 'Identity & Soul',
+        options: [
+            { text: 'ก. รู้สึกตลอดเวลา จนเหนื่อยใจและอยากหลบไปหลังบ้าน', score: 1 },
+            { text: 'ข. รู้สึกเป็นบางช่วงที่ต้องทำเพื่อ "ยอดขาย" หรือตามกระแส', score: 2 },
+            { text: 'ค. นานๆ ครั้ง เมื่อต้องทำในสิ่งที่ไม่ใช่จริตจริง', score: 3 },
+            { text: 'ง. ไม่เลย ฉันเป็นคนเดิมทั้งหน้ากล้องและหลังกล้อง', score: 4 }
+        ]
+    },
+    {
+        id: 4,
+        question_text: 'หากวันหนึ่งคุณอยากเปลี่ยนแนวทางธุรกิจ คุณกลัวไหมว่าคนจะจำคุณไม่ได้?',
+        order: 4,
+        category: 'Identity & Soul',
+        options: [
+            { text: 'ก. กลัวมาก เพราะคนจำแค่สินค้า ไม่ได้จำตัวตนของฉัน', score: 1 },
+            { text: 'ข. กังวล เพราะภาพจำเดิมมันแข็งแรงจนขยับตัวยาก', score: 2 },
+            { text: 'ค. เฉยๆ เพราะฉันค่อยๆ แทรกตัวตนลงไปบ้างแล้ว', score: 3 },
+            { text: 'ง. ไม่กลัวเลย เพราะแฟนคลับติดตามที่ "วิธีคิด" ของฉัน', score: 4 }
+        ]
+    },
+    {
+        id: 5,
+        question_text: 'ถ้าวันนี้คุณ "หยุดยิงโฆษณา" ทุกช่องทางเป็นเวลา 30 วัน...',
+        order: 5,
+        category: 'Message & Magnetic Power',
+        options: [
+            { text: 'ก. ธุรกิจน่าจะเงียบกริบเหมือนป่าช้า', score: 1 },
+            { text: 'ข. ยอดขายน่าจะตกฮวบจนใจหาย', score: 2 },
+            { text: 'ค. ยังพอมีลูกค้าทักมาบ้างจากคอนเทนต์เก่าๆ', score: 3 },
+            { text: 'ง. ยังมีลูกค้าทักมาสม่ำเสมอ เพราะเขาตั้งใจมาหาคุณ', score: 4 }
+        ]
+    },
+    {
+        id: 6,
+        question_text: 'ลูกค้าส่วนใหญ่ทักมาหาคุณด้วยประโยคไหนเป็นอันดับแรก?',
+        order: 6,
+        category: 'Message & Magnetic Power',
+        options: [
+            { text: 'ก. "ราคาเท่าไหร่?" / "มีโปรโมชั่นไหม?"', score: 1 },
+            { text: 'ข. "สนใจสินค้าตัวนี้ค่ะ/ครับ" (ทักตามรูปที่เห็น)', score: 2 },
+            { text: 'ค. "ชอบสไตล์การทำงานของคุณจังเลยค่ะ"', score: 3 },
+            { text: 'ง. "ต้องเป็นคุณเท่านั้นถึงจะช่วยเรื่องนี้ได้"', score: 4 }
+        ]
+    },
+    {
+        id: 7,
+        question_text: 'เมื่อตัดโลโก้และชื่อแบรนด์ออก คนยังจำ "น้ำเสียง" หรือ "สไตล์ภาพ" ของคุณได้ไหม?',
+        order: 7,
+        category: 'Message & Magnetic Power',
+        options: [
+            { text: 'ก. จำไม่ได้เลย เพราะฉันทำตามๆ คนอื่นมา', score: 1 },
+            { text: 'ข. อาจจะสับสนกับเจ้าอื่นที่ทำแนวเดียวกัน', score: 2 },
+            { text: 'ค. เริ่มจำได้จากเอกลักษณ์บางอย่างที่ชัดขึ้น', score: 3 },
+            { text: 'ง. จำได้ทันที แค่เห็นฟอนต์หรือคำพูดก็รู้ว่าเป็นฉัน', score: 4 }
+        ]
+    },
+    {
+        id: 8,
+        question_text: 'คุณรู้สึกเหนื่อยที่ต้องคอย "คิดคอนเทนต์ใหม่" ทุกวันเพื่อวิ่งไล่อัลกอริทึมไหม?',
+        order: 8,
+        category: 'Message & Magnetic Power',
+        options: [
+            { text: 'ก. เหนื่อยมาก เหมือนต้องเค้นสิ่งที่ไม่มีอยู่จริงออกมา', score: 1 },
+            { text: 'ข. เหนื่อยแบบทำตามหน้าที่ให้จบไปวันๆ', score: 2 },
+            { text: 'ค. เริ่มจับทางได้ว่าเล่าเรื่องไหนแล้วคนจะชอบ', score: 3 },
+            { text: 'ง. ไม่เหนื่อยเลย คอนเทนต์ไหลออกมาเองจากสิ่งที่ฉันเชื่อ', score: 4 }
+        ]
+    },
+    {
+        id: 9,
+        question_text: 'เช้าวันจันทร์ที่ต้องตื่นมาทำงานให้แบรนด์ตัวเอง คุณรู้สึกอย่างไร?',
+        order: 9,
+        category: 'Inner State & Consistency',
+        options: [
+            { text: 'ก. หนักอึ้งเหมือนแบกโลกไว้ อยากหลับต่อ', score: 1 },
+            { text: 'ข. ตื่นมาทำตาม To-do list ให้เสร็จตามหน้าที่', score: 2 },
+            { text: 'ค. ตื่นเต้นที่จะได้ลองไอเดียใหม่ๆ ในวันนี้', score: 3 },
+            { text: 'ง. ขอบคุณที่ได้ทำสิ่งที่รักและเป็นตัวเองอย่างเต็มที่', score: 4 }
+        ]
+    },
+    {
+        id: 10,
+        question_text: 'คำชมจากลูกค้าแบบไหนที่คุณได้รับแล้ว "ใจฟู" และมีพลังที่สุด?',
+        order: 10,
+        category: 'Inner State & Consistency',
+        options: [
+            { text: 'ก. "ถูกดี / คุ้มค่ามาก"', score: 1 },
+            { text: 'ข. "ทำงานไว / เก่งจัง"', score: 2 },
+            { text: 'ค. "ชอบแนวคิดและทัศนคติของคุณจัง"', score: 3 },
+            { text: 'ง. "ขอบคุณที่คุณเป็นคุณ ขอบคุณที่ทำสิ่งนี้ออกมา"', score: 4 }
+        ]
+    },
+    {
+        id: 11,
+        question_text: 'เวลาต้องเล่าเรื่องเดิมซ้ำๆ (เช่น ตอบคำถามเดิมหรือเล่าประวัติแบรนด์) คุณรู้สึก...',
+        order: 11,
+        category: 'Inner State & Consistency',
+        options: [
+            { text: 'ก. เบื่อจนอยากจ้างคนอื่นมาทำแทนให้หมด', score: 1 },
+            { text: 'ข. อดทนทำเพราะมันคือส่วนหนึ่งของรายได้', score: 2 },
+            { text: 'ค. พยายามหามุมมองใหม่ๆ มาเล่าให้ตัวเองไม่เบื่อ', score: 3 },
+            { text: 'ง. ยินดีมาก เพราะรู้ว่านี่คือหัวใจที่ต้องส่งต่อให้คนใหม่ๆ', score: 4 }
+        ]
+    },
+    {
+        id: 12,
+        question_text: 'พนักงานหรือแอดมินของคุณ สามารถตอบคำถามลูกค้าได้ "โทนเสียง" เดียวกับคุณไหม?',
+        order: 12,
+        category: 'Inner State & Consistency',
+        options: [
+            { text: 'ก. ไม่เลย ตอบเหมือนหุ่นยนต์ก๊อปวาง', score: 1 },
+            { text: 'ข. พอได้บ้างถ้ามี Script ให้', score: 2 },
+            { text: 'ค. เริ่มซึมซับความเป็นเราไปได้เกินครึ่ง', score: 3 },
+            { text: 'ง. เหมือนมีฉันอีกคนมานั่งตอบเอง จิตวิญญาณเดียวกันเป๊ะ', score: 4 }
+        ]
+    },
+    {
+        id: 13,
+        question_text: 'มีแบรนด์คู่แข่งหน้าใหม่ที่ "ภาพสวยกว่า / เด็กกว่า" เริ่มเข้ามา คุณรู้สึกอย่างไร?',
+        order: 13,
+        category: 'Future & Sustainability',
+        options: [
+            { text: 'ก. สติหลุด กลัวโดนแย่งลูกค้าจนต้องลดราคาแข่ง', score: 1 },
+            { text: 'ข. กังวล และพยายามวิ่งไล่ตามทำตามเขาทุกอย่าง', score: 2 },
+            { text: 'ค. ดูไว้เป็นไอเดีย แต่ยังเชื่อมั่นในทางของตัวเอง', score: 3 },
+            { text: 'ง. ไม่หวั่นใจเลย เพราะเขาเลียนแบบ "ตัวตน" ของฉันไม่ได้', score: 4 }
+        ]
+    },
+    {
+        id: 14,
+        question_text: 'ถ้าต้องทำธุรกิจแบบที่เป็นอยู่ตอนนี้ไปอีก 3 ปี คุณไหวไหม?',
+        order: 14,
+        category: 'Future & Sustainability',
+        options: [
+            { text: 'ก. ไม่ไหวแน่นอน ฉันคงเฉาตายหรือหมดไฟก่อน', score: 1 },
+            { text: 'ข. ไหวแหละ ถ้าเงินยังดีอยู่ก็ต้องทน', score: 2 },
+            { text: 'ค. ไหว และคิดว่าน่าจะปรับให้สนุกขึ้นได้อีก', score: 3 },
+            { text: 'ง. สบายมาก เพราะมันคือไลฟ์สไตล์ที่เป็นเนื้อเดียวกับชีวิต', score: 4 }
+        ]
+    },
+    {
+        id: 15,
+        question_text: 'คุณกล้าขึ้นราคาสินค้าเพิ่ม 20% โดยที่มั่นใจว่าลูกค้าเดิมจะยังอยู่ไหม?',
+        order: 15,
+        category: 'Future & Sustainability',
+        options: [
+            { text: 'ก. ไม่กล้าเลย ลูกค้าหนีไปหาของถูกกว่าแน่นอน', score: 1 },
+            { text: 'ข. ลังเลมาก กลัวยอดขายหายไปเกินครึ่ง', score: 2 },
+            { text: 'ค. พอจะกล้าลองกับลูกค้าบางกลุ่มที่เหนียวแน่น', score: 3 },
+            { text: 'ง. มั่นใจมาก เพราะเขารู้ว่าคุณค่าที่เราให้มันเกินราคาไปเยอะ', score: 4 }
+        ]
+    },
+    {
+        id: 16,
+        question_text: 'หากคุณหยุดทำงานไป 6 เดือน แบรนด์จะยังเดินต่อไปในทิศทางเดิมได้ไหม?',
+        order: 16,
+        category: 'Future & Sustainability',
+        options: [
+            { text: 'ก. ล่มสลายทันที เพราะทุกอย่างผูกติดที่ตัวฉันคนเดียว', score: 1 },
+            { text: 'ข. เดินต่อได้แต่สะดุดและเสียทิศทางไปเยอะ', score: 2 },
+            { text: 'ค. เดินต่อได้แต่อาจจะโตช้าลงกว่าตอนมีฉัน', score: 3 },
+            { text: 'ง. เดินต่อได้สบาย เพราะฉันวางโครงสร้างและจิตวิญญาณไว้ชัดเจน', score: 4 }
+        ]
+    },
+    {
+        id: 17,
+        question_text: 'แบรนด์ของคุณกำลังแย่ง "เวลาใช้ชีวิต" หรือ "ช่วยส่งเสริมชีวิต" คุณ?',
+        order: 17,
+        category: 'Future & Sustainability',
+        options: [
+            { text: 'ก. แย่งไปหมดจนไม่เหลือความเป็นตัวเอง', score: 1 },
+            { text: 'ข. แย่งไปเยอะ แต่ก็แลกมาด้วยความมั่นคงทางการเงิน', score: 2 },
+            { text: 'ค. เริ่มหาสมดุลได้แล้ว มีเวลาให้ตัวเองมากขึ้น', score: 3 },
+            { text: 'ง. ส่งเสริมชีวิต ทำให้ฉันมีพลังและมีอิสระอย่างที่ต้องการ', score: 4 }
+        ]
+    },
+    {
+        id: 18,
+        question_text: 'เป้าหมายในอีก 3 ปีข้างหน้า ชัดเจนจนทีมงานทุกคนมองเห็นภาพเดียวกันหรือยัง?',
+        order: 18,
+        category: 'Future & Sustainability',
+        options: [
+            { text: 'ก. ยังเลย แค่เอาตัวให้รอดเดือนนี้ก็เต็มที่แล้ว', score: 1 },
+            { text: 'ข. มีภาพในหัวแค่คนเดียว แต่ไม่รู้จะบอกทีมยังไง', score: 2 },
+            { text: 'ค. เริ่มสื่อสารให้ทีมเข้าใจทิศทางใหญ่ๆ บ้างแล้ว', score: 3 },
+            { text: 'ง. ชัดเจนมาก ทุกคนรู้ว่าเรากำลังจะไปเปลี่ยนโลกใบนี้ด้วยกัน', score: 4 }
+        ]
+    },
+    {
+        id: 19,
+        question_text: 'ถ้าวันนี้คุณมีเงิน 30 ล้านในบัญชี คุณยังจะทำแบรนด์นี้ต่อไหม?',
+        order: 19,
+        category: 'Future & Sustainability',
+        options: [
+            { text: 'ก. เลิกทันที ไปใช้ชีวิตที่อื่นดีกว่า', score: 1 },
+            { text: 'ข. อาจจะทำต่อแบบกึ่งๆ แก้เบื่อ', score: 2 },
+            { text: 'ค. ทำต่อแน่นอน แต่จะเน้นเรื่องที่อยากทำจริงๆ มากขึ้น', score: 3 },
+            { text: 'ง. ทำต่อแน่นอน เพราะนี่คือภารกิจชีวิตของฉัน', score: 4 }
+        ]
+    },
+    {
+        id: 20,
+        question_text: 'สรุปแล้ว คุณรู้สึกว่าความสำเร็จวันนี้มาจาก "ตัวจริง" หรือ "ความโชคดี"?',
+        order: 20,
+        category: 'Future & Sustainability',
+        options: [
+            { text: 'ก. โชคดีล้วนๆ และฉันกลัวว่าวันหนึ่งโชคจะหมดไป', score: 1 },
+            { text: 'ข. โชคดีผสมกับความเหนื่อยขยัน แต่ยังไม่ใช่ตัวตนจริงๆ', score: 2 },
+            { text: 'ค. เริ่มเป็นตัวจริงมากขึ้น แต่ยังต้องจูนอีกนิด', score: 3 },
+            { text: 'ง. มาจากตัวตนที่ชัดเจน ความโชคดีเป็นเพียงแค่ตัวเร่ง', score: 4 }
+        ]
+    }
+];
+
+let sql = `-- 1. Create questions table
+CREATE TABLE IF NOT EXISTS questions (
+  id SERIAL PRIMARY KEY,
+  question_text TEXT NOT NULL,
+  "order" INTEGER NOT NULL,
+  category TEXT NOT NULL,
+  options JSONB NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- 2. Create orders table
+CREATE TABLE IF NOT EXISTS orders (
+  id SERIAL PRIMARY KEY,
+  email TEXT NOT NULL,
+  amount INTEGER NOT NULL,
+  status TEXT NOT NULL DEFAULT 'pending', -- pending, successful, failed
+  omise_charge_id TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- 3. Enable RLS for questions (public read only)
+ALTER TABLE questions ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Allow public read access" ON questions;
+CREATE POLICY "Allow public read access" ON questions FOR SELECT USING (true);
+
+-- 4. Enable RLS for orders (public insert for checkout flow)
+ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Allow public insert" ON orders;
+CREATE POLICY "Allow public insert" ON orders FOR INSERT WITH CHECK (true);
+DROP POLICY IF EXISTS "Allow public read" ON orders;
+CREATE POLICY "Allow public read" ON orders FOR SELECT USING (true); -- Simplified
+
+-- 5. Clear old questions to prevent duplicates
+DELETE FROM questions;
+
+-- 6. Insert all 20 questions
+INSERT INTO questions (question_text, "order", category, options) VALUES
+`;
+
+const values = questionsData.map(q => {
+    // Use JSON.stringify to properly escape double quotes inside the JSON string
+    const optionsJson = JSON.stringify(q.options).replace(/'/g, "''");
+    const questionText = q.question_text.replace(/'/g, "''");
+    return `('${questionText}', ${q.order}, '${q.category}', '${optionsJson}'::jsonb)`;
+}).join(',\n');
+
+sql += values + ';\n';
+
+fs.writeFileSync('create_tables.sql', sql);
+console.log('SQL generated successfully with correctly escaped JSON');
