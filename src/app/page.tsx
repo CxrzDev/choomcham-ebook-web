@@ -264,7 +264,7 @@ export default async function Home() {
                                 </div>
                                 <Button
                                     as={Link}
-                                    href="/quiz"
+                                    href="/checkout"
                                     size="lg"
                                     className="bg-[--green] text-white font-bold text-lg px-8 py-6 w-full sm:w-auto shadow-xl hover:scale-105 transition-transform"
                                     radius="full"
