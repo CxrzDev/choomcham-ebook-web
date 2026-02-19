@@ -215,12 +215,12 @@ export default async function Home() {
                         </div>
 
                         <h2 className="text-3xl lg:text-5xl font-bold text-[--dark-blue] leading-tight">
-                            เลิกทำตัวเป็น <span className="text-[--green]">"ของดีที่ไม่มีใครเห็น"</span><br />
-                            แล้วเริ่มเป็น <span className="text-[--yellow] bg-black/5 px-2">"เบอร์หนึ่ง"</span> ที่ใครก็แทนไม่ได้
+                            เลิกทำตัวเป็น <span className="text-[--green]">&quot;ของดีที่ไม่มีใครเห็น&quot;</span><br />
+                            แล้วเริ่มเป็น <span className="text-[--yellow] bg-black/5 px-2">&quot;เบอร์หนึ่ง&quot;</span> ที่ใครก็แทนไม่ได้
                         </h2>
 
                         <h3 className="text-xl lg:text-2xl font-bold text-[--pink] italic">
-                            "คนเก่งที่ไม่มีที่ยืน... จะถูกแทนที่เสมอ"
+                            &quot;คนเก่งที่ไม่มีที่ยืน... จะถูกแทนที่เสมอ&quot;
                         </h3>
 
                         <div className="text-lg text-[--grey] leading-relaxed space-y-4">
@@ -229,12 +229,12 @@ export default async function Home() {
                                 แต่... <span className="font-bold text-red-500">นี่คือความจริงที่เจ็บปวด</span>
                             </p>
                             <p>
-                                ในโลกธุรกิจ <span className="font-bold">"ความเก่ง"</span> เป็นแค่ตั๋วเข้าประตู
-                                แต่ <span className="font-bold bg-[--yellow]/20 px-1">"ที่ยืน"</span> ต่างหากคือตัวตัดสินว่าใครจะรวย
+                                ในโลกธุรกิจ <span className="font-bold">&quot;ความเก่ง&quot;</span> เป็นแค่ตั๋วเข้าประตู
+                                แต่ <span className="font-bold bg-[--yellow]/20 px-1">&quot;ที่ยืน&quot;</span> ต่างหากคือตัวตัดสินว่าใครจะรวย
                             </p>
                             <p className="text-base text-slate-500 italic border-l-4 border-[--pink] pl-4">
-                                "ถ้าวันนี้คุณยังเหนื่อยกับการหาลูกค้า ยังต้องลดแลกแจกแถม หรือรู้สึกว่าคนอื่นที่ 'เก่งน้อยกว่า' กลับดังกว่าคุณ...
-                                ปัญหาไม่ใช่ว่าคุณไม่เก่ง แต่เป็นเพราะคุณ 'ยืนมั่ว' ค่ะ"
+                                &quot;ถ้าวันนี้คุณยังเหนื่อยกับการหาลูกค้า ยังต้องลดแลกแจกแถม หรือรู้สึกว่าคนอื่นที่ &apos;เก่งน้อยกว่า&apos; กลับดังกว่าคุณ...
+                                ปัญหาไม่ใช่ว่าคุณไม่เก่ง แต่เป็นเพราะคุณ &apos;ยืนมั่ว&apos; ค่ะ&quot;
                             </p>
                         </div>
 
@@ -245,15 +245,15 @@ export default async function Home() {
                             <ul className="space-y-2 text-left text-sm text-[--grey] mb-4">
                                 <li className="flex items-start gap-2">
                                     <span className="text-green-500 font-bold">✓</span>
-                                    <span><strong className="text-[--dark-blue]">The Displacement Reality:</strong> ทำไมการเป็นคนเก่งที่ "ไร้ตัวตน" ถึงอันตรายกว่าการเป็นคนไม่เก่ง</span>
+                                    <span><strong className="text-[--dark-blue]">The Displacement Reality:</strong> ทำไมการเป็นคนเก่งที่ &quot;ไร้ตัวตน&quot; ถึงอันตรายกว่าการเป็นคนไม่เก่ง</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-green-500 font-bold">✓</span>
-                                    <span><strong className="text-[--dark-blue]">The Positioning Matrix:</strong> เลิกยืนมั่ว แล้วไปยืนในจุดที่ลูกค้าไม่ต้องถามซ้ำว่า "คุณคือใคร"</span>
+                                    <span><strong className="text-[--dark-blue]">The Positioning Matrix:</strong> เลิกยืนมั่ว แล้วไปยืนในจุดที่ลูกค้าไม่ต้องถามซ้ำว่า &quot;คุณคือใคร&quot;</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-green-500 font-bold">✓</span>
-                                    <span><strong className="text-[--dark-blue]">Top of Mind Shortcut:</strong> วิธีสร้าง "ลายนิ้วมือทางธุรกิจ" ให้คนจำคุณได้ แม้จะยังไม่ซื้อ</span>
+                                    <span><strong className="text-[--dark-blue]">Top of Mind Shortcut:</strong> วิธีสร้าง &quot;ลายนิ้วมือทางธุรกิจ&quot; ให้คนจำคุณได้ แม้จะยังไม่ซื้อ</span>
                                 </li>
                             </ul>
 

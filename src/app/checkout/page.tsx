@@ -103,7 +103,7 @@ export default function CheckoutPage() {
                 </div>
 
                 <h1 className="text-2xl font-bold text-[--dark-blue] mb-2">สั่งซื้อ E-Book</h1>
-                <h2 className="text-lg text-[--pink] font-bold mb-6">"ตัวจริงต้องมีที่ยืน"</h2>
+                <h2 className="text-lg text-[--pink] font-bold mb-6">&quot;ตัวจริงต้องมีที่ยืน&quot;</h2>
 
                 <div className="bg-slate-50 rounded-2xl p-6 mb-8 border border-slate-100">
                     <div className="text-sm text-slate-500 mb-1">ราคาปกติ <span className="line-through">หลักแสน</span></div>

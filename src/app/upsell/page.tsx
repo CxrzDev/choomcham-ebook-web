@@ -33,7 +33,7 @@ export default function UpsellPage() {
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[--green]/20 text-[--green] mb-4">
                         <CheckCircle size={32} />
                     </div>
-                    <h1 className="text-2xl sm:text-3xl font-bold mb-2">ยินดีด้วยค่ะ... <br /><span className="text-[--yellow]">คุณเพิ่งก้าวออกจาก "ที่ยืนมั่วๆ" ไปสู่ "ที่ยืนของตัวจริง"</span></h1>
+                    <h1 className="text-2xl sm:text-3xl font-bold mb-2">ยินดีด้วยค่ะ... <br /><span className="text-[--yellow]">คุณเพิ่งก้าวออกจาก &quot;ที่ยืนมั่วๆ&quot; ไปสู่ &quot;ที่ยืนของตัวจริง&quot;</span></h1>
                     <p className="text-neutral-300 mt-4">
                         เช็ก Email ของคุณตอนนี้ได้เลย หนังสือถูกส่งไปรอที่นั่นแล้ว <br />
                         <span className="text-[--pink] font-bold">แต่ก่อนที่คุณพี่จะเริ่มเปิดอ่าน น้องฉ่ำมีเรื่องสำคัญอยากบอก 3 ข้อค่ะ</span>
@@ -43,21 +43,21 @@ export default function UpsellPage() {
                 {/* 3 Key Points Section */}
                 <div className="space-y-4 mb-8 text-left">
                     <div className="bg-neutral-700/50 p-4 rounded-xl border-l-4 border-[--pink]">
-                        <h3 className="font-bold text-[--pink] mb-1">1. เล่มนี้ไม่ใช่หนังสืออ่านเล่น แต่มันคือ "ยาแรง"</h3>
+                        <h3 className="font-bold text-[--pink] mb-1">1. เล่มนี้ไม่ใช่หนังสืออ่านเล่น แต่มันคือ &quot;ยาแรง&quot;</h3>
                         <p className="text-sm text-gray-300">
-                            เนื้อหาข้างในอาจจะทำให้คุณพี่รู้สึกจุก หรือเสียดายเวลาที่ผ่านมา แต่นั่นคือสัญญาณที่ดีค่ะ เพราะถ้าเราไม่รู้ว่า "แผล" อยู่ตรงไหน เราจะรักษาไม่ถูกจุด อย่าแค่อ่านให้จบนะคะ... <span className="text-white font-bold">แต่อ่านให้ "ตื่น" ค่ะ</span>
+                            เนื้อหาข้างในอาจจะทำให้คุณพี่รู้สึกจุก หรือเสียดายเวลาที่ผ่านมา แต่นั่นคือสัญญาณที่ดีค่ะ เพราะถ้าเราไม่รู้ว่า &quot;แผล&quot; อยู่ตรงไหน เราจะรักษาไม่ถูกจุด อย่าแค่อ่านให้จบนะคะ... <span className="text-white font-bold">แต่อ่านให้ &quot;ตื่น&quot; ค่ะ</span>
                         </p>
                     </div>
                     <div className="bg-neutral-700/50 p-4 rounded-xl border-l-4 border-[--yellow]">
-                        <h3 className="font-bold text-[--yellow] mb-1">2. ความเก่งคือ "ดาบ" แต่ที่ยืนคือ "ทำเล"</h3>
+                        <h3 className="font-bold text-[--yellow] mb-1">2. ความเก่งคือ &quot;ดาบ&quot; แต่ที่ยืนคือ &quot;ทำเล&quot;</h3>
                         <p className="text-sm text-gray-300">
-                            ต่อให้ดาบคมแค่ไหน ถ้าไปยืนแกว่งผิดที่ก็ไม่มีใครเห็นค่ะ เล่มนี้จะช่วยคุณพี่เลือกทำเลที่ได้เปรียบที่สุด อ่านจบแล้วลองมองไปรอบตัวดูนะคะ แล้วคุณพี่จะเห็นชัดเลยว่า ใครคือ "ตัวจริง" และใครที่แค่ "ทำเหมือนจะจริง"
+                            ต่อให้ดาบคมแค่ไหน ถ้าไปยืนแกว่งผิดที่ก็ไม่มีใครเห็นค่ะ เล่มนี้จะช่วยคุณพี่เลือกทำเลที่ได้เปรียบที่สุด อ่านจบแล้วลองมองไปรอบตัวดูนะคะ แล้วคุณพี่จะเห็นชัดเลยว่า ใครคือ &quot;ตัวจริง&quot; และใครที่แค่ &quot;ทำเหมือนจะจริง&quot;
                         </p>
                     </div>
                     <div className="bg-neutral-700/50 p-4 rounded-xl border-l-4 border-[--green]">
-                        <h3 className="font-bold text-[--green] mb-1">3. เตรียมใจไว้สำหรับการ "ตัดทิ้ง"</h3>
+                        <h3 className="font-bold text-[--green] mb-1">3. เตรียมใจไว้สำหรับการ &quot;ตัดทิ้ง&quot;</h3>
                         <p className="text-sm text-gray-300">
-                            น้องฉ่ำจะชวนคุณพี่ทำสิ่งที่ยากที่สุด คือการเลือก "เลิกเป็นทุกอย่าง" เพื่อเป็น "ที่หนึ่งเรื่องเดียว" เตรียมใจไว้เลยค่ะว่าหลังจากอ่านจบ แบรนด์ของคุณพี่จะเปลี่ยนไป และมันจะเปลี่ยนไปในทางที่ชัดเจนจนใครก็เลียนแบบไม่ได้
+                            น้องฉ่ำจะชวนคุณพี่ทำสิ่งที่ยากที่สุด คือการเลือก &quot;เลิกเป็นทุกอย่าง&quot; เพื่อเป็น &quot;ที่หนึ่งเรื่องเดียว&quot; เตรียมใจไว้เลยค่ะว่าหลังจากอ่านจบ แบรนด์ของคุณพี่จะเปลี่ยนไป และมันจะเปลี่ยนไปในทางที่ชัดเจนจนใครก็เลียนแบบไม่ได้
                         </p>
                     </div>
                 </div>
@@ -68,11 +68,11 @@ export default function UpsellPage() {
                     </div>
 
                     <h2 className="text-2xl font-bold text-center mb-4 text-yellow-500 mt-2">
-                        ต้องการเจาะลึก "กลยุทธ์เฉพาะแบรนด์คุณ" ไหม?
+                        ต้องการเจาะลึก &quot;กลยุทธ์เฉพาะแบรนด์คุณ&quot; ไหม?
                     </h2>
                     <p className="text-gray-300 text-center mb-6">
                         eBook ช่วยปูพื้นฐานวิธีคิด แต่คอร์สออนไลน์นี้จะพาคุณลงมือทำจริง <br />
-                        พร้อม Workshop ที่จะเปลี่ยนแบรนด์คุณให้ "แพง" และ "ยั่งยืน" ใน 30 วัน
+                        พร้อม Workshop ที่จะเปลี่ยนแบรนด์คุณให้ &quot;แพง&quot; และ &quot;ยั่งยืน&quot; ใน 30 วัน
                     </p>
 
                     <ul className="space-y-3 mb-8">
