@@ -8,16 +8,22 @@ import { getStorage } from 'firebase/storage';
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.apiKey,
-  authDomain:  process.env.authDomain,
-  projectId:  process.env.projectId,
-  storageBucket:  process.env.storageBucket,
-  messagingSenderId:  process.env.messagingSenderId,
-  appId:  process.env.appId
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
+let app: any = null;
+let db: any = null;
+let storage: any = null;
 
-export {db,storage};
+if (firebaseConfig.apiKey) {
+  app = initializeApp(firebaseConfig);
+  db = getFirestore(app);
+  storage = getStorage(app);
+}
+
+export { db, storage };

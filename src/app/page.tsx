@@ -10,7 +10,7 @@ import { Button, Card, CardBody, CardHeader, Link, divider } from '@nextui-org/r
 import { Image } from '@nextui-org/react'
 
 // import { db } from './firebaseConfig'
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
+// import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { JSXElementConstructor, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useEffect, useState } from 'react'
 import Loading from './components/loading'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
@@ -24,9 +24,10 @@ import Script from 'next/script'
 
 export default async function Home() {
 
-    var res = await fetch(`https://choomcham.com/api/course`)
-    var result: any = await res.json()
-    var contents: any = [...result.data];
+    // var res = await fetch(`https://choomcham.com/api/course`)
+    // var result: any = await res.json()
+    // var contents: any = [...result.data];
+    var contents: any = [];
 
 
 
