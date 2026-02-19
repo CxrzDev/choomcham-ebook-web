@@ -54,7 +54,12 @@ export default async function Home() {
         </div>
 
         <div id="fb-root"></div>
-        <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0&appId=156838349817980" nonce="WQnbcNzF"></script>
+        <Script
+            strategy="lazyOnload"
+            crossOrigin="anonymous"
+            src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0&appId=156838349817980"
+            nonce="WQnbcNzF"
+        />
 
         <section className="bg-[--dark-blue] overflow-visible pt-5">
             <div className="relative bg-blue-900 line z-2">
@@ -198,13 +203,77 @@ export default async function Home() {
                 </section>
             </div>
 
-            <section className='p-10 lg:flex grid justify-evenly items-center'>
-                <div  > <img width="250" src="/images/sticker6.png" alt="อิโมจิชุ่มฉ่ำ ตัวจริงต้องมีที่ยืน" /></div>
-                <div className='lg:w-[450px] md:w-[450px]'>
-                    <div className="text-xl sm:text-3xl font-bold  text-yellow-500 ">
-                        ภารกิจตัวจริงต้องมีที่ยืน
+            <section className='p-8 lg:p-16 bg-gradient-to-br from-white to-slate-50'>
+                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+                    <div className="w-full lg:w-1/3 flex justify-center">
+                        <img className="w-64 lg:w-80 drop-shadow-2xl hover:scale-105 transition-transform duration-300" src="/images/sticker6.png" alt="E-Book ตัวจริงต้องมีที่ยืน" />
                     </div>
-                    <div className="text-lg sm:text-2xl">คุณไม่จำเป็นต้องเป็นแบบใคร คุณแค่ต้องเป็นตัวเองให้ชัดพอ ที่เหลือเป็นเรื่องของศิลปะการถ่ายทอดว่าคุณจะทำให้คนจดจำคุณได้ยังไง และไปดึงดูดใครเข้ามา ธุรกิจคุณจะมีที่ยืนเมื่อคุณกล้าตัดสินใจจะเลิกอยู่ตรงกลาง</div>
+
+                    <div className="w-full lg:w-2/3 space-y-6 text-center lg:text-left">
+                        <div className="inline-block bg-[--pink] text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide uppercase shadow-md mb-2">
+                            Sales Page E-Book
+                        </div>
+
+                        <h2 className="text-3xl lg:text-5xl font-bold text-[--dark-blue] leading-tight">
+                            เลิกทำตัวเป็น <span className="text-[--green]">"ของดีที่ไม่มีใครเห็น"</span><br />
+                            แล้วเริ่มเป็น <span className="text-[--yellow] bg-black/5 px-2">"เบอร์หนึ่ง"</span> ที่ใครก็แทนไม่ได้
+                        </h2>
+
+                        <h3 className="text-xl lg:text-2xl font-bold text-[--pink] italic">
+                            "คนเก่งที่ไม่มีที่ยืน... จะถูกแทนที่เสมอ"
+                        </h3>
+
+                        <div className="text-lg text-[--grey] leading-relaxed space-y-4">
+                            <p>
+                                คุณอาจจะเก่งระดับโลก มีสินค้าที่ดีเกินมาตรฐาน หรือมีบริการที่เปลี่ยนชีวิตคนได้
+                                แต่... <span className="font-bold text-red-500">นี่คือความจริงที่เจ็บปวด</span>
+                            </p>
+                            <p>
+                                ในโลกธุรกิจ <span className="font-bold">"ความเก่ง"</span> เป็นแค่ตั๋วเข้าประตู
+                                แต่ <span className="font-bold bg-[--yellow]/20 px-1">"ที่ยืน"</span> ต่างหากคือตัวตัดสินว่าใครจะรวย
+                            </p>
+                            <p className="text-base text-slate-500 italic border-l-4 border-[--pink] pl-4">
+                                "ถ้าวันนี้คุณยังเหนื่อยกับการหาลูกค้า ยังต้องลดแลกแจกแถม หรือรู้สึกว่าคนอื่นที่ 'เก่งน้อยกว่า' กลับดังกว่าคุณ...
+                                ปัญหาไม่ใช่ว่าคุณไม่เก่ง แต่เป็นเพราะคุณ 'ยืนมั่ว' ค่ะ"
+                            </p>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 mt-6 max-w-2xl">
+                            <h4 className="text-xl font-bold text-[--dark-blue] mb-3 flex items-center gap-2">
+                                <span className="text-2xl">📖</span> E-Book ตัวจริงต้องมีที่ยืน: ประตูสู่ Top of Mind
+                            </h4>
+                            <ul className="space-y-2 text-left text-sm text-[--grey] mb-4">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500 font-bold">✓</span>
+                                    <span><strong className="text-[--dark-blue]">The Displacement Reality:</strong> ทำไมการเป็นคนเก่งที่ "ไร้ตัวตน" ถึงอันตรายกว่าการเป็นคนไม่เก่ง</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500 font-bold">✓</span>
+                                    <span><strong className="text-[--dark-blue]">The Positioning Matrix:</strong> เลิกยืนมั่ว แล้วไปยืนในจุดที่ลูกค้าไม่ต้องถามซ้ำว่า "คุณคือใคร"</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500 font-bold">✓</span>
+                                    <span><strong className="text-[--dark-blue]">Top of Mind Shortcut:</strong> วิธีสร้าง "ลายนิ้วมือทางธุรกิจ" ให้คนจำคุณได้ แม้จะยังไม่ซื้อ</span>
+                                </li>
+                            </ul>
+
+                            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 border-t pt-4">
+                                <div className="text-center sm:text-left">
+                                    <div className="text-sm text-slate-400 line-through">ปกติหลักแสน</div>
+                                    <div className="text-3xl font-bold text-[--green]">ราคาเพียง 599.-</div>
+                                </div>
+                                <Button
+                                    as={Link}
+                                    href="/quiz"
+                                    size="lg"
+                                    className="bg-[--green] text-white font-bold text-lg px-8 py-6 w-full sm:w-auto shadow-xl hover:scale-105 transition-transform"
+                                    radius="full"
+                                >
+                                    สั่งซื้อและรับแผนที่สู่ Top of Mind ทันที
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -352,7 +421,7 @@ export default async function Home() {
                                                 <p className="text-ellipsis sm:w-[auto] h-[120px] text-[14px] sm:text-xl overflow-hidden">{video.description}.</p>
                                             </div>
                                             <div className="card-actions justify-end">
-                                                <a href={video.src} target='blank'><button className="btn bg-[--yellow] border-none">Watch</button></a>
+                                                <a href={video.src} target='_blank' className="btn bg-[--yellow] border-none">Watch</a>
                                             </div>
                                         </div>
                                     </div>

@@ -27,14 +27,39 @@ export default function UpsellPage() {
                 className="max-w-2xl w-full bg-neutral-800 rounded-3xl p-6 sm:p-8 border border-neutral-700 relative overflow-hidden"
             >
                 {/* Decorative background */}
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-500 to-orange-500" />
+                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[--yellow] to-[--pink]" />
 
                 <div className="text-center mb-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/20 text-green-500 mb-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[--green]/20 text-[--green] mb-4">
                         <CheckCircle size={32} />
                     </div>
-                    <h1 className="text-3xl font-bold mb-2">การชำระเงินสำเร็จ!</h1>
-                    <p className="text-neutral-400">ระบบได้ส่งลิงก์ดาวน์โหลด eBook ไปยังอีเมลของคุณแล้ว</p>
+                    <h1 className="text-2xl sm:text-3xl font-bold mb-2">ยินดีด้วยค่ะ... <br /><span className="text-[--yellow]">คุณเพิ่งก้าวออกจาก "ที่ยืนมั่วๆ" ไปสู่ "ที่ยืนของตัวจริง"</span></h1>
+                    <p className="text-neutral-300 mt-4">
+                        เช็ก Email ของคุณตอนนี้ได้เลย หนังสือถูกส่งไปรอที่นั่นแล้ว <br />
+                        <span className="text-[--pink] font-bold">แต่ก่อนที่คุณพี่จะเริ่มเปิดอ่าน น้องฉ่ำมีเรื่องสำคัญอยากบอก 3 ข้อค่ะ</span>
+                    </p>
+                </div>
+
+                {/* 3 Key Points Section */}
+                <div className="space-y-4 mb-8 text-left">
+                    <div className="bg-neutral-700/50 p-4 rounded-xl border-l-4 border-[--pink]">
+                        <h3 className="font-bold text-[--pink] mb-1">1. เล่มนี้ไม่ใช่หนังสืออ่านเล่น แต่มันคือ "ยาแรง"</h3>
+                        <p className="text-sm text-gray-300">
+                            เนื้อหาข้างในอาจจะทำให้คุณพี่รู้สึกจุก หรือเสียดายเวลาที่ผ่านมา แต่นั่นคือสัญญาณที่ดีค่ะ เพราะถ้าเราไม่รู้ว่า "แผล" อยู่ตรงไหน เราจะรักษาไม่ถูกจุด อย่าแค่อ่านให้จบนะคะ... <span className="text-white font-bold">แต่อ่านให้ "ตื่น" ค่ะ</span>
+                        </p>
+                    </div>
+                    <div className="bg-neutral-700/50 p-4 rounded-xl border-l-4 border-[--yellow]">
+                        <h3 className="font-bold text-[--yellow] mb-1">2. ความเก่งคือ "ดาบ" แต่ที่ยืนคือ "ทำเล"</h3>
+                        <p className="text-sm text-gray-300">
+                            ต่อให้ดาบคมแค่ไหน ถ้าไปยืนแกว่งผิดที่ก็ไม่มีใครเห็นค่ะ เล่มนี้จะช่วยคุณพี่เลือกทำเลที่ได้เปรียบที่สุด อ่านจบแล้วลองมองไปรอบตัวดูนะคะ แล้วคุณพี่จะเห็นชัดเลยว่า ใครคือ "ตัวจริง" และใครที่แค่ "ทำเหมือนจะจริง"
+                        </p>
+                    </div>
+                    <div className="bg-neutral-700/50 p-4 rounded-xl border-l-4 border-[--green]">
+                        <h3 className="font-bold text-[--green] mb-1">3. เตรียมใจไว้สำหรับการ "ตัดทิ้ง"</h3>
+                        <p className="text-sm text-gray-300">
+                            น้องฉ่ำจะชวนคุณพี่ทำสิ่งที่ยากที่สุด คือการเลือก "เลิกเป็นทุกอย่าง" เพื่อเป็น "ที่หนึ่งเรื่องเดียว" เตรียมใจไว้เลยค่ะว่าหลังจากอ่านจบ แบรนด์ของคุณพี่จะเปลี่ยนไป และมันจะเปลี่ยนไปในทางที่ชัดเจนจนใครก็เลียนแบบไม่ได้
+                        </p>
+                    </div>
                 </div>
 
                 <div className="bg-neutral-900/50 rounded-2xl p-6 border border-yellow-500/30 mb-8 relative">
