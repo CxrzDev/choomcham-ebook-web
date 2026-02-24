@@ -1,6 +1,6 @@
 // 'use client'
 // import Navbar from "../components/nav"
-import NavigationBar from '../components/navbar';
+import NavigationBar from '../components/NavigationBarMain';
 import Footer from '../components/footer';
 import { motion } from "framer-motion"
 import { Image } from '@nextui-org/react';
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         description: 'เรียนรู้วิธีสร้างแบรนด์ที่เป็นมากกว่าธุรกิจ ครูอีฟ ภัทรัดจารินท์ สุวัชรานนท์ ช่วยให้แบรนด์ของคุณเพิ่มยอดขายอย่างมีคุณค่า',
         images: ["https://choomcham.com/images/cover6.png"],
     },
-   
+
 };
 
 function About() {
@@ -150,7 +150,7 @@ function About() {
                     </div>
                     <div >
                         <div className="w-full  grid justify-center">
-                            <h2 className="text-3xl sm:text-5xl text-center font-bold">ครูอีฟ <br className="lg:hidden "/> ภัทรัดจารินท์ สุวัชรานนท์ </h2>
+                            <h2 className="text-3xl sm:text-5xl text-center font-bold">ครูอีฟ <br className="lg:hidden " /> ภัทรัดจารินท์ สุวัชรานนท์ </h2>
                             <div className=" sm:w-[500px] text-lg sm:text-lg text-center relative z-1 text-slate-500">
                                 <div>ผู้ก่อตั้งชุ่มฉ่ำ Branding</div>
                                 <div>นักสร้างแบรนด์รุ่นใหม่สายคุณค่า</div>
@@ -200,7 +200,7 @@ function About() {
                         {/* <img draggable='false' src="/images/kruEve_image4.jpg" alt="รูปครูอีฟ กำลังทำมือผิด" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6" /> */}
                         <div className="outline outline-offset-4 outline-[--yellow] rounded-xl">
                             {/* <img draggable='false' src="/images/kruEve_image4.jpg" alt="รูปครูอีฟ กำลังทำมือผิด" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  -rotate-6" /> */}
-                            <video controls src="/images/3ms/kunevefacebook.mp4"  className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  "></video>
+                            <video controls src="/images/3ms/kunevefacebook.mp4" className="w-72 max-w-[auto] sm:w-96 rounded-2xl sm:mb-0  "></video>
                         </div>
                     </div>
                     <div>

@@ -47,7 +47,7 @@ export default function NavigationBar(props: { current: String }) {
 
 
                         <Link href="/">
-                            <div className="pr-10"><img src="/images/cropped-logo.png" alt="" />
+                            <div className="pr-10"><img src="/images/logo-clean.svg" className="w-24" alt="" />
                                 {/* <img src="https://www.choomcham.com/assets/images/4277eb7d.png" className='hidden' alt="" /> */}
                             </div>
                         </Link>
@@ -69,7 +69,7 @@ export default function NavigationBar(props: { current: String }) {
 
                             {/* <div className={'hover:bg-pink-400/10' + activeList[0] + '  hover:text-[--pink]  rounded-lg px-4 py-2 duration-200 relative group cursor-default'} >
                             <li>Consult & Courses</li>
-
+                            
                             <div className="rounded-2xl  p-5 absolute bg-white/80 w-[200px]  group-hover:text-black glass scale-0 group-hover:scale-100 translate-y-3 duration-200  ">
                                 <a href="/service">
                                     <li className="p-3 rounded-xl hover:bg-pink-400/10 w-full hover:text-[--pink] ">Consult</li>
@@ -80,13 +80,16 @@ export default function NavigationBar(props: { current: String }) {
                             </div>
                         </div> */}
                             <li className={'hover:bg-pink-400/10' + activeList[0] + '  rounded-lg duration-200'}>
-                                <a className="block px-4 py-2 hover:text-[--pink]" href="/courses/3m">3 Minutes Story</a>
+                                <a className="block px-4 py-2 hover:text-[--pink]" href="/courses/3ms">3 Minutes Story</a>
                             </li>
                             <li className={'hover:bg-pink-400/10' + activeList[2] + '  rounded-lg duration-200'}>
                                 <a className="block px-4 py-2 hover:text-[--pink]" href="/articles">Articles</a>
                             </li>
                             <li className={'hover:bg-pink-400/10' + activeList[1] + '  rounded-lg duration-200'}>
                                 <a className="block px-4 py-2 hover:text-[--pink]" href="/testimonials">Testimonials</a>
+                            </li>
+                            <li className={'hover:bg-pink-400/10' + '  rounded-lg duration-200'}>
+                                <a className="block px-4 py-2 hover:text-[--pink]" href="/sales">E-Book</a>
                             </li>
                             <li className={'hover:bg-pink-400/10' + activeList[3] + '  rounded-lg duration-200'}>
                                 <a className="block px-4 py-2 hover:text-[--pink]" href="/about">About us</a>
@@ -138,6 +141,7 @@ export default function NavigationBar(props: { current: String }) {
 
                                 <li><a href="/articles">Articles</a></li>
                                 <li><a href="/testimonials">Testimonials</a></li>
+                                <li><a href="/sales" className="text-[--pink] font-bold">E-Book ตัวจริงต้องมีที่ยืน</a></li>
                                 <li><a href="/about">About Us</a></li>
                                 <li><a href="/quiz" className="font-bold text-[--green]">ทำแบบสอบถาม</a></li>
                                 {/* <li><a>Analystic</a></li> */}

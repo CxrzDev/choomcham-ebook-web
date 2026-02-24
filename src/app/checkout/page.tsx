@@ -1,149 +1,204 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { Button, Input, Card, CardBody } from '@nextui-org/react'
+import { Lock, CheckCircle2, AlertCircle, Headphones } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import { Button, Input } from '@nextui-org/react'
-import { CheckCircle, Lock } from 'lucide-react'
+
+declare global {
+    interface Window {
+        OmiseCard: any;
+    }
+}
 
 export default function CheckoutPage() {
-    const router = useRouter()
     const [email, setEmail] = useState('')
-    const [loading, setLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+    const [errorMsg, setErrorMsg] = useState('')
+    const [orderBump, setOrderBump] = useState(false)
+    const router = useRouter()
 
-    const handlePayment = async (e?: React.MouseEvent) => {
-        if (e) e.preventDefault();
+    const basePrice = 599;
+    const bumpPrice = 150;
+    const totalPrice = orderBump ? basePrice + bumpPrice : basePrice;
+    const amountInSatang = totalPrice * 100;
+
+    useEffect(() => {
+        // Load Omise Script
+        const script = document.createElement('script')
+        script.src = 'https://cdn.omise.co/omise.js'
+        script.async = true
+        script.onload = () => {
+            if (window.OmiseCard) {
+                window.OmiseCard.configure({
+                    publicKey: process.env.NEXT_PUBLIC_OMISE_PUBLIC_KEY,
+                    currency: 'thb',
+                    frameLabel: 'Choomcham Branding',
+                    submitLabel: 'ชำระเงิน',
+                    buttonLabel: 'ชำระเงิน'
+                });
+            }
+        }
+        document.head.appendChild(script)
+
+        return () => {
+            // Cleanup if needed
+            if (document.head.contains(script)) {
+                document.head.removeChild(script)
+            }
+        }
+    }, [])
+
+    const handlePayment = () => {
+        setErrorMsg('')
 
         if (!email || !email.includes('@')) {
-            alert('กรุณากรอกอีเมลให้ถูกต้องเพื่อรับไฟล์ E-Book');
-            return;
+            setErrorMsg('กรุณากรอกอีเมลให้ถูกต้อง')
+            return
         }
 
-        setLoading(true);
+        setIsLoading(true)
 
-        // Load Omise script if not present
-        if (!(window as any).OmiseCard) {
-            const script = document.createElement('script');
-            script.src = 'https://cdn.omise.co/omise.js';
-            script.onload = () => {
-                proceedWithPayment();
-            };
-            script.onerror = () => {
-                console.error('Failed to load Omise script');
-                alert('ไม่สามารถโหลดระบบชำระเงินได้ กรุณาลองใหม่');
-                setLoading(false);
-            };
-            document.head.appendChild(script);
-        } else {
-            proceedWithPayment();
-        }
-    };
-
-    const proceedWithPayment = () => {
-        const { OmiseCard } = window as any;
-        if (!OmiseCard) {
-            alert('ระบบชำระเงินยังไม่พร้อมใช้งาน กรุณารอสักครู่แล้วลองใหม่');
-            setLoading(false);
-            return;
+        if (!window.OmiseCard) {
+            setErrorMsg('ระบบชำระเงินกำลังโหลด กรุณารอสักครู่...')
+            setIsLoading(false)
+            return
         }
 
-        OmiseCard.configure({
-            publicKey: process.env.NEXT_PUBLIC_OMISE_PUBLIC_KEY,
-            currency: 'thb',
-            frameLabel: 'ชุ่มฉ่ำ Branding Payment',
-            submitLabel: 'ชำระเงิน 599 THB',
-        });
-
-        OmiseCard.open({
-            amount: 59900,
+        window.OmiseCard.open({
+            amount: amountInSatang, // Dynamic amount based on order bump
             onCreateTokenSuccess: async (token: string) => {
                 try {
+                    // Send token to backend API
                     const res = await fetch('/api/checkout', {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
+                        headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
-                            email: email,
-                            amount: 599,
-                            token: token,
-                        }),
+                            email,
+                            token,
+                            amount: amountInSatang,
+                            orderBump: orderBump
+                        })
                     })
 
                     const data = await res.json()
 
-                    if (data.success) {
-                        router.push('/upsell')
-                    } else {
-                        alert('การชำระเงินไม่สำเร็จ: ' + (data.message || data.error))
-                        setLoading(false);
+                    if (!res.ok) {
+                        throw new Error(data.error || 'Payment failed')
                     }
-                } catch (err) {
-                    console.error('Payment error:', err)
-                    alert('เกิดข้อผิดพลาดในการชำระเงิน กรุณาลองใหม่')
-                    setLoading(false);
+
+                    // Success! Redirect directly to Upsell Page
+                    // (Do not redirect to success page yet, we want to upsell them first)
+                    router.push('/upsell')
+
+                } catch (err: any) {
+                    console.error(err)
+                    setErrorMsg(err.message || 'เกิดข้อผิดพลาดในการชำระเงิน')
+                    setIsLoading(false)
                 }
             },
-            onCancel: () => {
-                setLoading(false);
+            onFormClosed: () => {
+                setIsLoading(false)
             }
-        });
-    };
+        })
+    }
 
     return (
-        <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4 relative overflow-hidden">
-            {/* Background decorations */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="w-96 h-96 bg-[--green] rounded-full absolute -top-20 -right-20 opacity-10 blur-3xl"></div>
-                <div className="w-96 h-96 bg-[--pink] rounded-full absolute -bottom-20 -left-20 opacity-10 blur-3xl"></div>
-            </div>
-
-            <div className="bg-white/90 backdrop-blur-sm shadow-2xl rounded-3xl p-8 max-w-md w-full text-center border border-slate-100 relative z-10">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[--green]/10 text-[--green] mb-4">
-                    <Lock size={24} />
-                </div>
-
-                <h1 className="text-2xl font-bold text-[--dark-blue] mb-2">สั่งซื้อ E-Book</h1>
-                <h2 className="text-lg text-[--pink] font-bold mb-6">&quot;ตัวจริงต้องมีที่ยืน&quot;</h2>
-
-                <div className="bg-slate-50 rounded-2xl p-6 mb-8 border border-slate-100">
-                    <div className="text-sm text-slate-500 mb-1">ราคาปกติ <span className="line-through">หลักแสน</span></div>
-                    <div className="text-5xl font-black text-[--green] tracking-tight">599.-</div>
-                    <div className="text-xs text-slate-400 mt-2">ชำระครั้งเดียว รับไฟล์ทันทีทางอีเมล</div>
-                </div>
-
-                <div className="space-y-4 text-left">
-                    <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1 pl-1">
-                            อีเมลสำหรับจัดส่งไฟล์ <span className="text-red-500">*</span>
-                        </label>
-                        <Input
-                            type="email"
-                            placeholder="name@example.com"
-                            variant="bordered"
-                            value={email}
-                            onValueChange={setEmail}
-                            classNames={{
-                                inputWrapper: "border-slate-300 hover:border-[--green] focus-within:!border-[--green]",
-                            }}
-                        />
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 font-thai">
+            <Card className="w-full max-w-md shadow-xl rounded-[2.5rem] bg-white overflow-visible">
+                <CardBody className="p-8 md:p-12 relative">
+                    {/* Header Icon */}
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-[#06C755] border-2 border-[#06C755]/10">
+                            <Lock size={20} />
+                        </div>
                     </div>
 
-                    <Button
-                        className="w-full bg-[--green] text-white font-bold text-lg shadow-lg hover:scale-[1.02] transition-transform"
-                        size="lg"
-                        radius="full"
-                        isLoading={loading}
-                        onClick={handlePayment}
-                        startContent={!loading && <CheckCircle size={20} />}
-                    >
-                        ยืนยันการชำระเงิน
-                    </Button>
+                    <div className="text-center mt-6 mb-8 space-y-2">
+                        <h1 className="text-2xl font-bold text-[#1e293b]">สั่งซื้อ E-Book</h1>
+                        <p className="text-[--pink] font-medium text-lg">&quot;ตัวจริงต้องมีที่ยืน&quot;</p>
+                    </div>
 
-                    <p className="text-xs text-slate-400 text-center mt-4">
-                        ปลอดภัยด้วยมาตรฐาน SSL 256-bit
-                    </p>
-                </div>
-            </div>
+                    {/* Price Box */}
+                    <div className="bg-gray-50 rounded-2xl p-6 text-center mb-6 border border-gray-100">
+                        <p className="text-gray-400 text-sm mb-1 line-through">ราคาปกติ {orderBump ? '1,680.-' : '1,290.-'}</p>
+                        <div className="text-5xl font-bold text-[#06C755] mb-2">{totalPrice}.-</div>
+                        <p className="text-xs text-gray-400">ชำระครั้งเดียว รับไฟล์ทันทีทางอีเมล</p>
+                    </div>
+
+                    {/* Order Bump Section */}
+                    <div
+                        className={`p-4 rounded-xl border-2 transition-colors cursor-pointer mb-8 relative ${orderBump ? 'border-[#06C755] bg-[#06C755]/5' : 'border-gray-200 bg-white hover:border-gray-300'}`}
+                        onClick={() => setOrderBump(!orderBump)}
+                    >
+                        <div className="absolute -top-3 right-4 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded animate-pulse">
+                            🔥 ข้อเสนอพิเศษ
+                        </div>
+                        <div className="flex items-start gap-4">
+                            <div className="mt-1">
+                                <div className={`w-5 h-5 rounded flex items-center justify-center border transition-all ${orderBump ? 'bg-[#06C755] border-[#06C755]' : 'border-gray-300 bg-gray-50'}`}>
+                                    {orderBump && <CheckCircle2 size={14} className="text-white" />}
+                                </div>
+                            </div>
+                            <div className="flex-1">
+                                <h4 className="font-bold text-sm text-gray-800 flex items-center gap-2 mb-1">
+                                    <Headphones size={16} className={orderBump ? "text-[#06C755]" : "text-gray-500"} />
+                                    รับ Audiobook ด้วยไหม?
+                                </h4>
+                                <p className="text-xs text-gray-500 leading-relaxed">
+                                    ฟังเพลินๆ ระหว่างขับรถ ประหยัดเวลาอ่าน ในราคาเพียง <span className="text-[#06C755] font-bold">+150.-</span> (ปกติ 390.-) ติ๊กถูกเพื่อเพิ่มลงในออเดอร์
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Form */}
+                    <div className="space-y-6">
+                        <div className="space-y-2 text-left">
+                            <label className="text-sm font-medium text-gray-600 block">
+                                อีเมลสำหรับจัดส่งไฟล์ <span className="text-red-500">*</span>
+                            </label>
+                            <Input
+                                type="email"
+                                placeholder="name@example.com"
+                                variant="bordered"
+                                radius="lg"
+                                size="lg"
+                                classNames={{
+                                    input: "bg-white",
+                                    inputWrapper: "border-gray-200 hover:border-[#06C755] focus-within:!border-[#06C755] bg-white shadow-sm"
+                                }}
+                                value={email}
+                                onValueChange={(val) => { setEmail(val); setErrorMsg('') }}
+                                isInvalid={!!errorMsg}
+                                errorMessage={errorMsg}
+                            />
+                        </div>
+
+                        <Button
+                            size="lg"
+                            className="w-full bg-[#06C755] text-white font-bold text-lg rounded-full shadow-lg shadow-[#06C755]/20"
+                            startContent={!isLoading && <CheckCircle2 size={20} />}
+                            isLoading={isLoading}
+                            onPress={handlePayment}
+                        >
+                            {isLoading ? 'กำลังดำเนินการ...' : 'ยืนยันการชำระเงิน'}
+                        </Button>
+                    </div>
+
+                    {/* Footer Trust Badge */}
+                    <div className="mt-8 text-center">
+                        <p className="text-xs text-gray-400 flex items-center justify-center gap-1">
+                            <Lock size={12} /> ปลอดภัยด้วยมาตรฐาน SSL 256-bit
+                        </p>
+                        {process.env.NODE_ENV === 'development' && !process.env.NEXT_PUBLIC_OMISE_PUBLIC_KEY && (
+                            <p className="text-xs text-red-400 mt-2">
+                                (Dev: Missing Omise Public Key)
+                            </p>
+                        )}
+                    </div>
+                </CardBody>
+            </Card>
         </div>
     )
 }

@@ -5,7 +5,7 @@
 import { motion } from 'framer-motion'
 import Footer from './components/footer'
 import Navbar from './components/nav'
-import NavigationBar from './components/navbar'
+import NavigationBar from './components/NavigationBarMain'
 import { Button, Card, CardBody, CardHeader, Link, divider } from '@nextui-org/react'
 import { Image } from '@nextui-org/react'
 
@@ -17,9 +17,6 @@ import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { BadgeCheck, Flower, HeartHandshake } from 'lucide-react'
 import MyForm from './components/Myform'
 import Script from 'next/script'
-
-
-
 
 
 export default async function Home() {
@@ -37,17 +34,6 @@ export default async function Home() {
         { id: '3', src: 'https://www.facebook.com/choomchambranding/videos/215435620461048/', description: 'Creative อายุน้อยร้อยล้านมาเรียนคอร์สเล่าเรื่องใน 3 นาทีให้ได้ใจคนเป็นยังไง ?', platform: "facebook", title: "รีวิวจาก พี่ม่อน Producer อายุน้อยร้อยล้าน" },
     ]
 
-    const courses = [
-        { id: '1', title: "ที่ปรึกษาวางแผนสร้างแบรนด์จาก 0 ให้มีชื่อเสียง", description: "แบรนด์ไม่ชัด มีของดีแต่คนไม่รู้จัก ช่วยสะท้อนสิ่งที่คุณไม่เห็นเพื่อให้ไปต่อได้ เปิดรับเพียงแค่ 5 แบรนด์/เดือน ไม่ได้รับทุกธุรกิจต้องผ่านการสัมภาษณ์ก่อนเท่านั้น", imageUrl: "https://scontent.fbkk29-1.fna.fbcdn.net/v/t39.30808-6/394540875_832637978869474_2998277435694377056_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=KKZh2vSZnq0AX_DGuQd&_nc_ht=scontent.fbkk29-1.fna&oh=00_AfAS9pAoTV6U6ajw0gtkLkeEpTCSVEJpMr-vqXtsa_yhbA&oe=65AD89E7", price: "19,999" },
-        { id: '2', title: "Keynote Speaker ", description: "บรรยายให้ผู้เข้าร่วมงานเข้าใจเรื่อง Branding หรือ Storytelling แบบง่ายๆ นำไปใช้ในชีวิตได้จริง", imageUrl: "https://scontent.fbkk29-6.fna.fbcdn.net/v/t1.15752-9/413902958_366481376005129_6244924999535793949_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=x9oyjf3_Au0AX_RXaMB&_nc_ht=scontent.fbkk29-6.fna&oh=03_AdR99ysdhDvfov2IjqpNC6BPXHj078v0SOiwytJbVl1mQw&oe=65CF3423", price: " 125,000" },
-        { id: '3', title: "ชุ่มฉ่ำ Circle ", description: "ทำธุรกิจคนเดียวเปล่าเปลี่ยวใจ ลองเข้าสังคมเจอเพื่อนกัลยาณมิตรที่ช่วยกันผลักดันให้ถึงเป้าหมายได้ไวขึ้น ", imageUrl: "https://scontent.fbkk29-4.fna.fbcdn.net/v/t39.30808-6/394736445_831607658972506_7023956463251618192_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=QD9uI_a70GEAX9NZJzL&_nc_ht=scontent.fbkk29-4.fna&oh=00_AfCId5Hhmpz4_TeGAvLU-Swc7ZBHV2-ydzbiojq9kPLGbw&oe=65AD23E2", price: " 2,555" },
-        { id: '4', title: "In house Training ", description: "พัฒนาทีมให้เข้าใจการสร้าง Brand ยกระดับ Content ให้ได้ใจลูกค้าเพิ่ม ช่วยให้เจ้าของธุรกิจไม่ต้องเหนื่อย", imageUrl: "https://scontent.fbkk29-4.fna.fbcdn.net/v/t39.30808-6/394736445_831607658972506_7023956463251618192_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=QD9uI_a70GEAX9NZJzL&_nc_ht=scontent.fbkk29-4.fna&oh=00_AfCId5Hhmpz4_TeGAvLU-Swc7ZBHV2-ydzbiojq9kPLGbw&oe=65AD23E2", price: " 125,000" },
-        { id: '5', title: "Online Course  ", description: "คอร์สเข้าใจแบรนด์ตัวเอง คอร์สเล่าเรื่อง 3 นาทีให้มียอดขาย คอร์สสร้างคนดังในตำนาน เนื้อหาแน่น ห้ามพลาด", imageUrl: "https://scontent.fbkk29-7.fna.fbcdn.net/v/t39.30808-6/336890739_1354530558661892_5028428925110047977_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=VIkIn8LBXqoAX-Dvonk&_nc_ht=scontent.fbkk29-7.fna&oh=00_AfDdNl-E1cJuHTaW5_T-_HFkLe88yy_Q3pkbBRcpmWihhg&oe=65ACB443", price: " 555" },
-        { id: '6', title: "ชุ่มฉ่ำ Studio   ", description: "ถ่ายภาพโปรไฟล์สำหรับ CEO เพื่อสร้าง Personal Brand ดึงความเป็นตัวคุณออกมาให้มีเสน่ห์ ถ่ายภาพให้ดูมีชีวิตชุ่มฉ่ำ", imageUrl: "https://scontent.fbkk29-7.fna.fbcdn.net/v/t39.30808-6/336890739_1354530558661892_5028428925110047977_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=VIkIn8LBXqoAX-Dvonk&_nc_ht=scontent.fbkk29-7.fna&oh=00_AfDdNl-E1cJuHTaW5_T-_HFkLe88yy_Q3pkbBRcpmWihhg&oe=65ACB443", price: " 19,000" },
-    ]
-
-
-
     return <>
         <div className="text-white fixed  z-10 w-full duration-200" id="scroll_nav">
             <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" />
@@ -56,7 +42,8 @@ export default async function Home() {
 
         <div id="fb-root"></div>
         <Script
-            strategy="lazyOnload"
+            id="fb-sdk"
+            strategy="afterInteractive"
             crossOrigin="anonymous"
             src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0&appId=156838349817980"
             nonce="WQnbcNzF"
@@ -65,9 +52,6 @@ export default async function Home() {
         <section className="bg-[--dark-blue] overflow-visible pt-5">
             <div className="relative bg-blue-900 line z-2">
                 <div className="absolute sm:bottom-0 bottom-0 sm:left-[3%] left-10">
-                    {/* <div initial={{ y: 20, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 100 }}> <h1 className="text-white thai">ตัวจริงต้องมีที่ยืน</h1></div> */}
-                    {/* top */}
                     <div >
                         <div className="text-white">
                             <div className="mark">
@@ -82,8 +66,6 @@ export default async function Home() {
                                 <br />
                                 <div className="text-base sm:text-lg thai w-full sm:max-w-lg">ผลงานสร้างแบรนด์สายคุณค่าระดับประเทศ</div>
                                 <br />
-                                {/* <Link href="/about"><div className="btn bg-primary rounded-full px-10 py-1 border-0 hover:scale-110 duration-150 text-white">About us</div></Link> */}
-                                {/* <Link href="/about"><Button radius='sm' className='w-[300px] '>About Us</Button></Link> */}
                             </div>
                         </div>
                         <br />
@@ -105,9 +87,6 @@ export default async function Home() {
                 <section className=' flex flex-col gap-10  lg:flex-row lg:items-stretch items-center justify-center py-10 px-4 sm:px-10 '>
                     <Card className=' w-full max-w-[350px] shadow-xl bg-white hover:-translate-y-2 duration-300'>
                         <CardHeader>
-                            {/* <div className='h-10 w-10 rounded-full '>
-                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
-                            </div> */}
                         </CardHeader>
                         <CardBody>
                             <Flower size={48} className="text-[--pink] mb-4" />
@@ -119,9 +98,6 @@ export default async function Home() {
                     </Card>
                     <Card className=' w-full max-w-[350px] shadow-xl bg-white hover:-translate-y-2 duration-300'>
                         <CardHeader>
-                            {/* <div className='h-10 w-10 rounded-full '>
-                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
-                            </div> */}
                         </CardHeader>
                         <CardBody>
                             <BadgeCheck size={48} className="text-[--green] mb-4" />
@@ -133,9 +109,6 @@ export default async function Home() {
                     </Card>
                     <Card className=' w-full max-w-[350px] shadow-xl bg-white hover:-translate-y-2 duration-300'>
                         <CardHeader>
-                            {/* <div className='h-10 w-10 rounded-full '>
-                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
-                            </div> */}
                         </CardHeader>
                         <CardBody>
                             <HeartHandshake size={48} className="text-[--yellow] mb-4" />
@@ -153,11 +126,6 @@ export default async function Home() {
 
                 <section className=' flex flex-col gap-10  lg:flex-row lg:items-stretch items-center justify-center py-10 px-4 sm:px-10 '>
                     <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass hover:scale-105 duration-300'>
-                        {/* <CardHeader>
-                            <div className='w-10 rounded-full '>
-                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
-                            </div>
-                        </CardHeader> */}
                         <CardBody className="flex flex-col justify-between p-0">
                             <Image src="/images/courses/5.jpg" className="w-full h-auto object-cover aspect-video rounded-none"></Image>
                             <div className="p-5">
@@ -170,11 +138,6 @@ export default async function Home() {
                         </CardBody>
                     </Card>
                     <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass hover:scale-105 duration-300'>
-                        {/* <CardHeader>
-                            <div className=' w-10 rounded-full '>
-                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
-                            </div>
-                        </CardHeader> */}
                         <CardBody className="p-0">
                             <Image src="/images/courses/4.jpg" className="w-full h-auto object-cover aspect-video rounded-none"></Image>
                             <div className="p-5">
@@ -187,12 +150,6 @@ export default async function Home() {
                         </CardBody>
                     </Card>
                     <Card className='w-full max-w-[350px] shadow-xl bg-white/80 glass hover:scale-105 duration-300'>
-                        {/* <CardHeader>
-                            <div className=' w-10 rounded-full '>
-                                <Image className='' width={300} height={300} src="./icon.svg" alt="" />
-                            </div>
-                            
-                        </CardHeader> */}
                         <CardBody className="p-0">
                             <Image src="/images/courses/1.jpg" className="w-full h-auto object-cover aspect-video rounded-none"></Image>
                             <div className="p-5">
@@ -208,79 +165,7 @@ export default async function Home() {
                 </section>
             </div>
 
-            <section className='p-8 lg:p-16 bg-gradient-to-br from-white to-slate-50'>
-                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-                    <div className="w-full lg:w-1/3 flex justify-center">
-                        <img className="w-48 sm:w-64 lg:w-80 drop-shadow-2xl hover:scale-105 transition-transform duration-300" src="/images/sticker6.png" alt="E-Book ตัวจริงต้องมีที่ยืน" />
-                    </div>
-
-                    <div className="w-full lg:w-2/3 space-y-6 text-center lg:text-left">
-                        <div className="inline-block bg-[--pink] text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide uppercase shadow-md mb-2">
-                            Sales Page E-Book
-                        </div>
-
-                        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-[--dark-blue] leading-tight">
-                            เลิกทำตัวเป็น <span className="text-[--green]">&quot;ของดีที่ไม่มีใครเห็น&quot;</span><br />
-                            แล้วเริ่มเป็น <span className="text-[--yellow] bg-black/5 px-2">&quot;เบอร์หนึ่ง&quot;</span> ที่ใครก็แทนไม่ได้
-                        </h2>
-
-                        <h3 className="text-lg lg:text-2xl font-bold text-[--pink] italic">
-                            &quot;คนเก่งที่ไม่มีที่ยืน... จะถูกแทนที่เสมอ&quot;
-                        </h3>
-
-                        <div className="text-base lg:text-lg text-[--grey] leading-relaxed space-y-4">
-                            <p>
-                                คุณอาจจะเก่งระดับโลก มีสินค้าที่ดีเกินมาตรฐาน หรือมีบริการที่เปลี่ยนชีวิตคนได้
-                                แต่... <span className="font-bold text-red-500">นี่คือความจริงที่เจ็บปวด</span>
-                            </p>
-                            <p>
-                                ในโลกธุรกิจ <span className="font-bold">&quot;ความเก่ง&quot;</span> เป็นแค่ตั๋วเข้าประตู
-                                แต่ <span className="font-bold bg-[--yellow]/20 px-1">&quot;ที่ยืน&quot;</span> ต่างหากคือตัวตัดสินว่าใครจะรวย
-                            </p>
-                            <p className="text-sm sm:text-base text-slate-500 italic border-l-4 border-[--pink] pl-4">
-                                &quot;ถ้าวันนี้คุณยังเหนื่อยกับการหาลูกค้า ยังต้องลดแลกแจกแถม หรือรู้สึกว่าคนอื่นที่ &apos;เก่งน้อยกว่า&apos; กลับดังกว่าคุณ...
-                                ปัญหาไม่ใช่ว่าคุณไม่เก่ง แต่เป็นเพราะคุณ &apos;ยืนมั่ว&apos; ค่ะ&quot;
-                            </p>
-                        </div>
-
-                        <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 mt-6 max-w-2xl mx-auto lg:mx-0">
-                            <h4 className="text-lg sm:text-xl font-bold text-[--dark-blue] mb-3 flex items-center justify-center lg:justify-start gap-2">
-                                <span className="text-2xl">📖</span> E-Book ตัวจริงต้องมีที่ยืน: ประตูสู่ Top of Mind
-                            </h4>
-                            <ul className="space-y-2 text-left text-sm text-[--grey] mb-4">
-                                <li className="flex items-start gap-2">
-                                    <span className="text-green-500 font-bold">✓</span>
-                                    <span><strong className="text-[--dark-blue]">The Displacement Reality:</strong> ทำไมการเป็นคนเก่งที่ &quot;ไร้ตัวตน&quot; ถึงอันตรายกว่าการเป็นคนไม่เก่ง</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-green-500 font-bold">✓</span>
-                                    <span><strong className="text-[--dark-blue]">The Positioning Matrix:</strong> เลิกยืนมั่ว แล้วไปยืนในจุดที่ลูกค้าไม่ต้องถามซ้ำว่า &quot;คุณคือใคร&quot;</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-green-500 font-bold">✓</span>
-                                    <span><strong className="text-[--dark-blue]">Top of Mind Shortcut:</strong> วิธีสร้าง &quot;ลายนิ้วมือทางธุรกิจ&quot; ให้คนจำคุณได้ แม้จะยังไม่ซื้อ</span>
-                                </li>
-                            </ul>
-
-                            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 border-t pt-4">
-                                <div className="text-center sm:text-left">
-                                    <div className="text-sm text-slate-400 line-through">ปกติหลักแสน</div>
-                                    <div className="text-3xl font-bold text-[--green]">ราคาเพียง 599.-</div>
-                                </div>
-                                <Button
-                                    as={Link}
-                                    href="/checkout"
-                                    size="lg"
-                                    className="bg-[--green] text-white font-bold text-lg px-8 py-6 w-full sm:w-auto shadow-xl hover:scale-105 transition-transform"
-                                    radius="full"
-                                >
-                                    สั่งซื้อและรับแผนที่สู่ Top of Mind ทันที
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* REMOVED SALES PAGE E-BOOK SECTION FROM HERE */}
 
             <section className='p-10 bg-slate-100/40'>
                 <div className=''>

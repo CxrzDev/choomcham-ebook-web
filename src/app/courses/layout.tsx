@@ -1,7 +1,7 @@
 
 import Script from 'next/script';
 import Footer from "../components/footer"
-import NavigationBar from "../components/navbar"
+import NavigationBar from "../components/NavigationBarMain"
 
 import Head from 'next/head';
 import { Metadata } from 'next';
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <>
 
-      
+
 
       <NavigationBar current={""} />
       <div className="bg-[#EFEFEF]">

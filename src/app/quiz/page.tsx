@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from 'react'
 import { supabase } from '../service/supabase'
+import NextImage from 'next/image'
 import { useRouter } from 'next/navigation'
 
 export default function QuizPage() {
@@ -31,7 +32,8 @@ export default function QuizPage() {
     fetchQuestions()
   }, [])
   const [currentIndex, setCurrentIndex] = useState(-2)
-  const [score, setScore] = useState(0)
+  const [selectedScores, setSelectedScores] = useState<number[]>([])
+  const score = selectedScores.reduce((acc, s) => acc + s, 0)
   const [showAnalysis, setShowAnalysis] = useState(false)
   const [regData, setRegData] = useState({
     nickname: '',
@@ -48,6 +50,22 @@ export default function QuizPage() {
   const [resetEmailSent, setResetEmailSent] = useState(false)
   const [isAuthLoading, setIsAuthLoading] = useState(false)
 
+  // --- ระบบเลเวล (หมวดหมู่คำถาม) ---
+  const levels = [
+    { name: 'Identity & Soul', label: 'ตัวตนและจิตวิญญาณ', icon: '🧬', color: 'bg-[--pink]', start: 0, end: 3 },
+    { name: 'Message & Magnetic Power', label: 'พลังดึงดูดและสาร', icon: '🧲', color: 'bg-[--green]', start: 4, end: 7 },
+    { name: 'Inner State & Consistency', label: 'สภาวะภายในและความสม่ำเสมอ', icon: '🔥', color: 'bg-[--yellow]', start: 8, end: 11 },
+    { name: 'Future & Sustainability', label: 'อนาคตและความยั่งยืน', icon: '🚀', color: 'bg-[--dark-blue]', start: 12, end: 19 },
+  ]
+
+  const getCurrentLevel = (idx: number) => {
+    return levels.find(l => idx >= l.start && idx <= l.end) || levels[0]
+  }
+
+  const getCurrentLevelIndex = (idx: number) => {
+    return levels.findIndex(l => idx >= l.start && idx <= l.end)
+  }
+
   useEffect(() => {
     if (typeof window === 'undefined') return
     const savedEmail = window.localStorage.getItem('quizRegisteredEmail')
@@ -60,43 +78,54 @@ export default function QuizPage() {
   // --- Logic การคำนวณและแสดงผลลัพธ์ ---
   const getResultData = (totalScore: number) => {
     if (totalScore <= 35) return {
-      title: "ตัวจริงที่หาทางกลับบ้านไม่เจอ",
-      status: "สภาพแบรนด์: คุณกำลังใส่ชุดที่คนอื่นตัดให้ ยิ่งทำยิ่งเหนื่อย เพราะไม่ใช่เนื้อแท้ของตัวเอง",
-      finding: "สิ่งที่เจอ: ยอดขายแกว่ง คอนเทนต์ไร้เสน่ห์ เพราะคุณพยายามเป็นคนอื่นที่ไม่ใช่คุณ",
-      risk: "ความเสี่ยง: แบรนด์ไม่มีรากแก้ว ถ้าเทรนด์เปลี่ยนคุณจะหายไปเป็นคนแรก",
-      sakit: "เลิกเป็นคนอื่นแล้วกลับมาเป็นตัวเองที่ทำเงินได้ใน E-book ตัวจริงต้องมีที่ยืน นะจ๊ะ",
-      ctaLabel: "สั่งซื้อ E-Book เพื่อหาทางกลับบ้าน"
+      title: "The Wandering Soul: ตัวจริงที่กำลังตามหาทางกลับบ้าน",
+      status: "สภาพแบรนด์: คุณกำลังสวมบทบาทที่คนอื่นขีดให้ ยิ่งทำยิ่งเหนื่อย เพราะไม่ใช่เนื้อแท้ของตัวเอง",
+      finding: "Insight: ยอดขายผันผวน คอนเทนต์ขาดจิตวิญญาณ เพราะคุณพยายามเป็นคนอื่นที่ไม่ใช่คุณ",
+      risk: "ความเสี่ยง: แบรนด์ไร้รากแก้ว หากกระแสเปลี่ยน คุณอาจเลือนหายไปเป็นลำดับแรก",
+      sakit: "เลิกเป็นคนอื่น แล้วกลับมาเป็นตัวเองที่ทรงพลังใน E-book 'ตัวจริงต้องมีที่ยืน' นะจ๊ะ",
+      ctaLabel: "รับทางลัดหาตัวตนใน E-Book"
     }
     if (totalScore <= 50) return {
-      title: "ตัวจริงในกรงขังสีทอง",
-      status: "สภาพแบรนด์: ขายดี มีชื่อเสียง แต่ลึกๆ อึดอัด เพราะติดกับดักภาพจำจนไม่กล้าเปลี่ยน",
-      finding: "สิ่งที่เจอ: ยิ่งสำเร็จยิ่งปลอม กลัวยอดตกจนต้องฝืนทำสิ่งที่ใจไม่ได้อินแล้ว",
-      risk: "ความเสี่ยง: ไฟมอด (Burnout) เพราะเจ้าของแบรนด์หมดพลังชีวิตจากข้างใน",
-      sakit: "อยากขยับออกจากกรงมาหาจุดที่ใช่กว่าเดิมไหม? มาคุยกันต่อใน Program เล่าเรื่องแบรนด์ นะ",
-      ctaLabel: "สมัคร PROGRAM เล่าเรื่องแบรนด์"
+      title: "The Golden Cage: ตัวจริงในกรงขังความสำเร็จ",
+      status: "สภาพแบรนด์: ภายนอกดูสำเร็จและขายดี แต่ลึกๆ คุณรู้สึกอึดอัด เพราะติดกับดักภาพจำจนไม่กล้าเป็นตัวเอง",
+      finding: "Insight: ยิ่งประสบความสำเร็จยิ่งรู้สึก 'ปลอม' กลัวยอดตกจนต้องฝืนทำสิ่งที่ใจไม่ได้อินอีกต่อไป",
+      risk: "ความเสี่ยง: ภาวะหมดไฟ (Burnout) เพราะพลังชีวิตจากข้างในเริ่มแห้งเหือด",
+      sakit: "ปลดปล่อยตัวเองออกจากกรง และสร้างแบรนด์ที่ 'ใช่' กว่าเดิมใน Program เล่าเรื่องแบรนด์ นะคะ",
+      ctaLabel: "สมัคร Brand Story Program"
     }
     if (totalScore <= 65) return {
-      title: "ตัวจริงที่เริ่มมีที่ยืน",
-      status: "สภาพแบรนด์: มาถูกทางแล้ว! คนเริ่มจำได้ว่าเรื่องนี้ต้องเป็นคุณ แต่ความชัดเจนยังไม่ 100%",
-      finding: "สิ่งที่เจอ: มีลูกค้าที่รักคุณจริงๆ ทักมาบ้าง แต่คุณยังเขินที่จะโชว์ความเจ๋งออกมาทั้งหมด",
-      risk: "ความเสี่ยง: เติบโตช้ากว่าที่ควรจะเป็น เพราะการสื่อสารยังไม่คมพอจะดึงดูดลูกค้าเกรด A",
-      sakit: "อีกนิดเดียวจะถึงจุดที่หายใจก็เป็นเงิน! มาลับคมตัวตนใน E-book ตัวจริงต้องมีที่ยืน กันจ้ะ",
-      ctaLabel: "สั่งซื้อ E-Book เพื่อลับคมตัวตน"
+      title: "The Rising Star: ตัวจริงที่เริ่มเปล่งประกาย",
+      status: "สภาพแบรนด์: คุณมาถูกทางแล้ว! ผู้คนเริ่มจดจำได้ในแบบที่คุณเป็น แต่ความชัดเจนยังไม่ถึง 100%",
+      finding: "Insight: มีฐานแฟนที่รักคุณจริงๆ แต่คุณยังลังเลที่จะปลดปล่อยความ 'เจ๋ง' ออกมาแบบสุดทาง",
+      risk: "ความเสี่ยง: เติบโตช้ากว่าที่ควรจะเป็น เพราะการสื่อสารยังคมไม่พอจะดึงดูดลูกค้าเกรดพรีเมียม",
+      sakit: "อีกก้าวเดียวจะถึงจุดที่ 'ลมหายใจเป็นเงิน' มาลับคมตัวตนให้กริบใน E-book 'ตัวจริงต้องมีที่ยืน' กันจ้ะ",
+      ctaLabel: "ลับคมตัวตนด้วย E-Book"
     }
     return {
-      title: "ตัวจริงที่เป็นตำนาน (ในใจคน)",
-      status: "สภาพแบรนด์: คุณคือแม่เหล็ก! แบรนด์กับตัวตนคือเรื่องเดียวกัน ลูกค้าซื้อความเชื่อของคุณ",
-      finding: "สิ่งที่เจอ: ทำงานเหมือนไม่ได้ทำงาน คู่แข่งเลียนแบบไม่ได้เพราะไม่มี 'จิตวิญญาณ' แบบคุณ",
-      risk: "ความเสี่ยง: การย่ำอยู่กับที่จนเผลอหยุดพัฒนาวิธีเล่าเรื่องให้ทันยุคสมัย",
-      sakit: "ภูมิใจในตัวคุณมาก! ถ้าอยากขยายอาณาจักรตัวตนให้ทรงพลังกว่าเดิม เจอกันใน Program เล่าเรื่องแบรนด์ จ้ะ",
-      ctaLabel: "ขยายอาณาจักรใน PROGRAM เล่าเรื่องแบรนด์"
+      title: "The Iconic Legend: ตัวจริงที่เป็นตำนานในใจผู้คน",
+      status: "สภาพแบรนด์: คุณคือแม่เหล็ก! แบรนด์กับชีวิตคือเนื้อเดียวกัน ลูกค้าไม่ได้ซื้อแค่สินค้า แต่ซื้อ 'ความเชื่อ' ของคุณ",
+      finding: "Insight: คุณทำงานด้วยความสุขและเป็นธรรมชาติ คู่แข่งเลียนแบบไม่ได้เพราะขาด 'ดีเอ็นเอ' แบบคุณ",
+      risk: "ความเสี่ยง: การย่ำอยู่กับที่จนเผลอหยุดพัฒนาวิธีเล่าเรื่องให้ทันยุคสมัยที่เปลี่ยนไป",
+      sakit: "น้องฉ่ำภูมิใจในตัวคุณมาก! หากต้องการขยายอาณาจักรตัวตนให้ไร้ขีดจำกัด เจอกันใน Program เล่าเรื่องแบรนด์ นะคะ",
+      ctaLabel: "ขยายอาณาจักรแบรนด์คุณ"
     }
   }
 
   // --- ฟังก์ชันจัดการการชำระเงิน Omise (จุดที่ปรับปรุงตามที่บอก) ---
   const handleAnswer = (answerScore: number) => {
-    setScore(score + answerScore)
+    setSelectedScores([...selectedScores, answerScore])
     setCurrentIndex(currentIndex + 1)
+  }
+
+  const handleBack = () => {
+    if (currentIndex > 0) {
+      const newScores = [...selectedScores]
+      newScores.pop()
+      setSelectedScores(newScores)
+      setCurrentIndex(currentIndex - 1)
+    } else if (currentIndex === 0) {
+      setCurrentIndex(-1)
+    }
   }
 
   //   const handlePayment = async (e?: React.MouseEvent) => {
@@ -301,14 +330,26 @@ export default function QuizPage() {
         <div className="relative z-10 flex flex-col items-center justify-center gap-8">
           {/* หน้าลงทะเบียน / เข้าสู่ระบบ */}
           {currentIndex === -2 && authMode === 'register' && (
-            <div className="w-full max-w-xl bg-white/90 shadow-2xl rounded-[32px] border border-slate-200 p-6 sm:p-8 backdrop-blur-sm">
+            <div className="w-full max-w-xl bg-white/90 shadow-2xl rounded-[32px] border border-slate-200 p-6 sm:p-8 backdrop-blur-sm relative overflow-visible">
+              <div className="flex justify-center -mt-16 mb-4">
+                <div className="bg-white p-3 rounded-3xl shadow-lg border-2 border-[--yellow]">
+                  <NextImage
+                    src="/images/logo-clean.svg"
+                    alt="Choomcham Logo"
+                    width={150}
+                    height={150}
+                    unoptimized
+                    className="w-32 h-32 object-contain"
+                  />
+                </div>
+              </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-center text-[--yellow] mb-4 italic">
-                ลงทะเบียนก่อนเริ่ม Quiz แบรนด์คุณคือ "ตัวจริง" หรือแค่ "โชคดี"?
+                ลงทะเบียนเพื่อค้นพบ "ดีเอ็นเอตัวจริง" ของแบรนด์คุณ
               </h2>
               <p className="text-sm sm:text-base text-slate-700 mb-6">
-                ก่อนจะไปค้นหาคำตอบร่วมกัน... น้องฉ่ำรวบรวมข้อมูลเล็กน้อย เพื่อให้ผลลัพธ์ที่ได้
-                <span className="text-[--pink] font-semibold"> ฉ่ำ </span>
-                และตรงใจพี่ตัวจริงที่สุดนะคะ
+                เพื่อความแม่นยำในการวิเคราะห์ น้องฉ่ำขอรวบรวมข้อมูลเบื้องต้นสักครู่
+                เพื่อให้ผลลัพธ์ที่ได้ <span className="text-[--pink] font-semibold"> คมชัด </span>
+                และทรงพลังที่สุดสำหรับพี่ตัวจริงนะคะ
               </p>
               <div className="space-y-4 text-left">
                 <div>
@@ -417,7 +458,7 @@ export default function QuizPage() {
                   }
                   onClick={handleStartQuiz}
                 >
-                  ไปค้นหาคำตอบร่วมกัน
+                  เริ่มการเดินทางค้นหาตัวตน
                 </button>
                 <button
                   type="button"
@@ -434,7 +475,19 @@ export default function QuizPage() {
           )}
 
           {currentIndex === -2 && authMode === 'login' && (
-            <div className="w-full max-w-xl bg-white/90 shadow-2xl rounded-[32px] border border-slate-200 p-6 sm:p-8 backdrop-blur-sm">
+            <div className="w-full max-w-xl bg-white/90 shadow-2xl rounded-[32px] border border-slate-200 p-6 sm:p-8 backdrop-blur-sm relative overflow-visible">
+              <div className="flex justify-center -mt-16 mb-4">
+                <div className="bg-white p-3 rounded-3xl shadow-lg border-2 border-[--yellow]">
+                  <NextImage
+                    src="/images/logo-clean.svg"
+                    alt="Choomcham Logo"
+                    width={150}
+                    height={150}
+                    unoptimized
+                    className="w-32 h-32 object-contain"
+                  />
+                </div>
+              </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-center text-[--yellow] mb-4 italic">
                 เข้าสู่ระบบเพื่อทำ Quiz ต่อ
               </h2>
@@ -504,26 +557,87 @@ export default function QuizPage() {
 
           {/* หน้าคำถาม */}
           {currentIndex >= 0 && currentIndex < questions.length && (
-            <div className="w-full max-w-xl bg-white/95 shadow-2xl rounded-[32px] border border-slate-200 p-6 sm:p-8 backdrop-blur-sm">
-              <span className="text-[10px] font-black uppercase tracking-widest opacity-40 mb-4 block">
-                Question {currentIndex + 1} of {questions.length}
-              </span>
-              <h2 className="text-xl sm:text-2xl font-bold mb-6 leading-snug text-slate-900">
-                {questions[currentIndex].question_text}
-              </h2>
-              <div className="grid gap-3">
-                {questions[currentIndex].options.map((opt: any, i: number) => (
-                  <button
-                    key={i}
-                    className="w-full flex items-start justify-start gap-3 rounded-2xl border-2 border-[--green] bg-white/80 px-5 py-4 text-left text-sm sm:text-base text-slate-900 hover:bg-[--green] hover:text-white hover:-translate-y-0.5 transition-all duration-150"
-                    onClick={() => handleAnswer(opt.score)}
-                  >
-                    <span className="mt-0.5 text-xs font-semibold opacity-70">
-                      {String.fromCharCode(65 + i)}.
-                    </span>
-                    <span className="flex-1">{opt.text}</span>
-                  </button>
-                ))}
+            <div className="w-full max-w-xl space-y-4">
+              {/* Level Progress Bar */}
+              <div className="flex items-center gap-2 justify-center">
+                {levels.map((level, i) => {
+                  const levelIdx = getCurrentLevelIndex(currentIndex)
+                  const isActive = i === levelIdx
+                  const isCompleted = i < levelIdx
+                  return (
+                    <div key={i} className="flex items-center gap-2">
+                      <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 ${isActive ? level.color + ' text-white shadow-lg scale-105' : isCompleted ? 'bg-white/90 text-[--green]' : 'bg-white/40 text-slate-400'}`}>
+                        <span>{level.icon}</span>
+                        <span className="hidden sm:inline">Lv.{i + 1}</span>
+                        <span className="sm:hidden">Lv.{i + 1}</span>
+                      </div>
+                      {i < levels.length - 1 && (
+                        <div className={`w-4 sm:w-8 h-0.5 rounded-full transition-all duration-300 ${isCompleted ? 'bg-[--green]' : 'bg-white/30'}`} />
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* Level Title */}
+              <div className="text-center">
+                <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-white text-sm font-bold ${getCurrentLevel(currentIndex).color}`}>
+                  <span className="text-base">{getCurrentLevel(currentIndex).icon}</span>
+                  Level {getCurrentLevelIndex(currentIndex) + 1}: {getCurrentLevel(currentIndex).label}
+                </div>
+              </div>
+
+              {/* Question Card */}
+              <div className="bg-white/95 shadow-2xl rounded-[32px] border border-slate-200 p-6 sm:p-8 backdrop-blur-sm">
+                {/* Question Counter & Progress */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    Question {currentIndex + 1} of {questions.length}
+                  </span>
+                  <span className="text-[10px] font-bold text-[--green]">
+                    {Math.round(((currentIndex) / questions.length) * 100)}% เสร็จแล้ว
+                  </span>
+                </div>
+
+                {/* Mini Progress Bar */}
+                <div className="w-full h-1.5 bg-slate-100 rounded-full mb-6 overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-[--green] to-[--yellow] rounded-full transition-all duration-500 ease-out"
+                    style={{ width: `${((currentIndex) / questions.length) * 100}%` }}
+                  />
+                </div>
+
+                <h2 className="text-xl sm:text-2xl font-bold mb-6 leading-snug text-slate-900">
+                  {questions[currentIndex].question_text}
+                </h2>
+                <div className="grid gap-3">
+                  {questions[currentIndex].options.map((opt: any, i: number) => (
+                    <button
+                      key={i}
+                      className="w-full flex items-start justify-start gap-3 rounded-2xl border-2 border-[--green] bg-white/80 px-5 py-4 text-left text-sm sm:text-base text-slate-900 hover:bg-[--green] hover:text-white hover:-translate-y-0.5 transition-all duration-150 group"
+                      onClick={() => handleAnswer(opt.score)}
+                    >
+                      <span className="mt-0.5 text-xs font-semibold opacity-70 group-hover:opacity-100">
+                        {String.fromCharCode(65 + i)}.
+                      </span>
+                      <span className="flex-1">{opt.text}</span>
+                    </button>
+                  ))}
+                </div>
+
+                {currentIndex > 0 && (
+                  <div className="mt-8 flex justify-center">
+                    <button
+                      className="inline-flex items-center gap-2 rounded-full border-2 border-[--dark-blue]/20 bg-white px-6 py-3 text-sm font-bold text-[--dark-blue] shadow-sm hover:bg-[--dark-blue] hover:text-white hover:border-[--dark-blue] transition-all duration-200"
+                      onClick={handleBack}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                      </svg>
+                      ย้อนกลับข้อก่อนหน้า
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -570,6 +684,8 @@ export default function QuizPage() {
                 >
                   {getResultData(score).ctaLabel}
                 </button>
+
+
               </div>
             </div>
           )}
@@ -588,7 +704,7 @@ export default function QuizPage() {
                 className="bg-[--green] text-white rounded-full px-8 py-3 font-semibold text-sm sm:text-base shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-150"
                 onClick={() => setCurrentIndex(0)}
               >
-                เริ่มทำ Quiz เลย
+                ปลดล็อกตัวตนแบรนด์คุณเลย
               </button>
             </div>
           )}

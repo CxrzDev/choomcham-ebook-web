@@ -1,7 +1,7 @@
 
 'use client'
 import Footer from '@/app/components/footer';
-import NavigationBar from '@/app/components/navbar';
+import NavigationBar from '@/app/components/NavigationBarMain';
 import { motion, useAnimationControls } from 'framer-motion';
 import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
 import { useEffect } from 'react';
