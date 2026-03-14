@@ -125,10 +125,19 @@ export default function QuizPage() {
     }
   }
 
+  const [isTransitioning, setIsTransitioning] = useState(false)
+
   // --- ฟังก์ชันจัดการการชำระเงิน Omise (จุดที่ปรับปรุงตามที่บอก) ---
   const handleAnswer = (answerScore: number) => {
-    setSelectedScores([...selectedScores, answerScore])
-    setCurrentIndex(currentIndex + 1)
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    
+    setSelectedScores((prev) => [...prev, answerScore])
+    
+    setTimeout(() => {
+      setCurrentIndex((prev) => prev + 1)
+      setIsTransitioning(false)
+    }, 300)
   }
 
   const handleBack = () => {
