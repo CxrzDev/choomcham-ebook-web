@@ -126,16 +126,21 @@ export default function QuizPage() {
   }
 
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
 
-  // --- ฟังก์ชันจัดการการชำระเงิน Omise (จุดที่ปรับปรุงตามที่บอก) ---
-  const handleAnswer = (answerScore: number) => {
-    if (isTransitioning) return
+  const handleAnswerSelect = (answerScore: number) => {
+    setSelectedAnswer(answerScore)
+  }
+
+  const handleNextQuestion = () => {
+    if (selectedAnswer === null || isTransitioning) return
     setIsTransitioning(true)
-    
-    setSelectedScores((prev) => [...prev, answerScore])
-    
+
+    // Delay slightly for better UX
     setTimeout(() => {
+      setSelectedScores((prev) => [...prev, selectedAnswer])
       setCurrentIndex((prev) => prev + 1)
+      setSelectedAnswer(null) // Reset selection
       setIsTransitioning(false)
     }, 300)
   }
@@ -146,6 +151,7 @@ export default function QuizPage() {
       newScores.pop()
       setSelectedScores(newScores)
       setCurrentIndex(currentIndex - 1)
+      setSelectedAnswer(null)
     } else if (currentIndex === 0) {
       setCurrentIndex(-1)
     }
@@ -628,34 +634,59 @@ export default function QuizPage() {
                 <h2 className="text-xl sm:text-2xl font-bold mb-6 leading-snug text-slate-900">
                   {questions[currentIndex].question_text}
                 </h2>
-                <div className="grid gap-3">
-                  {questions[currentIndex].options.map((opt: any, i: number) => (
-                    <button
-                      key={i}
-                      className="w-full flex items-start justify-start gap-3 rounded-2xl border-2 border-[--green] bg-white px-5 py-4 text-left text-sm sm:text-base font-medium text-slate-900 hover:bg-[--green] hover:text-white hover:-translate-y-0.5 transition-all duration-150 group shadow-sm"
-                      onClick={() => handleAnswer(opt.score)}
-                    >
-                      <span className="mt-0.5 text-xs font-bold opacity-100 group-hover:text-white text-[--green]">
-                        {i + 1}.
-                      </span>
-                      <span className="flex-1 font-semibold">{opt.text}</span>
-                    </button>
-                  ))}
+                <div className="grid gap-3 mb-6">
+                  {questions[currentIndex].options.map((opt: any, i: number) => {
+                    const isSelected = selectedAnswer === opt.score
+                    return (
+                      <button
+                        key={i}
+                        className={`w-full flex items-start justify-start gap-3 rounded-2xl border-2 px-5 py-4 text-left text-sm sm:text-base font-medium transition-all duration-150 group shadow-sm
+                          ${isSelected 
+                            ? 'border-[--green] bg-[--green] text-white transform -translate-y-0.5 shadow-md' 
+                            : 'border-slate-200 bg-white text-slate-900 hover:border-[--green] hover:bg-green-50'
+                          }`}
+                        onClick={() => handleAnswerSelect(opt.score)}
+                      >
+                        <span className={`mt-0.5 text-xs font-bold 
+                          ${isSelected ? 'text-white' : 'text-[--green] group-hover:text-[--green]'}`}>
+                          {i + 1}.
+                        </span>
+                        <span className="flex-1 font-semibold">{opt.text}</span>
+                        {isSelected && (
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        )}
+                      </button>
+                    )
+                  })}
                 </div>
 
-                {currentIndex > 0 && (
-                  <div className="mt-8 flex justify-center">
-                    <button
-                      className="inline-flex items-center gap-2 rounded-full border-2 border-[--dark-blue]/20 bg-white px-6 py-3 text-sm font-bold text-[--dark-blue] shadow-sm hover:bg-[--dark-blue] hover:text-white hover:border-[--dark-blue] transition-all duration-200"
-                      onClick={handleBack}
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                      </svg>
-                      ย้อนกลับข้อก่อนหน้า
-                    </button>
-                  </div>
-                )}
+                <div className="flex justify-between items-center mt-4">
+                  <button
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-all duration-200"
+                    onClick={handleBack}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    ย้อนกลับ
+                  </button>
+
+                  <button
+                    className={`inline-flex items-center gap-2 rounded-full px-8 py-3 text-sm font-bold text-white shadow-lg transition-all duration-200
+                      ${selectedAnswer !== null 
+                        ? 'bg-[--green] hover:bg-[--green]/90 hover:scale-105 cursor-pointer' 
+                        : 'bg-slate-300 cursor-not-allowed'}`}
+                    onClick={handleNextQuestion}
+                    disabled={selectedAnswer === null}
+                  >
+                    ถัดไป
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           )}
