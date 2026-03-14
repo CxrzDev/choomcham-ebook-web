@@ -632,13 +632,13 @@ export default function QuizPage() {
                   {questions[currentIndex].options.map((opt: any, i: number) => (
                     <button
                       key={i}
-                      className="w-full flex items-start justify-start gap-3 rounded-2xl border-2 border-[--green] bg-white/80 px-5 py-4 text-left text-sm sm:text-base text-slate-900 hover:bg-[--green] hover:text-white hover:-translate-y-0.5 transition-all duration-150 group"
+                      className="w-full flex items-start justify-start gap-3 rounded-2xl border-2 border-[--green] bg-white px-5 py-4 text-left text-sm sm:text-base font-medium text-slate-900 hover:bg-[--green] hover:text-white hover:-translate-y-0.5 transition-all duration-150 group shadow-sm"
                       onClick={() => handleAnswer(opt.score)}
                     >
-                      <span className="mt-0.5 text-xs font-semibold opacity-70 group-hover:opacity-100">
+                      <span className="mt-0.5 text-xs font-bold opacity-100 group-hover:text-white text-[--green]">
                         {i + 1}.
                       </span>
-                      <span className="flex-1">{opt.text}</span>
+                      <span className="flex-1 font-semibold">{opt.text}</span>
                     </button>
                   ))}
                 </div>
