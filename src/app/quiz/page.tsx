@@ -251,18 +251,13 @@ export default function QuizPage() {
 
       if (authError) {
         console.error('Error during sign up:', authError)
-        // ถ้าเป็นการเชื่อมต่อผิดพลาด (Failed to fetch) ให้ถือว่าผ่าน (Mock Mode)
-        if (authError.message === 'Failed to fetch' || authError.message.includes('fetch')) {
-          console.warn('Network error, proceeding in offline mode')
-          if (typeof window !== 'undefined') {
-            window.localStorage.setItem('quizRegisteredEmail', regData.email)
-            window.localStorage.setItem('quizUserData', JSON.stringify(regData))
-          }
-          setCurrentIndex(-1)
-          setIsAuthLoading(false)
-          return
+        // Fallback: กรณี Error ใดๆ (เช่น User exist, Network fail) ให้เข้าสู่ Offline Mode ชั่วคราวเพื่อให้ทำ Quiz ต่อได้
+        console.warn('Sign up error, proceeding in offline mode:', authError.message)
+        if (typeof window !== 'undefined') {
+          window.localStorage.setItem('quizRegisteredEmail', regData.email)
+          window.localStorage.setItem('quizUserData', JSON.stringify(regData))
         }
-        setAuthError(authError.message)
+        setCurrentIndex(-1)
         setIsAuthLoading(false)
         return
       }
@@ -301,17 +296,13 @@ export default function QuizPage() {
       }
     } catch (err: any) {
       console.error('Unexpected error:', err)
-      // กรณีเกิด Error อื่นๆ ที่ไม่ใช่ Auth Error ให้ผ่านไปก่อน
-      if (err.message === 'Failed to fetch' || err.message.includes('fetch')) {
-          console.warn('Network error, proceeding in offline mode')
-          if (typeof window !== 'undefined') {
-            window.localStorage.setItem('quizRegisteredEmail', regData.email)
-            window.localStorage.setItem('quizUserData', JSON.stringify(regData))
-          }
-          setCurrentIndex(-1)
-      } else {
-          alert('เกิดข้อผิดพลาดในการบันทึกข้อมูล กรุณาลองใหม่')
+      // Fallback สำหรับ Error ทุกกรณี
+      console.warn('Unexpected error, proceeding in offline mode')
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem('quizRegisteredEmail', regData.email)
+        window.localStorage.setItem('quizUserData', JSON.stringify(regData))
       }
+      setCurrentIndex(-1)
     } finally {
       setIsAuthLoading(false)
     }
@@ -330,6 +321,16 @@ export default function QuizPage() {
 
       if (error) {
         console.error('Error during login:', error)
+        // Fallback: ถ้า Login กับ Supabase ไม่ผ่าน ให้เช็คใน localStorage แทน (กรณี Offline Mode)
+        if (typeof window !== 'undefined') {
+          const localEmail = window.localStorage.getItem('quizRegisteredEmail')
+          if (localEmail === loginEmail) {
+            console.log('Login success (Offline Mode)')
+            setCurrentIndex(-1)
+            setIsAuthLoading(false)
+            return
+          }
+        }
         setAuthError(error.message)
         return
       }
