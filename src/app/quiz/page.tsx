@@ -612,7 +612,7 @@ export default function QuizPage() {
           {currentIndex >= 0 && currentIndex < questions.length && (
             <div className="w-full max-w-xl space-y-4">
               {/* Question Card */}
-              <div className="bg-white/95 shadow-2xl rounded-[32px] border border-slate-200 p-6 sm:p-8 backdrop-blur-sm">
+              <div className="bg-white/95 shadow-2xl rounded-[24px] sm:rounded-[32px] border border-slate-200 p-5 sm:p-8 backdrop-blur-sm">
                 {/* Question Counter & Progress */}
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
@@ -631,7 +631,7 @@ export default function QuizPage() {
                   />
                 </div>
 
-                <h2 className="text-xl sm:text-2xl font-bold mb-6 leading-snug text-slate-900">
+                <h2 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6 leading-snug text-slate-900 min-h-[3.5rem] sm:min-h-0 flex items-center">
                   {questions[currentIndex].question_text}
                 </h2>
                 <div className="grid gap-3 mb-6">
@@ -640,7 +640,7 @@ export default function QuizPage() {
                     return (
                       <button
                         key={i}
-                        className={`w-full flex items-start justify-start gap-3 rounded-2xl border-2 px-5 py-4 text-left text-sm sm:text-base font-medium transition-all duration-150 group shadow-sm
+                        className={`w-full flex items-start justify-start gap-3 rounded-2xl border-2 px-4 py-3 sm:px-5 sm:py-4 text-left text-sm sm:text-base font-medium transition-all duration-150 group shadow-sm
                           ${isSelected 
                             ? 'border-[--green] bg-[--green] text-white transform -translate-y-0.5 shadow-md' 
                             : 'border-slate-200 bg-white text-slate-900 hover:border-[--green] hover:bg-green-50'
@@ -653,7 +653,7 @@ export default function QuizPage() {
                         </span>
                         <span className="flex-1 font-semibold">{opt.text}</span>
                         {isSelected && (
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         )}
@@ -662,9 +662,9 @@ export default function QuizPage() {
                   })}
                 </div>
 
-                <div className="flex justify-between items-center mt-4">
+                <div className="flex justify-between items-center mt-4 gap-3">
                   <button
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-all duration-200"
+                    className="flex-1 sm:flex-none inline-flex justify-center items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-3 sm:px-5 sm:py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-all duration-200"
                     onClick={handleBack}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -674,7 +674,7 @@ export default function QuizPage() {
                   </button>
 
                   <button
-                    className={`inline-flex items-center gap-2 rounded-full px-8 py-3 text-sm font-bold text-white shadow-lg transition-all duration-200
+                    className={`flex-[2] sm:flex-none inline-flex justify-center items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-lg transition-all duration-200
                       ${selectedAnswer !== null 
                         ? 'bg-[--green] hover:bg-[--green]/90 hover:scale-105 cursor-pointer' 
                         : 'bg-slate-300 cursor-not-allowed'}`}
