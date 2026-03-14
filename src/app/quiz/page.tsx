@@ -608,35 +608,6 @@ export default function QuizPage() {
           {/* หน้าคำถาม */}
           {currentIndex >= 0 && currentIndex < questions.length && (
             <div className="w-full max-w-xl space-y-4">
-              {/* Level Progress Bar */}
-              <div className="flex items-center gap-2 justify-center">
-                {levels.map((level, i) => {
-                  const levelIdx = getCurrentLevelIndex(currentIndex)
-                  const isActive = i === levelIdx
-                  const isCompleted = i < levelIdx
-                  return (
-                    <div key={i} className="flex items-center gap-2">
-                      <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 ${isActive ? level.color + ' text-white shadow-lg scale-105' : isCompleted ? 'bg-white/90 text-[--green]' : 'bg-white/40 text-slate-400'}`}>
-                        <span>{level.icon}</span>
-                        <span className="hidden sm:inline">Lv.{i + 1}</span>
-                        <span className="sm:hidden">Lv.{i + 1}</span>
-                      </div>
-                      {i < levels.length - 1 && (
-                        <div className={`w-4 sm:w-8 h-0.5 rounded-full transition-all duration-300 ${isCompleted ? 'bg-[--green]' : 'bg-white/30'}`} />
-                      )}
-                    </div>
-                  )
-                })}
-              </div>
-
-              {/* Level Title */}
-              <div className="text-center">
-                <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-white text-sm font-bold ${getCurrentLevel(currentIndex).color}`}>
-                  <span className="text-base">{getCurrentLevel(currentIndex).icon}</span>
-                  Level {getCurrentLevelIndex(currentIndex) + 1}: {getCurrentLevel(currentIndex).label}
-                </div>
-              </div>
-
               {/* Question Card */}
               <div className="bg-white/95 shadow-2xl rounded-[32px] border border-slate-200 p-6 sm:p-8 backdrop-blur-sm">
                 {/* Question Counter & Progress */}
@@ -668,7 +639,7 @@ export default function QuizPage() {
                       onClick={() => handleAnswer(opt.score)}
                     >
                       <span className="mt-0.5 text-xs font-semibold opacity-70 group-hover:opacity-100">
-                        {String.fromCharCode(65 + i)}.
+                        {i + 1}.
                       </span>
                       <span className="flex-1">{opt.text}</span>
                     </button>
@@ -694,8 +665,8 @@ export default function QuizPage() {
 
           {/* หน้าสรุปผลพร้อมปุ่มจ่ายเงิน (เด้งหน้าต่าง Omise) */}
           {currentIndex >= questions.length && questions.length > 0 && (
-            <div className="w-full max-w-md bg-white/95 shadow-2xl rounded-[32px] overflow-hidden border border-slate-200 backdrop-blur-sm">
-              <div className="bg-[--pink] p-8 sm:p-10 text-white text-center">
+            <div className="w-full max-w-2xl bg-white/95 shadow-2xl rounded-[32px] overflow-hidden border border-slate-200 backdrop-blur-sm">
+              <div className="bg-[--pink] p-6 sm:p-10 text-white text-center">
                 <h2 className="text-base sm:text-lg opacity-90 mb-2 italic">
                   ยินดีด้วยค่ะ พี่{regData.nickname}
                 </h2>
@@ -703,39 +674,48 @@ export default function QuizPage() {
                   คุณคือ "{getResultData(score).title}" นะคะ...
                 </p>
               </div>
-              <div className="p-8 text-center">
-                <div className="text-5xl sm:text-6xl font-black text-[--green] mb-6">{score}</div>
-                <p className="text-sm text-left mb-6 leading-relaxed text-slate-700 italic">
-                  "{getResultData(score).status}"
-                </p>
-                <button
-                  className="inline-flex items-center justify-center rounded-full border border-[--yellow] bg-white/90 px-5 py-2 text-sm font-semibold text-[--yellow] shadow-sm hover:bg-[--yellow] hover:text-white hover:-translate-y-0.5 transition-all duration-150 mb-6"
-                  onClick={() => setShowAnalysis(!showAnalysis)}
-                >
-                  {showAnalysis ? 'ซ่อนผลวิเคราะห์' : 'ดูผลวิเคราะห์'}
-                </button>
-                {showAnalysis && (
-                  <div className="bg-slate-100/80 border border-slate-200 p-5 rounded-2xl mb-8 text-left">
-                    <p className="text-sm text-[--green] font-bold mb-2">สิ่งที่เจอ:</p>
-                    <p className="text-sm text-slate-800 italic mb-4">"{getResultData(score).finding}"</p>
-                    <p className="text-sm text-[#D33666] font-bold mb-2">ความเสี่ยง:</p>
-                    <p className="text-sm text-slate-800 italic">"{getResultData(score).risk}"</p>
+              <div className="p-6 sm:p-8 text-center space-y-6">
+                <div>
+                  <div className="text-5xl sm:text-6xl font-black text-[--green] mb-4">{score} คะแนน</div>
+                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                    <p className="text-sm sm:text-base text-left leading-relaxed text-slate-700 italic">
+                      "{getResultData(score).status}"
+                    </p>
                   </div>
-                )}
-                <div className="bg-yellow-50 border border-yellow-200 p-5 rounded-2xl mb-8">
-                  <p className="text-xs text-yellow-800 font-bold italic mb-3">
-                    "{getResultData(score).sakit}"
-                  </p>
-                  <div className="text-3xl font-black text-slate-900">ราคา 599.-</div>
                 </div>
-                <button
-                  className="w-full bg-[--green] text-white rounded-full py-4 px-6 font-black text-base sm:text-lg shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-150"
-                  onClick={() => router.push(`/checkout?email=${encodeURIComponent(regData.email)}`)}
-                >
-                  {getResultData(score).ctaLabel}
-                </button>
 
+                <div className="space-y-4 text-left">
+                  <div className="bg-green-50 p-4 rounded-2xl border border-green-100">
+                    <p className="text-sm text-[--green] font-bold mb-2 flex items-center gap-2">
+                      <span className="text-lg">💡</span> สิ่งที่เจอ (Insight):
+                    </p>
+                    <p className="text-sm text-slate-800 italic leading-relaxed">"{getResultData(score).finding}"</p>
+                  </div>
 
+                  <div className="bg-red-50 p-4 rounded-2xl border border-red-100">
+                    <p className="text-sm text-[#D33666] font-bold mb-2 flex items-center gap-2">
+                      <span className="text-lg">⚠️</span> ความเสี่ยง (Risk):
+                    </p>
+                    <p className="text-sm text-slate-800 italic leading-relaxed">"{getResultData(score).risk}"</p>
+                  </div>
+
+                  <div className="bg-yellow-50 p-4 rounded-2xl border border-yellow-200">
+                    <p className="text-sm text-yellow-800 font-bold mb-2 flex items-center gap-2">
+                      <span className="text-lg">✨</span> ทางออก (Solution):
+                    </p>
+                    <p className="text-sm text-slate-800 italic leading-relaxed">"{getResultData(score).sakit}"</p>
+                  </div>
+                </div>
+
+                <div className="pt-2">
+                  <div className="text-3xl font-black text-slate-900 mb-4">ราคา 599.-</div>
+                  <button
+                    className="w-full bg-[--green] text-white rounded-full py-4 px-6 font-black text-base sm:text-lg shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-150"
+                    onClick={() => router.push(`/checkout?email=${encodeURIComponent(regData.email)}`)}
+                  >
+                    {getResultData(score).ctaLabel}
+                  </button>
+                </div>
               </div>
             </div>
           )}
