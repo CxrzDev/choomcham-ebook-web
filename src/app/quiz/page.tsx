@@ -364,29 +364,29 @@ export default function QuizPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[--dark-blue] flex items-center justify-center px-4 py-10">
-      <div className="w-full max-w-4xl hero min-h-[60vh] bg-slate-200 rounded-[40px] py-8 px-4 sm:px-10 shadow-xl relative overflow-hidden">
-        <div className="w-48 h-48 bg-[#D33666] rounded-full absolute -top-16 -right-20 opacity-60" />
-        <div className="w-64 h-64 bg-[#3C4297] rounded-full absolute -bottom-24 -left-24 opacity-50" />
-        <div className="w-40 h-40 bg-[#17A78A] rounded-full absolute -top-10 -left-10 opacity-60" />
+    <div className="min-h-screen bg-[--dark-blue] flex items-center justify-center px-4 py-6 sm:py-10">
+      <div className="w-full max-w-4xl min-h-[60vh] bg-slate-200 rounded-[24px] sm:rounded-[40px] py-6 px-4 sm:px-10 shadow-xl relative overflow-hidden">
+        <div className="w-32 h-32 sm:w-48 sm:h-48 bg-[#D33666] rounded-full absolute -top-10 -right-10 sm:-top-16 sm:-right-20 opacity-60" />
+        <div className="w-48 h-48 sm:w-64 sm:h-64 bg-[#3C4297] rounded-full absolute -bottom-16 -left-16 sm:-bottom-24 sm:-left-24 opacity-50" />
+        <div className="w-24 h-24 sm:w-40 sm:h-40 bg-[#17A78A] rounded-full absolute -top-5 -left-5 sm:-top-10 sm:-left-10 opacity-60" />
 
-        <div className="relative z-10 flex flex-col items-center justify-center gap-8">
+        <div className="relative z-10 flex flex-col items-center justify-center gap-6 sm:gap-8">
           {/* หน้าลงทะเบียน / เข้าสู่ระบบ */}
           {currentIndex === -2 && authMode === 'register' && (
-            <div className="w-full max-w-xl bg-white/90 shadow-2xl rounded-[32px] border border-slate-200 p-6 sm:p-8 backdrop-blur-sm relative overflow-visible">
-              <div className="flex justify-center -mt-16 mb-4">
-                <div className="bg-white p-3 rounded-3xl shadow-lg border-2 border-[--yellow]">
+            <div className="w-full max-w-xl bg-white/90 shadow-2xl rounded-[24px] sm:rounded-[32px] border border-slate-200 p-5 sm:p-8 backdrop-blur-sm relative overflow-visible">
+              <div className="flex justify-center -mt-12 sm:-mt-16 mb-4">
+                <div className="bg-white p-2 sm:p-3 rounded-3xl shadow-lg border-2 border-[--yellow]">
                   <NextImage
                     src="/images/logo-clean.svg"
                     alt="Choomcham Logo"
                     width={150}
                     height={150}
                     unoptimized
-                    className="w-32 h-32 object-contain"
+                    className="w-24 h-24 sm:w-32 sm:h-32 object-contain"
                   />
                 </div>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-center text-[--yellow] mb-4 italic">
+              <h2 className="text-xl sm:text-3xl font-bold text-center text-[--yellow] mb-3 sm:mb-4 italic px-2">
                 Quiz: Brand DNA Check: แบรนด์คุณแข็งแรงระดับไหน?
               </h2>
               <p className="text-center text-[--pink] font-bold mb-2">
