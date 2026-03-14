@@ -230,74 +230,61 @@ export default function QuizPage() {
     console.log('Starting quiz with data:', regData)
 
     try {
-      // สมัครสมาชิกด้วยอีเมล / รหัสผ่าน เพื่อใช้เข้าสู่ระบบครั้งถัดไป
       if (password.length < 6) {
         setAuthError('รหัสผ่านควรมีอย่างน้อย 6 ตัวอักษร')
         setIsAuthLoading(false)
         return
       }
 
-      const { data: authData, error: authError } = await supabase.auth.signUp({
-        email: regData.email,
-        password,
-        options: {
-          data: {
-            nickname: regData.nickname,
-            role: regData.role,
-            pain_point: regData.pain_point,
-          },
-        },
-      })
+      // Create a timeout promise
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Request timed out')), 8000)
+      )
 
-      if (authError) {
-        console.error('Error during sign up:', authError)
-        // Fallback: กรณี Error ใดๆ (เช่น User exist, Network fail) ให้เข้าสู่ Offline Mode ชั่วคราวเพื่อให้ทำ Quiz ต่อได้
-        console.warn('Sign up error, proceeding in offline mode:', authError.message)
-        if (typeof window !== 'undefined') {
-          window.localStorage.setItem('quizRegisteredEmail', regData.email)
-          window.localStorage.setItem('quizUserData', JSON.stringify(regData))
-        }
-        setCurrentIndex(-1)
-        setIsAuthLoading(false)
-        return
+      // Race between Supabase calls and timeout
+      await Promise.race([
+        (async () => {
+          // 1. Sign Up
+          const { error: authError } = await supabase.auth.signUp({
+            email: regData.email,
+            password,
+            options: {
+              data: {
+                nickname: regData.nickname,
+                role: regData.role,
+                pain_point: regData.pain_point,
+              },
+            },
+          })
+
+          if (authError) throw authError
+
+          // 2. Insert Registration Data
+          const { error: dbError } = await supabase
+            .from('registrations')
+            .insert([{
+              nickname: regData.nickname,
+              email: regData.email,
+              role: regData.role,
+              pain_point: regData.pain_point
+            }])
+          
+          if (dbError) throw dbError
+        })(),
+        timeoutPromise
+      ])
+      
+      // Success
+      console.log('Registration success')
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem('quizRegisteredEmail', regData.email)
       }
+      setCurrentIndex(-1)
 
-      const { data, error } = await supabase
-        .from('registrations')
-        .insert([{
-          nickname: regData.nickname,
-          email: regData.email,
-          role: regData.role,
-          pain_point: regData.pain_point
-        }])
-        .select()
-
-      if (error) {
-        console.error('Error saving registration:', error)
-        if (error.code === '42P01') {
-          alert('ฐานข้อมูลยังไม่ได้ตั้งค่า กรุณาติดต่อผู้ดูแลระบบเพื่อสร้างตาราง registrations')
-        } else if (error.code === '42501') {
-          alert('ไม่มีสิทธิ์เข้าถึงฐานข้อมูล กรุณาตรวจสอบการตั้งค่า RLS')
-        } else {
-          // ถ้าบันทึกไม่ได้ (เช่น Table ไม่มี) ให้ผ่านไปก่อน (Mock Mode)
-          console.warn('Database error, proceeding in offline mode')
-          if (typeof window !== 'undefined') {
-            window.localStorage.setItem('quizRegisteredEmail', regData.email)
-            window.localStorage.setItem('quizUserData', JSON.stringify(regData))
-          }
-          setCurrentIndex(-1)
-        }
-      } else {
-        console.log('Registration saved successfully:', data)
-        if (typeof window !== 'undefined') {
-          window.localStorage.setItem('quizRegisteredEmail', regData.email)
-        }
-        setCurrentIndex(-1)
-      }
     } catch (err: any) {
-      console.error('Unexpected error:', err)
-      // Fallback สำหรับ Error ทุกกรณี
-      console.warn('Unexpected error, proceeding in offline mode')
+      console.error('Error or Timeout during registration:', err)
+      // Unified Fallback: เข้าสู่ Offline Mode ทันที
+      console.warn('Proceeding in offline mode due to error')
       if (typeof window !== 'undefined') {
         window.localStorage.setItem('quizRegisteredEmail', regData.email)
         window.localStorage.setItem('quizUserData', JSON.stringify(regData))

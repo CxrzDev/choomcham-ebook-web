@@ -8,7 +8,11 @@ const nextConfig = {
       // this will just update topLevelAwait property of config.experiments
       // config.experiments.topLevelAwait = true
       return config
-    }
+    },
+    // Add buildId to force rebuild
+    generateBuildId: async () => {
+      return `build-${Date.now()}`
+    },
   }
 
 module.exports = nextConfig
